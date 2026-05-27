@@ -34,6 +34,12 @@ a{color:var(--coral);}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
 .grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start;}
 @media(min-width:880px){ .grid{grid-template-columns:1fr 440px;gap:60px;} }
+/* Mobile (single-column) order: form first, narrative second.
+   Desktop side-by-side ignores the order property. */
+@media(max-width:879px){
+  .grid > div:first-child{order:2;}
+  .grid > div:last-child{order:1;}
+}
 
 /* LEFT: hero content with face + personal note */
 .kicker{display:inline-block;color:var(--coral);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
