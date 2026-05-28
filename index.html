@@ -22,59 +22,67 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 img{max-width:100%;display:block;}
 a{color:var(--coral);text-decoration:none;}
 
-.topbar{background:var(--dark);color:var(--cream);text-align:center;padding:10px 16px;font-size:13.5px;letter-spacing:.3px;}
+.topbar{background:var(--dark);color:var(--cream);text-align:center;padding:9px 16px;font-size:13.5px;letter-spacing:.3px;}
 .topbar strong{color:#fff;font-weight:600;}
 
-/* hero */
-.hero{padding:54px 0 40px;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-.kicker{display:inline-block;color:var(--coral);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:46px;line-height:1.06;letter-spacing:-.5px;color:var(--ink);max-width:820px;}
-.hero h1 em{font-style:italic;color:var(--coral);}
-@media(min-width:880px){ .hero h1{font-size:56px;} }
-.hero .sub{color:var(--mute);font-size:19px;margin-top:18px;max-width:680px;line-height:1.55;}
 
-/* note */
-.note{margin-top:30px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 12px 30px rgba(80,60,30,.08);max-width:720px;}
-.note .row{display:flex;gap:18px;align-items:center;}
-.note img.face{width:88px;height:88px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--coral);flex-shrink:0;box-shadow:0 6px 16px rgba(80,60,30,.16);}
+/* HERO - tight, centered, everything fits in viewport on desktop */
+.hero{padding:36px 0 28px;text-align:center;}
+.kicker{display:inline-block;color:var(--coral);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1.08;letter-spacing:-.5px;color:var(--ink);max-width:780px;margin:0 auto;}
+.hero h1 em{font-style:italic;color:var(--coral);}
+@media(min-width:880px){ .hero h1{font-size:46px;} }
+.hero .sub{color:var(--mute);font-size:17px;margin:14px auto 0;max-width:600px;line-height:1.5;}
+
+/* CARDS - immediately under hero, large, prominent */
+.paths{padding:14px 0 36px;}
+.cards{display:grid;grid-template-columns:1fr;gap:18px;max-width:1020px;margin:0 auto;}
+@media(min-width:760px){ .cards{grid-template-columns:1fr 1fr 1fr;gap:22px;} }
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 22px 24px;box-shadow:0 10px 28px rgba(80,60,30,.10);display:flex;flex-direction:column;text-align:center;transition:transform .15s,box-shadow .15s;border-top:4px solid var(--coral);}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(80,60,30,.16);}
+.card .icon{width:60px;height:60px;border-radius:50%;background:rgba(208,85,40,.13);color:var(--coral);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.card h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.18;color:var(--ink);margin-bottom:8px;}
+.card p{color:var(--mute);font-size:15.5px;line-height:1.5;flex:1;margin-bottom:18px;}
+.card .go{background:var(--coral);color:#fff;font-weight:700;font-size:15px;padding:12px 16px;border-radius:9px;text-align:center;letter-spacing:.3px;transition:background .15s,transform .06s;display:block;}
+.card .go:hover{background:var(--coral-d);}
+.card .meta{display:block;color:var(--faint);font-size:12.5px;margin-top:10px;}
+
+/* trust strip - tight, just under cards */
+.trust{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;}
+.trust .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 26px;}
+.trust .item{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--mute);font-weight:600;}
+.trust .item .stars{color:#e8a13a;font-size:16px;letter-spacing:1.5px;}
+.trust .item svg{flex-shrink:0;}
+
+/* about section - below the fold, the warmth lives here */
+.about{padding:54px 0 50px;text-align:center;}
+.about h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.14;letter-spacing:-.3px;margin-bottom:8px;}
+.about h2 em{font-style:italic;color:var(--coral);}
+.about .lead{color:var(--mute);font-size:17px;max-width:560px;margin:0 auto 36px;}
+.note{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px 26px;box-shadow:0 12px 30px rgba(80,60,30,.08);max-width:680px;margin:0 auto;text-align:left;}
+.note .row{display:flex;gap:20px;align-items:center;}
+.note img.face{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--coral);flex-shrink:0;box-shadow:0 6px 16px rgba(80,60,30,.16);}
 .note .text{flex:1;}
 .note .who{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin-bottom:3px;}
 .note .who small{display:block;font-family:var(--sans);font-style:normal;color:var(--coral);font-size:13px;font-weight:600;margin-top:2px;letter-spacing:.2px;}
-.note p{color:var(--mute);font-size:16px;line-height:1.55;margin-top:8px;}
-
-/* paths section */
-.paths{padding:48px 0 64px;}
-.paths h2{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.12;letter-spacing:-.3px;text-align:center;margin-bottom:8px;}
-.paths h2 em{font-style:italic;color:var(--coral);}
-.paths .lead{color:var(--mute);font-size:17px;text-align:center;max-width:580px;margin:0 auto 40px;}
-.cards{display:grid;grid-template-columns:1fr;gap:22px;}
-@media(min-width:760px){ .cards{grid-template-columns:1fr 1fr 1fr;gap:24px;} }
-.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:30px 26px 28px;box-shadow:0 10px 28px rgba(80,60,30,.10);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;border-top:4px solid var(--coral);}
-.card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(80,60,30,.16);}
-.card .icon{width:56px;height:56px;border-radius:50%;background:rgba(208,85,40,.13);color:var(--coral);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
-.card h3{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.18;color:var(--ink);margin-bottom:8px;}
-.card p{color:var(--mute);font-size:16px;line-height:1.55;flex:1;margin-bottom:22px;}
-.card .go{background:var(--coral);color:#fff;font-weight:700;font-size:15.5px;padding:13px 18px;border-radius:9px;text-align:center;letter-spacing:.3px;transition:background .15s,transform .06s;display:inline-block;}
-.card .go:hover{background:var(--coral-d);}
-.card .meta{display:block;color:var(--faint);font-size:13px;margin-top:10px;text-align:center;}
-
-/* proof */
-.proof{padding:44px 0;background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-.proof .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:18px 30px;}
-.proof .item{display:flex;align-items:center;gap:9px;font-size:15.5px;color:var(--mute);font-weight:600;}
-.proof .item .stars{color:#e8a13a;font-size:17px;letter-spacing:1.5px;}
-.proof .item svg{flex-shrink:0;}
+.note p{color:var(--mute);font-size:16px;line-height:1.55;margin-top:10px;}
+.note p em{font-style:italic;color:var(--ink);}
 
 /* footer */
-.foot{background:var(--dark);color:#9a948c;padding:32px 0 38px;font-size:13px;line-height:1.7;}
+.foot{background:var(--dark);color:#9a948c;padding:30px 0 36px;font-size:13px;line-height:1.7;}
 .foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
 .foot a{color:#bdb6ac;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
+
 @media(max-width:580px){
-  .hero h1{font-size:36px;}
-  .note .row{flex-direction:column;align-items:flex-start;}
-  .note img.face{width:74px;height:74px;}
+  .hero{padding:24px 0 18px;}
+  .hero h1{font-size:30px;}
+  .hero .sub{font-size:16px;}
+  .paths{padding:6px 0 24px;}
+  .card{padding:22px 20px 20px;}
+  .note .row{flex-direction:column;align-items:center;text-align:center;}
+  .note img.face{width:84px;height:84px;}
 }
 </style>
 </head>
@@ -85,64 +93,49 @@ a{color:var(--coral);text-decoration:none;}
   <div class="wrap">
     <span class="kicker">For Kentuckians approaching Medicare</span>
     <h1>Medicare help from someone who <em>actually lives</em> here.</h1>
-    <p class="sub">No call center. No pressure. Just a real local agent in Lexington who picks up the phone when something changes with your Medicare. Pick the path that fits you below.</p>
-
-    <div class="note">
-      <div class="row">
-        <img class="face" src="https://awtyler1.github.io/tig-agent-assets/headshots/austin-tyler.jpg" alt="Austin Tyler">
-        <div class="text">
-          <div class="who">Austin Tyler
-            <small>Tyler Insurance Group · Lexington, KY</small>
-          </div>
-          <p>I built this office because I wanted to be the agent you actually <em>reach</em>. The same person who signs you up is the same person who picks up the phone next year, and the year after that.</p>
-        </div>
-      </div>
-    </div>
+    <p class="sub">No call center. No pressure. Just a real local agent in Lexington. Pick the path that fits you.</p>
   </div>
 </header>
 
 <section class="paths">
   <div class="wrap">
-    <h2>Three ways to get <em>started</em></h2>
-    <p class="lead">Pick what feels right. None of them cost anything, and none of them lock you into anything.</p>
-
     <div class="cards">
 
       <div class="card">
         <div class="icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
-        <h3>Take the Medicare quiz</h3>
-        <p>Ten questions, two minutes. Find out where you actually stand before you turn 65. No email needed to take it.</p>
+        <h3>Take the quiz</h3>
+        <p>Ten questions, two minutes. Find out where you actually stand before you turn 65.</p>
         <a class="go" href="/quiz-65/">Start the quiz →</a>
-        <span class="meta">Best for: people curious where they stand</span>
+        <span class="meta">Best for: curious where you stand</span>
       </div>
 
       <div class="card">
         <div class="icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         </div>
         <h3>Get the free guide</h3>
-        <p>A short, plain-English Medicare guide written by a local Kentucky agent. No jargon. No 128-page handbook. Instant download.</p>
+        <p>A short, plain-English Medicare guide. No jargon, no 128-page handbook. Instant download.</p>
         <a class="go" href="/guide/">Download the guide →</a>
-        <span class="meta">Best for: people who like to read first</span>
+        <span class="meta">Best for: like to read first</span>
       </div>
 
       <div class="card">
         <div class="icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <h3>Have me call you</h3>
-        <p>Skip the reading. Drop your number and I'll give you a call at a time that works. Free, no pressure, no obligation.</p>
+        <p>Skip the reading. Drop your number and I'll call at a time that works. Free, no pressure.</p>
         <a class="go" href="/help/">Request a call →</a>
-        <span class="meta">Best for: people ready to talk it through</span>
+        <span class="meta">Best for: ready to talk it through</span>
       </div>
 
     </div>
   </div>
 </section>
 
-<section class="proof">
+<section class="trust">
   <div class="wrap">
     <div class="row">
       <div class="item">
@@ -160,6 +153,25 @@ a{color:var(--coral);text-decoration:none;}
       <div class="item">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
         <span>Free to talk</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <h2>The agent behind the <em>three doors</em></h2>
+    <p class="lead">A quick note about who you'll actually be talking to.</p>
+
+    <div class="note">
+      <div class="row">
+        <img class="face" src="https://awtyler1.github.io/tig-agent-assets/headshots/austin-tyler.jpg" alt="Austin Tyler">
+        <div class="text">
+          <div class="who">Austin Tyler
+            <small>Tyler Insurance Group · Lexington, KY</small>
+          </div>
+          <p>I built this office because I wanted to be the agent you actually <em>reach</em>. The same person who signs you up is the same person who picks up the phone next year, and the year after that, when something changes with your coverage.</p>
+        </div>
       </div>
     </div>
   </div>
