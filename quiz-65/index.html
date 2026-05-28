@@ -108,9 +108,11 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 /* big side-by-side answer cards */
 .answers-lg{display:flex;gap:18px;max-width:560px;width:100%;margin:0 auto;}
 .ans-lg{flex:1;background:var(--white);border:2px solid var(--line);border-radius:18px;padding:34px 16px 26px;cursor:pointer;text-align:center;transition:border-color .15s,background .15s,transform .08s,box-shadow .15s;}
-.ans-lg:hover{background:var(--coral);border-color:var(--coral);box-shadow:0 10px 26px rgba(208,85,40,.30);transform:translateY(-2px);}
-.ans-lg:hover .ic{color:var(--cream);}
-.ans-lg:hover .lbl{color:var(--cream);}
+@media (hover: hover){
+  .ans-lg:hover{background:var(--coral);border-color:var(--coral);box-shadow:0 10px 26px rgba(208,85,40,.30);transform:translateY(-2px);}
+  .ans-lg:hover .ic{color:var(--cream);}
+  .ans-lg:hover .lbl{color:var(--cream);}
+}
 .ans-lg .ic{width:58px;height:58px;margin:0 auto 14px;color:var(--coral);transition:color .15s;}
 .ans-lg .lbl{font-size:22px;font-weight:700;color:var(--ink);}
 .ans-lg.chosen{background:var(--coral);border-color:var(--coral);transform:scale(1.03);box-shadow:0 12px 30px rgba(208,85,40,.34);}
@@ -258,8 +260,12 @@ function renderQ(){
   const q = QUESTIONS[idx];
   document.getElementById('qcount').textContent = 'Question ' + (idx+1) + ' of ' + QUESTIONS.length;
   document.getElementById('qtext').textContent = q.q;
-  document.getElementById('ansTrue').classList.remove('chosen');
-  document.getElementById('ansFalse').classList.remove('chosen');
+  ['ansTrue','ansFalse'].forEach(function(id){
+    const b = document.getElementById(id);
+    b.classList.remove('chosen');
+    b.style.pointerEvents = '';
+    b.blur();
+  });
   setBar( (idx / QUESTIONS.length) * 100 );
 }
 
@@ -276,6 +282,8 @@ function answer(val){
   setTimeout(()=>{
     document.getElementById('ansTrue').style.pointerEvents='';
     document.getElementById('ansFalse').style.pointerEvents='';
+    document.getElementById('ansTrue').blur();
+    document.getElementById('ansFalse').blur();
     idx++;
     if(idx < QUESTIONS.length){ renderQ(); }
     else{ runCalc(); }
