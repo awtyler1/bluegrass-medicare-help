@@ -3,23 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','2876662959370019');
-fbq('track','PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2876662959370019&ev=PageView&noscript=1"/></noscript>
-<!-- End Meta Pixel Code -->
-
 <title>Bluegrass Medicare Help | Local Kentucky Medicare Agent</title>
-<meta name="description" content="Medicare help from a real local agent in Lexington, KY. Take the quiz, get the free guide, or request a call.">
+<meta name="description" content="Medicare help from a real local agent in Lexington, KY. Take a quiz, get the free guide, or request a call.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
@@ -43,27 +28,45 @@ a{color:var(--coral);text-decoration:none;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
 
 /* HERO - tight, centered, everything fits in viewport on desktop */
-.hero{padding:36px 0 28px;text-align:center;}
+.hero{padding:36px 0 24px;text-align:center;}
 .kicker{display:inline-block;color:var(--coral);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
 .hero h1{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1.08;letter-spacing:-.5px;color:var(--ink);max-width:780px;margin:0 auto;}
 .hero h1 em{font-style:italic;color:var(--coral);}
 @media(min-width:880px){ .hero h1{font-size:46px;} }
 .hero .sub{color:var(--mute);font-size:17px;margin:14px auto 0;max-width:600px;line-height:1.5;}
 
-/* CARDS - immediately under hero, large, prominent */
-.paths{padding:14px 0 36px;}
-.cards{display:grid;grid-template-columns:1fr;gap:18px;max-width:1020px;margin:0 auto;}
-@media(min-width:760px){ .cards{grid-template-columns:1fr 1fr 1fr;gap:22px;} }
-.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:26px 22px 24px;box-shadow:0 10px 28px rgba(80,60,30,.10);display:flex;flex-direction:column;text-align:center;transition:transform .15s,box-shadow .15s;border-top:4px solid var(--coral);}
+/* PATHS - tiered: quizzes featured on top, other ways below */
+.paths{padding:8px 0 40px;}
+
+/* tier labels */
+.tier-label{text-align:center;font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 16px;}
+.tier-label.primary{color:var(--coral);}
+.tier-label.secondary{color:var(--faint);margin:34px 0 14px;}
+
+/* featured tier: two quiz cards, equal weight */
+.cards{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px;margin:0 auto;}
+@media(min-width:680px){ .cards{grid-template-columns:1fr 1fr;gap:20px;} }
+.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px 24px 24px;box-shadow:0 10px 28px rgba(80,60,30,.10);display:flex;flex-direction:column;text-align:center;transition:transform .15s,box-shadow .15s;border-top:4px solid var(--coral);}
 .card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(80,60,30,.16);}
 .card .icon{width:60px;height:60px;border-radius:50%;background:rgba(208,85,40,.13);color:var(--coral);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
 .card h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.18;color:var(--ink);margin-bottom:8px;}
 .card p{color:var(--mute);font-size:15.5px;line-height:1.5;flex:1;margin-bottom:18px;}
-.card .go{background:var(--coral);color:#fff;font-weight:700;font-size:15px;padding:12px 16px;border-radius:9px;text-align:center;letter-spacing:.3px;transition:background .15s,transform .06s;display:block;}
+.card .go{background:var(--coral);color:#fff;font-weight:700;font-size:15px;padding:13px 16px;border-radius:9px;text-align:center;letter-spacing:.3px;transition:background .15s,transform .06s;display:block;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .card .go:hover{background:var(--coral-d);}
 .card .meta{display:block;color:var(--faint);font-size:12.5px;margin-top:10px;}
 
-/* trust strip - tight, just under cards */
+/* secondary tier: lighter horizontal rows */
+.ways{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+.way{display:flex;align-items:center;gap:16px;background:var(--cream2);border:1px solid var(--line);border-radius:12px;padding:15px 20px;transition:border-color .15s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.way:hover{border-color:var(--coral);transform:translateY(-1px);}
+.way .wicon{width:42px;height:42px;border-radius:50%;background:rgba(208,85,40,.12);color:var(--coral);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.way .wtext{flex:1;min-width:0;text-align:left;}
+.way .wtext h4{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);margin:0;line-height:1.2;}
+.way .wtext p{color:var(--mute);font-size:14px;margin:2px 0 0;line-height:1.4;}
+.way .wgo{color:var(--coral);font-weight:700;font-size:14px;white-space:nowrap;flex-shrink:0;}
+.way:hover .wgo{color:var(--coral-d);}
+
+/* trust strip - tight, just under paths */
 .trust{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;}
 .trust .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 26px;}
 .trust .item{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--mute);font-weight:600;}
@@ -91,11 +94,14 @@ a{color:var(--coral);text-decoration:none;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
 
 @media(max-width:580px){
-  .hero{padding:24px 0 18px;}
+  .hero{padding:24px 0 16px;}
   .hero h1{font-size:30px;}
   .hero .sub{font-size:16px;}
-  .paths{padding:6px 0 24px;}
-  .card{padding:22px 20px 20px;}
+  .paths{padding:4px 0 28px;}
+  .card{padding:24px 20px 20px;}
+  .tier-label.secondary{margin:28px 0 12px;}
+  .way{padding:14px 16px;gap:13px;}
+  .way .wtext h4{font-size:16px;}
   .note .row{flex-direction:column;align-items:center;text-align:center;}
   .note img.face{width:84px;height:84px;}
 }
@@ -108,45 +114,65 @@ a{color:var(--coral);text-decoration:none;}
   <div class="wrap">
     <span class="kicker">For Kentuckians approaching Medicare</span>
     <h1>Medicare help from someone who <em>actually lives</em> here.</h1>
-    <p class="sub">No call center. No pressure. Just a real local agent in Lexington. Pick the path that fits you.</p>
+    <p class="sub">No call center. No pressure. Just a real local agent in Lexington. Start wherever makes sense for you.</p>
   </div>
 </header>
 
 <section class="paths">
   <div class="wrap">
+
+    <p class="tier-label primary">Start with a quick quiz</p>
     <div class="cards">
 
       <div class="card">
         <div class="icon">
           <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
         </div>
-        <h3>Take the quiz</h3>
-        <p>Ten questions, two minutes. Find out where you actually stand before you turn 65.</p>
-        <a class="go" href="/quiz-65/">Start the quiz →</a>
-        <span class="meta">Best for: curious where you stand</span>
+        <h3>Am I ready for Medicare?</h3>
+        <p>Ten quick questions to see where you actually stand before you turn 65. No jargon.</p>
+        <a class="go" href="/quiz-65/">Take the quiz →</a>
+        <span class="meta">2 minutes · 10 questions</span>
       </div>
 
       <div class="card">
         <div class="icon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
         </div>
-        <h3>Get the free guide</h3>
-        <p>A short, plain-English Medicare guide. No jargon, no 128-page handbook. Instant download.</p>
-        <a class="go" href="/guide/">Download the guide →</a>
-        <span class="meta">Best for: like to read first</span>
-      </div>
-
-      <div class="card">
-        <div class="icon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </div>
-        <h3>Have me call you</h3>
-        <p>Skip the reading. Drop your number and I'll call at a time that works. Free, no pressure.</p>
-        <a class="go" href="/help/">Request a call →</a>
-        <span class="meta">Best for: ready to talk it through</span>
+        <h3>Advantage or Supplement?</h3>
+        <p>Two main ways to get Medicare coverage. A few questions to see which one fits how you live.</p>
+        <a class="go" href="/advantage-or-supplement/">Find your fit →</a>
+        <span class="meta">2 minutes · plain English</span>
       </div>
 
     </div>
+
+    <p class="tier-label secondary">Or, two other ways to start</p>
+    <div class="ways">
+
+      <a class="way" href="/guide/">
+        <span class="wicon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </span>
+        <span class="wtext">
+          <h4>Read the free guide</h4>
+          <p>Plain-English Medicare basics. No 128-page handbook.</p>
+        </span>
+        <span class="wgo">Download →</span>
+      </a>
+
+      <a class="way" href="/help/">
+        <span class="wicon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="wtext">
+          <h4>Have me call you</h4>
+          <p>Drop your number and I'll call when it works for you.</p>
+        </span>
+        <span class="wgo">Request a call →</span>
+      </a>
+
+    </div>
+
   </div>
 </section>
 
@@ -175,7 +201,7 @@ a{color:var(--coral);text-decoration:none;}
 
 <section class="about">
   <div class="wrap">
-    <h2>The agent behind the <em>three doors</em></h2>
+    <h2>The agent behind <em>every door</em></h2>
     <p class="lead">A quick note about who you'll actually be talking to.</p>
 
     <div class="note">
