@@ -263,7 +263,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
    GOHIGHLEVEL WIRING
    Workflow: "Advantage vs Supplement Quiz, Intake"
    ============================================================ */
-const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/1916f80e-cc2d-42b6-81b3-aedffe7a75c2";
+const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/9fe8aa7e-6525-4add-9302-f65762993500";
 
 const CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans (Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance). Messages may be sent via automatic dialing system or prerecorded voice. Msg & data rates may apply. Consent is not required to purchase. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms.";
 
@@ -328,6 +328,123 @@ const QUESTIONS = [
     b: { label: "I think an Advantage plan",                      lean: "A", icon: "shield" }
   }
 ];
+
+/* ============================================================
+   REASON FRAGMENTS
+   For each question, each answer carries two reason fragments:
+     win: used when this answer matches the overall recommendation
+     counter: used when this answer pulls against the recommendation
+   Index of REASONS matches index of QUESTIONS.
+   ============================================================ */
+const REASONS = [
+  { // Q1
+    a: {
+      win: "You said you'd rather have vision, dental, and hearing bundled into one plan, which is something Advantage plans are typically built to do.",
+      counter: "You said you'd rather have vision, dental, and hearing bundled into one plan. That's an Advantage strength worth knowing."
+    },
+    b: {
+      win: "You said you're fine keeping vision, dental, and hearing as separate coverage, which means you don't need a plan that bundles them in.",
+      counter: "You said separate vision and dental coverage is fine, which leans Supplement. Worth noting in case bundling matters more later."
+    }
+  },
+  { // Q2
+    a: {
+      win: "You said you're comfortable paying separately for drug coverage, which fits the Supplement model where a Part D plan is a separate piece.",
+      counter: "You said paying separately for drug coverage is fine, which is more of a Supplement-style setup."
+    },
+    b: {
+      win: "You said you'd rather not pay an extra premium for a separate drug plan, which is one reason Advantage often appeals, drug coverage is typically built in.",
+      counter: "You said you'd rather avoid a separate drug-plan premium. That's typically easier with Advantage."
+    }
+  },
+  { // Q3
+    a: {
+      win: "You mentioned a chronic condition or a recent hospitalization. People with more frequent care needs often value Supplements because of the freedom to see any provider that accepts Medicare and the predictability around what they'll owe.",
+      counter: "You mentioned a chronic condition or recent hospitalization. That's a piece of your situation worth talking through carefully, since care frequency often shapes which plan type holds up better long term."
+    },
+    b: {
+      win: "You said you don't have a chronic condition or recent hospitalization, which means you have more flexibility on plan type and the Advantage trade-offs (network, pre-auth) usually feel lower-stakes.",
+      counter: "You said you don't have a chronic condition or recent hospitalization, which is good news for plan flexibility either direction."
+    }
+  },
+  { // Q4
+    a: {
+      win: "You said you don't want to risk a procedure being denied through a pre-authorization process. Supplements pair with Original Medicare, which doesn't use the same pre-auth structure that most Advantage plans do.",
+      counter: "You said pre-authorizations concern you. That's a meaningful Supplement signal worth keeping front of mind."
+    },
+    b: {
+      win: "You said pre-authorizations don't really concern you, which removes one of the most common reasons people steer away from Advantage.",
+      counter: "You said pre-authorizations don't bother you, which makes Advantage less of a concern on that front."
+    }
+  },
+  { // Q5
+    a: {
+      win: "You said the broadest coverage is what matters most. Supplements paired with a Part D plan generally give you the widest provider access and the fewest restrictions on what Medicare covers.",
+      counter: "You said broadest coverage is what matters most, which is a Supplement strength."
+    },
+    b: {
+      win: "You said keeping your monthly premium low matters more, which is one of the main reasons people start with Advantage, monthly premiums are typically lower than Supplements.",
+      counter: "You said keeping monthly premium low matters more. That usually points toward Advantage."
+    }
+  },
+  { // Q6
+    a: {
+      win: "You said you want a plan you can stay on long term. That's a real consideration, because Supplements are easiest to qualify for during your initial Medicare enrollment window. Choosing Supplement first preserves your future flexibility.",
+      counter: "You said you want a plan you can stay on long term. That's something to think hard about, since switching from Advantage to Supplement later often requires medical underwriting."
+    },
+    b: {
+      win: "You said you're not worried about passing a health check later if you want to switch plan types. That gives you flexibility to start with Advantage and revisit later if your situation changes.",
+      counter: "You said you're not worried about future underwriting, which lowers the long-term risk of starting with Advantage."
+    }
+  },
+  { // Q7
+    a: {
+      win: "You said you want a predictable yearly cost, even if your monthly premium runs higher. Supplements are designed for exactly that, you pay more each month but the surprises are smaller.",
+      counter: "You said you want a predictable yearly cost. Predictability is a Supplement strength worth weighing."
+    },
+    b: {
+      win: "You said a low monthly premium matters more than a fixed yearly total. Advantage plans are typically built around that trade-off, lower premium, more variability when you actually use care.",
+      counter: "You said low monthly premium matters more than yearly predictability. That's an Advantage-style trade-off."
+    }
+  },
+  { // Q8
+    a: {
+      win: "You said you're not on Medicaid or state assistance and don't expect to be, so we're comparing the two standard plan types head-to-head.",
+      counter: "You said you're not on Medicaid, which means we're looking at the standard plan-type comparison."
+    },
+    b: {
+      win: "You mentioned you're on Medicaid. There are special programs designed for people in your situation that don't fit cleanly into the standard Advantage-vs-Supplement comparison. Those are worth a conversation.",
+      counter: "You mentioned you're on Medicaid. That changes the calculus, special programs exist that we should talk through."
+    }
+  },
+  { // Q9
+    a: {
+      win: "You said being able to see any provider that accepts Medicare matters a lot. Supplements give you that, no network, no referrals, anywhere in the U.S. that takes Medicare.",
+      counter: "You said provider freedom matters a lot. That's a Supplement strength, especially if you travel or live part of the year somewhere else."
+    },
+    b: {
+      win: "You said a network of providers is fine and you don't travel much. That removes one of the main reasons people lean Supplement, which makes Advantage more workable for you.",
+      counter: "You said a network of providers is fine. That makes Advantage more workable on the access front."
+    }
+  },
+  { // Q10
+    a: {
+      win: "You said going in that you were leaning Supplement, and your other answers backed that up.",
+      counter: "You said going in that you were leaning Supplement. Your answers ended up suggesting the other direction, which is worth a conversation since gut instinct often matters."
+    },
+    b: {
+      win: "You said going in that you were leaning Advantage, and your other answers backed that up.",
+      counter: "You said going in that you were leaning Advantage. Your answers ended up suggesting the other direction, which is worth a conversation since gut instinct often matters."
+    }
+  }
+];
+
+/* Priority order for picking top reasons. Lower index = higher priority.
+   These reflect which questions are the strongest signals for each side.
+   When multiple answers match a side, we pick the top 3 (WIN) or top 2 (COUNTER)
+   following these orders. */
+const PRIORITY_SUPPLEMENT = [2, 5, 8, 6, 3, 4, 9, 1, 0, 7]; // Q3,Q6,Q9,Q7,Q4,Q5,Q10,Q2,Q1,Q8
+const PRIORITY_ADVANTAGE  = [4, 6, 3, 2, 8, 0, 5, 1, 9, 7]; // Q5,Q7,Q4,Q3,Q9,Q1,Q6,Q2,Q10,Q8
 
 /* Icon SVGs (kept simple, single color, inherit currentColor). */
 const ICONS = {
@@ -418,6 +535,62 @@ function computeRecommendation(){
   return { recommendation, advantageScore, supplementScore, medicaidFlag };
 }
 
+/* Pick the top reasons to include in the email.
+   Special programs and Tie route to a default email (Advantage and Supplement
+   respectively in the GHL workflow), so reasoning uses the matching priority list.
+
+   Returns:
+     topReason1, topReason2, topReason3: WIN-style reason strings (matching the routed side)
+     counterReason1, counterReason2: COUNTER-style reason strings (the minority side)
+     counterScore: count of answers on the minority side
+   Counter block in the email renders if counterScore >= 2. */
+function computeReasons(result){
+  // Determine which side is "the winning side" for reasoning purposes.
+  // Tie -> Supplement (safer first choice). Special programs -> Advantage (D-SNPs live there).
+  let winSide;
+  if (result.recommendation === 'Advantage' || result.recommendation === 'Special programs') {
+    winSide = 'A';
+  } else {
+    // Supplement, Tie
+    winSide = 'S';
+  }
+  const priority = winSide === 'A' ? PRIORITY_ADVANTAGE : PRIORITY_SUPPLEMENT;
+
+  // Build a map: question index -> the user's answer object {choice, lean, label}
+  const byQ = {};
+  answers.forEach(a => { byQ[a.i] = a; });
+
+  // Walk priority order, collect WIN reasons (answers that match winSide) and
+  // COUNTER reasons (answers on the other side). Medicaid answers ('M') are
+  // treated as counter only when winSide is 'A' (they hint at the special-program nuance).
+  const winList = [];
+  const counterList = [];
+  priority.forEach(qIdx => {
+    const ans = byQ[qIdx];
+    if (!ans) return;
+    const isAdvantageWin = winSide === 'A';
+    const reasonSet = REASONS[qIdx][ans.choice === 'A' ? 'a' : 'b'];
+    if (ans.lean === winSide) {
+      winList.push(reasonSet.win);
+    } else if (ans.lean === 'M') {
+      // Only relevant on the Advantage path; the COUNTER message flags the Medicaid nuance.
+      counterList.push(reasonSet.counter);
+    } else {
+      // Opposite lean
+      counterList.push(reasonSet.counter);
+    }
+  });
+
+  return {
+    topReason1: winList[0] || "",
+    topReason2: winList[1] || "",
+    topReason3: winList[2] || "",
+    counterReason1: counterList[0] || "",
+    counterReason2: counterList[1] || "",
+    counterScore: counterList.length
+  };
+}
+
 document.getElementById('quizform').addEventListener('submit', function(e){
   e.preventDefault();
   const fn=document.getElementById('fn').value.trim();
@@ -431,6 +604,7 @@ document.getElementById('quizform').addEventListener('submit', function(e){
   if(!consent){ alert('Please check the consent box so I can send your recommendation and follow up.'); return; }
 
   const result = computeRecommendation();
+  const reasons = computeReasons(result);
 
   // Fire Meta Pixel Lead event (post-validation, optimization signal for ads)
   if (typeof fbq !== 'undefined') {
@@ -461,6 +635,13 @@ document.getElementById('quizform').addEventListener('submit', function(e){
     supplementScore: result.supplementScore,
     medicaidFlag: result.medicaidFlag,
     answerDetail: detail,
+    topReason1: reasons.topReason1,
+    topReason2: reasons.topReason2,
+    topReason3: reasons.topReason3,
+    counterReason1: reasons.counterReason1,
+    counterReason2: reasons.counterReason2,
+    counterScore: reasons.counterScore,
+    showCounterBlock: reasons.counterScore >= 2,  // GHL can use this directly as a condition
     consentGiven: consent,
     consentText: CONSENT_TEXT,
     consentTimestamp: new Date().toISOString(),
