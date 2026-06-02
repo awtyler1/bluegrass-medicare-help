@@ -123,9 +123,11 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 /* big side-by-side answer cards */
 .answers-lg{display:flex;gap:18px;max-width:560px;width:100%;margin:0 auto;}
 .ans-lg{flex:1;background:var(--white);border:2px solid var(--line);border-radius:18px;padding:34px 16px 26px;cursor:pointer;text-align:center;transition:border-color .15s,background .15s,transform .08s,box-shadow .15s;}
-.ans-lg:hover{background:var(--coral);border-color:var(--coral);box-shadow:0 10px 26px rgba(208,85,40,.30);transform:translateY(-2px);}
-.ans-lg:hover .ic{color:var(--cream);}
-.ans-lg:hover .lbl{color:var(--cream);}
+@media(hover:hover) and (pointer:fine){
+  .ans-lg:hover{background:var(--coral);border-color:var(--coral);box-shadow:0 10px 26px rgba(208,85,40,.30);transform:translateY(-2px);}
+  .ans-lg:hover .ic{color:var(--cream);}
+  .ans-lg:hover .lbl{color:var(--cream);}
+}
 .ans-lg .ic{width:58px;height:58px;margin:0 auto 14px;color:var(--coral);transition:color .15s;}
 .ans-lg .lbl{font-size:22px;font-weight:700;color:var(--ink);}
 .ans-lg.chosen{background:var(--coral);border-color:var(--coral);transform:scale(1.03);box-shadow:0 12px 30px rgba(208,85,40,.34);}
