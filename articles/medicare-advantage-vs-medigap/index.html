@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Medicare Advantage vs. Medigap: The Real Difference | Bluegrass Medicare Help</title>
+<meta name="description" content="Medicare Advantage or a Medigap supplement? A plain-English breakdown of how they really differ — networks, costs, and the underwriting trap most people don't see coming.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
+  --coral:#d05528; --coral-d:#b3431d; --mute:#5f594f; --faint:#938c80;
+  --line:#e2d9c8; --white:#fff; --green:#3a7d52;
+  --serif:'Fraunces',Georgia,serif; --sans:'Source Sans 3',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:var(--coral);text-decoration:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+/* ===== shared header (keep in sync with homepage) ===== */
+.ustrip{background:var(--dark);color:var(--cream);font-size:13px;letter-spacing:.3px;}
+.ustrip .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;}
+.ustrip strong{color:#fff;font-weight:600;}
+.ustrip .rate{display:flex;align-items:center;gap:7px;white-space:nowrap;}
+.ustrip .rate .stars{color:#e8a13a;letter-spacing:1px;}
+@media(max-width:680px){ .ustrip .wrap{justify-content:center;} .ustrip .rate{display:none;} }
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);-webkit-backdrop-filter:saturate(1.3) blur(6px);backdrop-filter:saturate(1.3) blur(6px);border-bottom:1px solid var(--line);}
+.nav .wrap{position:relative;display:flex;align-items:center;gap:16px;padding-top:11px;padding-bottom:11px;}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0;}
+.brand .mark{width:38px;height:38px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--serif);font-weight:600;font-size:21px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(208,85,40,.3);}
+.brand .wm{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.04;color:var(--ink);}
+.brand .wm small{display:block;font-family:var(--sans);font-weight:600;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--coral);margin-top:1px;}
+.navlinks{display:flex;align-items:center;gap:24px;margin-left:auto;}
+.navlinks a{color:var(--ink);font-weight:600;font-size:15.5px;transition:color .15s;-webkit-tap-highlight-color:transparent;}
+.navlinks a:hover,.navlinks a.active{color:var(--coral);}
+.navcta{display:inline-flex;align-items:center;gap:7px;background:var(--coral);color:#fff;font-weight:700;font-size:15px;padding:11px 17px;border-radius:9px;white-space:nowrap;margin-left:24px;transition:background .15s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.navcta:hover{background:var(--coral-d);transform:translateY(-1px);}
+.navtog{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:9px;background:var(--cream2);color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+@media(max-width:860px){
+  .brand .wm small{display:none;}
+  .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:4px 0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(80,60,30,.12);display:none;}
+  .navlinks.open{display:flex;}
+  .navlinks a{padding:15px 24px;font-size:17px;border-top:1px solid var(--line);}
+  .navlinks a:first-child{border-top:none;}
+  .navcta{margin-left:auto;padding:10px 14px;}
+  .navtog{display:inline-flex;}
+}
+
+/* ===== article ===== */
+.article{max-width:720px;margin:0 auto;padding:0 24px;}
+.crumb{padding:26px 0 0;font-size:14.5px;font-weight:600;}
+.crumb a{color:var(--faint);} .crumb a:hover{color:var(--coral);}
+.head{padding:22px 0 8px;}
+.head .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--coral);background:rgba(208,85,40,.1);padding:5px 11px;border-radius:20px;margin-bottom:18px;}
+.head h1{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-.5px;}
+@media(min-width:780px){ .head h1{font-size:46px;} }
+.byline{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--coral);}
+.byline .b{font-size:14.5px;color:var(--mute);line-height:1.35;}
+.byline .b b{color:var(--ink);font-weight:600;display:block;font-size:15.5px;}
+
+.body{padding:28px 0 10px;font-size:18px;color:#3b352c;}
+.body p{margin:0 0 20px;}
+.body h2{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.2;color:var(--ink);margin:38px 0 12px;letter-spacing:-.3px;}
+.body strong{color:var(--ink);font-weight:600;}
+.body ul{margin:0 0 22px;padding-left:4px;list-style:none;}
+.body ul li{position:relative;padding-left:30px;margin-bottom:12px;}
+.body ul li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--coral);}
+.callout{background:var(--warm);border-left:4px solid var(--coral);border-radius:10px;padding:20px 22px;margin:28px 0;font-size:17px;color:var(--ink);}
+.callout b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:6px;}
+
+/* simple comparison table */
+.compare{width:100%;border-collapse:collapse;margin:8px 0 26px;font-size:16px;background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+.compare th,.compare td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top;}
+.compare thead th{background:var(--warm);font-family:var(--serif);font-weight:600;font-size:16px;color:var(--ink);}
+.compare tbody th{font-weight:600;color:var(--ink);font-size:15px;width:32%;}
+.compare td{color:var(--mute);}
+.compare tr:last-child th,.compare tr:last-child td{border-bottom:none;}
+@media(max-width:560px){ .compare,.compare thead,.compare tbody,.compare th,.compare td,.compare tr{display:block;} .compare thead{display:none;} .compare tbody th{width:auto;padding-bottom:2px;} .compare td{padding-top:2px;} .compare td::before{content:attr(data-label);display:block;font-weight:700;color:var(--coral);font-size:12px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px;} .compare tr{border-bottom:1px solid var(--line);padding:6px 0;} .compare tr:last-child{border-bottom:none;} }
+
+/* end CTA */
+.endcta{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 30px rgba(80,60,30,.10);padding:30px 28px;margin:40px 0 10px;text-align:center;}
+.endcta h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15;margin-bottom:8px;}
+.endcta p{color:var(--mute);font-size:16.5px;margin-bottom:20px;}
+.endcta .row{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--coral);color:#fff;font-weight:700;font-size:18px;padding:15px 38px;border-radius:11px;box-shadow:0 8px 22px rgba(208,85,40,.28);transition:background .15s,transform .07s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.btn:hover{background:var(--coral-d);transform:translateY(-2px);}
+.endcta .callline{font-size:15.5px;color:var(--mute);font-weight:600;}
+.endcta .callline a{font-weight:700;}
+
+.disclaim{font-size:13.5px;color:var(--faint);font-style:italic;line-height:1.5;margin:30px 0 0;padding-top:20px;border-top:1px solid var(--line);}
+
+/* ===== footer ===== */
+.foot{background:var(--dark);color:#9a948c;padding:30px 0 36px;font-size:13px;line-height:1.7;margin-top:48px;}
+.foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
+.foot a{color:#bdb6ac;}
+.foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
+
+@media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+</style>
+</head>
+<body>
+<div class="ustrip">
+  <div class="wrap">
+    <span>📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</span>
+    <span class="rate"><span class="stars">★★★★★</span> 5.0 on Google</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Bluegrass Medicare Help home">
+      <span class="mark">B</span>
+      <span class="wm">Bluegrass<small>Medicare Help</small></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="/quiz-65/">New to Medicare</a>
+      <a href="/supp-advantage/">Compare Plans</a>
+      <a href="/articles/" class="active">Articles</a>
+      <a href="/guide/">Free Guide</a>
+    </div>
+    <a class="navcta" href="tel:18596186443">📞 Call</a>
+    <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<article class="article">
+  <p class="crumb"><a href="/articles/">&larr; All articles</a></p>
+
+  <header class="head">
+    <span class="tag">Compare Plans</span>
+    <h1>Medicare Advantage vs. Medigap: The Real Difference</h1>
+    <div class="byline">
+      <img src="/assets/austin-tyler.jpg" alt="Austin Tyler">
+      <div class="b"><b>Austin Tyler</b>Local Kentucky Medicare agent · June 3, 2026 · 6 min read</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <p>This is the question I get more than any other: <strong>"Should I go with a Medicare Advantage plan or a supplement?"</strong> Both are popular, both are legitimate, and the right answer genuinely depends on the person. But most folks are comparing them on the wrong things — usually just the monthly premium. Let me show you what actually matters.</p>
+
+    <h2>First, what they're both trying to fix</h2>
+    <p>Original Medicare (Part A and Part B) is good coverage, but it has gaps. After your deductibles, Part B generally pays about 80% and <strong>you pay the other 20% — with no cap on what that 20% can add up to</strong> in a bad year. In 2026 the Part B deductible is $283 and the inpatient hospital deductible is $1,736 per benefit period.</p>
+    <p>There are two different ways to deal with those gaps. You pick one:</p>
+    <ul>
+      <li><strong>Medicare Advantage (Part C)</strong> — a private plan that <em>replaces</em> how you get your Medicare, usually bundling in drug coverage and extras.</li>
+      <li><strong>A Medigap supplement</strong> — a private policy that <em>works alongside</em> Original Medicare and pays the gaps it leaves behind (you add a separate Part D drug plan).</li>
+    </ul>
+
+    <h2>The side-by-side</h2>
+    <table class="compare">
+      <thead><tr><th>&nbsp;</th><th>Medicare Advantage</th><th>Medigap (Supplement)</th></tr></thead>
+      <tbody>
+        <tr><th>Monthly premium</th><td data-label="Medicare Advantage">Often low or $0 (you still pay your Part B premium)</td><td data-label="Medigap">Higher — a set monthly premium</td></tr>
+        <tr><th>Doctors</th><td data-label="Medicare Advantage">Network-based (HMO/PPO); referrals &amp; prior approval common</td><td data-label="Medigap">Any doctor or hospital in the U.S. that takes Medicare</td></tr>
+        <tr><th>Costs when you get care</th><td data-label="Medicare Advantage">Copays &amp; coinsurance as you go, up to a yearly out-of-pocket max</td><td data-label="Medigap">Little to nothing at the point of care (depends on plan)</td></tr>
+        <tr><th>Drug coverage</th><td data-label="Medicare Advantage">Usually built in</td><td data-label="Medigap">Separate Part D plan needed</td></tr>
+        <tr><th>Extras (dental, vision, etc.)</th><td data-label="Medicare Advantage">Often included</td><td data-label="Medigap">Not included</td></tr>
+        <tr><th>Best for</th><td data-label="Medicare Advantage">Lower upfront cost, OK with a network</td><td data-label="Medigap">Predictability &amp; freedom to go anywhere</td></tr>
+      </tbody>
+    </table>
+
+    <h2>The trade-off in one sentence</h2>
+    <p><strong>Medicare Advantage usually costs less when you're healthy; Medigap usually costs less when you're sick.</strong> Advantage keeps your monthly bill low but you pay as you use care, within a network and sometimes after prior authorization. Medigap costs more every month but smooths everything out — you can see almost any doctor, and your bills are predictable even in a rough year.</p>
+
+    <div class="callout">
+      <b>Good news on drug costs either way.</b>
+      Starting in 2025, Medicare put a hard cap on what you pay out of pocket for covered prescription drugs each year. In 2026 that cap is $2,100. It applies whether your Part D is built into an Advantage plan or it's a standalone plan paired with Medigap.
+    </div>
+
+    <h2>The part most people miss: medical underwriting</h2>
+    <p>Here's the catch that makes this decision bigger than it looks. When you first turn 65 and enroll in Part B, you get a <strong>6-month Medigap Open Enrollment Period</strong>. During that window, a supplement company <em>must</em> sell you a policy — they can't turn you down or charge you more for your health history.</p>
+    <p>After that window closes, in most states — <strong>Kentucky included</strong> — buying or switching a Medigap policy can require <strong>medical underwriting</strong>. That means the insurer can review your health and deny you or charge more. (Only a handful of states, like New York and Massachusetts, guarantee Medigap year-round.)</p>
+    <p>Why does that matter for this choice? Because if you start on Medicare Advantage and later decide you want the freedom of Medigap, you may have to pass underwriting to get it — and if your health has changed, that door can be hard to open. It's not impossible, and there are special situations that protect you, but it's the single most important thing to understand <em>before</em> you choose.</p>
+
+    <div class="callout">
+      <b>Bottom line:</b>
+      Don't pick on premium alone. Think about the doctors you want to keep, how predictable you need your costs to be, and the underwriting rules down the road. That's a 15-minute conversation — and it's worth getting right the first time.
+    </div>
+
+    <div class="endcta">
+      <h3>Not sure which one fits your life?</h3>
+      <p>Take the 2-minute "Advantage or Supplement?" quiz, or call me and we'll talk it through for your situation — no cost, no pressure.</p>
+      <div class="row">
+        <a class="btn" href="/supp-advantage/">Find your fit &rarr;</a>
+        <p class="callline">Or call me directly: <a href="tel:18596186443">(859) 618-6443</a></p>
+      </div>
+    </div>
+
+    <p class="disclaim">This article is general information, not advice for your specific situation, and Medicare rules and figures can change. 2026 amounts are from CMS. Tyler Insurance Group is not connected with or endorsed by the U.S. government or the federal Medicare program. We do not offer every plan available in your area. For complete details on all your options, contact Medicare.gov or 1-800-MEDICARE.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fnm">Tyler Insurance Group</div>
+    1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
+    <a href="tel:8596186443">(859) 618-6443</a> · <a href="https://www.tylerinsurancegroup.com">tylerinsurancegroup.com</a>
+    <div class="disc">
+      We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tog=document.getElementById('navtog'), links=document.getElementById('navlinks');
+  if(!tog||!links) return;
+  tog.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    tog.setAttribute('aria-expanded', open?'true':'false');
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){ links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); }
+  });
+})();
+</script>
+</body>
+</html>
