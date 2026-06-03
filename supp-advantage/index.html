@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" type="image/png" href="/assets/logo-mark.png">
 <link rel="apple-touch-icon" href="/assets/logo-mark.png">
+<meta name="theme-color" content="#1f1d1a">
 <title>Advantage or Supplement: Which Fits You? | Tyler Insurance Group</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,8 +47,8 @@ html{-webkit-text-size-adjust:100%;}
 }
 .consent{-webkit-tap-highlight-color:transparent;}
 #consentChk{min-width:24px;min-height:24px;}
-body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;}
-.stage{max-width:720px;margin:0 auto;padding:0 26px;min-height:100vh;display:flex;flex-direction:column;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;min-height:100dvh;}
+.stage{max-width:720px;margin:0 auto;padding:0 26px;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;}
 
 /* progress */
 .progress{position:fixed;top:0;left:0;height:5px;background:var(--coral);width:0;transition:width .45s cubic-bezier(.4,0,.2,1);z-index:50;border-radius:0 3px 3px 0;}
@@ -193,9 +194,9 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 <!-- QUESTION (single reused screen) -->
 <section class="screen qscreen active" id="qscreen">
   <div class="qhead">
-    <a class="qnav qhome" href="/" aria-label="Back to home">⌂ Home</a>
+    <a class="qnav qhome" href="/" aria-label="Back to home"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Home</a>
     <img src="/supp-advantage/austin.jpg" alt="Austin Tyler" width="84" height="84">
-    <a class="qnav qcall" href="tel:18596186443" aria-label="Call Austin">📞 Call</a>
+    <a class="qnav qcall" href="tel:18596186443" aria-label="Call Austin"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
   </div>
   <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:18px 0 30px;">
     <button class="qback" id="backBtn" onclick="goBack()" hidden>← Back</button>
@@ -274,7 +275,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
   <div class="local">
     <img class="local-face" src="/supp-advantage/austin.jpg" alt="Austin Tyler" width="96" height="96">
     <p class="note">Hi, it's Austin. The email is a starting point, not the final answer. If you want to talk through your specific situation, your doctors, your prescriptions, what you actually pay now, just call me. No script, no pressure, no call center.</p>
-    <a class="btn" href="tel:18596186443" id="bookcall">📞 Call Austin: (859) 618-6443</a>
+    <a class="btn" href="tel:18596186443" id="bookcall"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Austin: (859) 618-6443</a>
     <p class="callnote">Prefer we reach out? Your email has a link to book a time that works.</p>
   </div>
   <div class="explore">
@@ -302,7 +303,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
       <a href="/guide/">Free Guide</a>
       <a href="/help/">Talk to Austin</a>
     </div>
-    <a class="fcall" href="tel:18596186443">📞 Call (859) 618-6443</a>
+    <a class="fcall" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (859) 618-6443</a>
   </div>
 </nav>
 
