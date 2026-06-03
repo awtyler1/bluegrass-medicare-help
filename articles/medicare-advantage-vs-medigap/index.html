@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="/assets/logo-mark.png">
+<link rel="apple-touch-icon" href="/assets/logo-mark.png">
 <title>Medicare Advantage vs. Medigap: The Real Difference | Bluegrass Medicare Help</title>
 <meta name="description" content="Medicare Advantage or a Medigap supplement? A plain-English breakdown of how they really differ — networks, costs, and the underwriting trap most people don't see coming.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,8 +91,12 @@ a{color:var(--coral);text-decoration:none;}
 <nav class="nav">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Bluegrass Medicare Help home">
-      <span class="mark">B</span>
-      <span class="wm">Bluegrass<small>Medicare Help</small></span>
+      <img class="brand-logo" src="/assets/logo.png" alt="Bluegrass Medicare Help" height="46"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span class="brand-fallback">
+        <span class="mark">B</span>
+        <span class="wm">Bluegrass<small>Medicare Help</small></span>
+      </span>
     </a>
     <div class="navlinks" id="navlinks">
       <a href="/quiz-65/">New to Medicare</a>
@@ -175,6 +181,7 @@ a{color:var(--coral);text-decoration:none;}
 <!-- ============ FOOTER NAV ============ -->
 <nav class="fnav" aria-label="Footer">
   <div class="wrap">
+    <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" onerror="this.closest('.fnav-logo').style.display='none'"></a>
     <div class="fnav-links">
       <a href="/">Home</a>
       <a href="/quiz-65/">New to Medicare</a>
