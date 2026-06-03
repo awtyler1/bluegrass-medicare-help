@@ -17,6 +17,9 @@
   transition:top .15s ease;text-decoration:none;}
 .skip-link:focus{top:0;}
 :focus-visible{outline:3px solid var(--coral);outline-offset:2px;border-radius:4px;}
+a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+/* phone icon used in every Call control — scales with the button's font size */
+.cta-ico{width:1.05em;height:1.05em;flex-shrink:0;}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
     transition-duration:.001ms!important;scroll-behavior:auto!important;}
@@ -34,7 +37,7 @@
 .nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);
   -webkit-backdrop-filter:saturate(1.3) blur(6px);backdrop-filter:saturate(1.3) blur(6px);
   border-bottom:1px solid var(--line);}
-.nav .wrap{position:relative;display:flex;align-items:center;gap:16px;padding-top:11px;padding-bottom:11px;}
+.nav .wrap{position:relative;display:flex;align-items:center;gap:16px;padding:11px max(24px,env(safe-area-inset-right)) 11px max(24px,env(safe-area-inset-left));}
 .brand{display:flex;align-items:center;gap:11px;flex-shrink:0;}
 .brand .mark{width:38px;height:38px;border-radius:50%;background:var(--coral);color:#fff;
   font-family:var(--serif);font-weight:600;font-size:21px;display:flex;align-items:center;justify-content:center;
@@ -48,10 +51,11 @@
 .navlinks{display:flex;align-items:center;gap:24px;margin-left:auto;}
 .navlinks a{color:var(--ink);font-weight:600;font-size:15.5px;transition:color .15s;-webkit-tap-highlight-color:transparent;}
 .navlinks a:hover,.navlinks a.active,.navlinks a[aria-current="page"]{color:var(--coral);}
-.navcta{display:inline-flex;align-items:center;gap:7px;background:var(--coral);color:#fff;font-weight:700;font-size:15px;
-  padding:11px 17px;border-radius:9px;white-space:nowrap;margin-left:24px;transition:background .15s,transform .06s;
+.navcta{display:inline-flex;align-items:center;gap:7px;background:var(--coral);color:#fff;font-weight:700;font-size:14.5px;
+  line-height:1;padding:9px 16px;border-radius:10px;white-space:nowrap;margin-left:24px;transition:background .15s,transform .08s;
   -webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .navcta:hover{background:var(--coral-d);transform:translateY(-1px);}
+.navcta:active{transform:scale(.96);}
 .navtog{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);
   border-radius:9px;background:var(--cream2);color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 @media(max-width:860px){
@@ -62,13 +66,14 @@
   .navlinks.open{display:flex;}
   .navlinks a{padding:15px 24px;font-size:17px;border-top:1px solid var(--line);}
   .navlinks a:first-child{border-top:none;}
-  .navcta{margin-left:auto;padding:10px 14px;}
+  .navcta{margin-left:auto;padding:9px 15px;font-size:15px;}
   .navtog{display:inline-flex;}
 }
 
 /* ---------- universal footer nav (no dead ends) ---------- */
 .fnav{background:var(--cream2);border-top:1px solid var(--line);padding:30px 0 32px;}
-.fnav .wrap{display:flex;flex-direction:column;align-items:center;gap:18px;}
+.fnav .wrap{display:flex;flex-direction:column;align-items:center;gap:18px;
+  padding-left:max(24px,env(safe-area-inset-left));padding-right:max(24px,env(safe-area-inset-right));}
 .fnav-logo{display:block;}
 .fnav-logo img{height:54px;width:auto;display:block;}
 .fnav-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 26px;}
@@ -78,3 +83,7 @@
   padding:12px 22px;border-radius:10px;-webkit-tap-highlight-color:transparent;touch-action:manipulation;
   transition:background .15s,transform .06s;}
 .fcall:hover{background:var(--coral-d);transform:translateY(-1px);}
+.fcall:active{transform:scale(.97);}
+
+/* clear the iPhone home indicator at the very bottom of the page */
+body .foot{padding-bottom:max(36px,env(safe-area-inset-bottom));}
