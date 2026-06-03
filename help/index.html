@@ -23,6 +23,7 @@ src="https://www.facebook.com/tr?id=2876662959370019&ev=PageView&noscript=1"/></
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
 :root{
   --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
@@ -37,8 +38,6 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 img{max-width:100%;display:block;}
 a{color:var(--coral);}
 
-.topbar{background:var(--dark);color:var(--cream);text-align:center;padding:10px 16px;font-size:13.5px;letter-spacing:.3px;}
-.topbar strong{color:#fff;font-weight:600;}
 
 .hero{position:relative;
   background:linear-gradient(180deg,rgba(244,239,231,.85),rgba(244,239,231,.92) 60%,rgba(244,239,231,.98)),url('/assets/kentucky-hero.jpg');
@@ -151,9 +150,35 @@ a{color:var(--coral);}
 </head>
 <body>
 
-<div class="topbar">📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</div>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<header class="hero">
+<div class="ustrip">
+  <div class="wrap">
+    <span>📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</span>
+    <span class="rate"><span class="stars">★★★★★</span> 5.0 on Google</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Bluegrass Medicare Help home">
+      <span class="mark">B</span>
+      <span class="wm">Bluegrass<small>Medicare Help</small></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="/quiz-65/">New to Medicare</a>
+      <a href="/supp-advantage/">Compare Plans</a>
+      <a href="/articles/">Articles</a>
+      <a href="/guide/">Free Guide</a>
+    </div>
+    <a class="navcta" href="tel:18596186443">📞 Call</a>
+    <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="hero" id="main">
   <div class="wrap">
     <div class="grid">
       <div>
@@ -270,6 +295,21 @@ a{color:var(--coral);}
   </div>
 </section>
 
+<!-- ============ FOOTER NAV ============ -->
+<nav class="fnav" aria-label="Footer">
+  <div class="wrap">
+    <div class="fnav-links">
+      <a href="/">Home</a>
+      <a href="/quiz-65/">New to Medicare</a>
+      <a href="/supp-advantage/">Compare Plans</a>
+      <a href="/articles/">Articles</a>
+      <a href="/guide/">Free Guide</a>
+      <a href="/help/">Talk to Austin</a>
+    </div>
+    <a class="fcall" href="tel:18596186443">📞 Call (859) 618-6443</a>
+  </div>
+</nav>
+
 <footer class="foot">
   <div class="wrap">
     <div class="fnm">Tyler Insurance Group</div>
@@ -344,6 +384,19 @@ document.getElementById('leadform').addEventListener('submit', function(e){
     finish();
   }
 });
+</script>
+<script>
+(function(){
+  var tog=document.getElementById('navtog'), links=document.getElementById('navlinks');
+  if(!tog||!links) return;
+  tog.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    tog.setAttribute('aria-expanded', open?'true':'false');
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){ links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); }
+  });
+})();
 </script>
 </body>
 </html>
