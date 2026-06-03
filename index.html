@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bluegrass Medicare Help | Local Kentucky Medicare Agent</title>
-<meta name="description" content="Medicare help from a real local agent in Lexington, KY. Take a quiz, get the free guide, or request a call.">
+<title>Bluegrass Medicare Help | Your Kentucky Medicare Journey Starts Here</title>
+<meta name="description" content="Turning 65 or already on Medicare? Get plain-English help from a real local Kentucky agent. No call center, no pressure, no cost. Start here.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
@@ -12,197 +12,197 @@
 :root{
   --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
   --coral:#d05528; --coral-d:#b3431d; --mute:#5f594f; --faint:#938c80;
-  --line:#e2d9c8; --white:#fff;
+  --line:#e2d9c8; --white:#fff; --green:#3a7d52;
   --serif:'Fraunces',Georgia,serif; --sans:'Source Sans 3',-apple-system,sans-serif;
   --hand:'Caveat',cursive;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
 body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;}
 img{max-width:100%;display:block;}
 a{color:var(--coral);text-decoration:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
 
 .topbar{background:var(--dark);color:var(--cream);text-align:center;padding:9px 16px;font-size:13.5px;letter-spacing:.3px;}
 .topbar strong{color:#fff;font-weight:600;}
 
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-
-/* HERO - tight, centered, everything fits in viewport on desktop */
-.hero{padding:36px 0 24px;text-align:center;}
-.kicker{display:inline-block;color:var(--coral);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1.08;letter-spacing:-.5px;color:var(--ink);max-width:780px;margin:0 auto;}
+/* ============ HERO over the horse farm ============ */
+.hero{position:relative;overflow:hidden;padding:54px 0 56px;text-align:center;}
+.hero::before{content:"";position:absolute;inset:0;
+  background:url('/assets/kentucky-hero.jpg') center 30%/cover no-repeat;
+  transform:scale(1.06);z-index:0;}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg,rgba(244,239,231,.66),rgba(244,239,231,.82) 50%,rgba(244,239,231,.97) 88%,var(--cream) 100%);}
+.hero .wrap{position:relative;z-index:2;}
+.kicker{display:inline-block;color:var(--coral);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.06;letter-spacing:-.6px;color:var(--ink);max-width:760px;margin:0 auto;}
 .hero h1 em{font-style:italic;color:var(--coral);}
-@media(min-width:880px){ .hero h1{font-size:46px;} }
-.hero .sub{color:var(--mute);font-size:17px;margin:14px auto 0;max-width:600px;line-height:1.5;}
+@media(min-width:880px){ .hero h1{font-size:54px;} }
+.hero .sub{color:var(--ink);font-size:18.5px;margin:18px auto 0;max-width:600px;line-height:1.5;}
 
-/* PATHS - tiered: quizzes featured on top, other ways below */
-.paths{padding:8px 0 40px;}
+/* benefit checklist */
+.checks{list-style:none;display:inline-flex;flex-direction:column;gap:11px;margin:26px auto 0;text-align:left;}
+.checks li{display:flex;align-items:center;gap:11px;font-size:17px;font-weight:600;color:var(--ink);}
+.checks .ck{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;}
 
-/* tier labels */
-.tier-label{text-align:center;font-weight:600;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin:0 0 16px;}
-.tier-label.primary{color:var(--coral);}
-.tier-label.secondary{color:var(--faint);margin:34px 0 14px;}
+/* hero CTAs */
+.cta-row{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:34px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--coral);color:#fff;font-family:var(--sans);font-weight:700;font-size:21px;padding:18px 56px;border:none;border-radius:12px;cursor:pointer;letter-spacing:.3px;transition:background .15s,transform .07s,box-shadow .15s;box-shadow:0 10px 26px rgba(208,85,40,.30);-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.btn:hover{background:var(--coral-d);transform:translateY(-3px);box-shadow:0 16px 34px rgba(208,85,40,.38);}
+.btn:active{transform:translateY(-1px) scale(.99);}
+.callline{font-size:16px;color:var(--mute);font-weight:600;}
+.callline a{font-weight:700;white-space:nowrap;}
 
-/* featured tier: two quiz cards, equal weight */
-.cards{display:grid;grid-template-columns:1fr;gap:18px;max-width:720px;margin:0 auto;}
-@media(min-width:680px){ .cards{grid-template-columns:1fr 1fr;gap:20px;} }
-.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:28px 24px 24px;box-shadow:0 10px 28px rgba(80,60,30,.10);display:flex;flex-direction:column;text-align:center;transition:transform .15s,box-shadow .15s;border-top:4px solid var(--coral);}
-.card:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(80,60,30,.16);}
-.card .icon{width:60px;height:60px;border-radius:50%;background:rgba(208,85,40,.13);color:var(--coral);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
-.card h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.18;color:var(--ink);margin-bottom:8px;}
-.card p{color:var(--mute);font-size:15.5px;line-height:1.5;flex:1;margin-bottom:18px;}
-.card .go{background:var(--coral);color:#fff;font-weight:700;font-size:15px;padding:13px 16px;border-radius:9px;text-align:center;letter-spacing:.3px;transition:background .15s,transform .06s;display:block;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
-.card .go:hover{background:var(--coral-d);}
-.card .meta{display:block;color:var(--faint);font-size:12.5px;margin-top:10px;}
+/* ============ START / guided situations ============ */
+.start{padding:52px 0 18px;text-align:center;}
+.start h2{font-family:var(--serif);font-weight:500;font-size:32px;line-height:1.12;letter-spacing:-.3px;}
+.start h2 em{font-style:italic;color:var(--coral);}
+.start .lead{color:var(--mute);font-size:17.5px;max-width:560px;margin:10px auto 0;}
 
-/* secondary tier: lighter horizontal rows */
-.ways{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
-.way{display:flex;align-items:center;gap:16px;background:var(--cream2);border:1px solid var(--line);border-radius:12px;padding:15px 20px;transition:border-color .15s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
-.way:hover{border-color:var(--coral);transform:translateY(-1px);}
-.way .wicon{width:42px;height:42px;border-radius:50%;background:rgba(208,85,40,.12);color:var(--coral);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.way .wtext{flex:1;min-width:0;text-align:left;}
-.way .wtext h4{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);margin:0;line-height:1.2;}
-.way .wtext p{color:var(--mute);font-size:14px;margin:2px 0 0;line-height:1.4;}
-.way .wgo{color:var(--coral);font-weight:700;font-size:14px;white-space:nowrap;flex-shrink:0;}
-.way:hover .wgo{color:var(--coral-d);}
+.picks{display:grid;grid-template-columns:1fr;gap:16px;max-width:860px;margin:34px auto 0;text-align:left;}
+@media(min-width:760px){ .picks{grid-template-columns:repeat(3,1fr);gap:18px;} }
+.pick{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--coral);border-radius:16px;padding:26px 22px 22px;box-shadow:0 10px 28px rgba(80,60,30,.10);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent;}
+.pick:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(80,60,30,.16);}
+.pick .icon{width:54px;height:54px;border-radius:50%;background:rgba(208,85,40,.13);color:var(--coral);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.pick h3{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.18;color:var(--ink);margin-bottom:8px;}
+.pick p{color:var(--mute);font-size:15.5px;line-height:1.5;flex:1;margin-bottom:18px;}
+.pick .go{display:inline-flex;align-items:center;gap:7px;color:var(--coral);font-weight:700;font-size:16px;}
+.pick:hover .go{color:var(--coral-d);}
+.pick .go .meta{color:var(--faint);font-weight:600;font-size:13px;}
 
-/* trust strip - tight, just under paths */
-.trust{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;}
-.trust .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 26px;}
+/* quieter guide row */
+.guide-row{max-width:860px;margin:18px auto 0;}
+.guide-row a{display:flex;align-items:center;gap:16px;background:var(--cream2);border:1px solid var(--line);border-radius:12px;padding:16px 22px;transition:border-color .15s,transform .07s;}
+.guide-row a:hover{border-color:var(--coral);transform:translateY(-1px);}
+.guide-row .gi{width:42px;height:42px;border-radius:50%;background:rgba(208,85,40,.12);color:var(--coral);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.guide-row .gt{flex:1;min-width:0;}
+.guide-row .gt b{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);}
+.guide-row .gt span{display:block;color:var(--mute);font-size:14px;}
+.guide-row .gg{color:var(--coral);font-weight:700;font-size:15px;white-space:nowrap;}
+
+/* ============ trust strip ============ */
+.trust{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;margin-top:48px;}
+.trust .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 28px;}
 .trust .item{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--mute);font-weight:600;}
 .trust .item .stars{color:#e8a13a;font-size:16px;letter-spacing:1.5px;}
 .trust .item svg{flex-shrink:0;}
 
-/* about section - below the fold, the warmth lives here */
+/* ============ meet austin ============ */
 .about{padding:54px 0 50px;text-align:center;}
 .about h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.14;letter-spacing:-.3px;margin-bottom:8px;}
 .about h2 em{font-style:italic;color:var(--coral);}
-.about .lead{color:var(--mute);font-size:17px;max-width:560px;margin:0 auto 36px;}
+.about .lead{color:var(--mute);font-size:17px;max-width:560px;margin:0 auto 32px;}
 .note{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:28px 26px;box-shadow:0 12px 30px rgba(80,60,30,.08);max-width:680px;margin:0 auto;text-align:left;}
 .note .row{display:flex;gap:20px;align-items:center;}
-.note img.face{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--coral);flex-shrink:0;box-shadow:0 6px 16px rgba(80,60,30,.16);}
-.note .text{flex:1;}
+.note img.face{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--coral);flex-shrink:0;box-shadow:0 6px 16px rgba(80,60,30,.16);}
 .note .who{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);margin-bottom:3px;}
 .note .who small{display:block;font-family:var(--sans);font-style:normal;color:var(--coral);font-size:13px;font-weight:600;margin-top:2px;letter-spacing:.2px;}
 .note p{color:var(--mute);font-size:16px;line-height:1.55;margin-top:10px;}
 .note p em{font-style:italic;color:var(--ink);}
+.note .sign{font-family:var(--hand);color:var(--ink);font-size:25px;line-height:1;margin-top:12px;}
 
-/* footer */
+/* ============ footer ============ */
 .foot{background:var(--dark);color:#9a948c;padding:30px 0 36px;font-size:13px;line-height:1.7;}
 .foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
 .foot a{color:#bdb6ac;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
 
 @media(max-width:580px){
-  .hero{padding:24px 0 16px;}
-  .hero h1{font-size:30px;}
-  .hero .sub{font-size:16px;}
-  .paths{padding:4px 0 28px;}
-  .card{padding:24px 20px 20px;}
-  .tier-label.secondary{margin:28px 0 12px;}
-  .way{padding:14px 16px;gap:13px;}
-  .way .wtext h4{font-size:16px;}
+  .hero{padding:38px 0 40px;}
+  .hero h1{font-size:33px;}
+  .hero .sub{font-size:16.5px;}
+  .btn{font-size:19px;padding:17px 40px;width:100%;max-width:340px;}
+  .checks li{font-size:16px;}
+  .start{padding:40px 0 12px;}
+  .start h2{font-size:26px;}
   .note .row{flex-direction:column;align-items:center;text-align:center;}
-  .note img.face{width:84px;height:84px;}
+  .note img.face{width:92px;height:92px;}
 }
 </style>
 </head>
 <body>
 <div class="topbar">📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</div>
 
+<!-- ============ HERO ============ -->
 <header class="hero">
   <div class="wrap">
-    <span class="kicker">For Kentuckians approaching Medicare</span>
-    <h1>Medicare help from someone who <em>actually lives</em> here.</h1>
-    <p class="sub">No call center. No pressure. Just a real local agent in Lexington. Start wherever makes sense for you.</p>
+    <span class="kicker">Kentucky Medicare, made simple</span>
+    <h1>Your Medicare Journey <em>Starts Here.</em></h1>
+    <p class="sub">Turning 65 or already on Medicare? You don't have to figure it out alone. I'm a real local agent right here in Kentucky, and I'll walk you through it in plain English.</p>
+
+    <ul class="checks">
+      <li><span class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Personal, one-on-one guidance</li>
+      <li><span class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Plain English &mdash; no jargon, no pressure</li>
+      <li><span class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Always free &mdash; and never a call center</li>
+      <li><span class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Rated 5.0 stars by Kentucky neighbors</li>
+    </ul>
+
+    <div class="cta-row">
+      <a class="btn" href="#start">Start Here &rarr;</a>
+      <p class="callline">Rather talk now? Call <a href="tel:18596186443">(859) 618-6443</a></p>
+    </div>
   </div>
 </header>
 
-<section class="paths">
+<!-- ============ GUIDED START ============ -->
+<section class="start" id="start">
   <div class="wrap">
+    <h2>Where are you <em>right now?</em></h2>
+    <p class="lead">Pick the one that sounds most like you, and I'll point you to the right next step.</p>
 
-    <p class="tier-label primary">Start with a quick quiz</p>
-    <div class="cards">
+    <div class="picks">
 
-      <div class="card">
-        <div class="icon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </div>
-        <h3>Am I ready for Medicare?</h3>
-        <p>Ten quick questions to see where you actually stand before you turn 65. No jargon.</p>
-        <a class="go" href="/quiz-65/">Take the quiz →</a>
-        <span class="meta">2 minutes · 10 questions</span>
+      <div class="pick">
+        <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <h3>I'm turning 65 soon</h3>
+        <p>See if you're on track &mdash; and dodge the costly mistakes most people make signing up. A quick true-or-false quiz.</p>
+        <a class="go" href="/quiz-65/">Take the quiz &rarr; <span class="meta">2 min</span></a>
       </div>
 
-      <div class="card">
-        <div class="icon">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
-        </div>
-        <h3>Advantage or Supplement?</h3>
-        <p>Two main ways to get Medicare coverage. A few questions to see which one fits how you live.</p>
-        <a class="go" href="/supp-advantage">Find your fit →</a>
-        <span class="meta">2 minutes · plain English</span>
+      <div class="pick">
+        <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
+        <h3>I'm comparing my options</h3>
+        <p>Advantage or Supplement? They work very differently. A few questions to see which one fits how you actually live.</p>
+        <a class="go" href="/supp-advantage/">Find your fit &rarr; <span class="meta">2 min</span></a>
+      </div>
+
+      <div class="pick">
+        <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <h3>I'd rather just talk to someone</h3>
+        <p>No quiz needed. Leave your number and I'll call you back myself, whenever works for you. A real person, every time.</p>
+        <a class="go" href="/help/">Request a call &rarr; <span class="meta">no cost</span></a>
       </div>
 
     </div>
 
-    <p class="tier-label secondary">Or, two other ways to start</p>
-    <div class="ways">
-
-      <a class="way" href="/guide/">
-        <span class="wicon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-        </span>
-        <span class="wtext">
-          <h4>Read the free guide</h4>
-          <p>Plain-English Medicare basics. No 128-page handbook.</p>
-        </span>
-        <span class="wgo">Download →</span>
+    <div class="guide-row">
+      <a href="/guide/">
+        <span class="gi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+        <span class="gt"><b>Just want to read up first?</b><span>Grab the free Kentucky Medicare Guide &mdash; plain English, no 100-page handbook.</span></span>
+        <span class="gg">Download &rarr;</span>
       </a>
-
-      <a class="way" href="/help/">
-        <span class="wicon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        </span>
-        <span class="wtext">
-          <h4>Have me call you</h4>
-          <p>Drop your number and I'll call when it works for you.</p>
-        </span>
-        <span class="wgo">Request a call →</span>
-      </a>
-
     </div>
 
   </div>
 </section>
 
+<!-- ============ TRUST ============ -->
 <section class="trust">
   <div class="wrap">
     <div class="row">
-      <div class="item">
-        <span class="stars">★★★★★</span>
-        <span>5.0 on Google</span>
-      </div>
-      <div class="item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Local Lexington agent</span>
-      </div>
-      <div class="item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>No call center, ever</span>
-      </div>
-      <div class="item">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
-        <span>Free to talk</span>
-      </div>
+      <div class="item"><span class="stars">★★★★★</span><span>5.0 on Google</span></div>
+      <div class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Local Lexington agent</span></div>
+      <div class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>No call center, ever</span></div>
+      <div class="item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span>Free to talk</span></div>
     </div>
   </div>
 </section>
 
+<!-- ============ MEET AUSTIN ============ -->
 <section class="about">
   <div class="wrap">
-    <h2>The agent behind <em>every door</em></h2>
-    <p class="lead">A quick note about who you'll actually be talking to.</p>
+    <h2>The person behind <em>every door</em></h2>
+    <p class="lead">Whichever way you start, here's who you'll actually be talking to.</p>
 
     <div class="note">
       <div class="row">
@@ -212,12 +212,14 @@ a{color:var(--coral);text-decoration:none;}
             <small>Tyler Insurance Group · Lexington, KY</small>
           </div>
           <p>I built this office because I wanted to be the agent you actually <em>reach</em>. The same person who signs you up is the same person who picks up the phone next year, and the year after that, when something changes with your coverage.</p>
+          <div class="sign">— Austin</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ FOOTER ============ -->
 <footer class="foot">
   <div class="wrap">
     <div class="fnm">Tyler Insurance Group</div>
