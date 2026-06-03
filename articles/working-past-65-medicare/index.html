@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Still Working at 65? What to Do About Medicare | Bluegrass Medicare Help</title>
+<meta name="description" content="Still working at 65 with employer health coverage? When to enroll in Medicare, when you can safely wait, the HSA trap, and how to avoid a lifelong penalty — in plain English.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
+  --coral:#d05528; --coral-d:#b3431d; --mute:#5f594f; --faint:#938c80;
+  --line:#e2d9c8; --white:#fff; --green:#3a7d52;
+  --serif:'Fraunces',Georgia,serif; --sans:'Source Sans 3',-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:var(--coral);text-decoration:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+/* ===== shared header (keep in sync with homepage) ===== */
+.ustrip{background:var(--dark);color:var(--cream);font-size:13px;letter-spacing:.3px;}
+.ustrip .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px;}
+.ustrip strong{color:#fff;font-weight:600;}
+.ustrip .rate{display:flex;align-items:center;gap:7px;white-space:nowrap;}
+.ustrip .rate .stars{color:#e8a13a;letter-spacing:1px;}
+@media(max-width:680px){ .ustrip .wrap{justify-content:center;} .ustrip .rate{display:none;} }
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);-webkit-backdrop-filter:saturate(1.3) blur(6px);backdrop-filter:saturate(1.3) blur(6px);border-bottom:1px solid var(--line);}
+.nav .wrap{position:relative;display:flex;align-items:center;gap:16px;padding-top:11px;padding-bottom:11px;}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0;}
+.brand .mark{width:38px;height:38px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--serif);font-weight:600;font-size:21px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(208,85,40,.3);}
+.brand .wm{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.04;color:var(--ink);}
+.brand .wm small{display:block;font-family:var(--sans);font-weight:600;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--coral);margin-top:1px;}
+.navlinks{display:flex;align-items:center;gap:24px;margin-left:auto;}
+.navlinks a{color:var(--ink);font-weight:600;font-size:15.5px;transition:color .15s;-webkit-tap-highlight-color:transparent;}
+.navlinks a:hover,.navlinks a.active{color:var(--coral);}
+.navcta{display:inline-flex;align-items:center;gap:7px;background:var(--coral);color:#fff;font-weight:700;font-size:15px;padding:11px 17px;border-radius:9px;white-space:nowrap;margin-left:24px;transition:background .15s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.navcta:hover{background:var(--coral-d);transform:translateY(-1px);}
+.navtog{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid var(--line);border-radius:9px;background:var(--cream2);color:var(--ink);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+@media(max-width:860px){
+  .brand .wm small{display:none;}
+  .navlinks{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;margin:0;padding:4px 0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(80,60,30,.12);display:none;}
+  .navlinks.open{display:flex;}
+  .navlinks a{padding:15px 24px;font-size:17px;border-top:1px solid var(--line);}
+  .navlinks a:first-child{border-top:none;}
+  .navcta{margin-left:auto;padding:10px 14px;}
+  .navtog{display:inline-flex;}
+}
+
+/* ===== article ===== */
+.article{max-width:720px;margin:0 auto;padding:0 24px;}
+.crumb{padding:26px 0 0;font-size:14.5px;font-weight:600;}
+.crumb a{color:var(--faint);} .crumb a:hover{color:var(--coral);}
+.head{padding:22px 0 8px;}
+.head .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--coral);background:rgba(208,85,40,.1);padding:5px 11px;border-radius:20px;margin-bottom:18px;}
+.head h1{font-family:var(--serif);font-weight:500;font-size:38px;line-height:1.12;letter-spacing:-.5px;}
+@media(min-width:780px){ .head h1{font-size:46px;} }
+.byline{display:flex;align-items:center;gap:12px;margin:22px 0 6px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+.byline img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--coral);}
+.byline .b{font-size:14.5px;color:var(--mute);line-height:1.35;}
+.byline .b b{color:var(--ink);font-weight:600;display:block;font-size:15.5px;}
+
+.body{padding:28px 0 10px;font-size:18px;color:#3b352c;}
+.body p{margin:0 0 20px;}
+.body h2{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.2;color:var(--ink);margin:38px 0 12px;letter-spacing:-.3px;}
+.body strong{color:var(--ink);font-weight:600;}
+.body ul{margin:0 0 22px;padding-left:4px;list-style:none;}
+.body ul li{position:relative;padding-left:30px;margin-bottom:12px;}
+.body ul li::before{content:"";position:absolute;left:0;top:9px;width:9px;height:9px;border-radius:50%;background:var(--coral);}
+.callout{background:var(--warm);border-left:4px solid var(--coral);border-radius:10px;padding:20px 22px;margin:28px 0;font-size:17px;color:var(--ink);}
+.callout b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:6px;}
+
+/* end CTA */
+.endcta{background:var(--white);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 30px rgba(80,60,30,.10);padding:30px 28px;margin:40px 0 10px;text-align:center;}
+.endcta h3{font-family:var(--serif);font-weight:500;font-size:26px;line-height:1.15;margin-bottom:8px;}
+.endcta p{color:var(--mute);font-size:16.5px;margin-bottom:20px;}
+.endcta .row{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--coral);color:#fff;font-weight:700;font-size:18px;padding:15px 38px;border-radius:11px;box-shadow:0 8px 22px rgba(208,85,40,.28);transition:background .15s,transform .07s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.btn:hover{background:var(--coral-d);transform:translateY(-2px);}
+.endcta .callline{font-size:15.5px;color:var(--mute);font-weight:600;}
+.endcta .callline a{font-weight:700;}
+
+.disclaim{font-size:13.5px;color:var(--faint);font-style:italic;line-height:1.5;margin:30px 0 0;padding-top:20px;border-top:1px solid var(--line);}
+
+/* ===== footer ===== */
+.foot{background:var(--dark);color:#9a948c;padding:30px 0 36px;font-size:13px;line-height:1.7;margin-top:48px;}
+.foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
+.foot a{color:#bdb6ac;}
+.foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
+
+@media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+</style>
+</head>
+<body>
+<div class="ustrip">
+  <div class="wrap">
+    <span>📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</span>
+    <span class="rate"><span class="stars">★★★★★</span> 5.0 on Google</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Bluegrass Medicare Help home">
+      <span class="mark">B</span>
+      <span class="wm">Bluegrass<small>Medicare Help</small></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="/quiz-65/">New to Medicare</a>
+      <a href="/supp-advantage/">Compare Plans</a>
+      <a href="/articles/" class="active">Articles</a>
+      <a href="/guide/">Free Guide</a>
+    </div>
+    <a class="navcta" href="tel:18596186443">📞 Call</a>
+    <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<article class="article">
+  <p class="crumb"><a href="/articles/">&larr; All articles</a></p>
+
+  <header class="head">
+    <span class="tag">New to Medicare</span>
+    <h1>Still Working at 65? What to Do About Medicare</h1>
+    <div class="byline">
+      <img src="/assets/austin-tyler.jpg" alt="Austin Tyler">
+      <div class="b"><b>Austin Tyler</b>Local Kentucky Medicare agent · June 3, 2026 · 6 min read</div>
+    </div>
+  </header>
+
+  <div class="body">
+    <p>More people than ever are working past 65, and it raises a fair question: <strong>do I have to sign up for Medicare if I already have good insurance through my job?</strong> The honest answer is "it depends" — and the thing it depends on most is how big your employer is. Get this right and you can save real money. Get it wrong and you can trigger a penalty that never goes away.</p>
+
+    <h2>The question that decides everything: how big is the employer?</h2>
+    <p>This is the fork in the road. The rules hinge on whether your (or your spouse's) employer has <strong>20 or more employees</strong>.</p>
+
+    <h2>If the employer has 20+ employees</h2>
+    <p>Your group health plan stays your <strong>primary</strong> coverage, and you can usually <strong>delay Part B without any penalty</strong> while you're actively working and covered. Many people in this situation take premium-free Part A and simply wait on Part B until they retire. (See the HSA warning below before you even take Part A.)</p>
+    <p>When the job or that coverage ends, you get a <strong>Special Enrollment Period (SEP)</strong>: 8 months to sign up for Part B without a late penalty. To use it smoothly, your employer fills out a short form (CMS-L564) proving you had coverage.</p>
+
+    <div class="callout">
+      <b>Don't lean on COBRA or retiree coverage to delay Part B.</b>
+      The penalty-free delay only works while you have coverage from <em>active</em> employment. COBRA, retiree plans, and Marketplace (ACA) plans do <strong>not</strong> count — and the 8-month clock starts when the <em>job</em> ends, not when COBRA runs out. People get burned here every year.
+    </div>
+
+    <h2>If the employer has fewer than 20 employees</h2>
+    <p>Now it usually flips: <strong>Medicare typically becomes your primary payer at 65</strong>, and your group plan pays second. That means you generally <strong>need to enroll in both Part A and Part B during your Initial Enrollment Period</strong>, even though you're still working — otherwise you can be left with big gaps and a penalty later. Always confirm with your benefits administrator how your specific small-group plan coordinates with Medicare.</p>
+
+    <h2>The HSA trap nobody warns you about</h2>
+    <p>If you contribute to a <strong>Health Savings Account (HSA)</strong>, pay close attention. Under IRS rules, <strong>you can't contribute to an HSA in any month you're enrolled in any part of Medicare</strong> — including premium-free Part A.</p>
+    <p>Here's the sneaky part: when you eventually enroll, Part A coverage can be <strong>backdated up to 6 months</strong>. So the standard guidance is to <strong>stop HSA contributions at least 6 months before</strong> you enroll in Medicare or claim Social Security, to avoid a tax penalty. If keeping your HSA going matters to you, this needs to be part of the plan from the start.</p>
+
+    <h2>Don't forget drug coverage (Part D)</h2>
+    <p>If your employer plan's drug coverage is "creditable" (at least as good as Medicare's), you can stay on it and skip Part D for now with no penalty. If it's <em>not</em> creditable and you go 63+ days without coverage, you'll owe a Part D late penalty later — it's 1% of the national base premium ($38.99 in 2026) for every month you went without, added on for life. Your plan is required to send you a notice each year telling you whether its drug coverage is creditable. Keep that letter.</p>
+
+    <div class="callout">
+      <b>The lifelong penalty, in plain terms:</b>
+      Miss Part B when you should have taken it and the premium climbs 10% for each full year you went without — permanently. In 2026 the standard Part B premium is $202.90/month, so even a one-year penalty adds up fast. This is exactly why the "20 or fewer employees" question is worth a phone call.
+    </div>
+
+    <h2>Your simple action plan</h2>
+    <ul>
+      <li>Find out if your (or your spouse's) employer has 20+ employees.</li>
+      <li>Ask your benefits administrator whether your plan pays primary or secondary at 65, and whether the drug coverage is creditable.</li>
+      <li>If you have an HSA, plan to stop contributions ~6 months before enrolling.</li>
+      <li>When you retire, use your 8-month Special Enrollment Period — don't wait for COBRA to end.</li>
+    </ul>
+    <p>None of this is hard once someone lays it out for your exact situation. That's literally what I'm here for.</p>
+
+    <div class="endcta">
+      <h3>Working past 65 and not sure what to do?</h3>
+      <p>Tell me your situation and I'll tell you straight whether to enroll now or wait — and how to dodge the penalties. Local, free, no pressure.</p>
+      <div class="row">
+        <a class="btn" href="/#start">Start Here &rarr;</a>
+        <p class="callline">Or call me directly: <a href="tel:18596186443">(859) 618-6443</a></p>
+      </div>
+    </div>
+
+    <p class="disclaim">This article is general information, not advice for your specific situation, and Medicare rules and figures can change. 2026 amounts are from CMS. Tyler Insurance Group is not connected with or endorsed by the U.S. government or the federal Medicare program. For complete details on all your options, contact Medicare.gov or 1-800-MEDICARE.</p>
+  </div>
+</article>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fnm">Tyler Insurance Group</div>
+    1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
+    <a href="tel:8596186443">(859) 618-6443</a> · <a href="https://www.tylerinsurancegroup.com">tylerinsurancegroup.com</a>
+    <div class="disc">
+      We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tog=document.getElementById('navtog'), links=document.getElementById('navlinks');
+  if(!tog||!links) return;
+  tog.addEventListener('click',function(){
+    var open=links.classList.toggle('open');
+    tog.setAttribute('aria-expanded', open?'true':'false');
+  });
+  links.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){ links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); }
+  });
+})();
+</script>
+</body>
+</html>
