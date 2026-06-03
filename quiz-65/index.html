@@ -24,6 +24,7 @@ src="https://www.facebook.com/tr?id=2876662959370019&ev=PageView&noscript=1"/></
 <link rel="preconnect" href="https://connect.facebook.net">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/assets/site.css">
 <style>
 :root{
   --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
@@ -168,17 +169,31 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
   .ans-lg{padding:22px 10px 16px;}
   .ans-lg .ic{width:42px;height:42px;}
 }
+/* --- site nav added to the quiz header (no extra height on Q1) --- */
+.qhead .qnav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;display:inline-flex;align-items:center;gap:5px;font-weight:700;font-size:14px;color:var(--coral);background:none;border:none;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.qhead .qhome{left:0;} .qhead .qcall{right:0;}
+.qback{display:inline-flex;align-items:center;gap:7px;background:none;border:none;color:var(--mute);font-weight:600;font-size:15px;cursor:pointer;padding:8px 4px;margin-bottom:4px;align-self:flex-start;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.qback:hover{color:var(--coral);}
+.results .explore{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;}
+.results .explore a{color:var(--coral);font-weight:700;font-size:15px;}
+@media(max-width:430px){ .qhead .qnav{font-size:13px;} }
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="progress" id="bar"></div>
-<div class="stage">
+<div class="stage" id="main">
 
 <!-- INTRO -->
 <!-- QUESTION (single reused screen) -->
 <section class="screen qscreen active" id="qscreen">
-  <div class="qhead"><img src="/quiz-65/austin.jpg" alt="Austin Tyler" width="84" height="84"></div>
+  <div class="qhead">
+    <a class="qnav qhome" href="/" aria-label="Back to home">⌂ Home</a>
+    <img src="/quiz-65/austin.jpg" alt="Austin Tyler" width="84" height="84">
+    <a class="qnav qcall" href="tel:18596186443" aria-label="Call Austin">📞 Call</a>
+  </div>
   <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:18px 0 30px;">
+    <button class="qback" id="backBtn" onclick="goBack()" hidden>← Back</button>
     <div class="leadin" id="leadin">
       <h1 class="leadin-h">Turning 65? Most people make at least one costly Medicare mistake.</h1>
       <p class="leadin-sub">A quick true-or-false quiz &mdash; less than 60 seconds. See where you stand before it costs you.</p>
@@ -257,6 +272,11 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
     <a class="btn" href="tel:18596186443" id="bookcall">📞 Call Austin: (859) 618-6443</a>
     <p class="callnote">Prefer we reach out? Your results email has a link to book a time.</p>
   </div>
+  <div class="explore">
+    <a href="/articles/">Read Medicare articles &rarr;</a>
+    <a href="/supp-advantage/">Compare plan types &rarr;</a>
+    <a href="/">Back to home &rarr;</a>
+  </div>
   <div class="foot">
     Tyler Insurance Group · 1029 Monarch Street, Suite 110, Lexington, KY 40513 · (859) 618-6443<br>
     Not connected with or endorsed by the U.S. government or the federal Medicare program.
@@ -264,6 +284,21 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 </section>
 
 </div>
+
+<!-- ============ FOOTER NAV ============ -->
+<nav class="fnav" aria-label="Footer">
+  <div class="wrap">
+    <div class="fnav-links">
+      <a href="/">Home</a>
+      <a href="/quiz-65/">New to Medicare</a>
+      <a href="/supp-advantage/">Compare Plans</a>
+      <a href="/articles/">Articles</a>
+      <a href="/guide/">Free Guide</a>
+      <a href="/help/">Talk to Austin</a>
+    </div>
+    <a class="fcall" href="tel:18596186443">📞 Call (859) 618-6443</a>
+  </div>
+</nav>
 
 <script>
 /* ============================================================
@@ -287,6 +322,16 @@ function setBar(pct){ document.getElementById('bar').style.width = pct + '%'; }
 
 function startQuiz(){ idx=0; score=0; answers=[]; renderQ(); show('qscreen'); }
 
+function goBack(){
+  if(idx===0) return;
+  document.getElementById('ansTrue').style.pointerEvents='';
+  document.getElementById('ansFalse').style.pointerEvents='';
+  idx--;
+  var last=answers.pop();
+  if(last && last.correct) score--;
+  renderQ();
+}
+
 function renderQ(){
   const q = QUESTIONS[idx];
   document.getElementById('qcount').textContent = 'Question ' + (idx+1) + ' of ' + QUESTIONS.length;
@@ -294,6 +339,7 @@ function renderQ(){
   document.getElementById('ansTrue').classList.remove('chosen');
   document.getElementById('ansFalse').classList.remove('chosen');
   document.getElementById('leadin').style.display = (idx === 0) ? '' : 'none';
+  var _bb=document.getElementById('backBtn'); if(_bb) _bb.hidden = (idx === 0);
   // Per-step funnel tracking so we can see exactly which question loses people.
   if (typeof fbq !== 'undefined') { fbq('trackCustom', 'QuizStep', { step: idx + 1, total: QUESTIONS.length, quiz: 'Kentucky Medicare Quiz' }); }
   setBar( (idx / QUESTIONS.length) * 100 );
