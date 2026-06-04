@@ -83,13 +83,15 @@ a{color:var(--coral);text-decoration:none;}
 .picks{display:grid;grid-template-columns:1fr;gap:16px;max-width:860px;margin:34px auto 0;text-align:left;}
 @media(min-width:760px){ .picks{grid-template-columns:repeat(3,1fr);gap:18px;} }
 .pick{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--coral);border-radius:16px;padding:26px 22px 22px;box-shadow:0 10px 28px rgba(80,60,30,.10);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent;}
-.pick:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(80,60,30,.16);}
+.pick{cursor:pointer;}
+.pick:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(80,60,30,.16);border-color:var(--coral);}
+.pick:active{transform:translateY(-1px) scale(.995);}
 .pick .icon{width:54px;height:54px;border-radius:50%;background:rgba(208,85,40,.13);color:var(--coral);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
 .pick h3{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.18;color:var(--ink);margin-bottom:8px;}
 .pick p{color:var(--mute);font-size:15.5px;line-height:1.5;flex:1;margin-bottom:18px;}
-.pick .go{display:inline-flex;align-items:center;gap:7px;color:var(--coral);font-weight:700;font-size:16px;}
-.pick:hover .go{color:var(--coral-d);}
-.pick .go .meta{color:var(--faint);font-weight:600;font-size:13px;}
+.pick .go{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--coral);color:#fff;font-weight:700;font-size:15.5px;padding:13px 16px;border-radius:9px;text-align:center;}
+.pick:hover .go,.pick:focus-visible .go{background:var(--coral-d);}
+.pick .go .meta{color:rgba(255,255,255,.82);font-weight:600;font-size:12.5px;}
 
 /* quieter guide row */
 .guide-row{max-width:860px;margin:18px auto 0;}
@@ -139,6 +141,29 @@ a{color:var(--coral);text-decoration:none;}
   .note .row{flex-direction:column;align-items:center;text-align:center;}
   .note img.face{width:92px;height:92px;}
 }
+/* ============ reviews ============ */
+.reviews{background:var(--cream2);border-top:1px solid var(--line);padding:56px 0 52px;}
+.reviews .rhead{text-align:center;max-width:640px;margin:0 auto;}
+.reviews h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.14;letter-spacing:-.3px;}
+.reviews h2 em{font-style:italic;color:var(--coral);}
+.reviews .rsub{display:inline-flex;align-items:center;gap:9px;margin-top:12px;color:var(--mute);font-size:15.5px;font-weight:600;}
+.reviews .rsub .stars{color:#e8a13a;font-size:18px;letter-spacing:1px;}
+.rgrid{display:grid;grid-template-columns:1fr;gap:18px;max-width:1000px;margin:34px auto 0;text-align:left;}
+@media(min-width:640px){ .rgrid{grid-template-columns:1fr 1fr;} }
+@media(min-width:960px){ .rgrid{grid-template-columns:1fr 1fr 1fr;} }
+.rcard{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:0 10px 28px rgba(80,60,30,.08);display:flex;flex-direction:column;}
+.rcard .stars{color:#e8a13a;font-size:17px;letter-spacing:1.5px;margin-bottom:12px;}
+.rcard p{color:var(--ink);font-size:15.5px;line-height:1.6;flex:1;margin:0 0 16px;}
+.rcard .who{display:flex;align-items:center;gap:11px;}
+.rcard .av{width:40px;height:40px;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;font-family:var(--serif);font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rcard .nm{font-weight:700;color:var(--ink);font-size:15px;line-height:1.2;}
+.rcard .nm small{display:block;color:var(--faint);font-weight:600;font-size:12px;margin-top:2px;letter-spacing:.2px;}
+.reviews .rcta{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px 18px;justify-content:center;align-items:center;}
+.reviews .gbtn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-weight:700;font-size:15.5px;padding:13px 24px;border-radius:10px;transition:background .15s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.reviews .gbtn:hover{background:var(--coral-d);transform:translateY(-1px);}
+.reviews .gbtn .gstars{color:#ffd87a;letter-spacing:1px;}
+.reviews .gsec{color:var(--coral);font-weight:700;font-size:15px;}
+.reviews .gsec:hover{color:var(--coral-d);}
 </style>
 
 <!-- SEO / canonical / social -->
@@ -220,26 +245,26 @@ a{color:var(--coral);text-decoration:none;}
 
     <div class="picks">
 
-      <div class="pick">
+      <a class="pick" href="/quiz-65/">
         <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
         <h3>I'm turning 65 soon</h3>
         <p>See if you're on track &mdash; and dodge the costly mistakes most people make signing up. A quick true-or-false quiz.</p>
-        <a class="go" href="/quiz-65/">Take the quiz &rarr; <span class="meta">2 min</span></a>
-      </div>
+        <span class="go">Take the quiz &rarr; <span class="meta">2 min</span></span>
+      </a>
 
-      <div class="pick">
+      <a class="pick" href="/supp-advantage/">
         <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg></span>
         <h3>I'm comparing my options</h3>
         <p>Advantage or Supplement? They work very differently. A few questions to see which one fits how you actually live.</p>
-        <a class="go" href="/supp-advantage/">Find your fit &rarr; <span class="meta">2 min</span></a>
-      </div>
+        <span class="go">Find your fit &rarr; <span class="meta">2 min</span></span>
+      </a>
 
-      <div class="pick">
+      <a class="pick" href="/help/">
         <span class="icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
         <h3>I'd rather just talk to someone</h3>
         <p>No quiz needed. Leave your number and I'll call you back myself, whenever works for you. A real person, every time.</p>
-        <a class="go" href="/help/">Request a call &rarr; <span class="meta">no cost</span></a>
-      </div>
+        <span class="go">Request a call &rarr; <span class="meta">no cost</span></span>
+      </a>
 
     </div>
 
@@ -283,6 +308,52 @@ a{color:var(--coral);text-decoration:none;}
           <div class="sign">— Austin</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="reviews" id="reviews" aria-label="Reviews from our Kentucky clients">
+  <div class="wrap">
+    <div class="rhead">
+      <h2>What Kentuckians are <em>saying</em></h2>
+      <div class="rsub"><span class="stars">★★★★★</span> 5.0 on Google &middot; real reviews from real neighbors</div>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>“Best Medicare agency in Lexington. Would highly recommend it to anyone seeking Medicare guidance.”</p>
+        <div class="who"><span class="av">N</span><span class="nm">Nikhil P.<small>Google review</small></span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>“Austin is very professional and knowledgeable about what is available to us and the best way to go about it. He responds promptly and keeps us updated as to the status of our insurance. Thank you Austin!”</p>
+        <div class="who"><span class="av">D</span><span class="nm">Denise L.<small>Google review</small></span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>“Austin was extremely knowledgeable and explained everything in great detail so I could easily understand. I know that my insurance needs are in good hands!”</p>
+        <div class="who"><span class="av">D</span><span class="nm">Doug S.<small>Google review</small></span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>“Austin is such a pleasant man to talk to. He cares about his clients and finds ways to get what we need.”</p>
+        <div class="who"><span class="av">R</span><span class="nm">Robert E.<small>Google review</small></span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>“Tyler has been my agent since I signed for Medicare. He is very patient and knowledgeable about your insurance needs.”</p>
+        <div class="who"><span class="av">S</span><span class="nm">Samuel D.<small>Google review</small></span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>“Tyler is great to work with. He’s organized and customer service oriented. He follows up in a timely manner. Best agent I have ever worked with.”</p>
+        <div class="who"><span class="av">S</span><span class="nm">Stephen C.<small>Google review</small></span></div>
+      </div>
+    </div>
+    <div class="rcta">
+      <a class="gbtn" href="https://share.google/t5kgf6RBxLldnNVcX" target="_blank" rel="noopener"><span class="gstars">★★★★★</span> Read all our Google reviews</a>
+      <a class="gsec" href="https://share.google/t5kgf6RBxLldnNVcX" target="_blank" rel="noopener">Leave us a review &rarr;</a>
     </div>
   </div>
 </section>
