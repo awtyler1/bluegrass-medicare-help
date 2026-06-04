@@ -383,6 +383,7 @@ document.getElementById('leadform').addEventListener('submit', function(e){
 
   function finish(){
     if(typeof fbq==='function'){ fbq('track','Lead',{ content_name:'Kentucky Medicare Guide - Landing Page' }); }
+    window.location.href='/guide/thankyou/'; return;
     // Beat 2: button confirms "Done" with a green flash
     submitBtn.classList.remove('sending');
     submitBtn.classList.add('sent');

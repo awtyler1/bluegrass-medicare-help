@@ -383,6 +383,7 @@ document.getElementById('leadform').addEventListener('submit', function(e){
 
   function finish(){
     if(typeof fbq==='function'){ fbq('track','Lead',{ content_name:'Local Help - Contact Request' }); }
+    window.location.href='/help/thankyou/'; return;
     submitBtn.classList.remove('sending'); submitBtn.classList.add('sent');
     submitBtn.innerHTML='✓ Sent';
     setTimeout(function(){
