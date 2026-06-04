@@ -453,7 +453,7 @@ document.getElementById('quizform').addEventListener('submit', function(e){
 
   function finish(){
     if(typeof fbq==='function'){ fbq('track','Lead',{ content_name:'Kentucky Medicare Quiz' }); }
-    show('results');
+    window.location.href='/quiz-65/thankyou/';
   }
 
   if (GHL_WEBHOOK_URL) {

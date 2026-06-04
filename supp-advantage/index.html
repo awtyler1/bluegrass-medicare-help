@@ -742,7 +742,7 @@ document.getElementById('quizform').addEventListener('submit', function(e){
     pageUrl: window.location.href
   };
 
-  function finish(){ show('results'); }
+  function finish(){ window.location.href='/supp-advantage/thankyou/'; }
 
   if (GHL_WEBHOOK_URL) {
     fetch(GHL_WEBHOOK_URL, {
