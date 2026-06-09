@@ -136,10 +136,10 @@ a{color:var(--coral);text-decoration:none;}
       </span>
     </a>
     <div class="navlinks" id="navlinks">
-      <a href="/quiz-65/">New to Medicare</a>
-      <a href="/supp-advantage/">Compare Plans</a>
-      <a href="/articles/" class="active">Articles</a>
+      <a href="/articles/" class="active" aria-current="page">Learning Center</a>
+      <a href="/quizzes/">Quizzes</a>
       <a href="/guide/">Free Guide</a>
+      <a href="/help/">Get Help</a>
     </div>
     <a class="navcta" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
     <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
@@ -200,6 +200,22 @@ a{color:var(--coral);text-decoration:none;}
     <p>None of this is hard once someone lays it out for your exact situation. That's literally what I'm here for.</p>
     <p>When you're ready to actually pick coverage, my <a href="/articles/medicare-in-lexington-ky/">local Medicare guide for Lexington</a> covers your 2026 options and which plans keep your Bluegrass doctors and hospitals in-network.</p>
 
+    <section class="recap">
+      <h2>Quick recap</h2>
+      <div class="recap-item">The key question is your (or your spouse's) employer size: 20+ employees vs. fewer than 20.</div>
+      <div class="recap-item">20+ employees with active coverage: you can usually delay Part B penalty-free and enroll later.</div>
+      <div class="recap-item">Fewer than 20: Medicare usually pays first, so you typically need Parts A &amp; B at 65.</div>
+      <div class="recap-item">COBRA and retiree plans don't count as active coverage — the 8-month window starts when the job ends.</div>
+      <div class="recap-item">Stop HSA contributions about 6 months before enrolling in Medicare to avoid a tax penalty.</div>
+    </section>
+
+    <section class="kcheck">
+      <h2>Test what you learned</h2>
+      <p class="kc-sub">Five quick questions &mdash; pick an answer to see if you're right, and why.</p>
+      <div id="kcheck"></div>
+    </section>
+    <script>window.KCHECK = [{"q": "The biggest factor in whether you can delay Medicare while working is\u2026", "options": ["Your income", "Your employer's size (20+ vs. under 20)", "Your ZIP code", "Your doctor's advice"], "answer": 1, "why": "The 20-employee threshold decides whether your group plan pays before or after Medicare."}, {"q": "With an employer of 20+ employees and active coverage, you can usually\u2026", "options": ["Be forced onto Medicare at 65", "Delay Part B without a penalty", "Never get Medicare", "Only use COBRA"], "answer": 1, "why": "Your group plan stays primary, so you can delay Part B penalty-free while you keep working."}, {"q": "When you stop working, how long is your Special Enrollment Period to take Part B?", "options": ["30 days", "8 months", "2 years", "There's no window"], "answer": 1, "why": "You get 8 months after the job or that coverage ends to enroll in Part B without a penalty."}, {"q": "Does COBRA count as active coverage that lets you keep delaying Part B?", "options": ["Yes", "No", "Only for 5 years", "Only with 20+ employees"], "answer": 1, "why": "COBRA and retiree coverage don't count \u2014 your 8-month clock starts when the job ends, not when COBRA ends."}, {"q": "If you contribute to an HSA, you should stop contributions\u2026", "options": ["Never", "About 6 months before enrolling in Medicare", "The exact day you enroll", "After you turn 70"], "answer": 1, "why": "Because Part A can backdate up to 6 months, stop HSA contributions about 6 months before enrolling to avoid a tax penalty."}];</script>
+
     <div class="endcta">
       <h3>Working past 65 and not sure what to do?</h3>
       <p>Tell me your situation and I'll tell you straight whether to enroll now or wait — and how to dodge the penalties. Local, free, no pressure.</p>
@@ -219,11 +235,10 @@ a{color:var(--coral);text-decoration:none;}
     <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" onerror="this.closest('.fnav-logo').style.display='none'"></a>
     <div class="fnav-links">
       <a href="/">Home</a>
-      <a href="/quiz-65/">New to Medicare</a>
-      <a href="/supp-advantage/">Compare Plans</a>
-      <a href="/articles/">Articles</a>
+      <a href="/articles/">Learning Center</a>
+      <a href="/quizzes/">Quizzes</a>
       <a href="/guide/">Free Guide</a>
-      <a href="/help/">Talk to Austin</a>
+      <a href="/help/">Get Help</a>
     </div>
     <a class="fcall" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (859) 618-6443</a>
   </div>
@@ -253,5 +268,6 @@ a{color:var(--coral);text-decoration:none;}
   });
 })();
 </script>
+<script src="/assets/site.js"></script>
 </body>
 </html>
