@@ -187,14 +187,32 @@ a{color:var(--coral);text-decoration:none;}
 <div class="wrap">
   <div class="lcfilter" aria-label="Filter guides by topic">
     <button type="button" class="chip active" data-filter="all">All guides</button>
+    <button type="button" class="chip" data-filter="basics">Medicare Basics</button>
     <button type="button" class="chip" data-filter="turning65">Turning 65</button>
     <button type="button" class="chip" data-filter="coverage">Coverage Choices</button>
+    <button type="button" class="chip" data-filter="ss">Social Security</button>
     <button type="button" class="chip" data-filter="local">Local Kentucky</button>
   </div>
 
   <!-- TO ADD AN ARTICLE: copy one .lcrow below, set data-cat (turning65 | coverage | local | ...)
        and data-date="YYYY-MM-DD". Newest date sorts to the top automatically. -->
   <div class="lclist" id="lclist">
+    <a class="lcrow" data-cat="basics" data-date="2026-06-09" href="/articles/medicare-basics-parts-a-b-c-d/">
+      <div class="lcrow-main">
+        <div class="lcrow-meta"><span class="lctag">Medicare Basics</span><span class="lcdate">Jun 9, 2026</span></div>
+        <h2 class="lcrow-title">Medicare Made Simple: Parts A, B, C &amp; D</h2>
+        <p class="lcrow-dek">The whole Medicare alphabet in plain English &mdash; what each part covers, 2026 costs, and how to pick your path.</p>
+      </div>
+      <span class="lcrow-go">Read &rarr;</span>
+    </a>
+    <a class="lcrow" data-cat="ss" data-date="2026-06-09" href="/articles/social-security-when-to-claim/">
+      <div class="lcrow-main">
+        <div class="lcrow-meta"><span class="lctag">Social Security</span><span class="lcdate">Jun 9, 2026</span></div>
+        <h2 class="lcrow-title">Social Security 101: When Should You Claim?</h2>
+        <p class="lcrow-dek">Full retirement age, claiming at 62 vs 67 vs 70, working while collecting &mdash; and how it all connects to Medicare.</p>
+      </div>
+      <span class="lcrow-go">Read &rarr;</span>
+    </a>
     <a class="lcrow" data-cat="local" data-date="2026-06-03" href="/articles/medicare-in-lexington-ky/">
       <div class="lcrow-main">
         <div class="lcrow-meta"><span class="lctag">Local Kentucky</span><span class="lcdate">Jun 3, 2026</span></div>
