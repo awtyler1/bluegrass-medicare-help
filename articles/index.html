@@ -103,6 +103,26 @@ a{color:var(--coral);text-decoration:none;}
 .lcmore .up span{background:var(--white);border:1px solid var(--line);border-radius:30px;padding:8px 15px;font-weight:600;font-size:14px;color:var(--mute);}
 .lcmore .gbtn{display:inline-flex;align-items:center;gap:8px;background:var(--coral);color:#fff;font-weight:700;font-size:16px;padding:13px 26px;border-radius:11px;-webkit-tap-highlight-color:transparent;}
 .lcmore .gbtn:hover{background:var(--coral-d);}
+
+/* ===== learning center v2: filter + scannable list ===== */
+.lcstart{max-width:760px;margin:14px auto 0;color:var(--mute);font-size:16px;line-height:1.5;}
+.lcstart a{font-weight:700;}
+.lcfilter{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px;margin:28px auto 0;}
+.chip{background:var(--white);border:1.5px solid var(--line);border-radius:30px;padding:10px 18px;font-family:var(--sans);font-weight:600;font-size:15px;color:var(--ink);cursor:pointer;transition:background .12s,border-color .12s,color .12s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.chip:hover{border-color:var(--coral);color:var(--coral);}
+.chip.active{background:var(--coral);border-color:var(--coral);color:#fff;}
+.lclist{max-width:820px;margin:28px auto 0;display:flex;flex-direction:column;gap:14px;}
+.lcrow{display:flex;align-items:center;gap:18px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px 22px;box-shadow:0 6px 18px rgba(80,60,30,.07);transition:transform .12s,box-shadow .12s,border-color .12s;-webkit-tap-highlight-color:transparent;}
+.lcrow:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(80,60,30,.13);border-color:var(--coral);}
+.lcrow-main{flex:1;min-width:0;}
+.lcrow-meta{display:flex;align-items:center;gap:12px;margin-bottom:7px;flex-wrap:wrap;}
+.lctag{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--coral);background:rgba(208,85,40,.1);padding:4px 10px;border-radius:20px;}
+.lcdate{font-size:13.5px;color:var(--faint);font-weight:600;}
+.lcrow-title{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.22;color:var(--ink);margin:0 0 5px;}
+.lcrow-dek{color:var(--mute);font-size:15px;line-height:1.5;margin:0;}
+.lcrow-go{color:var(--coral);font-weight:700;font-size:15px;white-space:nowrap;flex-shrink:0;}
+.lcrow.hide{display:none;}
+@media(max-width:560px){ .lcrow{flex-direction:column;align-items:flex-start;gap:10px;} .lcrow-title{font-size:18px;} }
 </style>
 
 <!-- SEO / canonical / social -->
@@ -159,103 +179,68 @@ a{color:var(--coral);text-decoration:none;}
   <div class="wrap">
     <span class="kicker">Kentucky's Medicare Resource Hub</span>
     <h1>The <em>Learning Center</em></h1>
-    <p>Straight, plain-English answers on Medicare, Social Security, and retirement &mdash; from a local Kentucky agent who does this every day. Browse a topic below, or start with the basics.</p>
-  </div>
-  <div class="wrap">
-    <div class="topics">
-      <a href="#turning65">Turning 65</a>
-      <a href="#coverage">Coverage Choices</a>
-      <a href="#local">Local Kentucky</a>
-      <span class="soon">Medicare Basics &middot; soon</span>
-      <span class="soon">Costs &amp; Savings &middot; soon</span>
-      <span class="soon">Social Security &middot; soon</span>
-      <span class="soon">Retirement &middot; soon</span>
-    </div>
+    <p>Straight, plain-English answers on Medicare, Social Security, and retirement &mdash; from a local Kentucky agent who does this every day.</p>
+    <p class="lcstart">New to all this? Start with <a href="/articles/turning-65-enrollment-window/">The 7-Month Enrollment Window</a> &mdash; then explore the rest below.</p>
   </div>
 </section>
 
-<!-- =========================================================
-     TO ADD A NEW ARTICLE:
-     1. Copy /articles/turning-65-enrollment-window/ to a new
-        /articles/your-slug/ folder and edit its index.html.
-     2. Add an <a class="post"> card inside the right <section class="lcsec">
-        below (or create a new category section). Newest first.
-     ========================================================= -->
 <div class="wrap">
+  <div class="lcfilter" aria-label="Filter guides by topic">
+    <button type="button" class="chip active" data-filter="all">All guides</button>
+    <button type="button" class="chip" data-filter="turning65">Turning 65</button>
+    <button type="button" class="chip" data-filter="coverage">Coverage Choices</button>
+    <button type="button" class="chip" data-filter="local">Local Kentucky</button>
+  </div>
 
-  <section class="lcsec" id="turning65">
-    <h2>New to Medicare &amp; Turning 65</h2>
-    <p class="lcdesc">Just approaching 65, or still working? Start here so you don't miss a window or trigger a lifelong penalty.</p>
-    <div class="grid">
-      <a class="post" href="/articles/turning-65-enrollment-window/">
-        <div class="body">
-          <span class="tag">Turning 65</span>
-          <h2>The 7-Month Window: When to Sign Up for Medicare</h2>
-          <p>Miss it and the late penalty can follow you for the rest of your life. Here's exactly when your window opens, closes, and what to do.</p>
-          <div class="meta"><span>5 min read</span><span class="read">Read &amp; quiz yourself &rarr;</span></div>
-        </div>
-      </a>
-      <a class="post" href="/articles/working-past-65-medicare/">
-        <div class="body">
-          <span class="tag">Turning 65</span>
-          <h2>Still Working at 65? What to Do About Medicare</h2>
-          <p>Employer coverage changes the rules. When to enroll, when you can safely wait, the HSA trap, and how to avoid a penalty.</p>
-          <div class="meta"><span>6 min read</span><span class="read">Read &amp; quiz yourself &rarr;</span></div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="lcsec" id="coverage">
-    <h2>Coverage Choices</h2>
-    <p class="lcdesc">The big decisions once you're eligible &mdash; what each option really means for your doctors, your costs, and your freedom.</p>
-    <div class="grid">
-      <a class="post" href="/articles/medicare-advantage-vs-medigap/">
-        <div class="body">
-          <span class="tag">Coverage Choices</span>
-          <h2>Medicare Advantage vs. Medigap: The Real Difference</h2>
-          <p>Two very different ways to cover the gaps in Original Medicare. Which one actually fits how you live &mdash; and the underwriting trap to know first.</p>
-          <div class="meta"><span>6 min read</span><span class="read">Read &amp; quiz yourself &rarr;</span></div>
-        </div>
-      </a>
-    </div>
-  </section>
-
-  <section class="lcsec" id="local">
-    <h2>Local Kentucky</h2>
-    <p class="lcdesc">Medicare the way it actually works here in the Bluegrass &mdash; local plans, hospital networks, and where to get help.</p>
-    <div class="grid">
-      <a class="post" href="/articles/medicare-in-lexington-ky/">
-        <div class="body">
-          <span class="tag">Local Kentucky</span>
-          <h2>Medicare in Lexington, KY: A Local Guide</h2>
-          <p>Your 2026 Medicare options in the Bluegrass &mdash; real costs, local hospital networks, Fayette County plans, and where to get free help.</p>
-          <div class="meta"><span>7 min read</span><span class="read">Read &rarr;</span></div>
-        </div>
-      </a>
-      <a class="post" href="/articles/lexington-hospitals-medicare-advantage-networks/">
-        <div class="body">
-          <span class="tag">Local Kentucky</span>
-          <h2>Which Lexington Hospitals Take Medicare Advantage?</h2>
-          <p>UK HealthCare, Baptist Health, CHI Saint Joseph &mdash; how Advantage networks really work here, and how to confirm your hospital and doctors are covered.</p>
-          <div class="meta"><span>6 min read</span><span class="read">Read &rarr;</span></div>
-        </div>
-      </a>
-    </div>
-  </section>
-
+  <!-- TO ADD AN ARTICLE: copy one .lcrow below, set data-cat (turning65 | coverage | local | ...)
+       and data-date="YYYY-MM-DD". Newest date sorts to the top automatically. -->
+  <div class="lclist" id="lclist">
+    <a class="lcrow" data-cat="local" data-date="2026-06-03" href="/articles/medicare-in-lexington-ky/">
+      <div class="lcrow-main">
+        <div class="lcrow-meta"><span class="lctag">Local Kentucky</span><span class="lcdate">Jun 3, 2026</span></div>
+        <h2 class="lcrow-title">Medicare in Lexington, KY: A Local Guide</h2>
+        <p class="lcrow-dek">Your 2026 Medicare options in the Bluegrass &mdash; real costs, local hospital networks, Fayette County plans, and where to get free help.</p>
+      </div>
+      <span class="lcrow-go">Read &rarr;</span>
+    </a>
+    <a class="lcrow" data-cat="local" data-date="2026-06-03" href="/articles/lexington-hospitals-medicare-advantage-networks/">
+      <div class="lcrow-main">
+        <div class="lcrow-meta"><span class="lctag">Local Kentucky</span><span class="lcdate">Jun 3, 2026</span></div>
+        <h2 class="lcrow-title">Which Lexington Hospitals Take Medicare Advantage?</h2>
+        <p class="lcrow-dek">UK HealthCare, Baptist Health, CHI Saint Joseph &mdash; how Advantage networks really work here, and how to confirm your hospital is covered.</p>
+      </div>
+      <span class="lcrow-go">Read &rarr;</span>
+    </a>
+    <a class="lcrow" data-cat="turning65" data-date="2026-06-03" href="/articles/turning-65-enrollment-window/">
+      <div class="lcrow-main">
+        <div class="lcrow-meta"><span class="lctag">Turning 65</span><span class="lcdate">Jun 3, 2026</span></div>
+        <h2 class="lcrow-title">The 7-Month Window: When to Sign Up for Medicare</h2>
+        <p class="lcrow-dek">Miss it and the late penalty can follow you for life. Exactly when your window opens, closes, and what to do.</p>
+      </div>
+      <span class="lcrow-go">Read &rarr;</span>
+    </a>
+    <a class="lcrow" data-cat="turning65" data-date="2026-06-03" href="/articles/working-past-65-medicare/">
+      <div class="lcrow-main">
+        <div class="lcrow-meta"><span class="lctag">Turning 65</span><span class="lcdate">Jun 3, 2026</span></div>
+        <h2 class="lcrow-title">Still Working at 65? What to Do About Medicare</h2>
+        <p class="lcrow-dek">Employer coverage changes the rules. When to enroll, when you can safely wait, the HSA trap, and how to avoid a penalty.</p>
+      </div>
+      <span class="lcrow-go">Read &rarr;</span>
+    </a>
+    <a class="lcrow" data-cat="coverage" data-date="2026-06-03" href="/articles/medicare-advantage-vs-medigap/">
+      <div class="lcrow-main">
+        <div class="lcrow-meta"><span class="lctag">Coverage Choices</span><span class="lcdate">Jun 3, 2026</span></div>
+        <h2 class="lcrow-title">Medicare Advantage vs. Medigap: The Real Difference</h2>
+        <p class="lcrow-dek">Two very different ways to cover the gaps in Original Medicare. Which fits how you live &mdash; and the underwriting trap to know first.</p>
+      </div>
+      <span class="lcrow-go">Read &rarr;</span>
+    </a>
+  </div>
 </div>
 
 <div class="lcmore">
   <h2>More guides are on the way</h2>
-  <p>We're building out Kentucky's most helpful Medicare resource, one plain-English guide at a time. Coming soon:</p>
-  <div class="up">
-    <span>Medicare Basics (Parts A&ndash;D)</span>
-    <span>Costs &amp; Savings</span>
-    <span>Already on Medicare</span>
-    <span>Social Security</span>
-    <span>Retirement Planning</span>
-  </div>
+  <p>We're building Kentucky's most helpful Medicare resource, one plain-English guide at a time. Coming soon: Medicare Basics, Costs &amp; Savings, Social Security, and Retirement.</p>
   <a class="gbtn" href="/guide/">Get the free Kentucky Medicare Guide &rarr;</a>
 </div>
 
@@ -296,6 +281,20 @@ a{color:var(--coral);text-decoration:none;}
   links.addEventListener('click',function(e){
     if(e.target.tagName==='A'){ links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); }
   });
+})();
+</script>
+<script>
+(function(){
+  var list=document.getElementById('lclist'); if(!list) return;
+  var rows=[].slice.call(list.querySelectorAll('.lcrow'));
+  rows.sort(function(a,b){ return (b.getAttribute('data-date')||'').localeCompare(a.getAttribute('data-date')||''); });
+  rows.forEach(function(r){ list.appendChild(r); });
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  chips.forEach(function(c){ c.addEventListener('click', function(){
+    chips.forEach(function(x){ x.classList.remove('active'); }); c.classList.add('active');
+    var f=c.getAttribute('data-filter');
+    rows.forEach(function(r){ r.classList.toggle('hide', f!=='all' && r.getAttribute('data-cat')!==f); });
+  });});
 })();
 </script>
 </body>
