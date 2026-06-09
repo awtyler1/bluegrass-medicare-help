@@ -87,3 +87,27 @@ a,button{-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 
 /* clear the iPhone home indicator at the very bottom of the page */
 body .foot{padding-bottom:max(36px,env(safe-area-inset-bottom));}
+
+/* ---------- article: quick recap + knowledge check ---------- */
+.recap{background:var(--cream2);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:22px 24px;margin:36px 0;}
+.recap h2{font-family:var(--serif);font-weight:600;font-size:20px;margin:0 0 12px;color:var(--ink);}
+.recap-item{position:relative;padding-left:30px;margin-bottom:10px;font-size:16px;color:var(--ink);line-height:1.5;}
+.recap-item:last-child{margin-bottom:0;}
+.recap-item::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-weight:800;}
+.kcheck{margin:36px 0 10px;}
+.kcheck h2{font-family:var(--serif);font-weight:600;font-size:24px;letter-spacing:-.3px;margin:0 0 4px;}
+.kcheck .kc-sub{color:var(--mute);font-size:15.5px;margin:0 0 18px;}
+.kc-q{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px;}
+.kcheck .kc-qt{font-weight:700;font-size:17px;color:var(--ink);margin:0 0 14px;line-height:1.4;}
+.kc-opts{display:flex;flex-direction:column;gap:10px;}
+.kc-opt{text-align:left;background:var(--cream2);border:2px solid var(--line);border-radius:10px;padding:13px 16px;font-family:var(--sans);font-size:16px;color:var(--ink);cursor:pointer;transition:border-color .12s,background .12s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.kc-opt:hover:not(:disabled){border-color:var(--coral);}
+.kc-opt:disabled{cursor:default;}
+.kc-opt.right{border-color:var(--green);background:rgba(58,125,82,.13);font-weight:700;}
+.kc-opt.wrong{border-color:#c0392b;background:rgba(192,57,43,.10);}
+.kcheck .kc-why{font-size:15px;color:var(--mute);line-height:1.55;margin:14px 2px 4px;}
+.kcheck .kc-why b{color:var(--ink);}
+.kc-result{background:var(--warm);border-radius:12px;padding:24px;text-align:center;}
+.kc-result .kc-score{font-family:var(--serif);font-weight:600;font-size:24px;color:var(--ink);margin-bottom:6px;}
+.kcheck .kc-result p{color:var(--mute);font-size:16px;margin:6px 0 0;}
+.kc-result a{font-weight:700;}
