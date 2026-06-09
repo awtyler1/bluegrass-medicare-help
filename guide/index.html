@@ -25,6 +25,15 @@ src="https://www.facebook.com/tr?id=27176602235306137&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF57CZ802N"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NF57CZ802N');
+</script>
+
 <title>Free Kentucky Medicare Guide (Plain English) | Bluegrass Medicare Help</title>
 <meta name="description" content="Download a free, plain-English Kentucky Medicare guide from a local Lexington agent. Parts A, B, C, D, enrollment windows, and costs without the jargon.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -262,7 +271,7 @@ a{color:var(--coral);}
             </div>
             <div class="field"><label>Email address</label><input type="email" id="em" autocomplete="email" placeholder="you@email.com" required></div>
             <div class="frow">
-              <div class="field"><label>Phone</label><input type="tel" id="ph" autocomplete="tel" placeholder="(859) 000-0000" required></div>
+              <div class="field"><label>Phone <span style="color:var(--faint);font-weight:400;">(optional)</span></label><input type="tel" id="ph" autocomplete="tel" placeholder="(859) 000-0000"></div>
               <div class="field"><label>ZIP</label><input type="tel" id="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="40513" required></div>
             </div>
             <button type="submit" class="submit">Send me the guide →</button>
@@ -359,7 +368,7 @@ document.getElementById('leadform').addEventListener('submit', function(e){
   var ph=document.getElementById('ph').value.trim();
   var zip=document.getElementById('zip').value.trim();
   var consent=document.getElementById('consentChk').checked;
-  if(!fn||!ln||!em||!ph||!zip){ alert('Please fill in all fields so we can send your guide.'); return; }
+  if(!fn||!ln||!em||!zip){ alert('Please add your name, email, and ZIP so we can send your guide.'); return; }
   if(!/^\d{5}$/.test(zip)){ alert('Please enter a valid 5-digit ZIP code.'); return; }
   if(!consent){ alert('Please check the consent box so we can send your guide and follow up.'); return; }
 
