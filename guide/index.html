@@ -35,143 +35,106 @@ gtag('config', 'G-NF57CZ802N');
 </script>
 
 <title>Free Kentucky Medicare Guide (Plain English) | Bluegrass Medicare Help</title>
-<meta name="description" content="Download a free, plain-English Kentucky Medicare guide from a local Lexington agent. Parts A, B, C, D, enrollment windows, and costs without the jargon.">
+<meta name="description" content="Get a free, plain-English Kentucky Medicare guide from a local Lexington agent. Parts A, B, C, D, enrollment windows, and costs without the jargon. Sent to your inbox.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
 :root{
   --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
   --coral:#d05528; --coral-d:#b3431d; --mute:#5f594f; --faint:#938c80;
-  --line:#e2d9c8; --white:#fff;
+  --line:#e2d9c8; --white:#fff; --green:#3a7d52;
   --serif:'Fraunces',Georgia,serif; --sans:'Source Sans 3',-apple-system,sans-serif;
-  --hand:'Caveat',cursive;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
-html{-webkit-text-size-adjust:100%;}
-body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;}
 img{max-width:100%;display:block;}
-a{color:var(--coral);}
-
-/* top utility bar */
-
-/* hero shell - photo wash background */
-.hero{position:relative;
-  background:linear-gradient(180deg,rgba(244,239,231,.85),rgba(244,239,231,.92) 60%,rgba(244,239,231,.98)),url('/assets/kentucky-hero.jpg');
-  background-size:cover;background-position:center 20%;
-  padding:44px 0 64px;}
+a{color:var(--coral);text-decoration:none;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
-.grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start;}
-@media(min-width:880px){ .grid{grid-template-columns:1fr 440px;gap:60px;} }
-/* Mobile (single-column) order: form first, narrative second.
-   Desktop side-by-side ignores the order property. */
-@media(max-width:879px){
-  .grid > div:first-child{order:2;}
-  .grid > div:last-child{order:1;}
-}
 
-/* LEFT: hero content with face + personal note */
-.kicker{display:inline-block;color:var(--coral);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
-.hero h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.08;letter-spacing:-.5px;color:var(--ink);}
-.hero h1 em{font-style:italic;color:var(--coral);}
-@media(min-width:880px){ .hero h1{font-size:50px;} }
+.rmain{padding:42px 0 64px;text-align:center;}
+.rmain h1{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1.08;letter-spacing:-.6px;max-width:880px;margin:0 auto;}
+.rmain h1 em{font-style:normal;color:var(--coral);}
+@media(min-width:880px){ .rmain h1{font-size:50px;} }
+.rmain .rsub{color:var(--mute);font-size:18px;max-width:600px;margin:16px auto 0;line-height:1.5;}
 
-.note{margin-top:28px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:24px 24px 22px;box-shadow:0 12px 30px rgba(80,60,30,.08);position:relative;}
-.note .row{display:flex;gap:18px;align-items:center;margin-bottom:14px;}
-.note img.face{width:74px;height:74px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--coral);flex-shrink:0;box-shadow:0 6px 16px rgba(80,60,30,.16);}
-.note .who{font-family:var(--serif);font-weight:600;font-size:20px;color:var(--ink);}
-.note .who small{display:block;font-family:var(--sans);font-style:normal;color:var(--coral);font-size:13px;font-weight:600;margin-top:2px;letter-spacing:.2px;}
-.note p{color:var(--mute);font-size:16.5px;line-height:1.6;margin:0 0 10px;}
-.note .sign{font-family:var(--hand);color:var(--ink);font-size:26px;line-height:1;margin-top:14px;}
+.rscene{max-width:340px;margin:24px auto 4px;}
+.rscene svg{width:100%;height:auto;display:block;filter:drop-shadow(0 14px 28px rgba(80,60,30,.16));}
 
-/* google reviews + pillars row */
-.proof{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 22px;}
-.proof .item{display:flex;align-items:center;gap:8px;font-size:14.5px;color:var(--mute);font-weight:600;}
-.proof .item .stars{color:#e8a13a;font-size:16px;letter-spacing:1.5px;}
-.proof .item .g{width:20px;height:20px;}
-.proof .sep{width:1px;height:22px;background:var(--line);}
-.proof .item svg{flex-shrink:0;}
+/* funnel card */
+.funnel{max-width:600px;margin:30px auto 0;background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px rgba(80,60,30,.14);padding:30px 28px 28px;text-align:left;scroll-margin-top:84px;}
+.funnel:focus,.step:focus{outline:none;}
+.progress{height:8px;background:var(--cream);border-radius:6px;overflow:hidden;}
+.pbar{height:100%;width:33%;background:var(--coral);border-radius:6px;transition:width .35s cubic-bezier(.4,0,.2,1);}
+.pstep{font-size:13px;font-weight:700;color:var(--faint);letter-spacing:.6px;text-transform:uppercase;margin:10px 0 4px;}
 
-/* RIGHT: form card */
-.card{background:var(--white);border-radius:16px;box-shadow:0 18px 48px rgba(80,60,30,.20);padding:28px 26px 26px;border:1px solid rgba(0,0,0,.04);position:relative;}
-.card .badge{display:inline-block;background:var(--coral);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 11px;border-radius:6px;margin-bottom:14px;}
-.card h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.14;color:var(--ink);}
-.card .csub{color:var(--mute);font-size:15.5px;margin-top:6px;margin-bottom:18px;}
-.frow{display:flex;gap:10px;} .frow .field{flex:1;}
-.field{margin-bottom:12px;}
-.field label{display:block;font-size:13px;font-weight:600;color:var(--mute);margin-bottom:5px;}
-.field input{width:100%;font-family:var(--sans);font-size:17px;padding:13px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fcfbf8;transition:border-color .15s,box-shadow .15s;}
-.field input:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 3px rgba(208,85,40,.15);}
-.submit{-webkit-tap-highlight-color:transparent;touch-action:manipulation;width:100%;background:var(--coral);color:#fff;font-family:var(--sans);font-weight:700;font-size:18px;padding:16px;border:none;border-radius:10px;cursor:pointer;margin-top:4px;transition:background .15s,transform .06s,box-shadow .15s;box-shadow:0 8px 22px rgba(208,85,40,.26);}
-.submit:hover{background:var(--coral-d);transform:translateY(-2px);box-shadow:0 12px 28px rgba(208,85,40,.32);}
-.consent{display:block;font-size:11.5px;color:var(--mute);line-height:1.55;margin-top:13px;padding:12px;background:var(--cream2);border-radius:8px;border:1px solid var(--line);cursor:pointer;}
-.consent input{float:left;margin:3px 9px 0 0;width:18px;height:18px;accent-color:var(--coral);}
+.step{display:none;animation:fade .35s ease;}
+.step.is-active{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.q{font-family:var(--serif);font-weight:500;font-size:27px;line-height:1.16;letter-spacing:-.3px;margin:8px 0 20px;}
+.q b{font-weight:600;color:var(--coral);}
+
+.frow{display:flex;gap:12px;}
+@media(max-width:520px){ .frow{flex-direction:column;gap:14px;} }
+.inp{width:100%;font-family:var(--sans);font-size:18px;padding:16px 16px;border:1.5px solid var(--line);border-radius:11px;background:#fcfbf8;transition:border-color .15s,box-shadow .15s;margin-bottom:14px;}
+.inp::placeholder{color:var(--faint);letter-spacing:.4px;}
+.inp:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 3px rgba(208,85,40,.15);}
+
+/* big tappable options */
+.opts{display:flex;flex-direction:column;gap:12px;margin-bottom:6px;}
+.opt{display:flex;align-items:center;gap:14px;width:100%;min-height:58px;line-height:1.3;text-align:left;font-family:var(--sans);font-size:18px;font-weight:600;color:var(--ink);background:var(--cream2);border:1.5px solid var(--line);border-radius:13px;padding:16px 18px;cursor:pointer;transition:border-color .14s,background .14s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.opt:hover{border-color:var(--coral);background:#fff;transform:translateY(-1px);}
+.opt.sel{border-color:var(--coral);background:rgba(208,85,40,.07);}
+.opt .dot{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:#fff;transition:.14s;}
+.opt:hover .dot,.opt.sel .dot{border-color:var(--coral);background:var(--coral);}
+
+.cta{-webkit-tap-highlight-color:transparent;touch-action:manipulation;width:100%;background:var(--coral);color:#fff;font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:.3px;padding:17px;border:none;border-radius:50px;cursor:pointer;margin-top:6px;transition:background .15s,transform .06s,box-shadow .15s;box-shadow:0 10px 26px rgba(208,85,40,.30);}
+.cta:hover{background:var(--coral-d);transform:translateY(-2px);box-shadow:0 14px 32px rgba(208,85,40,.38);}
+.cta.sending{background:var(--coral-d);cursor:wait;}
+.back{display:inline-flex;align-items:center;gap:6px;min-height:44px;background:none;border:none;color:var(--faint);font-family:var(--sans);font-weight:600;font-size:15.5px;cursor:pointer;margin-top:12px;padding:10px 6px;}
+.back:hover{color:var(--coral);}
+
+.consent{display:block;font-size:12.5px;color:var(--mute);line-height:1.55;margin:14px 0 4px;padding:14px;background:var(--cream2);border-radius:8px;border:1px solid var(--line);cursor:pointer;}
+.consent input{float:left;margin:2px 11px 0 0;width:22px;height:22px;accent-color:var(--coral);}
 .consent a{color:var(--coral);}
 
-/* sections below the fold */
-.section{padding:54px 0;}
-.section h2{font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.1;letter-spacing:-.3px;text-align:center;margin-bottom:8px;}
-.section h2 em{font-style:italic;color:var(--coral);}
-.section .lead{color:var(--mute);font-size:18px;text-align:center;max-width:600px;margin:0 auto 36px;}
+/* trust bullets */
+.rtrust{display:flex;flex-direction:column;gap:12px;max-width:470px;margin:30px auto 0;}
+.rtrust .t{display:flex;align-items:center;gap:11px;font-size:16.5px;font-weight:600;color:var(--ink);justify-content:center;}
+.rtrust .t svg{flex-shrink:0;color:var(--coral);}
 
-/* what's inside */
-.inside{display:grid;grid-template-columns:1fr;gap:18px;max-width:780px;margin:0 auto;}
-@media(min-width:720px){ .inside{grid-template-columns:1fr 1fr;} }
-.inside .item{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px 22px;display:flex;gap:14px;align-items:flex-start;}
-.inside .num{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:rgba(208,85,40,.12);color:var(--coral);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px;font-family:var(--serif);}
-.inside .it{font-size:16.5px;}
-.inside .it b{display:block;font-weight:600;color:var(--ink);margin-bottom:3px;}
-.inside .it span{color:var(--faint);font-size:14.5px;}
+/* what's inside strip */
+.inside{max-width:600px;margin:36px auto 0;}
+.inside h2{font-family:var(--serif);font-weight:600;font-size:21px;text-align:center;margin-bottom:18px;}
+.inlist{display:grid;grid-template-columns:1fr;gap:11px;}
+@media(min-width:560px){ .inlist{grid-template-columns:1fr 1fr;} }
+.initem{display:flex;gap:12px;align-items:flex-start;background:var(--cream2);border:1px solid var(--line);border-radius:13px;padding:15px 16px;}
+.initem .ic{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:rgba(208,85,40,.12);color:var(--coral);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--serif);font-size:15px;}
+.initem b{font-size:15.5px;color:var(--ink);display:block;line-height:1.25;}
+.initem span{font-size:13.5px;color:var(--mute);line-height:1.4;}
 
-/* longer about block */
-.about{background:var(--warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0;}
-.about .ainner{display:grid;grid-template-columns:1fr;gap:30px;align-items:start;max-width:880px;margin:0 auto;}
-@media(min-width:760px){ .about .ainner{grid-template-columns:230px 1fr;gap:48px;} }
-.about img.face2{width:200px;height:230px;object-fit:cover;object-position:center top;border-radius:12px;border:4px solid var(--coral);box-shadow:0 12px 30px rgba(80,60,30,.18);margin:0 auto;}
-.about .akick{color:var(--coral);font-weight:600;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
-.about h3{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.15;letter-spacing:-.3px;margin-bottom:14px;}
-.about h3 em{font-style:italic;color:var(--coral);}
-.about p{color:var(--mute);font-size:17px;line-height:1.65;margin-bottom:14px;}
-.about .pull{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.4;color:var(--ink);border-left:3px solid var(--coral);padding:6px 0 6px 18px;margin:18px 0;}
-
-/* final cta band */
-.final{background:var(--coral);color:#fff;text-align:center;padding:54px 0;}
-.final h3{font-family:var(--serif);font-weight:500;font-size:32px;line-height:1.14;margin-bottom:10px;}
-.final p{font-size:17px;color:#ffe9e0;margin-bottom:24px;}
-.final a{display:inline-block;background:#fff;color:var(--coral-d);font-weight:700;font-size:17px;padding:15px 36px;border-radius:10px;text-decoration:none;transition:transform .06s;}
-.final a:active{transform:scale(.98);}
+.rfine{max-width:620px;margin:30px auto 0;color:var(--faint);font-size:12.5px;line-height:1.5;text-align:center;}
+.rfine a{color:var(--mute);}
 
 /* footer */
-.foot{background:var(--dark);color:#9a948c;padding:30px 0 38px;font-size:13px;line-height:1.7;}
+.foot{background:var(--dark);color:#9a948c;padding:30px 0 36px;font-size:13px;line-height:1.7;}
 .foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
 .foot a{color:#bdb6ac;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
 
 @media(max-width:580px){
-  .hero h1{font-size:34px;}
-  .frow{flex-direction:column;gap:0;}
-  .proof{justify-content:flex-start;}
+  .rmain{padding:20px 0 40px;}
+  .rmain h1{font-size:28px;}
+  .rmain .rsub{font-size:16px;margin-top:12px;}
+  .rscene{max-width:190px;margin:16px auto 2px;}
+  .funnel{padding:22px 18px 22px;margin-top:22px;}
+  .q{font-size:22px;}
+  .cta{width:100%;font-size:18px;}
+  .opt{font-size:17px;}
 }
-
-/* ===== success state: subtle dopamine moment ===== */
-.submit.sending{background:var(--coral-d);cursor:wait;}
-.submit.sent{background:#3a7d52;}
-@keyframes lift-in{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
-@keyframes pop-in{
-  0%{transform:scale(0);opacity:0;}
-  60%{transform:scale(1.15);opacity:1;}
-  100%{transform:scale(1);opacity:1;}
-}
-.success{animation:lift-in .45s cubic-bezier(.4,0,.2,1);}
-.success .check{width:64px;height:64px;border-radius:50%;background:rgba(58,125,82,.14);color:#3a7d52;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;animation:pop-in .55s cubic-bezier(.34,1.56,.64,1) .15s both;}
-.success h2{font-family:var(--serif);font-weight:600;font-size:26px;line-height:1.14;color:var(--ink);text-align:center;margin-bottom:8px;animation:lift-in .5s ease .25s both;}
-.success .lead-line{color:var(--mute);font-size:16.5px;text-align:center;margin-bottom:18px;line-height:1.55;animation:lift-in .5s ease .35s both;}
-.success .lead-line b{color:var(--ink);}
-.success .next{background:var(--cream2);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin-bottom:14px;font-size:14.5px;color:var(--mute);line-height:1.55;animation:lift-in .5s ease .45s both;}
-.success .next b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px;}
-.success .calltag{text-align:center;color:var(--faint);font-size:13.5px;animation:lift-in .5s ease .55s both;}
-.success .calltag a{color:var(--coral);font-weight:600;text-decoration:none;}</style>
+</style>
 
 <!-- SEO / canonical / social -->
 <link rel="canonical" href="https://bluegrassmedicarehelp.com/guide/">
@@ -180,19 +143,18 @@ a{color:var(--coral);}
 <meta property="og:site_name" content="Bluegrass Medicare Help">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Free Kentucky Medicare Guide (Plain English) | Bluegrass Medicare Help">
-<meta property="og:description" content="Download a free, plain-English Kentucky Medicare guide from a local Lexington agent. Parts A, B, C, D, enrollment windows, and costs without the jargon.">
+<meta property="og:description" content="Get a free, plain-English Kentucky Medicare guide from a local Lexington agent. Parts A, B, C, D, enrollment windows, and costs without the jargon.">
 <meta property="og:url" content="https://bluegrassmedicarehelp.com/guide/">
 <meta property="og:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Free Kentucky Medicare Guide (Plain English) | Bluegrass Medicare Help">
-<meta name="twitter:description" content="Download a free, plain-English Kentucky Medicare guide from a local Lexington agent. Parts A, B, C, D, enrollment windows, and costs without the jargon.">
+<meta name="twitter:description" content="Get a free, plain-English Kentucky Medicare guide from a local Lexington agent. Parts A, B, C, D, enrollment windows, and costs without the jargon.">
 <meta name="twitter:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://bluegrassmedicarehelp.com/guide/#webpage","url":"https://bluegrassmedicarehelp.com/guide/","name":"Free Kentucky Medicare Guide","isPartOf":{"@id":"https://bluegrassmedicarehelp.com/#website"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bluegrassmedicarehelp.com/"},{"@type":"ListItem","position":2,"name":"Free Guide","item":"https://bluegrassmedicarehelp.com/guide/"}]}]}</script>
 </head>
 <body>
-
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="ustrip">
@@ -207,10 +169,7 @@ a{color:var(--coral);}
     <a class="brand" href="/" aria-label="Bluegrass Medicare Help home">
       <img class="brand-logo" src="/assets/logo.png" alt="Bluegrass Medicare Help" height="46"
            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <span class="brand-fallback">
-        <span class="mark">B</span>
-        <span class="wm">Bluegrass<small>Medicare Help</small></span>
-      </span>
+      <span class="brand-fallback"><span class="mark">B</span><span class="wm">Bluegrass<small>Medicare Help</small></span></span>
     </a>
     <div class="navlinks" id="navlinks">
       <a href="/articles/">Learning Center</a>
@@ -225,103 +184,112 @@ a{color:var(--coral);}
   </div>
 </nav>
 
-<header class="hero" id="main">
+<main class="rmain" id="main">
   <div class="wrap">
-    <div class="grid">
-      <div>
-        <span class="kicker">For Kentuckians approaching Medicare</span>
-        <h1>The plain-English Medicare guide <em>your neighbor</em> would hand you.</h1>
+    <h1>Get Your Free <em>Kentucky Medicare Guide</em></h1>
+    <p class="rsub">A short, plain-English guide to Parts A, B, C and D, the windows you can't miss, and what it really costs &mdash; from a local Lexington agent. We'll send it to your inbox.</p>
 
-        <div class="note">
-          <div class="row">
-            <img class="face" src="/assets/austin-tyler.jpg" alt="Austin Tyler">
-            <div class="who">A quick note from Austin
-              <small>Tyler Insurance Group · Lexington, KY</small>
-            </div>
-          </div>
-          <p>Medicare comes with a 128-page government handbook. Most people don't read it, and the ones who do come out more confused than they started. I wrote a short guide that covers what actually matters, in plain English, no jargon.</p>
-          <p>It's free, it's instant, and there's no obligation attached. Drop your details on the right and I'll send it over.</p>
-          <p class="sign">— Austin</p>
-        </div>
-
-        <div class="proof">
-          <div class="item"><img class="g" src="data:image/png;base64,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" alt="Google"><span class="stars">★★★★★</span> 5.0 on Google</div>
-          <div class="sep"></div>
-          <div class="item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
-            Local Lexington agent
-          </div>
-          <div class="sep"></div>
-          <div class="item">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
-            No call center, ever
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <div class="card" id="formCard">
-          <div class="badge">Free guide · instant download</div>
-          <h2>Get your free Kentucky Medicare Guide</h2>
-          <p class="csub">Plain English. No jargon. No pressure.</p>
-          <form id="leadform" novalidate>
-            <div class="frow">
-              <div class="field"><label>First name</label><input type="text" id="fn" autocomplete="given-name" placeholder="First" required></div>
-              <div class="field"><label>Last name</label><input type="text" id="ln" autocomplete="family-name" placeholder="Last" required></div>
-            </div>
-            <div class="field"><label>Email address</label><input type="email" id="em" autocomplete="email" placeholder="you@email.com" required></div>
-            <div class="frow">
-              <div class="field"><label>Phone <span style="color:var(--faint);font-weight:400;">(optional)</span></label><input type="tel" id="ph" autocomplete="tel" placeholder="(859) 000-0000"></div>
-              <div class="field"><label>ZIP</label><input type="tel" id="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="40513" required></div>
-            </div>
-            <button type="submit" class="submit">Send me the guide →</button>
-            <label class="consent" for="consentChk">
-              <input type="checkbox" id="consentChk">
-              This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans (Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance). Messages may be sent via automatic dialing system or prerecorded voice. Msg &amp; data rates may apply. Consent is not required to purchase. Reply STOP to opt out, HELP for help. See our <a href="#">Privacy Policy</a> and <a href="#">Terms</a>.
-            </label>
-          </form>
-        </div>
-      </div>
+    <div class="rscene" aria-hidden="true">
+      <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="205" cy="234" rx="140" ry="12" fill="#efe6d6"/>
+        <g transform="rotate(5 205 132)"><rect x="128" y="50" width="168" height="168" rx="10" fill="#f7f2e9" stroke="#e9e0cf" stroke-width="2"/></g>
+        <g transform="rotate(-3 200 130)">
+          <rect x="104" y="38" width="180" height="180" rx="13" fill="#ffffff" stroke="#e2d9c8" stroke-width="2"/>
+          <path d="M104 51a13 13 0 0 1 13-13h154a13 13 0 0 1 13 13v44H104z" fill="#d05528"/>
+          <g fill="#ffffff" opacity=".95">
+            <ellipse cx="150" cy="70" rx="17" ry="8"/>
+            <path d="M137 66l-7-14 6-2 7 15z"/>
+            <path d="M130 50l-9 4 2 4 8-2z"/>
+            <rect x="136" y="76" width="3" height="12" rx="1.5"/>
+            <rect x="143" y="77" width="3" height="11" rx="1.5"/>
+            <rect x="158" y="77" width="3" height="11" rx="1.5"/>
+            <rect x="164" y="76" width="3" height="12" rx="1.5"/>
+          </g>
+          <rect x="182" y="58" width="86" height="7" rx="3.5" fill="#ffffff" opacity=".95"/>
+          <rect x="182" y="71" width="64" height="7" rx="3.5" fill="#ffffff" opacity=".7"/>
+          <g>
+            <circle cx="128" cy="120" r="8" fill="#3a7d52"/><path d="M124 120l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="144" y="116" width="120" height="8" rx="4" fill="#e7ddcb"/>
+            <circle cx="128" cy="148" r="8" fill="#3a7d52"/><path d="M124 148l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="144" y="144" width="104" height="8" rx="4" fill="#e7ddcb"/>
+            <circle cx="128" cy="176" r="8" fill="#3a7d52"/><path d="M124 176l3 3 5-6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="144" y="172" width="116" height="8" rx="4" fill="#e7ddcb"/>
+          </g>
+        </g>
+        <g transform="rotate(8 312 66)"><circle cx="312" cy="66" r="32" fill="#3a7d52" stroke="#fff" stroke-width="3"/>
+          <text x="312" y="72" font-family="'Source Sans 3',sans-serif" font-size="19" font-weight="800" fill="#fff" text-anchor="middle">FREE</text></g>
+      </svg>
     </div>
-  </div>
-</header>
 
-<section class="section">
-  <div class="wrap">
-    <h2>What's <em>actually</em> in the guide</h2>
-    <p class="lead">Short, skimmable, and built around the things people turning 65 in Kentucky actually need to know.</p>
+    <!-- ============ FUNNEL ============ -->
+    <div class="funnel">
+      <div class="progress"><div class="pbar" id="pbar"></div></div>
+      <div class="pstep" id="pstep">Step 1 of 3</div>
+
+      <form id="gform" novalidate>
+
+        <!-- STEP 1: name -->
+        <div class="step is-active" data-step="1">
+          <h2 class="q">First, what's your <b>name?</b></h2>
+          <div class="frow">
+            <input class="inp" id="fn" placeholder="FIRST NAME" autocomplete="given-name" aria-label="First name">
+            <input class="inp" id="ln" placeholder="LAST NAME" autocomplete="family-name" aria-label="Last name">
+          </div>
+          <button type="button" class="cta" data-go="2">NEXT &rarr;</button>
+        </div>
+
+        <!-- STEP 2: stage -->
+        <div class="step" data-step="2">
+          <h2 class="q">Where are you with <b>Medicare?</b></h2>
+          <div class="opts" data-field="stage">
+            <button type="button" class="opt" data-val="Turning 65 soon"><span class="dot"></span>I'm turning 65 soon</button>
+            <button type="button" class="opt" data-val="Already on Medicare"><span class="dot"></span>I'm already on Medicare</button>
+            <button type="button" class="opt" data-val="Helping a parent"><span class="dot"></span>I'm helping a parent or loved one</button>
+            <button type="button" class="opt" data-val="Just learning"><span class="dot"></span>Just learning for now</button>
+          </div>
+          <button type="button" class="back" data-back="1">&larr; Back</button>
+        </div>
+
+        <!-- STEP 3: where to send it -->
+        <div class="step" data-step="3">
+          <h2 class="q">Where should we <b>send your guide?</b></h2>
+          <input class="inp" id="em" type="email" autocomplete="email" placeholder="EMAIL ADDRESS" aria-label="Email address">
+          <div class="frow">
+            <input class="inp" id="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="ZIP CODE" aria-label="ZIP code">
+            <input class="inp" id="ph" type="tel" autocomplete="tel" placeholder="PHONE (OPTIONAL)" aria-label="Phone (optional)">
+          </div>
+          <label class="consent" for="consentChk">
+            <input type="checkbox" id="consentChk">
+            This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans (Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance). Messages may be sent via automatic dialing system or prerecorded voice. Msg &amp; data rates may apply. Consent is not required to purchase. Reply STOP to opt out, HELP for help.
+          </label>
+          <button type="submit" class="cta" id="finalBtn">Send my free guide →</button>
+          <button type="button" class="back" data-back="2">&larr; Back</button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- trust bullets -->
+    <div class="rtrust">
+      <div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> In your inbox within minutes</div>
+      <div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg> Plain English &mdash; no jargon</div>
+      <div class="t"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 100% free &mdash; no pressure, never a call center</div>
+    </div>
+
+    <!-- what's inside -->
     <div class="inside">
-      <div class="item"><div class="num">1</div><div class="it"><b>How Medicare actually works</b><span>Parts A, B, C, D explained without the alphabet headache</span></div></div>
-      <div class="item"><div class="num">2</div><div class="it"><b>Advantage vs. Supplement</b><span>The biggest decision you'll make, in plain terms</span></div></div>
-      <div class="item"><div class="num">3</div><div class="it"><b>The windows you can't miss</b><span>And the lifelong penalties for missing them</span></div></div>
-      <div class="item"><div class="num">4</div><div class="it"><b>What it actually costs</b><span>Premiums, copays, and the gotchas the TV ads skip</span></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="about">
-  <div class="wrap">
-    <div class="ainner">
-      <img class="face2" src="/assets/austin-tyler.jpg" alt="Austin Tyler, local Medicare advisor in Lexington KY">
-      <div>
-        <div class="akick">More about who you'll be calling</div>
-        <h3>I built this office because I wanted to be the agent you actually <em>reach</em>.</h3>
-        <p>I'm Austin Tyler. I grew up in Owensboro and went to Murray State for my undergrad. I liked it enough that I stayed for the MBA. I opened my Medicare office in Lexington the year I graduated, at 22.</p>
-        <p>I didn't want to spend the early part of my career inside someone else's company. I wanted a business where the effort I put in showed up directly in the result. Medicare turned out to be that business.</p>
-        <div class="pull">"The agent you pick is going to be the person you call next year, and the year after that, when something changes with your coverage. It's worth knowing who that person is before you commit."</div>
-        <p>The other stuff: I have an Australian shepherd named Bentley, I read more books than is probably reasonable, and I can solve a Rubik's cube. There's usually one on my desk if you stop by.</p>
+      <h2>What's inside</h2>
+      <div class="inlist">
+        <div class="initem"><span class="ic">1</span><div><b>How Medicare actually works</b><span>Parts A, B, C, D without the alphabet headache</span></div></div>
+        <div class="initem"><span class="ic">2</span><div><b>Advantage vs. Supplement</b><span>The biggest decision you'll make, in plain terms</span></div></div>
+        <div class="initem"><span class="ic">3</span><div><b>The windows you can't miss</b><span>And the lifelong penalties for missing them</span></div></div>
+        <div class="initem"><span class="ic">4</span><div><b>What it actually costs</b><span>Premiums, copays, and the gotchas the TV ads skip</span></div></div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="final">
-  <div class="wrap">
-    <h3>Ready for Medicare in plain English?</h3>
-    <p>Grab your free Kentucky guide. Takes ten seconds.</p>
-    <a href="#formCard">Get the free guide →</a>
+    <p class="rfine">Tyler Insurance Group is not connected with or endorsed by the U.S. government or the federal Medicare program. We do not offer every plan available in your area. Currently we serve Kentucky residents. Please contact Medicare.gov or 1-800-MEDICARE to discuss all of your options.</p>
   </div>
-</section>
+</main>
 
 <!-- ============ FOOTER NAV ============ -->
 <nav class="fnav" aria-label="Footer">
@@ -350,100 +318,100 @@ a{color:var(--coral);}
 </footer>
 
 <script>
-/* ============================================================
-   GOHIGHLEVEL WIRING - GUIDE DOWNLOAD
-   Separate webhook from the quiz, so guide-download leads route
-   through their own follow-up workflow.
-   ============================================================ */
-const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/b2b5e80c-e2ce-4479-aa96-613e9abe0bfe";
-
-const CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.";
-
-document.getElementById('leadform').addEventListener('submit', function(e){
-  e.preventDefault();
-  var fn=document.getElementById('fn').value.trim();
-  var ln=document.getElementById('ln').value.trim();
-  var em=document.getElementById('em').value.trim();
-  var ph=document.getElementById('ph').value.trim();
-  var zip=document.getElementById('zip').value.trim();
-  var consent=document.getElementById('consentChk').checked;
-  if(!fn||!ln||!em||!zip){ alert('Please add your name, email, and ZIP so we can send your guide.'); return; }
-  if(!/^\d{5}$/.test(zip)){ alert('Please enter a valid 5-digit ZIP code.'); return; }
-  if(!consent){ alert('Please check the consent box so we can send your guide and follow up.'); return; }
-
-  var submitBtn = e.target.querySelector('.submit');
-  submitBtn.disabled = true;
-  submitBtn.classList.add('sending');
-  submitBtn.innerHTML = 'Sending…';
-
-  var payload = {
-    firstName: fn,
-    lastName: ln,
-    email: em,
-    phone: ph,
-    zip: zip,
-    consentGiven: consent,
-    consentText: CONSENT_TEXT,
-    consentTimestamp: new Date().toISOString(),
-    source: 'Kentucky Medicare Guide - Landing Page',
-    pageUrl: window.location.href
-  };
-
-  function finish(){
-    if(typeof fbq==='function'){ fbq('track','Lead',{ content_name:'Kentucky Medicare Guide - Landing Page' }); }
-    window.location.href='/guide/thankyou/'; return;
-    // Beat 2: button confirms "Done" with a green flash
-    submitBtn.classList.remove('sending');
-    submitBtn.classList.add('sent');
-    submitBtn.innerHTML = '✓ Sent';
-
-    // Beat 3: card transitions to success state after the button celebrates
-    setTimeout(function(){
-      var card = document.getElementById('formCard');
-      card.innerHTML =
-        '<div class="success">' +
-          '<div class="check">' +
-            '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>' +
-          '</div>' +
-          '<h2>Nice move, ' + fn.split(' ')[0] + '.</h2>' +
-          '<p class="lead-line">Your <b>Kentucky Medicare Guide</b> is heading to <b>' + em + '</b> right now. ' +
-          'Plain English, no jargon, the stuff that actually matters.</p>' +
-          '<div class="next">' +
-            '<b>What happens next</b>' +
-            'Check your inbox in the next minute or two (peek in spam if you don\'t see it). ' +
-            'Read it whenever, there\'s no follow-up call unless you ask for one.' +
-          '</div>' +
-          '<div class="calltag">' +
-            'Have a question right now? <a href="tel:18596186443">Call Austin at (859) 618-6443</a>' +
-          '</div>' +
-        '</div>';
-      card.scrollIntoView({behavior:'smooth',block:'center'});
-    }, 650);
+(function(){
+  var tog=document.getElementById('navtog'), links=document.getElementById('navlinks');
+  if(tog&&links){
+    tog.addEventListener('click',function(){ var open=links.classList.toggle('open'); tog.setAttribute('aria-expanded', open?'true':'false'); });
+    links.addEventListener('click',function(e){ if(e.target.tagName==='A'){ links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); } });
   }
-
-  fetch(GHL_WEBHOOK_URL, {
-    method: 'POST',
-    headers: {'Content-Type':'application/json'},
-    body: JSON.stringify(payload)
-  })
-  .then(function(){ finish(); })
-  .catch(function(err){
-    console.error('Webhook error:', err);
-    finish();
-  });
-});
+})();
 </script>
 <script>
 (function(){
-  var tog=document.getElementById('navtog'), links=document.getElementById('navlinks');
-  if(!tog||!links) return;
-  tog.addEventListener('click',function(){
-    var open=links.classList.toggle('open');
-    tog.setAttribute('aria-expanded', open?'true':'false');
+  var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/b2b5e80c-e2ce-4479-aa96-613e9abe0bfe";
+  var CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.";
+
+  var TOTAL=3, cur=1, initial=true;
+  var state={stage:''};
+  var form=document.getElementById('gform');
+  var steps=[].slice.call(form.querySelectorAll('.step'));
+  var pbar=document.getElementById('pbar'), pstep=document.getElementById('pstep');
+  var funnel=document.querySelector('.funnel');
+  var navEl=document.querySelector('.nav');
+
+  function show(n){
+    cur=n;
+    steps.forEach(function(s){ s.classList.toggle('is-active', +s.getAttribute('data-step')===n); });
+    pbar.style.width=(n/TOTAL*100)+'%';
+    pstep.textContent='Step '+n+' of '+TOTAL;
+    if(initial){ initial=false; return; }
+    var active=form.querySelector('.step.is-active');
+    var navH=(navEl?navEl.offsetHeight:64);
+    var rect=funnel.getBoundingClientRect();
+    if(rect.top < navH+8 || rect.top > window.innerHeight*0.55){
+      window.scrollTo({ top: rect.top+window.pageYOffset-navH-14, behavior:'smooth' });
+    }
+    if(active){ active.setAttribute('tabindex','-1'); try{ active.focus({preventScroll:true}); }catch(e){} }
+  }
+  function val(id){ return (document.getElementById(id).value||'').trim(); }
+
+  function validate(step){
+    if(step===1){ if(!val('fn')||!val('ln')){ alert('Please enter your first and last name.'); return false; } }
+    return true;
+  }
+
+  [].forEach.call(form.querySelectorAll('[data-go]'), function(b){
+    b.addEventListener('click', function(){ if(!validate(cur)) return; show(+b.getAttribute('data-go')); });
   });
-  links.addEventListener('click',function(e){
-    if(e.target.tagName==='A'){ links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); }
+  [].forEach.call(form.querySelectorAll('[data-back]'), function(b){
+    b.addEventListener('click', function(){ show(+b.getAttribute('data-back')); });
   });
+  [].forEach.call(form.querySelectorAll('.opts'), function(group){
+    var field=group.getAttribute('data-field');
+    [].forEach.call(group.querySelectorAll('.opt'), function(opt){
+      opt.addEventListener('click', function(){
+        [].forEach.call(group.querySelectorAll('.opt'), function(o){ o.classList.remove('sel'); });
+        opt.classList.add('sel');
+        state[field]=opt.getAttribute('data-val');
+        setTimeout(function(){ show(Math.min(cur+1, TOTAL)); }, 180);
+      });
+    });
+  });
+  form.addEventListener('keydown', function(e){
+    if(e.key!=='Enter') return;
+    var t=e.target;
+    if(t.tagName==='TEXTAREA') return;
+    if(cur===1){ e.preventDefault(); var go=form.querySelector('.step.is-active [data-go]'); if(go) go.click(); }
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var fn=val('fn'), ln=val('ln'), em=val('em'), zip=val('zip'), ph=val('ph');
+    if(!em || em.indexOf('@')<1){ alert('Please enter your email so we can send the guide.'); return; }
+    if(!/^\d{5}$/.test(zip)){ alert('Please enter a valid 5-digit ZIP code.'); return; }
+    if(!document.getElementById('consentChk').checked){ alert('Please check the consent box so we can send your guide.'); return; }
+
+    var btn=document.getElementById('finalBtn');
+    btn.disabled=true; btn.classList.add('sending'); btn.innerHTML='Sending…';
+
+    var payload={
+      firstName: fn, lastName: ln, email: em, phone: ph, zip: zip,
+      medicareStage: state.stage,
+      consentGiven: true, consentText: CONSENT_TEXT, consentTimestamp: new Date().toISOString(),
+      source: 'Kentucky Medicare Guide - Landing Page', pageUrl: window.location.href
+    };
+
+    function finish(){
+      if(typeof fbq==='function'){ fbq('track','Lead',{ content_name:'Kentucky Medicare Guide - Landing Page' }); }
+      window.location.href='/guide/thankyou/';
+    }
+    if(GHL_WEBHOOK_URL){
+      fetch(GHL_WEBHOOK_URL,{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) })
+        .then(finish).catch(function(err){ console.error('Webhook error:',err); finish(); });
+    } else { console.log('LEAD PAYLOAD:', payload); finish(); }
+  });
+
+  show(1);
 })();
 </script>
 </body>
