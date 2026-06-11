@@ -64,7 +64,8 @@ a{color:var(--coral);text-decoration:none;}
 .rscene svg{width:100%;height:auto;display:block;filter:drop-shadow(0 14px 28px rgba(80,60,30,.16));}
 
 /* funnel card */
-.funnel{max-width:600px;margin:30px auto 0;background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px rgba(80,60,30,.14);padding:30px 28px 28px;text-align:left;}
+.funnel{max-width:600px;margin:30px auto 0;background:var(--white);border:1px solid var(--line);border-radius:20px;box-shadow:0 20px 50px rgba(80,60,30,.14);padding:30px 28px 28px;text-align:left;scroll-margin-top:84px;}
+.funnel:focus,.step:focus{outline:none;}
 .progress{height:8px;background:var(--cream);border-radius:6px;overflow:hidden;}
 .pbar{height:100%;width:20%;background:var(--coral);border-radius:6px;transition:width .35s cubic-bezier(.4,0,.2,1);}
 .pstep{font-size:13px;font-weight:700;color:var(--faint);letter-spacing:.6px;text-transform:uppercase;margin:10px 0 4px;}
@@ -84,7 +85,7 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:url("data:im
 
 /* big tappable options */
 .opts{display:flex;flex-direction:column;gap:12px;margin-bottom:6px;}
-.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font-family:var(--sans);font-size:18px;font-weight:600;color:var(--ink);background:var(--cream2);border:1.5px solid var(--line);border-radius:13px;padding:18px 18px;cursor:pointer;transition:border-color .14s,background .14s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.opt{display:flex;align-items:center;gap:14px;width:100%;min-height:58px;line-height:1.3;text-align:left;font-family:var(--sans);font-size:18px;font-weight:600;color:var(--ink);background:var(--cream2);border:1.5px solid var(--line);border-radius:13px;padding:16px 18px;cursor:pointer;transition:border-color .14s,background .14s,transform .06s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .opt:hover{border-color:var(--coral);background:#fff;transform:translateY(-1px);}
 .opt.sel{border-color:var(--coral);background:rgba(208,85,40,.07);}
 .opt .dot{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:#fff;transition:.14s;}
@@ -93,11 +94,11 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:url("data:im
 .cta{-webkit-tap-highlight-color:transparent;touch-action:manipulation;width:100%;background:var(--coral);color:#fff;font-family:var(--sans);font-weight:700;font-size:19px;letter-spacing:.3px;padding:17px;border:none;border-radius:50px;cursor:pointer;margin-top:6px;transition:background .15s,transform .06s,box-shadow .15s;box-shadow:0 10px 26px rgba(208,85,40,.30);}
 .cta:hover{background:var(--coral-d);transform:translateY(-2px);box-shadow:0 14px 32px rgba(208,85,40,.38);}
 .cta.sending{background:var(--coral-d);cursor:wait;}
-.back{display:inline-flex;align-items:center;gap:6px;background:none;border:none;color:var(--faint);font-family:var(--sans);font-weight:600;font-size:15px;cursor:pointer;margin-top:16px;padding:4px 2px;}
+.back{display:inline-flex;align-items:center;gap:6px;min-height:44px;background:none;border:none;color:var(--faint);font-family:var(--sans);font-weight:600;font-size:15.5px;cursor:pointer;margin-top:12px;padding:10px 6px;}
 .back:hover{color:var(--coral);}
 
-.consent{display:block;font-size:11.5px;color:var(--mute);line-height:1.55;margin:14px 0 4px;padding:12px;background:var(--cream2);border-radius:8px;border:1px solid var(--line);cursor:pointer;}
-.consent input{float:left;margin:3px 9px 0 0;width:18px;height:18px;accent-color:var(--coral);}
+.consent{display:block;font-size:12.5px;color:var(--mute);line-height:1.55;margin:14px 0 4px;padding:14px;background:var(--cream2);border-radius:8px;border:1px solid var(--line);cursor:pointer;}
+.consent input{float:left;margin:2px 11px 0 0;width:22px;height:22px;accent-color:var(--coral);}
 .consent a{color:var(--coral);}
 .optnote{font-size:13px;color:var(--faint);margin:-6px 0 12px;}
 
@@ -115,11 +116,14 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:url("data:im
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
 
 @media(max-width:580px){
-  .rmain{padding:28px 0 44px;}
-  .rmain h1{font-size:30px;}
-  .funnel{padding:24px 20px 24px;}
-  .q{font-size:23px;}
-  .cta{width:100%;}
+  .rmain{padding:20px 0 40px;}
+  .rmain h1{font-size:28px;}
+  .rmain .rsub{font-size:16px;margin-top:12px;}
+  .rscene{max-width:200px;margin:16px auto 2px;}
+  .funnel{padding:22px 18px 22px;margin-top:22px;}
+  .q{font-size:22px;}
+  .cta{width:100%;font-size:18px;}
+  .opt{font-size:17px;}
 }
 </style>
 
@@ -325,20 +329,30 @@ select.inp{appearance:none;-webkit-appearance:none;background-image:url("data:im
   var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/fd91eae1-1237-43bf-9ec3-0822cab210d6";
   var CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.";
 
-  var TOTAL=5, cur=1;
+  var TOTAL=5, cur=1, initial=true;
   var state={stage:'', priority:''};
   var form=document.getElementById('rform');
   var steps=[].slice.call(form.querySelectorAll('.step'));
   var pbar=document.getElementById('pbar'), pstep=document.getElementById('pstep');
+  var funnel=document.querySelector('.funnel');
+  var navEl=document.querySelector('.nav');
 
   function show(n){
     cur=n;
     steps.forEach(function(s){ s.classList.toggle('is-active', +s.getAttribute('data-step')===n); });
     pbar.style.width=(n/TOTAL*100)+'%';
     pstep.textContent='Step '+n+' of '+TOTAL;
+    if(initial){ initial=false; return; }   // never grab focus / scroll on first paint
     var active=form.querySelector('.step.is-active');
-    var first=active.querySelector('input,select');
-    if(first && first.type!=='checkbox'){ try{ first.focus({preventScroll:true}); }catch(e){} }
+    // keep the current question visible below the sticky header
+    var navH=(navEl?navEl.offsetHeight:64);
+    var rect=funnel.getBoundingClientRect();
+    if(rect.top < navH+8 || rect.top > window.innerHeight*0.55){
+      window.scrollTo({ top: rect.top+window.pageYOffset-navH-14, behavior:'smooth' });
+    }
+    // move focus to the step container (a div) — announces it to screen readers
+    // and keeps keyboard navigation in sync WITHOUT opening the mobile keyboard
+    if(active){ active.setAttribute('tabindex','-1'); try{ active.focus({preventScroll:true}); }catch(e){} }
   }
   function val(id){ return (document.getElementById(id).value||'').trim(); }
 
