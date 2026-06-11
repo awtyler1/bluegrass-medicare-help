@@ -158,6 +158,19 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 .ans-lg .lbl{font-size:22px;font-weight:700;color:var(--ink);}
 .ans-lg.chosen{background:var(--coral);border-color:var(--coral);transform:scale(1.03);box-shadow:0 12px 30px rgba(208,85,40,.34);}
 .ans-lg.chosen .ic{color:#fff;} .ans-lg.chosen .lbl{color:#fff;}
+/* instant per-question feedback */
+.ans-lg.correct{background:var(--green);border-color:var(--green);box-shadow:0 12px 30px rgba(58,125,82,.3);}
+.ans-lg.correct .ic,.ans-lg.correct .lbl{color:#fff;}
+.ans-lg.incorrect{background:#bf3b22;border-color:#bf3b22;box-shadow:0 12px 30px rgba(191,59,34,.3);}
+.ans-lg.incorrect .ic,.ans-lg.incorrect .lbl{color:#fff;}
+.feedback{max-width:560px;width:100%;margin:24px auto 0;text-align:center;animation:fade .35s ease;}
+.fb-tag{font-weight:800;font-size:19px;margin-bottom:8px;}
+.fb-tag.ok{color:var(--green);} .fb-tag.no{color:#bf3b22;}
+.fb-why{color:var(--mute);font-size:16.5px;line-height:1.55;margin:0 auto 20px;max-width:480px;}
+.fb-next{margin:0 auto;}
+.resultcard{margin-top:30px;text-align:left;}
+.resultcard .cardh{font-family:var(--serif);font-weight:600;font-size:22px;text-align:center;margin:14px 0 6px;}
+.resultcard .cardsub{color:var(--mute);font-size:15.5px;line-height:1.5;text-align:center;margin:0 auto 20px;max-width:430px;}
 /* bottom trust bar */
 .trustbar{margin-top:auto;padding:26px 0 30px;border-top:1px solid var(--line);}
 .trustbar .row{display:flex;align-items:center;justify-content:center;gap:22px;flex-wrap:wrap;}
@@ -236,7 +249,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
     </div>
     <div class="qcount" id="qcount"></div>
     <div class="qtext-lg" id="qtext"></div>
-    <div class="choose">Please choose an option</div>
+    <div class="choose" id="choose">Please choose an option</div>
     <div class="answers-lg">
       <button class="ans-lg" id="ansTrue" onclick="answer(true)">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9"/></svg></div>
@@ -246,6 +259,11 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div>
         <div class="lbl">False</div>
       </button>
+    </div>
+    <div class="feedback" id="feedback" hidden>
+      <div class="fb-tag" id="fbTag"></div>
+      <div class="fb-why" id="fbWhy"></div>
+      <button class="btn fb-next" id="nextBtn" onclick="nextQ()">Next &rarr;</button>
     </div>
   </div>
   <div class="trustbar">
@@ -264,12 +282,16 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
   <p>Checking your answers against the Medicare rules.</p>
 </section>
 
-<!-- CAPTURE -->
-<section class="screen capture" id="capture">
-  <div class="av-wrap"><img class="avatar" src="/quiz-65/austin.jpg" alt="Austin Tyler" width="96" height="96"></div>
-  <h1>Where should we send your results?</h1>
-  <p class="sub">We'll send your score, the correct answer and a plain-English explanation for every question, plus your free Kentucky Medicare Guide.</p>
-  <div class="card">
+<!-- RESULTS (score shown first; email is an optional next step) -->
+<section class="screen results" id="results">
+  <div class="badge"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM5 6H3v1a3 3 0 0 0 3 3M19 6h2v1a3 3 0 0 1-3 3"/></svg></div>
+  <h1 id="scoreHead">Your score</h1>
+  <p id="scoreSub"></p>
+
+  <div class="card resultcard">
+    <div class="av-wrap" style="text-align:center;"><img class="avatar" src="/quiz-65/austin.jpg" alt="Austin Tyler" width="96" height="96"></div>
+    <h2 class="cardh">Want every answer explained?</h2>
+    <p class="cardsub">Enter your info and Austin will email a plain-English explanation for all 10 questions, plus your free Kentucky Medicare Guide. Totally optional.</p>
     <form id="quizform" novalidate>
       <div class="frow">
         <div class="field"><label>First name</label><input id="fn" autocomplete="given-name" placeholder="First" required></div>
@@ -287,26 +309,18 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
           <option>Just researching</option>
         </select>
       </div>
-      <button type="submit" class="submit">Send my results →</button>
-      <p class="reassure">🔒 No spam, ever. Your info is private and only used to send your results and have Austin follow up.</p>
+      <button type="submit" class="submit">Email me the breakdown + guide →</button>
+      <p class="reassure">🔒 No spam, ever. Used only to send your results and have Austin follow up.</p>
       <label class="consent" for="consentChk">
         <input type="checkbox" id="consentChk" style="float:left;margin:3px 10px 0 0;width:18px;height:18px;accent-color:var(--coral);">
         This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg &amp; data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance. See our <a href="#" style="color:var(--coral);">Privacy Policy</a> and <a href="#" style="color:var(--coral);">Terms of Service</a> for additional information.
       </label>
     </form>
   </div>
-</section>
 
-<!-- RESULTS -->
-<section class="screen results" id="results">
-  <div class="badge"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg></div>
-  <h1>Well, you did it.</h1>
-  <p>Thanks for taking the quiz. Your score, every answer explained in plain English, and your free Kentucky Medicare Guide are on the way to your inbox.</p>
   <div class="local">
-    <img class="local-face" src="/quiz-65/austin.jpg" alt="Austin Tyler" width="96" height="96">
-    <p class="note">Hi, it's Austin. If the quiz stirred up a question, or you just want a real person to walk you through your options, call me directly. No script, no pressure, no call center, just a local Kentucky guy who does this for a living. I'm happy to help.</p>
+    <p class="note">Hi, it's Austin. If the quiz stirred up a question, or you'd rather just talk it through, call me directly. No script, no pressure, no call center, just a local Kentucky guy who does this for a living.</p>
     <a class="btn" href="tel:18596186443" id="bookcall"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call Austin: (859) 618-6443</a>
-    <p class="callnote">Prefer we reach out? Your results email has a link to book a time.</p>
   </div>
   <div class="explore">
     <a href="/articles/">Read Medicare articles &rarr;</a>
@@ -346,7 +360,18 @@ const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4w
 
 const CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.";
 
-const QUESTIONS = [{"q": "Everyone is automatically enrolled in Medicare Part A and Part B at age 65.", "a": false}, {"q": "If you're already getting Social Security benefits, you'll be automatically enrolled in Part A and Part B.", "a": true}, {"q": "You or your spouse must have paid Medicare taxes for 40 quarters (10 years) to get premium-free Part A.", "a": true}, {"q": "If you or your spouse have health coverage through an employer with more than 20 employees, you can usually take Part A and delay Part B without a penalty.", "a": true}, {"q": "You generally need to enroll in Part A and Part B when you retire, or if you currently have TRICARE, COBRA, a Marketplace (ACA) plan, or coverage from an employer with fewer than 20 employees.", "a": true}, {"q": "You can keep contributing to an HSA after you enroll in Medicare Part A.", "a": false}, {"q": "Your Initial Enrollment Period is 7 months: the 3 months before your birthday month, your birthday month, and the 3 months after.", "a": true}, {"q": "When you enroll during a Special Enrollment Period, you may need to provide a CMS-L564 (proof of employer coverage) form.", "a": true}, {"q": "Both Original Medicare and Medicare Advantage let you go to any doctor or hospital you want.", "a": false}, {"q": "Medicare Supplement (Medigap) plans don't require pre-authorization for covered services.", "a": true}];
+const QUESTIONS = [
+  {"q":"Everyone is automatically enrolled in Medicare Part A and Part B at age 65.","a":false,"why":"Only people already drawing Social Security are enrolled automatically. Most everyone else has to sign up themselves."},
+  {"q":"If you're already getting Social Security benefits, you'll be automatically enrolled in Part A and Part B.","a":true,"why":"If you're collecting Social Security, Medicare signs you up and mails your card before you turn 65."},
+  {"q":"You or your spouse must have paid Medicare taxes for 40 quarters (10 years) to get premium-free Part A.","a":true,"why":"About 10 years of work (40 quarters) earns you Part A with no monthly premium."},
+  {"q":"If you or your spouse have health coverage through an employer with more than 20 employees, you can usually take Part A and delay Part B without a penalty.","a":true,"why":"Active coverage from a larger employer (20+) lets you safely wait on Part B until you retire."},
+  {"q":"You generally need to enroll in Part A and Part B when you retire, or if you currently have TRICARE, COBRA, a Marketplace (ACA) plan, or coverage from an employer with fewer than 20 employees.","a":true,"why":"Those kinds of coverage don't let you delay Part B, so you enroll at 65 to dodge a lifelong penalty."},
+  {"q":"You can keep contributing to an HSA after you enroll in Medicare Part A.","a":false,"why":"Once Part A starts, HSA contributions must stop. It's a costly surprise for people working past 65."},
+  {"q":"Your Initial Enrollment Period is 7 months: the 3 months before your birthday month, your birthday month, and the 3 months after.","a":true,"why":"It's a 7-month window centered on your 65th birthday month. Signing up early avoids any gap."},
+  {"q":"When you enroll during a Special Enrollment Period, you may need to provide a CMS-L564 (proof of employer coverage) form.","a":true,"why":"That form proves you had employer coverage, which is what lets you skip the late penalty."},
+  {"q":"Both Original Medicare and Medicare Advantage let you go to any doctor or hospital you want.","a":false,"why":"Original Medicare goes almost anywhere; Advantage plans use networks, so always check your doctors."},
+  {"q":"Medicare Supplement (Medigap) plans don't require pre-authorization for covered services.","a":true,"why":"If Medicare approves a service, your Medigap plan pays its share. There's no separate approval to chase."}
+];
 let idx = 0, score = 0, answers = [];
 
 function show(id){
@@ -360,8 +385,6 @@ function startQuiz(){ idx=0; score=0; answers=[]; renderQ(); show('qscreen'); }
 
 function goBack(){
   if(idx===0) return;
-  document.getElementById('ansTrue').style.pointerEvents='';
-  document.getElementById('ansFalse').style.pointerEvents='';
   idx--;
   var last=answers.pop();
   if(last && last.correct) score--;
@@ -372,8 +395,13 @@ function renderQ(){
   const q = QUESTIONS[idx];
   document.getElementById('qcount').textContent = 'Question ' + (idx+1) + ' of ' + QUESTIONS.length;
   document.getElementById('qtext').textContent = q.q;
-  document.getElementById('ansTrue').classList.remove('chosen');
-  document.getElementById('ansFalse').classList.remove('chosen');
+  ['ansTrue','ansFalse'].forEach(function(id){
+    var b=document.getElementById(id);
+    b.classList.remove('chosen','correct','incorrect');
+    b.style.pointerEvents=''; b.disabled=false;
+  });
+  document.getElementById('feedback').hidden = true;
+  document.getElementById('choose').style.display = '';
   document.getElementById('leadin').style.display = (idx === 0) ? '' : 'none';
   var _bb=document.getElementById('backBtn'); if(_bb) _bb.hidden = (idx === 0);
   // Per-step funnel tracking so we can see exactly which question loses people.
@@ -384,22 +412,32 @@ function renderQ(){
 function answer(val){
   // First answer = funnel started (replaces the old Start button).
   if (idx === 0 && typeof fbq !== 'undefined') { fbq('track','InitiateCheckout'); }
-  // lock + highlight chosen for the dopamine beat
-  const btn = val ? document.getElementById('ansTrue') : document.getElementById('ansFalse');
-  document.getElementById('ansTrue').style.pointerEvents='none';
-  document.getElementById('ansFalse').style.pointerEvents='none';
-  btn.classList.add('chosen');
+  var tBtn=document.getElementById('ansTrue'), fBtn=document.getElementById('ansFalse');
+  tBtn.style.pointerEvents='none'; fBtn.style.pointerEvents='none';
   const correct = QUESTIONS[idx].a === val;
   if(correct) score++;
   answers.push({i:idx, chosen:val, correct:correct});
+  // mark the chosen answer, and reveal the right one if they missed it
+  var chosenBtn = val ? tBtn : fBtn;
+  var rightBtn  = QUESTIONS[idx].a ? tBtn : fBtn;
+  chosenBtn.classList.add(correct ? 'correct' : 'incorrect');
+  if(!correct) rightBtn.classList.add('correct');
+  // reveal the plain-English explanation
+  var tag=document.getElementById('fbTag');
+  tag.textContent = correct ? '✓ Correct' : '✗ Not quite';
+  tag.className = 'fb-tag ' + (correct ? 'ok' : 'no');
+  document.getElementById('fbWhy').textContent = QUESTIONS[idx].why;
+  document.getElementById('choose').style.display = 'none';
+  document.getElementById('feedback').hidden = false;
+  document.getElementById('backBtn').hidden = true;   // no going back once revealed
+  document.getElementById('nextBtn').textContent = (idx === QUESTIONS.length-1) ? 'See my score →' : 'Next →';
   setBar( ((idx+1) / QUESTIONS.length) * 100 );
-  setTimeout(()=>{
-    document.getElementById('ansTrue').style.pointerEvents='';
-    document.getElementById('ansFalse').style.pointerEvents='';
-    idx++;
-    if(idx < QUESTIONS.length){ renderQ(); }
-    else{ runCalc(); }
-  }, 250);
+}
+
+function nextQ(){
+  idx++;
+  if(idx < QUESTIONS.length){ renderQ(); }
+  else{ runCalc(); }
 }
 
 function runCalc(){
@@ -409,10 +447,20 @@ function runCalc(){
   const t = setInterval(()=>{ m++; if(m<msgs.length) document.getElementById('calcText').textContent = msgs[m]; }, 750);
   setTimeout(()=>{
     clearInterval(t);
-    // Reached the form = finished all questions. Separates quiz drop-off from form drop-off.
     if (typeof fbq !== 'undefined') { fbq('trackCustom', 'QuizCompleted', { quiz: 'Kentucky Medicare Quiz' }); }
-    show('capture');
-  }, 2400);
+    showResults();
+  }, 1600);
+}
+
+function showResults(){
+  document.getElementById('scoreHead').textContent = 'You got ' + score + ' of ' + QUESTIONS.length + ' right';
+  var sub;
+  if(score >= 8)      sub = "Great work — you really know your Medicare basics.";
+  else if(score >= 5) sub = "Not bad! But a few of these trip up almost everyone.";
+  else                sub = "Medicare is genuinely confusing — these are exactly the things a quick chat can clear up.";
+  document.getElementById('scoreSub').textContent = sub;
+  setBar(100);
+  show('results');
 }
 
 document.getElementById('quizform').addEventListener('submit', function(e){
