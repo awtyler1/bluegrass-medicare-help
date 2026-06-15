@@ -26,8 +26,8 @@ Fonts: **Fraunces** (serif, headings) + **Source Sans 3** (sans, body).
 
 ## Learning Center (`/articles/`) — current IA (Design 2)
 - Hero (`.intro`) → illustrated **topic cards** (`.m2grid`/`.m2cat`, one per category) → list header (`#m2title` + "Show all topics") → scannable **list** (`.lclist` of `.lcrow`).
-- Each `.lcrow` carries `data-cat` (basics | turning65 | coverage | costs | onmedicare | ss | local) and `data-date="YYYY-MM-DD"`. JS auto-sorts newest-first; clicking a topic card filters via `window.__lcset(filter,label)` and scrolls to `#guides`.
-- **Adding an article:** create `/articles/<slug>/index.html` (copy an existing one — it includes recap + 5-question knowledge check + FAQ schema), add a `.lcrow` to `/articles/index.html` with the right `data-cat`/`data-date`, bump the matching topic card's `.m2n` count, and add the URL to `sitemap.xml`.
+- Each `.lcrow` carries `data-cat` (basics | turning65 | coverage | costs | onmedicare | ss | local) and `data-date="YYYY-MM-DD"`. `data-cat` may hold **multiple space-separated categories** (e.g. `data-cat="costs local"`) so one article can appear under more than one topic card; the filter matches by membership. JS auto-sorts newest-first; clicking a topic card filters via `window.__lcset(filter,label)` and scrolls to `#guides`.
+- **Adding an article:** create `/articles/<slug>/index.html` (copy an existing one — it includes recap + 5-question knowledge check + FAQ schema), add a `.lcrow` to `/articles/index.html` with the right `data-cat`/`data-date`, bump **each** matching topic card's `.m2n` count, and add the URL to `sitemap.xml`.
 
 ## Article requirements
 - YMYL accuracy: verify all dollar figures / rules against CMS / SSA before publishing.
