@@ -56,6 +56,14 @@ a{color:var(--coral);text-decoration:none;}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--coral);color:#fff;font-family:var(--sans);font-weight:700;font-size:20px;padding:17px 44px;border:none;border-radius:12px;cursor:pointer;letter-spacing:.3px;transition:background .15s,transform .07s,box-shadow .15s;box-shadow:0 10px 26px rgba(208,85,40,.30);-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
 .btn:hover{background:var(--coral-d);transform:translateY(-3px);box-shadow:0 16px 34px rgba(208,85,40,.38);}
 .btn:active{transform:translateY(-1px) scale(.99);}
+/* two-door hero CTAs (turning 65 vs already on Medicare) */
+.cta2{display:flex;gap:14px;width:100%;max-width:560px;}
+.choice{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--coral);color:#fff;font-family:var(--sans);border-radius:14px;padding:13px 20px 15px;text-align:center;box-shadow:0 10px 26px rgba(208,85,40,.30);transition:background .15s,transform .07s,box-shadow .15s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+.choice:hover{background:var(--coral-d);transform:translateY(-3px);box-shadow:0 16px 34px rgba(208,85,40,.38);}
+.choice:active{transform:translateY(-1px) scale(.99);}
+.choice .who{font-size:13px;font-weight:600;letter-spacing:.2px;opacity:.92;}
+.choice .act{font-size:18.5px;font-weight:800;letter-spacing:.2px;}
+@media(max-width:879px){ .cta2{flex-direction:column;align-items:center;margin-left:auto;margin-right:auto;} .choice{width:100%;max-width:360px;} }
 .callline{font-size:16px;color:var(--mute);font-weight:600;}
 .callline a{font-weight:700;white-space:nowrap;}
 .kicker{display:inline-block;color:var(--coral);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;}
@@ -215,7 +223,10 @@ a{color:var(--coral);text-decoration:none;}
         <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Always free to talk</li>
       </ul>
       <div class="cta-row">
-        <a class="btn" href="/review/">Get My Free Medicare Review &rarr;</a>
+        <div class="cta2">
+          <a class="choice" href="/guide/"><span class="who">New to Medicare / Turning 65?</span><span class="act">Get the free guide &rarr;</span></a>
+          <a class="choice" href="/review/"><span class="who">Already on Medicare?</span><span class="act">Get a free review &rarr;</span></a>
+        </div>
         <p class="callline">Or call now: <a href="tel:18596186443">(859) 618-6443</a></p>
       </div>
     </div>
