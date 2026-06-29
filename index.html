@@ -80,10 +80,13 @@ a{color:var(--coral);text-decoration:none;}
 @media(max-width:879px){ .callplate{margin-left:auto;margin-right:auto;justify-content:center;} }
 @media(min-width:880px){ .callplate .cpnum{font-size:38px;} }
 @media(max-width:580px){ .callplate{gap:12px;padding:13px 16px;} .callplate .cpnum{font-size:31px;} .callplate .cpico{width:44px;height:44px;} .callplate .cpico svg{width:23px;height:23px;} }
-/* big tap-to-call echo on the portrait card */
-.pcall{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:12px;background:var(--coral);color:#fff;font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:-.3px;padding:13px 14px;border-radius:12px;min-height:52px;box-shadow:0 10px 24px rgba(208,85,40,.28);transition:background .15s,transform .07s;-webkit-tap-highlight-color:transparent;}
-.pcall:hover{background:var(--coral-d);transform:translateY(-2px);}
-.pcall svg{width:20px;height:20px;flex-shrink:0;}
+/* phone plate under the name on the portrait card (same style as the hero call plate) */
+.pcallplate{margin-top:14px;gap:13px;padding:11px 14px;min-height:54px;}
+.pcallplate .cpico{width:42px;height:42px;}
+.pcallplate .cpico svg{width:22px;height:22px;}
+.pcallplate .cplabel{font-size:12.5px;}
+.pcallplate .cpnum{font-size:30px;}
+@media(min-width:880px){ .pcallplate .cpnum{font-size:30px;} }
 
 /* illustrated feature cards (shared Design-2 vocabulary) */
 .scard{display:block;background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 10px 28px rgba(80,60,30,.09);transition:transform .15s,box-shadow .15s;-webkit-tap-highlight-color:transparent;}
@@ -287,10 +290,6 @@ a{color:var(--coral);text-decoration:none;}
         <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Always free to talk</li>
       </ul>
       <div class="cta-row">
-        <a class="callplate" href="tel:18596186443" aria-label="Call Austin at (859) 618-6443">
-          <span class="cpico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-          <span class="cptx"><span class="cplabel">Call Austin now, it's free</span><span class="cpnum">(859) 618-6443</span></span>
-        </a>
         <div class="cta2">
           <a class="choice" href="/guide/"><span class="who">New to Medicare / Turning 65?</span><span class="act">Get the free guide &rarr;</span></a>
           <a class="choice" href="/review/"><span class="who">Already on Medicare?</span><span class="act">Get a free review &rarr;</span></a>
@@ -302,7 +301,10 @@ a{color:var(--coral);text-decoration:none;}
       <div class="pwho"><b>Austin Tyler</b><span>★★★★★ 5.0</span></div>
       <small>Tyler Insurance Group · Lexington, KY</small>
       <div class="phand">“I pick up my own phone.”</div>
-      <a class="pcall" href="tel:18596186443" aria-label="Call Austin at (859) 618-6443"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(859) 618-6443</a>
+      <a class="callplate pcallplate" href="tel:18596186443" aria-label="Call Austin at (859) 618-6443">
+        <span class="cpico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+        <span class="cptx"><span class="cplabel">Call Austin now</span><span class="cpnum">(859) 618-6443</span></span>
+      </a>
     </div></div>
   </div></div>
 </header>
