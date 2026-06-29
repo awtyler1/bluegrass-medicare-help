@@ -184,10 +184,12 @@ a{color:var(--coral);text-decoration:none;}
 .office .otx p{font-size:17px;color:var(--ink);line-height:1.6;margin-top:14px;max-width:560px;}
 .office .otx p:first-child{margin-top:0;}
 .office .ocard{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 12px 30px rgba(80,60,30,.10);}
-.office .ophoto{position:relative;background:var(--warm);}
-.office .ophoto svg{width:100%;height:100%;display:block;}
-.office .ophlabel{position:absolute;left:14px;bottom:14px;background:rgba(31,29,26,.82);color:var(--cream);font-size:12px;font-weight:600;padding:6px 11px;border-radius:8px;}
+.office .ophoto{position:relative;background:var(--warm);line-height:0;}
+.office .omap{width:100%;height:300px;display:block;border:0;}
 .office .obar{display:flex;align-items:center;gap:10px;padding:16px 18px;border-top:1px solid var(--line);}
+.office .oadr{display:flex;flex-direction:column;}
+.office .odir{margin-top:5px;color:var(--coral);font-weight:700;font-size:13.5px;line-height:1.2;}
+.office .odir:hover{color:var(--coral-d);text-decoration:underline;}
 .office .obar svg{width:20px;height:20px;color:var(--coral);flex-shrink:0;}
 .office .obar b{font-size:15px;color:var(--ink);}
 .office .obar small{display:block;color:var(--mute);font-size:13px;font-weight:600;}
@@ -196,6 +198,7 @@ a{color:var(--coral);text-decoration:none;}
 .office .ocall svg{width:19px;height:19px;}
 
 /* ===== learn-at-your-own-pace band ===== */
+.lcsec{padding:0 0 8px;}
 .lcband{max-width:1000px;margin:54px auto 0;border:1px solid var(--line);border-radius:18px;overflow:hidden;display:grid;grid-template-columns:1fr;background:var(--white);box-shadow:0 12px 30px rgba(80,60,30,.10);}
 @media(min-width:760px){ .lcband{grid-template-columns:.9fr 1.1fr;} }
 .lcband .bimg{min-height:180px;}
@@ -304,30 +307,19 @@ a{color:var(--coral);text-decoration:none;}
   </div></div>
 </header>
 
-<!-- ============ WHAT'S ON YOUR MIND ============ -->
-<section class="qs" id="questions">
+<!-- ============ REVIEWS ============ -->
+<section class="rev2" id="reviews" aria-label="Reviews from our Kentucky clients">
   <div class="wrap">
-    <h2>What's on <em>your</em> mind?</h2>
-    <p class="lead">These are the questions Kentuckians ask us most. Tap yours &mdash; the answer is free, and so is the follow-up.</p>
-    <div class="qgrid">
-      <a class="scard" href="/articles/medicare-costs-2026/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#fbf3df"/><circle cx="70" cy="34" r="48" fill="#f6e7c6"/><ellipse cx="222" cy="158" rx="92" ry="8" fill="#e8d9bb"/><rect x="96" y="148" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><rect x="96" y="137" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><rect x="96" y="126" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><rect x="104" y="115" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><path d="M168 70q-14-4-12 12" stroke="#e89aa4" stroke-width="5" fill="none" stroke-linecap="round"/><ellipse cx="222" cy="110" rx="62" ry="46" fill="#e89aa4"/><path d="M192 70l-7-19 19 7z" fill="#e89aa4"/><rect x="196" y="148" width="11" height="13" rx="3" fill="#d8848f"/><rect x="238" y="148" width="11" height="13" rx="3" fill="#d8848f"/><ellipse cx="281" cy="110" rx="13" ry="11" fill="#f3b9c1"/><circle cx="277" cy="109" r="1.8" fill="#c97884"/><circle cx="285" cy="109" r="1.8" fill="#c97884"/><circle cx="256" cy="94" r="4" fill="#5c3a3f"/><rect x="206" y="66" width="28" height="6" rx="3" fill="#c97884"/><circle cx="220" cy="32" r="15" fill="#e9b949" stroke="#d3a233" stroke-width="1.5"/><text x="220" y="38" font-family="'Source Sans 3',sans-serif" font-size="17" font-weight="700" fill="#a87a18" text-anchor="middle">$</text></svg></span>
-        <span class="sbody"><b>&ldquo;What will this actually cost me?&rdquo;</b>
-        <span class="sd">Real 2026 numbers for Parts A, B and D &mdash; and the surcharge higher earners need to watch.</span>
-        <span class="sgo">Get the answer &rarr;</span></span></a>
-      <a class="scard" href="/articles/turning-65-enrollment-window/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#fdeadd"/><circle cx="40" cy="30" r="5" fill="#d05528" opacity=".85"/><circle cx="75" cy="62" r="4" fill="#3a7d52" opacity=".85"/><circle cx="120" cy="24" r="4" fill="#e9b949" opacity=".85"/><circle cx="310" cy="40" r="5" fill="#7d9bb3" opacity=".85"/><circle cx="348" cy="70" r="4" fill="#d05528" opacity=".85"/><circle cx="370" cy="26" r="4" fill="#3a7d52" opacity=".85"/><circle cx="265" cy="18" r="4" fill="#e9b949" opacity=".85"/><circle cx="30" cy="95" r="4" fill="#7d9bb3" opacity=".85"/><ellipse cx="200" cy="153" rx="98" ry="9" fill="#e6d2b8"/><rect x="130" y="112" width="140" height="42" rx="9" fill="#f3d9b8"/><rect x="130" y="112" width="140" height="15" rx="7.5" fill="#fdf8f0"/><circle cx="145" cy="127" r="6" fill="#fdf8f0"/><circle cx="172" cy="127" r="6" fill="#fdf8f0"/><circle cx="200" cy="127" r="6" fill="#fdf8f0"/><circle cx="228" cy="127" r="6" fill="#fdf8f0"/><circle cx="255" cy="127" r="6" fill="#fdf8f0"/><rect x="152" y="80" width="96" height="34" rx="8" fill="#eec39a"/><rect x="152" y="80" width="96" height="12" rx="6" fill="#fdf8f0"/><circle cx="165" cy="92" r="5" fill="#fdf8f0"/><circle cx="188" cy="92" r="5" fill="#fdf8f0"/><circle cx="212" cy="92" r="5" fill="#fdf8f0"/><circle cx="235" cy="92" r="5" fill="#fdf8f0"/><text x="179" y="74" font-family="Fraunces,Georgia,serif" font-size="46" font-weight="700" fill="#d05528" text-anchor="middle">6</text><text x="221" y="74" font-family="Fraunces,Georgia,serif" font-size="46" font-weight="700" fill="#d05528" text-anchor="middle">5</text><ellipse cx="179" cy="26" rx="5" ry="9" fill="#f2b53c"/><ellipse cx="179" cy="28" rx="2.4" ry="4.5" fill="#fdf3d8"/><ellipse cx="221" cy="26" rx="5" ry="9" fill="#f2b53c"/><ellipse cx="221" cy="28" rx="2.4" ry="4.5" fill="#fdf3d8"/></svg></span>
-        <span class="sbody"><b>&ldquo;When do I have to sign up?&rdquo;</b>
-        <span class="sd">Your 7-month window, exactly when it opens and closes, and the lifetime penalty for missing it.</span>
-        <span class="sgo">Get the answer &rarr;</span></span></a>
-      <a class="scard" href="/articles/medicare-advantage-vs-medigap/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#e9f2e6"/><circle cx="345" cy="32" r="22" fill="#f7d77c"/><ellipse cx="80" cy="195" rx="200" ry="78" fill="#cfe3c7"/><ellipse cx="330" cy="205" rx="220" ry="86" fill="#bcd8b2"/><path d="M200 178 C 198 142 158 132 112 126" stroke="#f0e7d2" stroke-width="24" fill="none" stroke-linecap="round"/><path d="M200 178 C 202 142 242 132 288 126" stroke="#f0e7d2" stroke-width="24" fill="none" stroke-linecap="round"/><rect x="195" y="52" width="10" height="86" rx="4" fill="#8a6a48"/><path d="M208 56h74l13 12-13 12h-74z" fill="#3a7d52"/><rect x="220" y="64" width="44" height="6" rx="3" fill="#ffffff" opacity=".9"/><path d="M192 92h-74l-13 12 13 12h74z" fill="#d05528"/><rect x="136" y="100" width="44" height="6" rx="3" fill="#ffffff" opacity=".9"/></svg></span>
-        <span class="sbody"><b>&ldquo;Advantage or Medigap &mdash; what's the difference?&rdquo;</b>
-        <span class="sd">Two very different roads. The honest comparison, including the underwriting trap nobody mentions.</span>
-        <span class="sgo">Get the answer &rarr;</span></span></a>
-      <a class="scard" href="/review/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#fdeadd"/><circle cx="330" cy="36" r="44" fill="#ffffff" opacity=".5"/><ellipse cx="200" cy="156" rx="86" ry="8" fill="#e6d2b8"/><g transform="rotate(-6 200 100)"><rect x="166" y="38" width="68" height="118" rx="14" fill="#38302a"/><rect x="173" y="50" width="54" height="86" rx="6" fill="#fdf8f0"/><path d="M200 106c-12-9-20-17-20-26a10 10 0 0 1 20-3 10 10 0 0 1 20 3c0 9-8 17-20 26z" fill="#d05528"/><circle cx="200" cy="146" r="5" fill="#fdf8f0"/></g><path d="M252 52q14 4 18 18M258 36q22 6 28 28" fill="none" stroke="#d05528" stroke-width="4" stroke-linecap="round"/></svg></span>
-        <span class="sbody"><b>&ldquo;Honestly? I'd rather someone just handle it.&rdquo;</b>
-        <span class="sd">That's fine too. Leave your number and Austin will call you back himself and sort it out with you.</span>
-        <span class="sgo">Get my free review &rarr;</span></span></a>
+    <div class="rhead">
+      <h2>Don't take our word <em>for it</em></h2>
+      <p class="rframe">Over 1,000 Kentuckians have sat where you're sitting. Here is what a few of them said.</p>
+      <div class="rsub"><span class="stars">★★★★★</span> 5.0 on Google &middot; real reviews from real neighbors</div>
     </div>
-    <p class="qmore">Have a different question? <a href="/articles/">Browse every guide in the Learning Center &rarr;</a></p>
+    <div class="rgrid"><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Best Medicare agency in Lexington. Would highly recommend it to anyone seeking Medicare guidance.”</p><div class="who"><span class="av">N</span><span class="nm">Nikhil P.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Austin is very professional and knowledgeable about what is available to us and the best way to go about it. He responds promptly and keeps us updated as to the status of our insurance. Thank you Austin!”</p><div class="who"><span class="av">D</span><span class="nm">Denise L.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Austin was extremely knowledgeable and explained everything in great detail so I could easily understand. I know that my insurance needs are in good hands!”</p><div class="who"><span class="av">D</span><span class="nm">Doug S.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Austin is such a pleasant man to talk to. He cares about his clients and finds ways to get what we need.”</p><div class="who"><span class="av">R</span><span class="nm">Robert E.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Tyler has been my agent since I signed for Medicare. He is very patient and knowledgeable about your insurance needs.”</p><div class="who"><span class="av">S</span><span class="nm">Samuel D.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Tyler is great to work with. He’s organized and customer service oriented. He follows up in a timely manner. Best agent I have ever worked with.”</p><div class="who"><span class="av">S</span><span class="nm">Stephen C.<small>Google review</small></span></div></div></div>
+    <div class="rcta">
+      <a class="gbtn" href="https://share.google/t5kgf6RBxLldnNVcX" target="_blank" rel="noopener"><span class="gstars">★★★★★</span> Read all our Google reviews</a>
+      <a class="gsec" href="https://share.google/t5kgf6RBxLldnNVcX" target="_blank" rel="noopener">Leave us a review &rarr;</a>
+    </div>
   </div>
 </section>
 
@@ -369,22 +361,6 @@ a{color:var(--coral);text-decoration:none;}
   </div>
 </section>
 
-<!-- ============ REVIEWS ============ -->
-<section class="rev2" id="reviews" aria-label="Reviews from our Kentucky clients">
-  <div class="wrap">
-    <div class="rhead">
-      <h2>Don't take our word <em>for it</em></h2>
-      <p class="rframe">Over 1,000 Kentuckians have sat where you're sitting. Here is what a few of them said.</p>
-      <div class="rsub"><span class="stars">★★★★★</span> 5.0 on Google &middot; real reviews from real neighbors</div>
-    </div>
-    <div class="rgrid"><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Best Medicare agency in Lexington. Would highly recommend it to anyone seeking Medicare guidance.”</p><div class="who"><span class="av">N</span><span class="nm">Nikhil P.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Austin is very professional and knowledgeable about what is available to us and the best way to go about it. He responds promptly and keeps us updated as to the status of our insurance. Thank you Austin!”</p><div class="who"><span class="av">D</span><span class="nm">Denise L.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Austin was extremely knowledgeable and explained everything in great detail so I could easily understand. I know that my insurance needs are in good hands!”</p><div class="who"><span class="av">D</span><span class="nm">Doug S.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Austin is such a pleasant man to talk to. He cares about his clients and finds ways to get what we need.”</p><div class="who"><span class="av">R</span><span class="nm">Robert E.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Tyler has been my agent since I signed for Medicare. He is very patient and knowledgeable about your insurance needs.”</p><div class="who"><span class="av">S</span><span class="nm">Samuel D.<small>Google review</small></span></div></div><div class="rcard"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>“Tyler is great to work with. He’s organized and customer service oriented. He follows up in a timely manner. Best agent I have ever worked with.”</p><div class="who"><span class="av">S</span><span class="nm">Stephen C.<small>Google review</small></span></div></div></div>
-    <div class="rcta">
-      <a class="gbtn" href="https://share.google/t5kgf6RBxLldnNVcX" target="_blank" rel="noopener"><span class="gstars">★★★★★</span> Read all our Google reviews</a>
-      <a class="gsec" href="https://share.google/t5kgf6RBxLldnNVcX" target="_blank" rel="noopener">Leave us a review &rarr;</a>
-    </div>
-  </div>
-</section>
-
 <!-- ============ OFFICE LOCATION ============ -->
 <section class="officesec" id="office" aria-label="Office location">
   <div class="wrap">
@@ -398,37 +374,47 @@ a{color:var(--coral);text-decoration:none;}
       </div>
       <div class="ocard">
         <div class="ophoto">
-          <svg viewBox="0 0 400 230" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Stylized street map marking the office at 1029 Monarch Street, Lexington">
-            <rect width="400" height="230" fill="#eef0e8"/>
-            <rect x="0" y="0" width="150" height="120" fill="#dbe7cf"/>
-            <circle cx="46" cy="46" r="16" fill="#a9c592"/>
-            <circle cx="92" cy="74" r="13" fill="#a9c592"/>
-            <circle cx="118" cy="34" r="11" fill="#a9c592"/>
-            <rect x="0" y="120" width="400" height="34" fill="#f7f3ea"/>
-            <rect x="160" y="0" width="30" height="230" fill="#f7f3ea"/>
-            <line x1="0" y1="137" x2="160" y2="137" stroke="#e2d9c8" stroke-width="3" stroke-dasharray="14 12"/>
-            <line x1="190" y1="137" x2="400" y2="137" stroke="#e2d9c8" stroke-width="3" stroke-dasharray="14 12"/>
-            <line x1="175" y1="0" x2="175" y2="120" stroke="#e2d9c8" stroke-width="3" stroke-dasharray="14 12"/>
-            <line x1="175" y1="154" x2="175" y2="230" stroke="#e2d9c8" stroke-width="3" stroke-dasharray="14 12"/>
-            <rect x="206" y="14" width="86" height="42" rx="4" fill="#e7ddca"/>
-            <rect x="310" y="20" width="70" height="60" rx="4" fill="#e7ddca"/>
-            <rect x="206" y="168" width="78" height="50" rx="4" fill="#e7ddca"/>
-            <rect x="14" y="168" width="120" height="50" rx="4" fill="#e7ddca"/>
-            <text x="68" y="113" font-family="'Source Sans 3',sans-serif" font-size="11" font-weight="600" fill="#938c80">Monarch St</text>
-            <g transform="translate(248 96)">
-              <ellipse cx="0" cy="44" rx="20" ry="6" fill="#1f1d1a" opacity=".18"/>
-              <path d="M0 42C0 42 -22 16 -22 -2A22 22 0 0 1 22 -2C22 16 0 42 0 42Z" fill="#d05528"/>
-              <circle cx="0" cy="-2" r="9" fill="#faf6ef"/>
-            </g>
-          </svg>
-          <span class="ophlabel">Office photo placeholder · 1029 Monarch Street</span>
+          <iframe class="omap" title="Map to Tyler Insurance Group at 1029 Monarch Street, Suite 110, Lexington, KY 40513" src="https://www.google.com/maps?q=1029+Monarch+Street+Suite+110,+Lexington,+KY+40513&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="obar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <div><b>1029 Monarch Street, Lexington, KY</b><small>Right off Beaumont Circle</small></div>
+          <div class="oadr"><b>1029 Monarch Street, Suite 110, Lexington, KY</b><small>Right off Beaumont Circle</small><a class="odir" href="https://www.google.com/maps/dir/?api=1&amp;destination=1029+Monarch+Street+Suite+110,+Lexington,+KY+40513" target="_blank" rel="noopener">Get directions &rarr;</a></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S ON YOUR MIND ============ -->
+<section class="qs" id="questions">
+  <div class="wrap">
+    <h2>What's on <em>your</em> mind?</h2>
+    <p class="lead">These are the questions Kentuckians ask us most. Tap yours &mdash; the answer is free, and so is the follow-up.</p>
+    <div class="qgrid">
+      <a class="scard" href="/articles/medicare-costs-2026/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#fbf3df"/><circle cx="70" cy="34" r="48" fill="#f6e7c6"/><ellipse cx="222" cy="158" rx="92" ry="8" fill="#e8d9bb"/><rect x="96" y="148" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><rect x="96" y="137" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><rect x="96" y="126" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><rect x="104" y="115" width="40" height="9" rx="4.5" fill="#e9b949" stroke="#d3a233" stroke-width="1.2"/><path d="M168 70q-14-4-12 12" stroke="#e89aa4" stroke-width="5" fill="none" stroke-linecap="round"/><ellipse cx="222" cy="110" rx="62" ry="46" fill="#e89aa4"/><path d="M192 70l-7-19 19 7z" fill="#e89aa4"/><rect x="196" y="148" width="11" height="13" rx="3" fill="#d8848f"/><rect x="238" y="148" width="11" height="13" rx="3" fill="#d8848f"/><ellipse cx="281" cy="110" rx="13" ry="11" fill="#f3b9c1"/><circle cx="277" cy="109" r="1.8" fill="#c97884"/><circle cx="285" cy="109" r="1.8" fill="#c97884"/><circle cx="256" cy="94" r="4" fill="#5c3a3f"/><rect x="206" y="66" width="28" height="6" rx="3" fill="#c97884"/><circle cx="220" cy="32" r="15" fill="#e9b949" stroke="#d3a233" stroke-width="1.5"/><text x="220" y="38" font-family="'Source Sans 3',sans-serif" font-size="17" font-weight="700" fill="#a87a18" text-anchor="middle">$</text></svg></span>
+        <span class="sbody"><b>&ldquo;What will this actually cost me?&rdquo;</b>
+        <span class="sd">Real 2026 numbers for Parts A, B and D &mdash; and the surcharge higher earners need to watch.</span>
+        <span class="sgo">Get the answer &rarr;</span></span></a>
+      <a class="scard" href="/articles/turning-65-enrollment-window/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#fdeadd"/><circle cx="40" cy="30" r="5" fill="#d05528" opacity=".85"/><circle cx="75" cy="62" r="4" fill="#3a7d52" opacity=".85"/><circle cx="120" cy="24" r="4" fill="#e9b949" opacity=".85"/><circle cx="310" cy="40" r="5" fill="#7d9bb3" opacity=".85"/><circle cx="348" cy="70" r="4" fill="#d05528" opacity=".85"/><circle cx="370" cy="26" r="4" fill="#3a7d52" opacity=".85"/><circle cx="265" cy="18" r="4" fill="#e9b949" opacity=".85"/><circle cx="30" cy="95" r="4" fill="#7d9bb3" opacity=".85"/><ellipse cx="200" cy="153" rx="98" ry="9" fill="#e6d2b8"/><rect x="130" y="112" width="140" height="42" rx="9" fill="#f3d9b8"/><rect x="130" y="112" width="140" height="15" rx="7.5" fill="#fdf8f0"/><circle cx="145" cy="127" r="6" fill="#fdf8f0"/><circle cx="172" cy="127" r="6" fill="#fdf8f0"/><circle cx="200" cy="127" r="6" fill="#fdf8f0"/><circle cx="228" cy="127" r="6" fill="#fdf8f0"/><circle cx="255" cy="127" r="6" fill="#fdf8f0"/><rect x="152" y="80" width="96" height="34" rx="8" fill="#eec39a"/><rect x="152" y="80" width="96" height="12" rx="6" fill="#fdf8f0"/><circle cx="165" cy="92" r="5" fill="#fdf8f0"/><circle cx="188" cy="92" r="5" fill="#fdf8f0"/><circle cx="212" cy="92" r="5" fill="#fdf8f0"/><circle cx="235" cy="92" r="5" fill="#fdf8f0"/><text x="179" y="74" font-family="Fraunces,Georgia,serif" font-size="46" font-weight="700" fill="#d05528" text-anchor="middle">6</text><text x="221" y="74" font-family="Fraunces,Georgia,serif" font-size="46" font-weight="700" fill="#d05528" text-anchor="middle">5</text><ellipse cx="179" cy="26" rx="5" ry="9" fill="#f2b53c"/><ellipse cx="179" cy="28" rx="2.4" ry="4.5" fill="#fdf3d8"/><ellipse cx="221" cy="26" rx="5" ry="9" fill="#f2b53c"/><ellipse cx="221" cy="28" rx="2.4" ry="4.5" fill="#fdf3d8"/></svg></span>
+        <span class="sbody"><b>&ldquo;When do I have to sign up?&rdquo;</b>
+        <span class="sd">Your 7-month window, exactly when it opens and closes, and the lifetime penalty for missing it.</span>
+        <span class="sgo">Get the answer &rarr;</span></span></a>
+      <a class="scard" href="/articles/medicare-advantage-vs-medigap/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#e9f2e6"/><circle cx="345" cy="32" r="22" fill="#f7d77c"/><ellipse cx="80" cy="195" rx="200" ry="78" fill="#cfe3c7"/><ellipse cx="330" cy="205" rx="220" ry="86" fill="#bcd8b2"/><path d="M200 178 C 198 142 158 132 112 126" stroke="#f0e7d2" stroke-width="24" fill="none" stroke-linecap="round"/><path d="M200 178 C 202 142 242 132 288 126" stroke="#f0e7d2" stroke-width="24" fill="none" stroke-linecap="round"/><rect x="195" y="52" width="10" height="86" rx="4" fill="#8a6a48"/><path d="M208 56h74l13 12-13 12h-74z" fill="#3a7d52"/><rect x="220" y="64" width="44" height="6" rx="3" fill="#ffffff" opacity=".9"/><path d="M192 92h-74l-13 12 13 12h74z" fill="#d05528"/><rect x="136" y="100" width="44" height="6" rx="3" fill="#ffffff" opacity=".9"/></svg></span>
+        <span class="sbody"><b>&ldquo;Advantage or Medigap &mdash; what's the difference?&rdquo;</b>
+        <span class="sd">Two very different roads. The honest comparison, including the underwriting trap nobody mentions.</span>
+        <span class="sgo">Get the answer &rarr;</span></span></a>
+      <a class="scard" href="/review/"><span class="simg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect width="400" height="175" fill="#fdeadd"/><circle cx="330" cy="36" r="44" fill="#ffffff" opacity=".5"/><ellipse cx="200" cy="156" rx="86" ry="8" fill="#e6d2b8"/><g transform="rotate(-6 200 100)"><rect x="166" y="38" width="68" height="118" rx="14" fill="#38302a"/><rect x="173" y="50" width="54" height="86" rx="6" fill="#fdf8f0"/><path d="M200 106c-12-9-20-17-20-26a10 10 0 0 1 20-3 10 10 0 0 1 20 3c0 9-8 17-20 26z" fill="#d05528"/><circle cx="200" cy="146" r="5" fill="#fdf8f0"/></g><path d="M252 52q14 4 18 18M258 36q22 6 28 28" fill="none" stroke="#d05528" stroke-width="4" stroke-linecap="round"/></svg></span>
+        <span class="sbody"><b>&ldquo;Honestly? I'd rather someone just handle it.&rdquo;</b>
+        <span class="sd">That's fine too. Leave your number and Austin will call you back himself and sort it out with you.</span>
+        <span class="sgo">Get my free review &rarr;</span></span></a>
+    </div>
+    <p class="qmore">Have a different question? <a href="/articles/">Browse every guide in the Learning Center &rarr;</a></p>
+  </div>
+</section>
+
+<!-- ============ LEARNING CENTER ============ -->
+<section class="lcsec" aria-label="Learning Center">
+  <div class="wrap">
     <div class="lcband">
       <div class="bimg"><svg viewBox="0 0 400 175" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><defs><linearGradient id="kysky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fdeed2"/><stop offset="1" stop-color="#f9cf8a"/></linearGradient></defs><rect width="400" height="130" fill="url(#kysky)"/><circle cx="200" cy="98" r="32" fill="#f6a93d" opacity=".92"/><ellipse cx="70" cy="142" rx="170" ry="48" fill="#7da06b"/><ellipse cx="330" cy="148" rx="200" ry="54" fill="#5f8b55"/><rect y="124" width="400" height="51" fill="#4f7a4a"/><g fill="#38302a"><ellipse cx="225" cy="112" rx="48" ry="22"/><path d="M190 105L172 68l17-6 19 38z"/><path d="M170 60l-24 11 4 9 22-5z"/><path d="M184 60l-3-12 10 7z"/><rect x="189" y="124" width="7" height="33" rx="3"/><rect x="206" y="127" width="7" height="30" rx="3"/><rect x="243" y="127" width="7" height="30" rx="3"/><rect x="259" y="124" width="7" height="33" rx="3"/><path d="M271 100q17 9 13 40l-8-2q4-23-9-31z"/></g><g fill="#faf6ef" stroke="#d8cfc0" stroke-width="1.2"><rect x="38" y="116" width="9" height="46" rx="2"/><rect x="148" y="116" width="9" height="46" rx="2"/><rect x="258" y="116" width="9" height="46" rx="2"/><rect x="364" y="116" width="9" height="46" rx="2"/><rect x="0" y="124" width="400" height="7"/><rect x="0" y="142" width="400" height="7"/></g></svg></div>
       <div class="btxt">
