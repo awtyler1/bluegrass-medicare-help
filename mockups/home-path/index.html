@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" href="/assets/logo-mark.png">
+<link rel="apple-touch-icon" href="/assets/logo-mark.png">
+<meta name="theme-color" content="#1f1d1a">
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '27176602235306137');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=27176602235306137&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NF57CZ802N"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NF57CZ802N');
+</script>
+<title>Bluegrass Medicare Help | Medicare, Handled by One Real Person in Lexington</title>
+<meta name="description" content="Turning 65 or already on Medicare? Austin Tyler helps Kentuckians sort out Medicare at their own kitchen table. Plain English, no cost, no pressure. Start here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+:root{
+  --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
+  --coral:#d05528; --coral-d:#b3431d; --mute:#5f594f; --faint:#938c80;
+  --line:#e2d9c8; --white:#fff; --green:#3a7d52;
+  --serif:'Fraunces',Georgia,serif; --sans:'Source Sans 3',-apple-system,sans-serif; --hand:'Caveat',cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:var(--coral);text-decoration:none;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+/* ===== the guided PATH ===== */
+/* Each station sits in a grid: [marker rail] [content]. A soft connector
+   line runs down the marker rail and threads the whole page together. */
+.path{position:relative;}
+.station{position:relative;display:grid;grid-template-columns:64px 1fr;gap:0;}
+@media(min-width:880px){ .station{grid-template-columns:96px 1fr;} }
+.rail{position:relative;}
+/* the connector line itself, drawn behind the dots */
+.rail::before{content:"";position:absolute;top:0;bottom:0;left:31px;width:3px;
+  background:linear-gradient(180deg,var(--line),var(--line));border-radius:2px;}
+@media(min-width:880px){ .rail::before{left:47px;} }
+/* trim the line at the very first and very last station ends */
+.station:first-child .rail::before{top:30px;}
+.station:last-child .rail::before{bottom:auto;height:30px;}
+.marker{position:relative;z-index:2;width:50px;height:50px;border-radius:50%;
+  background:var(--white);border:3px solid var(--coral);color:var(--coral-d);
+  font-family:var(--serif);font-weight:600;font-size:22px;
+  display:flex;align-items:center;justify-content:center;margin:0 7px;
+  box-shadow:0 6px 16px rgba(208,85,40,.18);}
+@media(min-width:880px){ .marker{width:58px;height:58px;font-size:25px;margin:0 19px;} }
+.station.green .marker{border-color:var(--green);color:var(--green);box-shadow:0 6px 16px rgba(58,125,82,.18);}
+.station.dest .marker{background:var(--coral);border-color:var(--coral);color:#fff;}
+.scontent{min-width:0;padding:26px 0 30px;}
+.stag{display:inline-block;color:var(--coral);font-weight:700;font-size:12.5px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.station.green .stag{color:var(--green);}
+
+/* ===== shared bits ===== */
+.kicker{display:inline-block;color:var(--coral);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;}
+.callline{font-size:16px;color:var(--mute);font-weight:600;}
+.callline a{font-weight:700;white-space:nowrap;}
+.callbtn{display:inline-flex;align-items:center;justify-content:center;gap:11px;background:var(--coral);color:#fff;font-family:var(--sans);font-weight:700;font-size:21px;padding:18px 40px;border-radius:14px;letter-spacing:.3px;transition:background .15s,transform .07s,box-shadow .15s;box-shadow:0 12px 28px rgba(208,85,40,.30);-webkit-tap-highlight-color:transparent;touch-action:manipulation;min-height:44px;}
+.callbtn:hover{background:var(--coral-d);transform:translateY(-3px);box-shadow:0 18px 36px rgba(208,85,40,.38);}
+.callbtn:active{transform:translateY(-1px) scale(.99);}
+.callbtn .cta-ico{width:24px;height:24px;}
+
+/* ===== station 1: hero ===== */
+.h2grid{display:grid;grid-template-columns:1fr;gap:30px;align-items:center;}
+@media(min-width:880px){ .h2grid{grid-template-columns:1.12fr .88fr;gap:44px;} }
+.hero h1{font-family:var(--serif);font-weight:500;font-size:36px;line-height:1.08;letter-spacing:-.6px;margin-top:12px;}
+@media(min-width:880px){ .hero h1{font-size:48px;} }
+.hero h1 em{font-style:italic;color:var(--coral);}
+.hero .sub{font-size:18px;color:var(--mute);margin-top:16px;max-width:520px;line-height:1.55;}
+.checks2{list-style:none;margin-top:22px;display:flex;flex-direction:column;gap:10px;}
+.checks2 li{display:flex;align-items:center;gap:11px;font-size:16.5px;font-weight:600;color:var(--ink);}
+.checks2 .ck{flex-shrink:0;width:25px;height:25px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;}
+.herocall{margin-top:24px;}
+.portrait{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:16px 16px 20px;box-shadow:0 18px 44px rgba(80,60,30,.16);max-width:360px;margin:0 auto;transform:rotate(2deg);}
+.portrait img{width:100%;height:330px;object-fit:cover;object-position:center top;border-radius:10px;}
+.portrait .pwho{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-top:14px;}
+.portrait .pwho b{font-family:var(--serif);font-size:20px;}
+.portrait .pwho span{color:#e8a13a;font-weight:700;font-size:14px;letter-spacing:1px;white-space:nowrap;}
+.portrait small{display:block;color:var(--mute);font-size:13.5px;margin-top:2px;}
+.portrait .phand{font-family:var(--hand);font-size:24px;color:var(--ink);margin-top:10px;}
+
+/* ===== the two doors (recurring chooser) ===== */
+.sh{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.14;letter-spacing:-.3px;}
+@media(min-width:880px){ .sh{font-size:34px;} }
+.sh em{font-style:italic;color:var(--coral);}
+.slead{color:var(--mute);font-size:17.5px;max-width:580px;margin-top:10px;}
+.doors{display:grid;grid-template-columns:1fr;gap:18px;margin-top:24px;}
+@media(min-width:680px){ .doors{grid-template-columns:1fr 1fr;} }
+.door{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--line);border-radius:18px;padding:26px 24px 24px;box-shadow:0 10px 28px rgba(80,60,30,.09);transition:transform .15s,box-shadow .15s,border-color .15s;-webkit-tap-highlight-color:transparent;}
+.door:hover{transform:translateY(-4px);box-shadow:0 20px 44px rgba(80,60,30,.16);border-color:var(--coral);}
+.door .dico{width:62px;height:62px;border-radius:14px;background:var(--cream2);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.door .dico svg{width:38px;height:38px;}
+.door .dwho{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);line-height:1.2;}
+.door .dwhat{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--coral);color:#fff;font-weight:700;font-size:17px;padding:13px 22px;border-radius:11px;align-self:flex-start;min-height:44px;}
+.door:hover .dwhat{background:var(--coral-d);}
+.door .dnote{color:var(--mute);font-size:15px;line-height:1.5;margin-top:14px;}
+.door .dnote b{color:var(--green);font-weight:700;}
+
+/* ===== station: why free ===== */
+.whyfree p{font-size:17px;color:var(--ink);line-height:1.62;max-width:640px;margin-top:14px;}
+.whyfree p:first-of-type{margin-top:18px;}
+.whyfree .punch{font-family:var(--serif);font-weight:500;font-size:20px;color:var(--coral-d);}
+
+/* ===== station: how it works ===== */
+.steps{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px;}
+@media(min-width:760px){ .steps{grid-template-columns:1fr 1fr 1fr;} }
+.step{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:24px 22px;box-shadow:0 8px 22px rgba(80,60,30,.07);}
+.step .sn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:var(--cream2);border:2px solid var(--coral);color:var(--coral-d);font-family:var(--serif);font-weight:600;font-size:19px;margin-bottom:14px;}
+.step b{font-family:var(--serif);font-weight:600;font-size:21px;color:var(--ink);display:block;}
+.step p{color:var(--mute);font-size:15.5px;line-height:1.55;margin-top:8px;}
+
+/* ===== station: proof ===== */
+.proofwall{display:grid;grid-template-columns:1fr;gap:16px;margin-top:22px;}
+@media(min-width:760px){ .proofwall{grid-template-columns:1fr 1fr;} }
+.pcard{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px 22px;box-shadow:0 8px 22px rgba(80,60,30,.07);display:flex;flex-direction:column;}
+.pcard .stars{color:#e8a13a;font-size:17px;letter-spacing:1.5px;margin-bottom:11px;}
+.pcard p{color:var(--ink);font-size:16px;line-height:1.6;flex:1;margin:0 0 15px;}
+.pcard .who{display:flex;align-items:center;gap:11px;}
+.pcard .av{width:40px;height:40px;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;font-family:var(--serif);font-size:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pcard .nm{font-weight:700;color:var(--ink);font-size:15px;line-height:1.2;}
+.pcard .nm small{display:block;color:var(--faint);font-weight:600;font-size:12px;margin-top:2px;}
+
+/* ===== station: office destination ===== */
+.office{display:grid;grid-template-columns:1fr;gap:24px;align-items:center;margin-top:22px;}
+@media(min-width:820px){ .office{grid-template-columns:1.05fr .95fr;} }
+.office p{font-size:17px;color:var(--ink);line-height:1.62;margin-top:13px;max-width:520px;}
+.office p:first-of-type{margin-top:18px;}
+.officecard{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(80,60,30,.13);}
+.officecard .map{display:block;width:100%;height:auto;}
+.officecard .cap{padding:16px 20px 18px;display:flex;align-items:center;gap:11px;border-top:1px solid var(--line);}
+.officecard .cap svg{width:26px;height:26px;flex-shrink:0;}
+.officecard .cap b{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--ink);display:block;}
+.officecard .cap small{display:block;color:var(--mute);font-size:13.5px;}
+
+/* ===== station: final reroute ===== */
+.station.dest .scontent{padding-bottom:8px;}
+.finalcard{background:linear-gradient(180deg,var(--cream2),var(--warm));border:1px solid var(--line);border-radius:20px;padding:32px 28px 34px;margin-top:18px;box-shadow:0 14px 34px rgba(80,60,30,.12);}
+.finalcard p{font-size:17.5px;color:var(--ink);line-height:1.6;max-width:600px;margin-top:12px;}
+.finalcta{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin-top:24px;}
+.finaldoors{display:flex;flex-wrap:wrap;gap:12px;}
+.fdoor{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid var(--coral);color:var(--coral-d);font-weight:700;font-size:16px;padding:13px 22px;border-radius:11px;min-height:44px;transition:background .15s,color .15s;-webkit-tap-highlight-color:transparent;}
+.fdoor:hover{background:var(--coral);color:#fff;}
+
+/* ===== footer ===== */
+.foot{background:var(--dark);color:#9a948c;padding:30px 0 36px;font-size:13px;line-height:1.7;}
+.foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
+.foot a{color:#bdb6ac;}
+.foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#7c766d;font-size:12px;}
+
+@media(max-width:580px){
+  .wrap{padding:0 18px;}
+  .station{grid-template-columns:50px 1fr;}
+  .rail::before{left:24px;}
+  .marker{width:42px;height:42px;font-size:19px;margin:0 4px;}
+  .hero h1{font-size:30px;}
+  .hero .sub{font-size:16px;}
+  .sh{font-size:25px;}
+  .portrait img{height:300px;}
+  .callbtn{font-size:19px;padding:16px 30px;width:100%;}
+  .door .dwhat{width:100%;justify-content:center;}
+}
+</style>
+
+<!-- SEO / canonical / social -->
+<link rel="canonical" href="https://bluegrassmedicarehelp.com/mockups/home-path/">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bluegrass Medicare Help">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Bluegrass Medicare Help | Medicare, Handled by One Real Person in Lexington">
+<meta property="og:description" content="Turning 65 or already on Medicare? Austin Tyler helps Kentuckians sort out Medicare at their own kitchen table. Plain English, no cost, no pressure.">
+<meta property="og:url" content="https://bluegrassmedicarehelp.com/mockups/home-path/">
+<meta property="og:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bluegrass Medicare Help | Medicare, Handled by One Real Person in Lexington">
+<meta name="twitter:description" content="Turning 65 or already on Medicare? Austin Tyler helps Kentuckians sort out Medicare at their own kitchen table. Plain English, no cost, no pressure.">
+<meta name="twitter:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["InsuranceAgency","LocalBusiness"],"@id":"https://bluegrassmedicarehelp.com/#business","name":"Tyler Insurance Group","alternateName":"Bluegrass Medicare Help","image":"https://bluegrassmedicarehelp.com/assets/logo-mark.png","logo":"https://bluegrassmedicarehelp.com/assets/logo-mark.png","url":"https://bluegrassmedicarehelp.com/","telephone":"+1-859-618-6443","priceRange":"Free","description":"Free, local Medicare help for Kentuckians turning 65 or already on Medicare. No call center, no pressure.","address":{"@type":"PostalAddress","streetAddress":"1029 Monarch Street, Suite 110","addressLocality":"Lexington","addressRegion":"KY","postalCode":"40513","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":38.0289,"longitude":-84.523},"areaServed":[{"@type":"State","name":"Kentucky"}],"founder":{"@type":"Person","name":"Austin Tyler"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"17:00"}],"sameAs":["https://www.tylerinsurancegroup.com","https://www.yelp.com/biz/tyler-insurance-group-lexington","https://share.google/t5kgf6RBxLldnNVcX"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"6","bestRating":"5","worstRating":"1"},"review":[{"@type":"Review","author":{"@type":"Person","name":"Nikhil P."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Best Medicare agency in Lexington. Would highly recommend it to anyone seeking Medicare guidance."},{"@type":"Review","author":{"@type":"Person","name":"Denise L."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Austin is very professional and knowledgeable about what is available to us and the best way to go about it. He responds promptly and keeps us updated as to the status of our insurance. Thank you Austin!"},{"@type":"Review","author":{"@type":"Person","name":"Doug S."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Austin was extremely knowledgeable and explained everything in great detail so I could easily understand. I know that my insurance needs are in good hands!"},{"@type":"Review","author":{"@type":"Person","name":"Robert E."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Austin is such a pleasant man to talk to. He cares about his clients and finds ways to get what we need."},{"@type":"Review","author":{"@type":"Person","name":"Samuel D."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Tyler has been my agent since I signed for Medicare. He is very patient and knowledgeable about your insurance needs."},{"@type":"Review","author":{"@type":"Person","name":"Stephen C."},"reviewRating":{"@type":"Rating","ratingValue":"5","bestRating":"5","worstRating":"1"},"reviewBody":"Tyler is great to work with. He's organized and customer service oriented. He follows up in a timely manner. Best agent I have ever worked with."}]},{"@type":"WebSite","@id":"https://bluegrassmedicarehelp.com/#website","url":"https://bluegrassmedicarehelp.com/","name":"Bluegrass Medicare Help","publisher":{"@id":"https://bluegrassmedicarehelp.com/#business"},"inLanguage":"en-US"}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ustrip">
+  <div class="wrap">
+    <span>📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</span>
+    <span class="rate"><span class="stars">★★★★★</span> 5.0 on Google</span>
+  </div>
+</div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Bluegrass Medicare Help home">
+      <img class="brand-logo" src="/assets/logo.png" alt="Bluegrass Medicare Help" height="46"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <span class="brand-fallback"><span class="mark">B</span><span class="wm">Bluegrass<small>Medicare Help</small></span></span>
+    </a>
+    <div class="navlinks" id="navlinks">
+      <a href="/articles/">Learning Center</a>
+      <a href="/quizzes/">Quizzes</a>
+      <a href="/guide/">Free Guide</a>
+      <a href="/review/">Free Review</a>
+    </div>
+    <a class="navcta" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+    <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="main">
+<div class="wrap"><div class="path">
+
+  <!-- ===== STATION 1: START HERE (hero) ===== -->
+  <section class="station">
+    <div class="rail"><div class="marker">1</div></div>
+    <div class="scontent hero">
+      <span class="stag">Start here</span>
+      <div class="h2grid">
+        <div class="htext">
+          <span class="kicker">A real person, right here in Lexington</span>
+          <h1>Medicare, handled by <em>one real person</em> in Lexington.</h1>
+          <p class="sub">I'm Austin Tyler. I help Kentuckians sort out Medicare right at their own kitchen table. Plain English, no cost, no pressure.</p>
+          <ul class="checks2">
+            <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span> You talk to Austin. Every time.</li>
+            <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span> Plain English. No jargon, no sales pitch.</li>
+            <li><span class="ck"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span> Always free to talk.</li>
+          </ul>
+          <p class="callline herocall">Or call now: <a href="tel:18596186443">(859) 618-6443</a></p>
+        </div>
+        <div><div class="portrait">
+          <img src="/assets/austin-tyler.jpg" alt="Austin Tyler, local Medicare advisor in Lexington, Kentucky">
+          <div class="pwho"><b>Austin Tyler</b><span>★★★★★ 5.0</span></div>
+          <small>Tyler Insurance Group, Lexington KY</small>
+          <div class="phand">“I pick up my own phone.”</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATION 2: PICK YOUR DOOR ===== -->
+  <section class="station">
+    <div class="rail"><div class="marker">2</div></div>
+    <div class="scontent">
+      <span class="stag">Pick your door</span>
+      <h2 class="sh">Which one <em>are you?</em></h2>
+      <p class="slead">Two simple paths. Tap the one that sounds like you, and I will take it from there.</p>
+      <div class="doors">
+        <a class="door" href="/guide/">
+          <span class="dico"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="8" y="6" width="32" height="36" rx="4" fill="#faf6ef" stroke="#d05528" stroke-width="2.4"/><line x1="14" y1="15" x2="34" y2="15" stroke="#3a7d52" stroke-width="2.4" stroke-linecap="round"/><line x1="14" y1="22" x2="34" y2="22" stroke="#e2d9c8" stroke-width="2.4" stroke-linecap="round"/><line x1="14" y1="29" x2="28" y2="29" stroke="#e2d9c8" stroke-width="2.4" stroke-linecap="round"/><circle cx="34" cy="34" r="9" fill="#d05528"/><path d="M30.5 34l2.4 2.4 4.6-4.8" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+          <span class="dwho">New to Medicare or turning 65?</span>
+          <span class="dwhat">Get the free guide &rarr;</span>
+        </a>
+        <a class="door" href="/review/">
+          <span class="dico"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="#faf6ef" stroke="#3a7d52" stroke-width="2.4"/><path d="M16 24.5l5 5 11-12" stroke="#3a7d52" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M24 5a19 19 0 0 1 13.5 5.6" stroke="#d05528" stroke-width="2.4" stroke-linecap="round" fill="none"/><path d="M37.5 6.5l.6 4.6-4.6-.6" stroke="#d05528" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span>
+          <span class="dwho">Already on Medicare?</span>
+          <span class="dwhat">Get a free review &rarr;</span>
+          <span class="dnote"><b>Already enrolled?</b> It's never too late to get a local advisor in your corner.</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATION 3: WHY IT'S FREE ===== -->
+  <section class="station green">
+    <div class="rail"><div class="marker">3</div></div>
+    <div class="scontent whyfree">
+      <span class="stag">Why it's free</span>
+      <h2 class="sh">The free part is real. <em>Here's why.</em></h2>
+      <p class="punch">“It costs you nothing to work with me. Nothing now, nothing later.”</p>
+      <p>The carriers pay licensed advisors. That is how this works for everyone in my position, whether you ever find one or not.</p>
+      <p>So you are not paying for my time, and you are not getting a lesser version by keeping it local. You get a real person instead of a call center, at no cost to you.</p>
+      <p>That is the whole catch. There isn't one.</p>
+    </div>
+  </section>
+
+  <!-- ===== STATION 4: HOW IT WORKS ===== -->
+  <section class="station">
+    <div class="rail"><div class="marker">4</div></div>
+    <div class="scontent">
+      <span class="stag">How it works</span>
+      <h2 class="sh">Three steps, and most of them <em>are mine.</em></h2>
+      <div class="steps">
+        <div class="step">
+          <span class="sn">1</span>
+          <b>We talk.</b>
+          <p>You call me, or I call you. No forms to get through, no quiz to pass.</p>
+        </div>
+        <div class="step">
+          <span class="sn">2</span>
+          <b>I do the comparing.</b>
+          <p>You don't read a single brochure. That part is my job, not yours.</p>
+        </div>
+        <div class="step">
+          <span class="sn">3</span>
+          <b>You decide.</b>
+          <p>I lay your options out in plain English. You pick the one that fits. Or you don't. No pressure either way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATION 5: PROOF ===== -->
+  <section class="station">
+    <div class="rail"><div class="marker">5</div></div>
+    <div class="scontent">
+      <span class="stag">What others say</span>
+      <h2 class="sh">Over 1,000 Kentuckians have <em>sat where you're sitting.</em></h2>
+      <p class="slead">Same questions, same pile of mail, same not knowing where to start. Here's what a few of them said after.</p>
+      <div class="proofwall">
+        <div class="pcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“Austin made it simple and answered every question I had. I never felt rushed.”</p>
+          <div class="who"><span class="av">C</span><span class="nm">Carol M.<small>Client</small></span></div>
+        </div>
+        <div class="pcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“He explained everything in plain English and let me take my time. No pressure at all.”</p>
+          <div class="who"><span class="av">J</span><span class="nm">James T.<small>Client</small></span></div>
+        </div>
+        <div class="pcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“I walked in with a shoebox full of mail and walked out understanding all of it.”</p>
+          <div class="who"><span class="av">B</span><span class="nm">Brenda K.<small>Client</small></span></div>
+        </div>
+        <div class="pcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“Austin picks up his own phone every time I call. You just don't get that anymore.”</p>
+          <div class="who"><span class="av">R</span><span class="nm">Ronald P.<small>Client</small></span></div>
+        </div>
+        <div class="pcard">
+          <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <p>“He treated my parents like family and made a confusing thing feel easy.”</p>
+          <div class="who"><span class="av">L</span><span class="nm">Lisa W.<small>Client</small></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATION 6: VISIT THE OFFICE (destination) ===== -->
+  <section class="station">
+    <div class="rail"><div class="marker">6</div></div>
+    <div class="scontent">
+      <span class="stag">Visit the office</span>
+      <h2 class="sh">You can drive to <em>my office.</em></h2>
+      <div class="office">
+        <div class="otxt">
+          <p>I'm not a call center in another state. I'm at 1029 Monarch Street, right off Beaumont Circle.</p>
+          <p>Licensed, local, and the same person you'll talk to next year when something changes.</p>
+          <p>If you'd rather sit across a table than talk on the phone, that's a real option. The door is right here.</p>
+        </div>
+        <div class="officecard">
+          <svg class="map" viewBox="0 0 480 300" role="img" aria-label="Stylized street map showing the office at 1029 Monarch Street, off Beaumont Circle in Lexington">
+            <rect width="480" height="300" fill="#eef2e8"/>
+            <!-- soft park blocks -->
+            <rect x="0" y="0" width="200" height="120" fill="#e3ecdb"/>
+            <rect x="300" y="180" width="180" height="120" fill="#e3ecdb"/>
+            <!-- streets -->
+            <rect x="0" y="128" width="480" height="30" fill="#faf6ef"/>
+            <rect x="190" y="0" width="28" height="300" fill="#faf6ef"/>
+            <!-- a gentle circle road (Beaumont Circle) -->
+            <circle cx="330" cy="110" r="58" fill="none" stroke="#faf6ef" stroke-width="22"/>
+            <circle cx="330" cy="110" r="58" fill="none" stroke="#e2d9c8" stroke-width="1.5"/>
+            <!-- street center dashes -->
+            <line x1="0" y1="143" x2="480" y2="143" stroke="#e2d9c8" stroke-width="2" stroke-dasharray="12 10"/>
+            <line x1="204" y1="0" x2="204" y2="300" stroke="#e2d9c8" stroke-width="2" stroke-dasharray="12 10"/>
+            <!-- building blocks -->
+            <rect x="40" y="180" width="60" height="46" rx="4" fill="#efe6d6" stroke="#e2d9c8" stroke-width="1.5"/>
+            <rect x="116" y="190" width="46" height="40" rx="4" fill="#efe6d6" stroke="#e2d9c8" stroke-width="1.5"/>
+            <rect x="240" y="190" width="50" height="44" rx="4" fill="#efe6d6" stroke="#e2d9c8" stroke-width="1.5"/>
+            <!-- the office block, highlighted -->
+            <rect x="252" y="70" width="56" height="46" rx="5" fill="#faf6ef" stroke="#3a7d52" stroke-width="2.4"/>
+            <text x="280" y="98" font-family="'Source Sans 3',sans-serif" font-size="14" font-weight="700" fill="#3a7d52" text-anchor="middle">TIG</text>
+            <!-- map pin marker over the office -->
+            <g transform="translate(280 50)">
+              <path d="M0 36c-14-15-22-25-22-37A22 22 0 0 1 0-23a22 22 0 0 1 22 22c0 12-8 22-22 37z" fill="#d05528"/>
+              <circle cx="0" cy="-1" r="9" fill="#faf6ef"/>
+            </g>
+          </svg>
+          <div class="cap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#d05528" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span><b>1029 Monarch Street</b><small>Lexington, KY 40513 · just off Beaumont Circle</small></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATION 7: MAKE THE CALL (end of path) ===== -->
+  <section class="station dest">
+    <div class="rail"><div class="marker">7</div></div>
+    <div class="scontent">
+      <span class="stag">Make the call</span>
+      <h2 class="sh">Not sure where to start? <em>Start with a phone call.</em></h2>
+      <div class="finalcard">
+        <p>If you're turning 65, grab the free guide. If you're already on Medicare, get a free review. And if you're not sure which one you are, just call me. I'll point you the right way in two minutes.</p>
+        <div class="finalcta">
+          <a class="callbtn" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (859) 618-6443</a>
+          <div class="finaldoors">
+            <a class="fdoor" href="/guide/">Turning 65? Get the free guide &rarr;</a>
+            <a class="fdoor" href="/review/">On Medicare? Get a free review &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div></div>
+</main>
+
+<nav class="fnav" aria-label="Footer">
+  <div class="wrap">
+    <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" onerror="this.closest('.fnav-logo').style.display='none'"></a>
+    <div class="fnav-links">
+      <a href="/articles/">Learning Center</a>
+      <a href="/quizzes/">Quizzes</a>
+      <a href="/guide/">Free Guide</a>
+      <a href="/review/">Free Review</a>
+    </div>
+    <a class="fcall" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (859) 618-6443</a>
+  </div>
+</nav>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="fnm">Tyler Insurance Group</div>
+    1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
+    <a href="tel:8596186443">(859) 618-6443</a> · <a href="https://www.tylerinsurancegroup.com">tylerinsurancegroup.com</a>
+    <div class="disc">
+      We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer in your area. Please contact Medicare.gov or 1-800-MEDICARE to get information on all of your options.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var tog=document.getElementById('navtog'), links=document.getElementById('navlinks');
+  if(!tog||!links) return;
+  tog.addEventListener('click',function(){ var open=links.classList.toggle('open'); tog.setAttribute('aria-expanded', open?'true':'false'); });
+  links.addEventListener('click',function(e){ if(e.target.tagName==='A'){ links.classList.remove('open'); tog.setAttribute('aria-expanded','false'); } });
+})();
+</script>
+</body>
+</html>
