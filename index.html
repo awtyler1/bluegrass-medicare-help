@@ -43,7 +43,7 @@ gtag('config', 'G-NF57CZ802N');
 :root{
   --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
   --coral:#d05528; --coral-d:#b3431d; --mute:#5f594f; --faint:#938c80;
-  --line:#e2d9c8; --white:#fff; --green:#3a7d52;
+  --line:#e2d9c8; --white:#fff; --green:#3a7d52; --green-d:#2f6844;
   --serif:'Fraunces',Georgia,serif; --sans:'Source Sans 3',-apple-system,sans-serif; --hand:'Caveat',cursive;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -69,14 +69,14 @@ a{color:var(--coral);text-decoration:none;}
 .kicker{display:inline-block;color:var(--coral);font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;}
 
 /* ===== prominent above-the-fold phone plate ===== */
-.callplate{display:flex;align-items:center;gap:15px;width:100%;max-width:560px;background:var(--white);border:2px solid var(--coral);border-radius:16px;padding:11px 18px;box-shadow:0 12px 30px rgba(208,85,40,.18);transition:transform .12s,box-shadow .15s,background .15s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;min-height:56px;}
-.callplate:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(208,85,40,.26);background:var(--cream2);}
+.callplate{display:flex;align-items:center;gap:15px;width:100%;max-width:560px;background:var(--white);border:2px solid var(--green);border-radius:16px;padding:11px 18px;box-shadow:0 12px 30px rgba(58,125,82,.20);transition:transform .12s,box-shadow .15s,background .15s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;min-height:56px;}
+.callplate:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(58,125,82,.30);background:var(--cream2);}
 .callplate:active{transform:translateY(-1px) scale(.99);}
-.callplate .cpico{flex-shrink:0;width:46px;height:46px;border-radius:50%;background:var(--coral);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(208,85,40,.30);}
+.callplate .cpico{flex-shrink:0;width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(58,125,82,.32);}
 .callplate .cpico svg{width:24px;height:24px;}
 .callplate .cptx{display:flex;flex-direction:column;line-height:1.05;min-width:0;}
 .callplate .cplabel{font-size:13.5px;font-weight:700;color:var(--mute);letter-spacing:.3px;text-transform:uppercase;}
-.callplate .cpnum{font-family:var(--serif);font-weight:600;font-size:34px;color:var(--coral);letter-spacing:-.5px;line-height:1.04;}
+.callplate .cpnum{font-family:var(--serif);font-weight:600;font-size:34px;color:var(--green-d);letter-spacing:-.5px;line-height:1.04;}
 @media(max-width:879px){ .callplate{margin-left:auto;margin-right:auto;justify-content:center;} }
 @media(min-width:880px){ .callplate .cpnum{font-size:38px;} }
 @media(max-width:580px){ .callplate{gap:12px;padding:13px 16px;} .callplate .cpnum{font-size:31px;} .callplate .cpico{width:44px;height:44px;} .callplate .cpico svg{width:23px;height:23px;} }
@@ -196,8 +196,8 @@ a{color:var(--coral);text-decoration:none;}
 .office .obar svg{width:20px;height:20px;color:var(--coral);flex-shrink:0;}
 .office .obar b{font-size:15px;color:var(--ink);}
 .office .obar small{display:block;color:var(--mute);font-size:13px;font-weight:600;}
-.office .ocall{display:inline-flex;align-items:center;gap:9px;margin-top:22px;background:var(--coral);color:#fff;font-weight:700;font-size:17px;padding:14px 26px;border-radius:11px;min-height:52px;box-shadow:0 10px 24px rgba(208,85,40,.28);transition:background .15s,transform .07s;-webkit-tap-highlight-color:transparent;}
-.office .ocall:hover{background:var(--coral-d);transform:translateY(-2px);}
+.office .ocall{display:inline-flex;align-items:center;gap:9px;margin-top:22px;background:var(--green);color:#fff;font-weight:700;font-size:17px;padding:14px 26px;border-radius:11px;min-height:52px;box-shadow:0 10px 24px rgba(58,125,82,.30);transition:background .15s,transform .07s;-webkit-tap-highlight-color:transparent;}
+.office .ocall:hover{background:var(--green-d);transform:translateY(-2px);}
 .office .ocall svg{width:19px;height:19px;}
 
 /* ===== learn-at-your-own-pace band ===== */
