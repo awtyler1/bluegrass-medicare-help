@@ -34,6 +34,17 @@ Fonts: **Fraunces** (serif, headings) + **Source Sans 3** (sans, body).
 - End each article with a `.recap` summary and a 5-question knowledge check (`window.KCHECK` array + `<div id="kcheck">` + `/assets/site.js`).
 - Include FAQPage + BreadcrumbList + BlogPosting JSON-LD.
 
+## Tyler Insurance Group cross-post (do this for every new article)
+Every article published here also gets a **Tyler Insurance Group version** for the parent agency's
+national site. See **`docs/tyler-insurance-group-article-guide.md`** for the full spec. In short:
+- **Agency voice** ("we / our team / our licensed agents," never "I / Austin"); byline `Tyler Insurance Group`.
+- **National, not local** — strip all Kentucky / Lexington / Bluegrass references; generalize state rules.
+- **A distinct opener per article** — never reuse a shared template hook.
+- Deliver **both** a styled HTML doc (for pasting into the TIG site) and an editable Word `.docx`.
+- **TIG brand colors** (from the logo), NOT the Bluegrass coral/green:
+  `--tig-gold:#dbcf86  --tig-gold-d:#b0a154  --tig-gray:#7e8082  --tig-gray-d:#5c5e60` + white text; same Fraunces/Source Sans fonts.
+- Matching **1200×630 inline-SVG illustration** in the TIG palette; compliance-safe (no drug branding, no before/after).
+
 ## Validation before committing
 HTML tag balance (`html.parser`), `json.loads` on JSON-LD, internal-link existence, SVG well-formedness (`xml.dom.minidom`), `sitemap.xml` via `xml.dom.minidom`.
 
