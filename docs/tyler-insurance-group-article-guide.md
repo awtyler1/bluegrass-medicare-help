@@ -30,8 +30,14 @@ Notes:
 
 ## 2. Voice & content rules
 
-- **Agency voice, not first-person.** Use "we / our team / our licensed agents," never "I / Austin."
-  Byline is `Tyler Insurance Group · Updated <Month Year>`.
+- **Agency voice, not first-person.** Use "we / our team / our licensed agents," never "I / Austin"
+  in the body. The *authorship* is still credited to Austin Tyler (see below) — agency voice in the
+  prose, personal author on the byline.
+- **Author attribution (every TIG doc).** Credit Austin Tyler in two subtle spots:
+  - **Byline** under the title: `By Austin Tyler · Tyler Insurance Group · Updated <Month Year>`.
+  - **End-of-article author line**, set off by a thin top divider, small italic gray text:
+    *"Written by Austin Tyler, a licensed insurance agent with Tyler Insurance Group."*
+  This reads as natural authorship and adds author-authority (E-E-A-T) signal for SEO.
 - **National, not local.** Remove every Kentucky / Lexington / Bluegrass / Fayette reference and any
   local hospital names. Generalize state-specific rules (e.g. Medigap underwriting) to "in most
   states," naming a few example states rather than KY.
@@ -55,6 +61,11 @@ For each TIG article, produce BOTH:
    tables, lists carry over). Uses the doc CSS pattern established in the scratchpad HTML files.
 2. **Editable Word `.docx`** — generated with `python-docx`; Heading 1/2/3 styles, real table,
    numbered/bulleted lists, shaded callout/quick-answer boxes, gold/gray-aware accents.
+
+Both carry the **Austin Tyler byline + end author line** (see Voice & content rules), and both use
+**roomy spacing** so the text pastes into a blog with breathing room: line spacing ~1.5 (Word) /
+~1.85 (HTML), ~15pt / ~26px between paragraphs, and extra space above headings. Keep quick-answer
+and callout *label* lines tight to their box body.
 
 Both must be verified free of Kentucky/Bluegrass/Lexington references before sending.
 

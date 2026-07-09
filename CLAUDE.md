@@ -37,10 +37,10 @@ Fonts: **Fraunces** (serif, headings) + **Source Sans 3** (sans, body).
 ## Tyler Insurance Group cross-post (do this for every new article)
 Every article published here also gets a **Tyler Insurance Group version** for the parent agency's
 national site. See **`docs/tyler-insurance-group-article-guide.md`** for the full spec. In short:
-- **Agency voice** ("we / our team / our licensed agents," never "I / Austin"); byline `Tyler Insurance Group`.
+- **Agency voice** in the body ("we / our team," never "I / Austin"), but **credit Austin Tyler as author**: byline `By Austin Tyler · Tyler Insurance Group · Updated <Month Year>`, plus a small end-of-article author line ("Written by Austin Tyler, a licensed insurance agent with Tyler Insurance Group").
 - **National, not local** — strip all Kentucky / Lexington / Bluegrass references; generalize state rules.
 - **A distinct opener per article** — never reuse a shared template hook.
-- Deliver **both** a styled HTML doc (for pasting into the TIG site) and an editable Word `.docx`.
+- Deliver **both** a styled HTML doc (for pasting into the TIG site) and an editable Word `.docx`, with **roomy spacing** (looser line height, more space between paragraphs and above headings).
 - **TIG brand colors** (from the logo), NOT the Bluegrass coral/green:
   `--tig-gold:#dbcf86  --tig-gold-d:#b0a154  --tig-gray:#7e8082  --tig-gray-d:#5c5e60` + white text; same Fraunces/Source Sans fonts.
 - Matching **1200×630 inline-SVG illustration** in the TIG palette; compliance-safe (no drug branding, no before/after).
