@@ -21,6 +21,14 @@ clear. If it isn't all three, it doesn't ship.
 - **Prime the reader up front.** In the opening, make it obvious what they'll get and why it's worth
   their time: lead with the answer, promise the payoff, set expectations. Don't make them dig for it.
 
+## Style rules
+
+- **No em dashes.** Do not use em dashes (`—`) anywhere in article prose or docs. Use a comma, colon,
+  period, or parentheses instead, and recast the sentence if needed. (En dashes are fine only for
+  numeric ranges in tables, e.g. `$109,001–$137,000`.) In HTML that means no `&mdash;`; in Word,
+  no `—` characters. Verify a finished draft has zero em dashes before it ships.
+- Plain English, short sentences, one idea at a time.
+
 ## Questions to ask on every draft (before it ships)
 
 **True**

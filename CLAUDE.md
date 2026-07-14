@@ -9,7 +9,7 @@ Audience: Kentucky seniors approaching or on Medicare. Philosophy: **guide → e
 - **Show, don't just label.** Topic tiles and section headers get a custom **illustrated SVG scene** in the brand palette (see `/articles/` topic cards and `mockups/learn-2/`), not bare text + pills. Illustrations are drawn inline in code (no image downloads — the build network blocks stock-photo CDNs). Real photos of Austin / Lexington / clients are welcome when provided and beat both stock and illustration for trust.
 - **Educate first, convert second.** Lead with the answer; the call-to-a-local-agent CTA comes after value is delivered.
 - **No dead ends.** Every page has the shared nav + footer nav + a back path. Feels like a premium, finished site.
-- **Minimal em dashes** in article prose; include a relatable scenario where it helps.
+- **No em dashes** in article prose (use commas, colons, periods, or parentheses instead; never `—`/`&mdash;`); include a relatable scenario where it helps.
 
 ## Brand tokens (keep consistent)
 `--cream:#f4efe7  --cream2:#faf6ef  --warm:#efe6d6  --ink:#2a2620  --dark:#1f1d1a`
@@ -38,6 +38,7 @@ the work. See **`docs/writing-standards.md`** for the full checklist. On every d
 - **Clear** — simpler and easier to understand; one idea at a time.
 - **Signal > noise** — a lot of signal, little noise; cut what doesn't help.
 - **Reader-first** — keep the lens on the reader, and **prime them up front** (lead with the answer / payoff).
+- **No em dashes** — never use `—`/`&mdash;`; use commas, colons, periods, or parentheses. Verify zero before shipping.
 
 ## Article requirements
 - YMYL accuracy: verify all dollar figures / rules against CMS / SSA before publishing.
