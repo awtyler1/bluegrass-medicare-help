@@ -1,0 +1,74 @@
+name: IndexNow submit
+
+# Pings IndexNow (Bing, Yandex, and other participating engines) with the URLs
+# that changed on each deploy, so new/updated pages are discovered within minutes
+# instead of waiting for a crawl. IndexNow feeds Bing's index, which in turn
+# grounds ChatGPT Search and Microsoft Copilot.
+#
+# NOTE: this assumes GitHub Pages deploys from the `main` branch. If your Pages
+# site publishes from a different branch (e.g. gh-pages) or /docs, change the
+# branch under `on.push.branches` below. You can also run it by hand any time
+# from the Actions tab (workflow_dispatch), which resubmits every indexable page.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+      - 'sitemap.xml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    env:
+      HOST: bluegrassmedicarehelp.com
+      KEY: b6680aa195008b73387d72d39198aaa9
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Collect changed indexable URLs and submit to IndexNow
+        run: |
+          set -euo pipefail
+
+          # On manual runs (or if we can't diff), resubmit every indexable page.
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            files=$(git ls-files '*.html')
+          else
+            files=$(git diff --name-only "${{ github.event.before }}" "${{ github.sha }}" -- '*.html' 2>/dev/null || git ls-files '*.html')
+          fi
+
+          urls=""
+          for f in $files; do
+            [ -z "$f" ] && continue
+            case "$f" in mockups/*) continue;; esac          # skip prototypes
+            [ -f "$f" ] || continue                          # skip deleted files
+            grep -q 'noindex' "$f" && continue               # skip noindex pages
+            case "$f" in
+              index.html)        u="https://$HOST/";;
+              */index.html)      u="https://$HOST/${f%index.html}";;
+              *)                 continue;;                  # only pretty-URL dir pages
+            esac
+            urls="$urls$u\n"
+          done
+
+          urls=$(printf '%b' "$urls" | sort -u | sed '/^$/d')
+          if [ -z "$urls" ]; then echo "No indexable URLs changed. Nothing to submit."; exit 0; fi
+
+          echo "Submitting these URLs to IndexNow:"; echo "$urls"
+
+          list=$(printf '%s\n' "$urls" | awk 'BEGIN{ORS=""} {printf "%s\"%s\"", (NR>1?",":""), $0}')
+          body="{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/$KEY.txt\",\"urlList\":[$list]}"
+
+          code=$(curl -sS -o /tmp/indexnow_resp -w '%{http_code}' -X POST \
+            'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' \
+            --data "$body")
+          echo "IndexNow HTTP $code"; cat /tmp/indexnow_resp || true
+          # 200 = accepted, 202 = accepted/validating. Anything else is a soft failure.
+          case "$code" in 200|202) echo "Submitted OK";; *) echo "IndexNow returned $code (non-fatal)";; esac
