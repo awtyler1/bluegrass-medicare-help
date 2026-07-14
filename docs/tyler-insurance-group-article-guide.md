@@ -85,3 +85,7 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
   illustration (pen + capsule + "$50/month" badge).
 - `Medicare Advantage vs. Medigap: The Real Difference` — HTML + docx + gold/gray illustration
   (fork-in-the-road signpost: gold "Medigap" / gray "Advantage").
+- `The Medigap Birthday Rule: How It Works and Which States Have It` — HTML + docx + gold/gray
+  illustration (birthday calendar + cake, recurring-year arrow, "Same plan · No health questions"
+  ribbon). National generalization of the Kentucky birthday-rule article; names example states
+  rather than KY, and points readers to their own state Department of Insurance.
