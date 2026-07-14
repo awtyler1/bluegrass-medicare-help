@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
 
+# Internal / prototype directories: no crawl, no index
+Disallow: /mockups/
+Disallow: /certifications/
+
 Sitemap: https://bluegrassmedicarehelp.com/sitemap.xml
