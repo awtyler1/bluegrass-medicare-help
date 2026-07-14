@@ -29,6 +29,16 @@ Fonts: **Fraunces** (serif, headings) + **Source Sans 3** (sans, body).
 - Each `.lcrow` carries `data-cat` (basics | turning65 | coverage | costs | onmedicare | ss | local) and `data-date="YYYY-MM-DD"`. `data-cat` may hold **multiple space-separated categories** (e.g. `data-cat="costs local"`) so one article can appear under more than one topic card; the filter matches by membership. JS auto-sorts newest-first; clicking a topic card filters via `window.__lcset(filter,label)` and scrolls to `#guides`.
 - **Adding an article:** create `/articles/<slug>/index.html` (copy an existing one — it includes recap + 5-question knowledge check + FAQ schema), add a `.lcrow` to `/articles/index.html` with the right `data-cat`/`data-date`, bump **each** matching topic card's `.m2n` count, and add the URL to `sitemap.xml`.
 
+## Writing standards (every consumer article — both sites)
+Every article must clear one bar: **True. Useful / actionable. Clear.** Reputation is the quality of
+the work. See **`docs/writing-standards.md`** for the full checklist. On every draft, ask:
+- **True** — every fact/figure verified against a primary source (CMS / SSA / official).
+- **Useful** — how do we make this *incredibly* useful? What do people need right now / are asking for?
+- **Actionable** — clear next steps the reader can take.
+- **Clear** — simpler and easier to understand; one idea at a time.
+- **Signal > noise** — a lot of signal, little noise; cut what doesn't help.
+- **Reader-first** — keep the lens on the reader, and **prime them up front** (lead with the answer / payoff).
+
 ## Article requirements
 - YMYL accuracy: verify all dollar figures / rules against CMS / SSA before publishing.
 - End each article with a `.recap` summary and a 5-question knowledge check (`window.KCHECK` array + `<div id="kcheck">` + `/assets/site.js`).
