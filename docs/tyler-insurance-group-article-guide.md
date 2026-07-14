@@ -41,6 +41,16 @@ Notes:
 - **National, not local.** Remove every Kentucky / Lexington / Bluegrass / Fayette reference and any
   local hospital names. Generalize state-specific rules (e.g. Medigap underwriting) to "in most
   states," naming a few example states rather than KY.
+- **One Bluegrass backlink per article (the standing cross-link rule).** This is the *single*
+  intentional exception to "no Bluegrass references." Every TIG article links **once**, with a
+  natural descriptive anchor, to its Bluegrass counterpart (or the closest Bluegrass Kentucky
+  resource) as the local deep-dive example, e.g. "…which our local Kentucky team breaks down in
+  [their guide to the Kentucky Medigap birthday rule]" → the matching `bluegrassmedicarehelp.com`
+  article. Rationale: TIG (established, national) lends authority to Bluegrass (younger, local), so
+  the valuable direction is **TIG → Bluegrass**. Keep it to ONE contextual link (Bluegrass already
+  links back to TIG in its footer; do not add more Bluegrass→TIG links, which would bleed Bluegrass's
+  authority outward). Kentucky may appear as one example among several states so the link reads
+  naturally; that does not make the piece Kentucky-centric.
 - **Every article gets its own distinct opener.** Do NOT reuse a template hook across articles
   (e.g. don't start multiple pieces with "It's the question our team hears most…"). Write a fresh,
   topic-specific opening each time so the library reads like a real editorial collection.
