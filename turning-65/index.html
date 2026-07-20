@@ -91,8 +91,11 @@ img{max-width:100%;display:block;}
 .formcard h2{font-family:var(--serif);font-weight:500;font-size:25px;text-align:center;margin:8px 0 18px;letter-spacing:-.3px;}
 .field{margin-bottom:13px;}
 .field label{display:block;font-size:14.5px;font-weight:700;color:var(--mute);margin-bottom:5px;}
-.field input{width:100%;font-family:var(--sans);font-size:18px;padding:15px 16px;border:1.5px solid var(--line);border-radius:10px;background:var(--cream2);color:var(--ink);}
-.field input:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 3px rgba(208,85,40,.15);}
+.field input,.field select,.field textarea{width:100%;font-family:var(--sans);font-size:18px;padding:15px 16px;border:1.5px solid var(--line);border-radius:10px;background:var(--cream2);color:var(--ink);-webkit-appearance:none;appearance:none;}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--coral);box-shadow:0 0 0 3px rgba(208,85,40,.15);}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%235f594f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:42px;cursor:pointer;}
+.field textarea{min-height:74px;resize:vertical;line-height:1.5;}
+.hp{position:absolute!important;left:-9999px!important;top:auto;width:1px;height:1px;overflow:hidden;margin:0;padding:0;}
 .frow{display:flex;gap:12px;}
 .frow .field{flex:1;}
 .submit{width:100%;background:var(--coral);color:#fff;font-family:var(--sans);font-weight:700;font-size:20px;padding:17px;border:none;border-radius:10px;cursor:pointer;margin-top:4px;transition:background .15s,transform .07s;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
@@ -228,15 +231,38 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
     </div>
 
     <div class="formcard" id="lead">
-      <h2>See all your options in one place.</h2>
+      <h2>Get your no-cost quote.</h2>
       <form id="leadform" novalidate>
-        <div class="field"><label for="fn">First name</label><input id="fn" name="firstName" autocomplete="given-name" placeholder="First name" required></div>
         <div class="frow">
-          <div class="field"><label for="by">Birth year</label><input id="by" name="birthYear" inputmode="numeric" maxlength="4" placeholder="1961" required></div>
+          <div class="field"><label for="fn">First name</label><input id="fn" name="firstName" autocomplete="given-name" placeholder="First name" required></div>
+          <div class="field"><label for="ln">Last name</label><input id="ln" name="lastName" autocomplete="family-name" placeholder="Last name" required></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="dob">Date of birth</label><input id="dob" name="dob" type="date" autocomplete="bday" required></div>
           <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="40513" required></div>
         </div>
         <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(859) 555-1234" required></div>
-        <button type="submit" class="submit">See my plan comparison</button>
+        <div class="field"><label for="journey">Where are you in your Medicare journey?</label><select id="journey" name="journey" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>Turning 65 soon</option>
+          <option>New to Medicare</option>
+          <option>Already on Medicare</option>
+          <option>Just exploring my options</option>
+        </select></div>
+        <div class="field"><label for="lookingFor">What are you looking for?</label><select id="lookingFor" name="lookingFor" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>Medicare Supplement (Medigap)</option>
+          <option>Medicare Advantage</option>
+          <option>Not sure yet</option>
+        </select></div>
+        <div class="field"><label for="advisor">Are you currently working with a local advisor?</label><select id="advisor" name="advisor" required>
+          <option value="" disabled selected>Choose one</option>
+          <option>No</option>
+          <option>Yes</option>
+        </select></div>
+        <div class="field"><label for="notes">Anything else I should know? <span style="font-weight:400;color:var(--faint);">(optional)</span></label><textarea id="notes" name="notes" placeholder="Doctors you want to keep, prescriptions, questions..."></textarea></div>
+        <div class="field hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="_honey" tabindex="-1" autocomplete="off"></div>
+        <button type="submit" class="submit">Get my no-cost quote</button>
         <p class="risk"><b>No cost to you, ever.</b> &bull; <b>No obligation.</b> &bull; <b>Local, licensed, real Lexington office.</b></p>
         <p class="consent">By submitting, you agree that Bluegrass Medicare Help may contact you by phone about Medicare plan options. This is not a condition of purchase. You can opt out at any time.</p>
         <p class="reassure">We do not sell your information. One local advisor, not a call center.</p>
@@ -382,12 +408,16 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
 (function(){var tog=document.getElementById('navtog'),links=document.getElementById('navlinks');if(!tog||!links)return;tog.addEventListener('click',function(){var o=links.classList.toggle('open');tog.setAttribute('aria-expanded',o?'true':'false');});links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');tog.setAttribute('aria-expanded','false');}});})();
 </script>
 <script>
-/* GoHighLevel wiring. Paste the Turning 65 funnel's GHL inbound webhook URL into
-   GHL_WEBHOOK_URL below to start transmitting leads. Until it is set, the form still
-   validates and shows the success state but does not send.
-   Webhook trap reminder: in GHL's Create Contact step, inboundWebhookRequest fields are
-   distinct from contact fields. Map firstName, phone, birthYear, zip, and
-   consentTimestamp deliberately or the data lands nowhere. */
+/* Lead delivery.
+   INTERIM (live now): the form emails leads to Austin via FormSubmit.co. The FIRST real
+   submission triggers a one-time confirmation email from FormSubmit to that address; click
+   the link in it once to activate delivery. Nothing else is required.
+   LATER (GoHighLevel): paste the Turning 65 funnel's GHL inbound webhook URL into
+   GHL_WEBHOOK_URL below and the form will also POST the JSON payload there. Map firstName,
+   lastName, dob, phone, zip, journey, lookingFor, advisor, notes, and consentTimestamp in
+   GHL's Create Contact step, or the data lands nowhere. Leaving the webhook blank is fine;
+   the email path keeps working on its own. */
+var FORMSUBMIT_ENDPOINT = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";
 var GHL_WEBHOOK_URL = "";
 
 var CONSENT_TEXT = "By submitting, you agree that Bluegrass Medicare Help may contact you by phone about Medicare plan options. This is not a condition of purchase. You can opt out at any time.";
@@ -395,41 +425,78 @@ var CONSENT_TEXT = "By submitting, you agree that Bluegrass Medicare Help may co
 document.getElementById('leadform').addEventListener('submit', function(e){
   e.preventDefault();
   var fn = document.getElementById('fn').value.trim();
-  var by = document.getElementById('by').value.trim();
+  var ln = document.getElementById('ln').value.trim();
+  var dob = document.getElementById('dob').value.trim();
   var ph = document.getElementById('ph').value.trim();
   var zip = document.getElementById('zip').value.trim();
+  var journey = document.getElementById('journey').value;
+  var lookingFor = document.getElementById('lookingFor').value;
+  var advisor = document.getElementById('advisor').value;
+  var notes = document.getElementById('notes').value.trim();
+  var honey = document.getElementById('company').value.trim();
+
+  // Honeypot: bots fill the hidden field. Show success but send nothing.
+  if(honey){ finish(); return; }
+
   if(!fn){ alert('Please enter your first name.'); return; }
-  if(!/^(19|20)\d{2}$/.test(by)){ alert('Please enter your 4-digit birth year, like 1961.'); return; }
+  if(!ln){ alert('Please enter your last name.'); return; }
+  if(!dob){ alert('Please enter your date of birth.'); return; }
   if(ph.replace(/\D/g,'').length < 10){ alert('Please enter a 10-digit phone number.'); return; }
   if(!/^\d{5}$/.test(zip)){ alert('Please enter a valid 5-digit ZIP code.'); return; }
+  if(!journey){ alert('Please tell us where you are in your Medicare journey.'); return; }
+  if(!lookingFor){ alert('Please tell us what you are looking for.'); return; }
+  if(!advisor){ alert('Please let us know if you already work with a local advisor.'); return; }
 
   var btn = e.target.querySelector('.submit');
   btn.disabled = true; btn.textContent = 'Sending…';
 
+  var consentTs = new Date().toISOString();
+
+  // Machine-readable payload for GoHighLevel (used only when GHL_WEBHOOK_URL is set).
   var payload = {
-    firstName: fn,
-    birthYear: by,
-    phone: ph,
-    zip: zip,
-    consentGiven: true,
-    consentText: CONSENT_TEXT,
-    consentTimestamp: new Date().toISOString(),
-    source: 'Turning 65 Page',
-    pageUrl: window.location.href
+    firstName: fn, lastName: ln, dob: dob, phone: ph, zip: zip,
+    journey: journey, lookingFor: lookingFor, advisor: advisor, notes: notes,
+    consentGiven: true, consentText: CONSENT_TEXT, consentTimestamp: consentTs,
+    source: 'Turning 65 Page', pageUrl: window.location.href
   };
+
+  // Readable payload for the FormSubmit email to Austin.
+  var emailBody = {
+    "Name": fn + ' ' + ln,
+    "Date of birth": dob,
+    "Phone": ph,
+    "ZIP": zip,
+    "Medicare journey": journey,
+    "Looking for": lookingFor,
+    "Working with a local advisor": advisor,
+    "Notes": notes || '(none)',
+    "Consent to phone contact": 'Yes, ' + consentTs,
+    "Source": 'Turning 65 page (' + window.location.href + ')',
+    "_subject": 'New no-cost quote request: ' + fn + ' ' + ln,
+    "_template": 'table',
+    "_captcha": 'false'
+  };
+
+  var sends = [];
+  sends.push(
+    fetch(FORMSUBMIT_ENDPOINT, {
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(emailBody)
+    })
+  );
+  if(GHL_WEBHOOK_URL){
+    sends.push(
+      fetch(GHL_WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) })
+    );
+  }
+
+  Promise.allSettled(sends).then(finish).catch(finish);
 
   function finish(){
     if(typeof fbq === 'function'){ fbq('track','Lead',{ content_name:'Turning 65 Page' }); }
     document.getElementById('leadform').style.display = 'none';
     document.getElementById('sent').style.display = 'block';
-  }
-
-  if(GHL_WEBHOOK_URL){
-    fetch(GHL_WEBHOOK_URL, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) })
-      .then(finish).catch(function(err){ console.error('Webhook error:', err); finish(); });
-  } else {
-    console.log('LEAD PAYLOAD (no webhook set yet):', payload);
-    finish();
   }
 });
 </script>
