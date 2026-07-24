@@ -77,6 +77,20 @@ Both carry the **Austin Tyler byline + end author line** (see Voice & content ru
 ~1.85 (HTML), ~15pt / ~26px between paragraphs, and extra space above headings. Keep quick-answer
 and callout *label* lines tight to their box body.
 
+**Word docs are built for copy-paste into a web editor.** The .docx must be a clean, strict
+heading outline, because web editors map Word's built-in styles to HTML tags on paste:
+- **Real heading styles only**: exactly ONE Heading 1 (the title), Heading 2 for every section
+  (including "Quick answer", "Quick recap", "Frequently asked questions", and the CTA heading),
+  Heading 3 for FAQ questions and sub-sections. Never fake a heading with a bold/ALL-CAPS
+  paragraph: it pastes as a plain `<p>` and breaks the outline.
+- **No level jumps** (H1 to H3) and no decorative empty paragraphs; attach dividers as paragraph
+  borders instead of blank lines.
+- **Callout labels** become bold lead-ins inside the paragraph ("Where this shows up in real
+  life: ..."), which paste cleanly as `<p><strong>`.
+- **Validate programmatically before sending**: re-open the saved .docx and assert one H1,
+  sequential heading levels, and no ALL-CAPS pseudo-label or empty paragraphs (see
+  `make_tig_docx.py` validator pattern).
+
 Both must be verified free of Kentucky/Bluegrass/Lexington references before sending.
 
 ## 4. Illustration rules
