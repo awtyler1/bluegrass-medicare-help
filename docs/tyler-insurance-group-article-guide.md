@@ -99,3 +99,9 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
   illustration (birthday calendar + cake, recurring-year arrow, "Same plan · No health questions"
   ribbon). National generalization of the Kentucky birthday-rule article; names example states
   rather than KY, and points readers to their own state Department of Insurance.
+- `How to Check If Your Hospital Takes Your Medicare Advantage Plan` — HTML + docx + gold/gray
+  illustration (gray hospital + gold checklist clipboard + magnifying glass, "Is your hospital
+  in network?" ribbon). National generalization of the Bluegrass hospital-network articles: the
+  three-check verification method, when to run it, and the options if a hospital goes
+  out-of-network. Standing TIG-to-Bluegrass backlink points to the Lexington verified network
+  status guide (`/articles/does-baptist-health-take-medicare-advantage/`).
