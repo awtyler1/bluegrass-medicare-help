@@ -51,9 +51,14 @@ Notes:
   links back to TIG in its footer; do not add more Bluegrass→TIG links, which would bleed Bluegrass's
   authority outward). Kentucky may appear as one example among several states so the link reads
   naturally; that does not make the piece Kentucky-centric.
-- **Every article gets its own distinct opener.** Do NOT reuse a template hook across articles
-  (e.g. don't start multiple pieces with "It's the question our team hears most…"). Write a fresh,
-  topic-specific opening each time so the library reads like a real editorial collection.
+- **Every article gets its own distinct opener AND structure.** Do NOT reuse a template hook or
+  a repeated article shape across pieces. Rotate opener styles (case story, reader question,
+  stat-led punch, second-person seasonal, myth-bust, etc.) and vary the skeleton: quick-answer
+  box placement, section order, and where lists/steps sit should differ piece to piece so the
+  library reads like a real editorial collection, not a mail merge.
+- **Full heading hierarchy in every article.** One H1 (title), H2 for sections, and **H3
+  subsections inside the body wherever a section has distinct sub-ideas** (minimum two body H3s
+  per article, beyond the FAQ questions). Never ship an article whose body is H2-only.
 - Keep the shared structure: **quick-answer box → sections → callouts → recap → 5-question FAQ →
   CTA → disclaimer.**
 - **CTA** ends with the agency: "Our licensed agents can…" and `Call Tyler Insurance Group:
