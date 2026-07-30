@@ -82,19 +82,26 @@ Both carry the **Austin Tyler byline + end author line** (see Voice & content ru
 ~1.85 (HTML), ~15pt / ~26px between paragraphs, and extra space above headings. Keep quick-answer
 and callout *label* lines tight to their box body.
 
-**Word docs are built for copy-paste into a web editor.** The .docx must be a clean, strict
-heading outline, because web editors map Word's built-in styles to HTML tags on paste:
-- **Real heading styles only**: exactly ONE Heading 1 (the title), Heading 2 for every section
-  (including "Quick answer", "Quick recap", "Frequently asked questions", and the CTA heading),
-  Heading 3 for FAQ questions and sub-sections. Never fake a heading with a bold/ALL-CAPS
-  paragraph: it pastes as a plain `<p>` and breaks the outline.
-- **No level jumps** (H1 to H3) and no decorative empty paragraphs; attach dividers as paragraph
-  borders instead of blank lines.
-- **Callout labels** become bold lead-ins inside the paragraph ("Where this shows up in real
-  life: ..."), which paste cleanly as `<p><strong>`.
-- **Validate programmatically before sending**: re-open the saved .docx and assert one H1,
-  sequential heading levels, and no ALL-CAPS pseudo-label or empty paragraphs (see
-  `make_tig_docx.py` validator pattern).
+**Word docs are built for the TIG blog editor workflow** (a "Generate Blog" form with a separate
+Title field, a rich-text Blog Content editor with H1-H6 buttons, and a separate Add Media upload).
+The .docx is a two-copy operation: copy the title line into the Title field, then select the body
+and paste it into Blog Content. Because the Title field renders as the page's H1:
+- **Doc layout**: a small gray instruction line, the title as a PLAIN bold line (NOT Heading 1),
+  a second instruction line marking where the body starts, then the body beginning with the
+  byline paragraph.
+- **Body headings are H2/H3 only, never H1** (the Title field is the H1). Heading 2 for every
+  section (including "Quick answer", "Quick recap", "Frequently asked questions", and the CTA
+  heading), Heading 3 for body subsections and FAQ questions. Never fake a heading with a
+  bold/ALL-CAPS paragraph.
+- **No embedded image**: the illustration is uploaded separately via Add Media, so the doc stays
+  text-only (deliver the SVG + PNG alongside).
+- **No level jumps** and no decorative empty paragraphs; attach dividers as paragraph borders.
+- **Callout labels** become bold lead-ins inside the paragraph, which paste cleanly as
+  `<p><strong>`.
+- **Validate programmatically before sending**: re-open the saved .docx and assert ZERO Heading 1
+  paragraphs, first heading is Heading 2, at least two body H3s before the FAQ, sequential
+  levels, and no ALL-CAPS pseudo-label or empty paragraphs (see `build_tig_month.py` /
+  `make_tig_docx.py` validator patterns).
 
 Both must be verified free of Kentucky/Bluegrass/Lexington references before sending.
 
