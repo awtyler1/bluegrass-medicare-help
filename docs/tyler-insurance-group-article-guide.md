@@ -119,3 +119,15 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
   three-check verification method, when to run it, and the options if a hospital goes
   out-of-network. Standing TIG-to-Bluegrass backlink points to the Lexington verified network
   status guide (`/articles/does-baptist-health-take-medicare-advantage/`).
+- **August 2026 monthly set** (4 articles, built from one generator so HTML and docx stay in
+  sync; all with strict H1/H2/H3 docx outlines, TIG-palette illustrations, and one Bluegrass
+  backlink each):
+  - `Medicare Late Enrollment Penalties: What They Cost and How to Avoid Them` (publish Aug 4)
+    → backlink `/articles/medicare-late-enrollment-penalties/`. Calendar + growing cost bars.
+  - `Observation vs. Inpatient: The Hospital Status That Decides Who Pays for Rehab` (Aug 11)
+    → backlink `/articles/does-medicare-cover-nursing-homes/`. Hospital bed + two status signs.
+  - `HSA and Medicare: The 6-Month Rule to Know Before You Enroll` (Aug 18)
+    → backlink `/articles/working-past-65-medicare/`. Piggy bank + Medicare card + 6-month strip.
+  - `Your ANOC Letter: The September Mail That Decides What You Pay Next Year` (Aug 25)
+    → backlink `/articles/annual-medicare-review-aep/`. Envelope + notice + magnifier. Timed to
+    tee up AEP; refresh yearly.
