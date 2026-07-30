@@ -51,9 +51,14 @@ Notes:
   links back to TIG in its footer; do not add more Bluegrass→TIG links, which would bleed Bluegrass's
   authority outward). Kentucky may appear as one example among several states so the link reads
   naturally; that does not make the piece Kentucky-centric.
-- **Every article gets its own distinct opener.** Do NOT reuse a template hook across articles
-  (e.g. don't start multiple pieces with "It's the question our team hears most…"). Write a fresh,
-  topic-specific opening each time so the library reads like a real editorial collection.
+- **Every article gets its own distinct opener AND structure.** Do NOT reuse a template hook or
+  a repeated article shape across pieces. Rotate opener styles (case story, reader question,
+  stat-led punch, second-person seasonal, myth-bust, etc.) and vary the skeleton: quick-answer
+  box placement, section order, and where lists/steps sit should differ piece to piece so the
+  library reads like a real editorial collection, not a mail merge.
+- **Full heading hierarchy in every article.** One H1 (title), H2 for sections, and **H3
+  subsections inside the body wherever a section has distinct sub-ideas** (minimum two body H3s
+  per article, beyond the FAQ questions). Never ship an article whose body is H2-only.
 - Keep the shared structure: **quick-answer box → sections → callouts → recap → 5-question FAQ →
   CTA → disclaimer.**
 - **CTA** ends with the agency: "Our licensed agents can…" and `Call Tyler Insurance Group:
@@ -77,19 +82,26 @@ Both carry the **Austin Tyler byline + end author line** (see Voice & content ru
 ~1.85 (HTML), ~15pt / ~26px between paragraphs, and extra space above headings. Keep quick-answer
 and callout *label* lines tight to their box body.
 
-**Word docs are built for copy-paste into a web editor.** The .docx must be a clean, strict
-heading outline, because web editors map Word's built-in styles to HTML tags on paste:
-- **Real heading styles only**: exactly ONE Heading 1 (the title), Heading 2 for every section
-  (including "Quick answer", "Quick recap", "Frequently asked questions", and the CTA heading),
-  Heading 3 for FAQ questions and sub-sections. Never fake a heading with a bold/ALL-CAPS
-  paragraph: it pastes as a plain `<p>` and breaks the outline.
-- **No level jumps** (H1 to H3) and no decorative empty paragraphs; attach dividers as paragraph
-  borders instead of blank lines.
-- **Callout labels** become bold lead-ins inside the paragraph ("Where this shows up in real
-  life: ..."), which paste cleanly as `<p><strong>`.
-- **Validate programmatically before sending**: re-open the saved .docx and assert one H1,
-  sequential heading levels, and no ALL-CAPS pseudo-label or empty paragraphs (see
-  `make_tig_docx.py` validator pattern).
+**Word docs are built for the TIG blog editor workflow** (a "Generate Blog" form with a separate
+Title field, a rich-text Blog Content editor with H1-H6 buttons, and a separate Add Media upload).
+The .docx is a two-copy operation: copy the title line into the Title field, then select the body
+and paste it into Blog Content. Because the Title field renders as the page's H1:
+- **Doc layout**: a small gray instruction line, the title as a PLAIN bold line (NOT Heading 1),
+  a second instruction line marking where the body starts, then the body beginning with the
+  byline paragraph.
+- **Body headings are H2/H3 only, never H1** (the Title field is the H1). Heading 2 for every
+  section (including "Quick answer", "Quick recap", "Frequently asked questions", and the CTA
+  heading), Heading 3 for body subsections and FAQ questions. Never fake a heading with a
+  bold/ALL-CAPS paragraph.
+- **No embedded image**: the illustration is uploaded separately via Add Media, so the doc stays
+  text-only (deliver the SVG + PNG alongside).
+- **No level jumps** and no decorative empty paragraphs; attach dividers as paragraph borders.
+- **Callout labels** become bold lead-ins inside the paragraph, which paste cleanly as
+  `<p><strong>`.
+- **Validate programmatically before sending**: re-open the saved .docx and assert ZERO Heading 1
+  paragraphs, first heading is Heading 2, at least two body H3s before the FAQ, sequential
+  levels, and no ALL-CAPS pseudo-label or empty paragraphs (see `build_tig_month.py` /
+  `make_tig_docx.py` validator patterns).
 
 Both must be verified free of Kentucky/Bluegrass/Lexington references before sending.
 
@@ -119,3 +131,15 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
   three-check verification method, when to run it, and the options if a hospital goes
   out-of-network. Standing TIG-to-Bluegrass backlink points to the Lexington verified network
   status guide (`/articles/does-baptist-health-take-medicare-advantage/`).
+- **August 2026 monthly set** (4 articles, built from one generator so HTML and docx stay in
+  sync; all with strict H1/H2/H3 docx outlines, TIG-palette illustrations, and one Bluegrass
+  backlink each):
+  - `Medicare Late Enrollment Penalties: What They Cost and How to Avoid Them` (publish Aug 4)
+    → backlink `/articles/medicare-late-enrollment-penalties/`. Calendar + growing cost bars.
+  - `Observation vs. Inpatient: The Hospital Status That Decides Who Pays for Rehab` (Aug 11)
+    → backlink `/articles/does-medicare-cover-nursing-homes/`. Hospital bed + two status signs.
+  - `HSA and Medicare: The 6-Month Rule to Know Before You Enroll` (Aug 18)
+    → backlink `/articles/working-past-65-medicare/`. Piggy bank + Medicare card + 6-month strip.
+  - `Your ANOC Letter: The September Mail That Decides What You Pay Next Year` (Aug 25)
+    → backlink `/articles/annual-medicare-review-aep/`. Envelope + notice + magnifier. Timed to
+    tee up AEP; refresh yearly.
