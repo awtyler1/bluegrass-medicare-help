@@ -78,14 +78,22 @@ a{color:var(--coral-d);text-decoration:none;}
 .pfoot{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:16px;color:var(--mute);}
 .pfoot b{font-family:var(--serif);color:var(--ink);}
 .pfoot a{font-weight:700;white-space:nowrap;}
-/* booking widget: space reserved up front so nothing jumps when it arrives.
-   --calcap keeps the frame inside one screen. A day with a lot of open times
-   scrolls its own list inside the frame rather than stretching the page, so
-   the header, the value panel and the calendar all stay put. */
-.calwrap{--calcap:clamp(560px,calc(100vh - 150px),760px);
-  position:relative;min-height:560px;display:flex;flex-direction:column;}
-.calwrap iframe{width:100%;border:none;position:relative;z-index:1;max-height:var(--calcap);}
-.calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;max-height:var(--calcap);}
+/* Booking widget: space reserved up front so nothing jumps when it arrives.
+   The frame is a FIXED height, which is what makes the month grid stay put
+   while only the list of times scrolls. Calendly lays itself out to whatever
+   height the frame is: give it a fixed one and it puts the times in their own
+   scrolling column beside the calendar. Let the frame grow to fit instead and
+   Calendly renders the times full length, so its own page scrolls and takes
+   the calendar up with it. */
+.calwrap{--calh:clamp(620px,calc(100vh - 150px),780px);
+  position:relative;min-height:var(--calh);display:flex;flex-direction:column;}
+.calwrap iframe{width:100%;border:none;position:relative;z-index:1;
+  height:var(--calh);max-height:var(--calh);}
+.calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;
+  height:var(--calh);max-height:var(--calh);}
+/* on the details step the frame is allowed to grow to the height of the form */
+.calwrap.is-form iframe,
+.calwrap.is-form .calendly-inline-widget{max-height:none;}
 /* loader sits on top of the reserved space until the widget reports it is ready */
 .calstate{position:absolute;inset:0;z-index:2;background:var(--cream2);border-radius:12px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px 20px;
@@ -278,30 +286,49 @@ a{color:var(--coral-d);text-decoration:none;}
         && e.data && typeof e.data.event === 'string'
         && e.data.event.indexOf('calendly.') === 0;
   }
-  /* Calendly reports how tall each step is. Short steps shrink the frame so
-     there is no empty gap, but nothing grows past one screenful: a long list
-     of times scrolls inside the frame instead of stretching the whole page.
-     The same ceiling is set in CSS, so it holds even if Calendly's own script
-     tries to resize the frame itself. */
-  var box=null, wanted=0;
-  function cap(){
+  /* The two steps want opposite things from the frame.
+     Picking a date: hold the frame at one screenful. Calendly then pins the
+     month grid and scrolls only its list of times. Letting the frame grow here
+     makes Calendly render every open time at full length and scroll its own
+     page, which carries the calendar off the top.
+     Filling in details: there is no calendar left to pin, so a fixed frame just
+     buries the form under a scrollbar inside a scrollbar. Grow to fit instead
+     and the whole form is on the page, scrolled the ordinary way. */
+  var box=null, mode='calendar', wanted=0;
+  function calh(){
     var vh=window.innerHeight||800;
-    return Math.max(560, Math.min(760, vh-150));
+    return Math.max(620, Math.min(780, vh-150));
   }
-  function fit(px){
-    var h=parseInt(px,10);
-    if(!(h>300 && h<6000)) return;
-    wanted=h;
-    apply();
+  function setH(px){
+    if(box) box.style.height=px+'px';
+    if(!frame) frame=wrap.querySelector('iframe');
+    if(frame) frame.style.height=px+'px';
   }
   function apply(){
-    if(!wanted) return;
-    var h=Math.min(wanted, cap());
-    if(box) box.style.height=h+'px';
-    if(!frame) frame=wrap.querySelector('iframe');
-    if(frame) frame.style.height=h+'px';
+    if(mode==='form' && wanted) setH(Math.min(wanted, 2600));
+    else setH(calh());
   }
-  /* keep the ceiling honest if the window is resized or the phone is turned */
+  function setMode(next){
+    if(mode===next) return;
+    mode=next;
+    wrap.classList.toggle('is-form', mode==='form');
+    apply();
+  }
+  /* bring the panel up to the top of the screen when the form appears, so the
+     reader starts at the booking panel rather than part way down it */
+  function showPanel(){
+    var panel=document.querySelector('.unified');
+    if(!panel) return;
+    var nav=document.querySelector('.nav'),
+        off=(nav?nav.getBoundingClientRect().height:0)+14,
+        y=window.pageYOffset+panel.getBoundingClientRect().top-off;
+    if(y < window.pageYOffset - 4 || y > window.pageYOffset + 4){
+      var soft=!window.matchMedia||!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      try{ window.scrollTo({top:Math.max(0,y), behavior:soft?'smooth':'auto'}); }
+      catch(err){ window.scrollTo(0, Math.max(0,y)); }
+    }
+  }
+  /* keep it to one screenful if the window is resized or the phone is turned */
   var rz=null;
   window.addEventListener('resize', function(){
     clearTimeout(rz); rz=setTimeout(apply, 150);
@@ -313,14 +340,21 @@ a{color:var(--coral-d);text-decoration:none;}
       if(!isCalendly(e)) return;
       /* any Calendly event means the embed is alive */
       confirm();
-      /* keep the frame exactly as tall as its contents */
-      if(e.data.event === 'calendly.page_height' && e.data.payload){
-        fit(e.data.payload.height);
+      var ev=e.data.event;
+      /* back on the calendar: hold the frame steady again */
+      if(ev === 'calendly.event_type_viewed'){ setMode('calendar'); }
+      /* a time is picked, so the form is next: let it grow to fit */
+      if(ev === 'calendly.date_and_time_selected'){ setMode('form'); showPanel(); }
+      /* only the form ever follows the reported height */
+      if(ev === 'calendly.page_height' && e.data.payload){
+        var h=parseInt(e.data.payload.height,10);
+        if(h>300 && h<6000){ wanted=h; if(mode==='form') apply(); }
       }
       /* someone actually booked: report it once */
-      if(e.data.event === 'calendly.event_scheduled'){
+      if(ev === 'calendly.event_scheduled'){
         if(typeof fbq==='function'){fbq('track','Schedule',{content_name:'Medicare review'});}
         if(typeof gtag==='function'){gtag('event','appointment_booked',{event_category:'booking'});}
+        showPanel();
       }
     });
 
@@ -328,7 +362,7 @@ a{color:var(--coral-d);text-decoration:none;}
     d.className='calendly-inline-widget';
     d.setAttribute('data-url', CAL_URL);
     d.style.minWidth='320px';
-    d.style.height=cap()+'px';
+    d.style.height=calh()+'px';
     wrap.appendChild(d);
     box=d;
 
