@@ -78,14 +78,19 @@ a{color:var(--coral-d);text-decoration:none;}
 .pfoot{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:16px;color:var(--mute);}
 .pfoot b{font-family:var(--serif);color:var(--ink);}
 .pfoot a{font-weight:700;white-space:nowrap;}
-/* booking widget: space reserved up front so nothing jumps when it arrives.
-   --calcap keeps the frame inside one screen. A day with a lot of open times
-   scrolls its own list inside the frame rather than stretching the page, so
-   the header, the value panel and the calendar all stay put. */
-.calwrap{--calcap:clamp(560px,calc(100vh - 150px),760px);
-  position:relative;min-height:560px;display:flex;flex-direction:column;}
-.calwrap iframe{width:100%;border:none;position:relative;z-index:1;max-height:var(--calcap);}
-.calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;max-height:var(--calcap);}
+/* Booking widget: space reserved up front so nothing jumps when it arrives.
+   The frame is a FIXED height, which is what makes the month grid stay put
+   while only the list of times scrolls. Calendly lays itself out to whatever
+   height the frame is: give it a fixed one and it puts the times in their own
+   scrolling column beside the calendar. Let the frame grow to fit instead and
+   Calendly renders the times full length, so its own page scrolls and takes
+   the calendar up with it. */
+.calwrap{--calh:clamp(620px,calc(100vh - 150px),780px);
+  position:relative;min-height:var(--calh);display:flex;flex-direction:column;}
+.calwrap iframe{width:100%;border:none;position:relative;z-index:1;
+  height:var(--calh);max-height:var(--calh);}
+.calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;
+  height:var(--calh);max-height:var(--calh);}
 /* loader sits on top of the reserved space until the widget reports it is ready */
 .calstate{position:absolute;inset:0;z-index:2;background:var(--cream2);border-radius:12px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px 20px;
@@ -278,30 +283,22 @@ a{color:var(--coral-d);text-decoration:none;}
         && e.data && typeof e.data.event === 'string'
         && e.data.event.indexOf('calendly.') === 0;
   }
-  /* Calendly reports how tall each step is. Short steps shrink the frame so
-     there is no empty gap, but nothing grows past one screenful: a long list
-     of times scrolls inside the frame instead of stretching the whole page.
-     The same ceiling is set in CSS, so it holds even if Calendly's own script
-     tries to resize the frame itself. */
-  var box=null, wanted=0;
-  function cap(){
+  /* One screenful, never more. Deliberately NOT tied to the height Calendly
+     reports: matching that would make the frame grow to fit every open time,
+     which is what pushed the month grid off the top of the frame. Holding the
+     height steady hands the scrolling to Calendly's own times column. */
+  var box=null;
+  function calh(){
     var vh=window.innerHeight||800;
-    return Math.max(560, Math.min(760, vh-150));
-  }
-  function fit(px){
-    var h=parseInt(px,10);
-    if(!(h>300 && h<6000)) return;
-    wanted=h;
-    apply();
+    return Math.max(620, Math.min(780, vh-150));
   }
   function apply(){
-    if(!wanted) return;
-    var h=Math.min(wanted, cap());
-    if(box) box.style.height=h+'px';
+    var h=calh()+'px';
+    if(box) box.style.height=h;
     if(!frame) frame=wrap.querySelector('iframe');
-    if(frame) frame.style.height=h+'px';
+    if(frame) frame.style.height=h;
   }
-  /* keep the ceiling honest if the window is resized or the phone is turned */
+  /* keep it to one screenful if the window is resized or the phone is turned */
   var rz=null;
   window.addEventListener('resize', function(){
     clearTimeout(rz); rz=setTimeout(apply, 150);
@@ -313,10 +310,6 @@ a{color:var(--coral-d);text-decoration:none;}
       if(!isCalendly(e)) return;
       /* any Calendly event means the embed is alive */
       confirm();
-      /* keep the frame exactly as tall as its contents */
-      if(e.data.event === 'calendly.page_height' && e.data.payload){
-        fit(e.data.payload.height);
-      }
       /* someone actually booked: report it once */
       if(e.data.event === 'calendly.event_scheduled'){
         if(typeof fbq==='function'){fbq('track','Schedule',{content_name:'Medicare review'});}
@@ -328,7 +321,7 @@ a{color:var(--coral-d);text-decoration:none;}
     d.className='calendly-inline-widget';
     d.setAttribute('data-url', CAL_URL);
     d.style.minWidth='320px';
-    d.style.height=cap()+'px';
+    d.style.height=calh()+'px';
     wrap.appendChild(d);
     box=d;
 
