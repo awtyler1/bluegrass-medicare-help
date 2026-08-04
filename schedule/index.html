@@ -73,18 +73,24 @@ a{color:var(--coral-d);text-decoration:none;}
 .pfoot b{font-family:var(--serif);color:var(--ink);}
 .pfoot a{font-weight:700;white-space:nowrap;}
 /* booking widget: space reserved up front so nothing jumps when it arrives */
-.calwrap{min-height:640px;display:flex;flex-direction:column;}
-.calwrap iframe{width:100%;border:none;overflow:hidden;min-height:640px;}
-.calskel{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:30px 16px;}
-.calskel .sk-t{font-family:var(--serif);font-size:21px;color:var(--ink);}
-.calskel .sk-s{font-size:15.5px;color:var(--mute);max-width:320px;}
-.calskel .sk-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;width:100%;max-width:320px;margin-top:4px;}
-.calskel .sk-grid i{display:block;height:34px;border-radius:8px;background:var(--warm);opacity:.55;animation:skpulse 1.6s ease-in-out infinite;}
-.calskel .sk-grid i:nth-child(3n){opacity:.35;} .calskel .sk-grid i:nth-child(4n){opacity:.7;}
-@keyframes skpulse{0%,100%{opacity:.35;}50%{opacity:.7;}}
-@media(prefers-reduced-motion:reduce){.calskel .sk-grid i{animation:none;}}
-.skbtn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--coral);color:#fff;font-weight:700;font-size:17px;padding:14px 30px;border:none;border-radius:11px;cursor:pointer;box-shadow:0 8px 22px rgba(208,85,40,.28);font-family:var(--sans);}
-.skbtn:hover{background:var(--coral-d);}
+.calwrap{position:relative;min-height:640px;display:flex;flex-direction:column;}
+.calwrap iframe{width:100%;border:none;overflow:hidden;min-height:640px;position:relative;z-index:1;}
+/* loader sits on top of the reserved space until the widget reports it is ready */
+.calstate{position:absolute;inset:0;z-index:2;background:var(--cream2);border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px 20px;
+  transition:opacity .35s ease;}
+.calstate.is-done{opacity:0;visibility:hidden;pointer-events:none;}
+.calstate .sk-t{font-family:var(--serif);font-size:21px;color:var(--ink);}
+.calstate .sk-s{font-size:15.5px;color:var(--mute);max-width:340px;}
+.spin{width:38px;height:38px;border-radius:50%;border:3px solid var(--warm);border-top-color:var(--coral);animation:spin .9s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.sk-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;width:100%;max-width:320px;margin-top:2px;}
+.sk-grid i{display:block;height:30px;border-radius:8px;background:var(--warm);animation:skpulse 1.6s ease-in-out infinite;}
+.sk-grid i:nth-child(3n){animation-delay:.2s;} .sk-grid i:nth-child(4n){animation-delay:.4s;}
+@keyframes skpulse{0%,100%{opacity:.35;}50%{opacity:.75;}}
+@media(prefers-reduced-motion:reduce){.sk-grid i,.spin{animation:none;} .calstate{transition:none;}}
+.calhelp{margin-top:14px;text-align:center;font-size:15px;color:var(--mute);}
+.calhelp a{font-weight:700;}
 .quad{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
 .quad i{font-style:normal;text-align:center;font-size:15px;font-weight:700;color:var(--green);background:rgba(58,125,82,.09);border-radius:12px;padding:16px 10px;}
 .scfaq{margin-top:54px;}
@@ -165,14 +171,17 @@ a{color:var(--coral-d);text-decoration:none;}
         </div>
         <div class="uright">
           <div class="calwrap" id="calwrap">
-            <div class="calskel" id="calskel">
-              <div class="sk-t">Pick a time that works for you</div>
-              <div class="sk-s">Free · 30 minutes · phone or video</div>
-              <div class="sk-grid" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-              <button class="skbtn" id="skbtn" type="button">Show available times</button>
-              <noscript><p class="sk-s">The booking calendar needs JavaScript. Please call <a href="tel:18596186443">(859) 618-6443</a> and we'll find a time together.</p></noscript>
+            <div class="calstate" id="calstate" role="status" aria-live="polite">
+              <div class="spin" id="calspin" aria-hidden="true"></div>
+              <div class="sk-t" id="calmsg">Loading available times</div>
+              <div class="sk-s" id="calsub">Free · 30 minutes · phone or video</div>
+              <div class="sk-grid" id="calgridskel" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+              <noscript><p class="sk-s">The booking calendar needs JavaScript. Please call <a href="tel:18596186443">(859) 618-6443</a> and we will find a time together.</p></noscript>
             </div>
           </div>
+          <p class="calhelp" id="calhelp" hidden>Trouble seeing the calendar?
+            <a href="https://link.runonforge.us/widget/booking/d8bRC0hzOnha9XAdaCoD" target="_blank" rel="noopener">Open it in a new tab</a>
+            or call <a href="tel:18596186443">(859) 618-6443</a>.</p>
         </div>
       </div>
     </div>
@@ -218,38 +227,80 @@ a{color:var(--coral-d);text-decoration:none;}
 (function(){var tog=document.getElementById('navtog'),links=document.getElementById('navlinks');if(!tog||!links)return;tog.addEventListener('click',function(){var o=links.classList.toggle('open');tog.setAttribute('aria-expanded',o?'true':'false');});links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');tog.setAttribute('aria-expanded','false');}});})();
 </script>
 <script>
-/* Booking widget: the page paints first, then the third-party calendar loads.
-   Space is reserved above so nothing shifts when it arrives. Loads when the
-   calendar scrolls into view, or immediately if the visitor taps the button. */
+/* Booking widget.
+   The page paints first and the calendar's space is reserved, so nothing shifts.
+   A loader covers the space until the widget confirms it rendered (it posts a
+   message once it sizes itself). A cross-origin iframe fires "load" even when it
+   fails, so that event is not trusted on its own: instead the loader clears on a
+   timer, and a small helper line appears offering a direct link and the phone
+   number. That way the fallback never hides a calendar that actually worked. */
 (function(){
-  var wrap=document.getElementById('calwrap'), btn=document.getElementById('skbtn'), loaded=false;
-  if(!wrap) return;
-  function load(){
-    if(loaded) return; loaded=true;
+  var wrap=document.getElementById('calwrap'),
+      state=document.getElementById('calstate'),
+      help=document.getElementById('calhelp'),
+      started=false, confirmed=false, cleared=false,
+      clearTimer=null, helpTimer=null;
+  if(!wrap||!state) return;
+
+  function clearLoader(){
+    if(cleared) return; cleared=true;
+    state.classList.add('is-done');
+  }
+  function confirm(){
+    if(confirmed) return; confirmed=true;
+    clearLoader();
+    if(helpTimer){clearTimeout(helpTimer);helpTimer=null;}
+    if(help) help.hidden=true;
+    if(typeof gtag==='function'){gtag('event','booking_widget_ready');}
+  }
+  function offerHelp(){
+    if(confirmed) return;
+    clearLoader();
+    if(help) help.hidden=false;
+    if(typeof gtag==='function'){gtag('event','booking_widget_slow');}
+  }
+  function start(){
+    if(started) return; started=true;
+
+    window.addEventListener('message', function(e){
+      if(typeof e.origin==='string' && e.origin.indexOf('runonforge') > -1){ confirm(); }
+    });
+
     var f=document.createElement('iframe');
     f.src='https://link.runonforge.us/widget/booking/d8bRC0hzOnha9XAdaCoD';
     f.id='d8bRC0hzOnha9XAdaCoD_1785875909017';
     f.title='Book an appointment with Austin Tyler';
     f.setAttribute('allow','payment');
     f.setAttribute('scrolling','no');
-    f.setAttribute('loading','eager');
-    wrap.innerHTML='';
     wrap.appendChild(f);
+
     var s=document.createElement('script');
     s.src='https://link.runonforge.us/js/form_embed.js';
-    s.type='text/javascript';
     s.async=true;
     document.body.appendChild(s);
-    if(typeof gtag==='function'){gtag('event','booking_widget_loaded');}
+
+    /* second signal: form_embed.js resizes the iframe once the widget is alive,
+       so a height change is proof even if no message we recognise arrives */
+    var baseH=f.offsetHeight;
+    var poll=setInterval(function(){
+      if(confirmed || !document.body.contains(f)){ clearInterval(poll); return; }
+      if(f.style.height || f.offsetHeight > baseH + 20){ clearInterval(poll); confirm(); }
+    }, 500);
+    setTimeout(function(){ clearInterval(poll); }, 12000);
+
+    /* uncover the calendar even if nothing confirms, then offer a hand if it
+       still has not confirmed shortly after */
+    clearTimer=setTimeout(clearLoader, 6000);
+    helpTimer=setTimeout(offerHelp, 9000);
   }
-  if(btn){btn.addEventListener('click',load);}
+
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); load(); } });
+      entries.forEach(function(e){ if(e.isIntersecting){ io.disconnect(); start(); } });
     },{rootMargin:'300px 0px'});
     io.observe(wrap);
   } else {
-    if(window.requestIdleCallback){requestIdleCallback(load);}else{setTimeout(load,1200);}
+    setTimeout(start, 400);
   }
 })();
 </script>
