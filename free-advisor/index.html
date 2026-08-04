@@ -372,7 +372,7 @@ h2{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.18;lett
 <script>
 (function(){
   var CONSENT_TEXT = "By checking this box and tapping the button, I give Tyler Insurance Group (dba Bluegrass Medicare Help) and licensed agent Austin Tyler my prior express consent to contact me at the phone number provided, including by autodialer, prerecorded or artificial voice, and text message, about Medicare insurance options. Consent is not a condition of purchase. Message and data rates may apply. I can opt out at any time by replying STOP.";
-  var WEBHOOK = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/fd91eae1-1237-43bf-9ec3-0822cab210d6";
+  var WEBHOOK = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";
   var SOURCE = "Born 1961 - Free Advisor LP";
   var CONTENT = "Free Advisor LP";
   var SLUG = "free-advisor";
@@ -405,7 +405,7 @@ h2{font-family:var(--serif);font-weight:600;font-size:28px;line-height:1.18;lett
       medicareStage:state.stage,birthdayTiming:state.birthday,topPriority:'',bestTimeToCall:'',
       consentGiven:true,consentText:CONSENT_TEXT,consentTimestamp:new Date().toISOString(),
       source:SOURCE,pageUrl:window.location.href};
-    fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+    fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.assign({},payload,{_subject:'Free Advisor page lead',_template:'table',_captcha:'false'}))})
       .then(function(){finish(fn);}).catch(function(){finish(fn);});
   });
   show(1);
