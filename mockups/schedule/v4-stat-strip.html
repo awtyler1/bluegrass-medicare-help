@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<title>V4 · Stat Strip | Schedule page concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f4efe7;--cream2:#faf6ef;--warm:#efe6d6;--ink:#2a2620;--dark:#1f1d1a;--coral:#d05528;--coral-d:#b3431d;--mute:#5f594f;--faint:#6f6a60;--line:#e2d9c8;--white:#fff;--green:#3a7d52;--serif:'Fraunces',Georgia,serif;--sans:'Source Sans 3',-apple-system,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;}
+img{max-width:100%;display:block;} a{color:var(--coral-d);text-decoration:none;}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+/* ---- the twin columns: equal height, always ---- */
+.twin{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;}
+.twin>*{min-width:0;}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;box-shadow:0 14px 34px rgba(80,60,30,.08);display:flex;flex-direction:column;}
+.calbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 14px 34px rgba(80,60,30,.08);height:100%;display:flex;flex-direction:column;}
+.calbox--bare{background:none;border:none;box-shadow:none;padding:0;}
+.calhead{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px;}
+.calhead b{display:block;font-family:var(--serif);font-size:21px;}
+.calhead span{font-size:14.5px;color:var(--mute);}
+.calgrid{flex:1;}
+.calmonth{font-weight:700;font-size:16px;margin-bottom:10px;display:flex;justify-content:space-between;}
+.calmonth span{color:var(--faint);letter-spacing:6px;}
+.caldays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;}
+.caldays i{font-style:normal;text-align:center;font-size:12px;color:var(--faint);font-weight:700;}
+.calnums{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:20px;}
+.calnums i{font-style:normal;text-align:center;font-size:14.5px;padding:9px 0;border-radius:8px;color:#b9b1a4;}
+.calnums i.on{color:var(--ink);background:var(--cream2);border:1px solid var(--line);font-weight:600;}
+.calnums i.sel{background:var(--coral);color:#fff;border-color:var(--coral);}
+.calslots b{display:block;font-size:15px;margin-bottom:9px;}
+.calslots span{display:inline-block;border:1.5px solid var(--coral);color:var(--coral-d);font-weight:700;font-size:14.5px;padding:9px 14px;border-radius:9px;margin:0 6px 6px 0;}
+.calnote{margin-top:14px;font-size:12px;color:#c2b9ab;text-align:center;font-style:italic;}
+/* ---- shared value list ---- */
+.vlist{list-style:none;}
+.vlist li{position:relative;padding-left:38px;margin-bottom:19px;}
+.vlist li::before{content:"✓";position:absolute;left:0;top:1px;width:26px;height:26px;border-radius:50%;background:var(--green);color:#fff;font-size:14px;font-weight:800;display:flex;align-items:center;justify-content:center;}
+.vlist b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:2px;}
+.vlist span{font-size:15.5px;color:var(--mute);}
+.who{display:flex;gap:15px;align-items:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line);}
+.who img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--coral);flex-shrink:0;}
+.who b{font-family:var(--serif);font-size:19px;display:block;}
+.who span{font-size:14.5px;color:var(--mute);}
+.pfoot{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:16px;}
+.pfoot b{font-family:var(--serif);}
+/* ---- chrome ---- */
+.ustrip{background:var(--dark);color:#cfc7bb;font-size:13px;padding:7px 0;}
+.ustrip .wrap{display:flex;justify-content:space-between;}
+.ustrip .stars{color:#e9b949;}
+.nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;}
+.nav .wrap{display:flex;align-items:center;gap:26px;padding-top:12px;padding-bottom:12px;}
+.brand-logo{height:42px;width:auto;}
+.navlinks{display:flex;gap:22px;margin-left:auto;}
+.navlinks a{color:var(--ink);font-weight:600;font-size:15px;}
+.navlinks a.active{color:var(--coral-d);}
+.navcta{background:var(--green);color:#fff;font-weight:700;padding:10px 18px;border-radius:10px;font-size:14.5px;}
+.foot{background:var(--dark);color:#9a948c;padding:28px 0 34px;font-size:13px;margin-top:56px;}
+.foot .fnm{color:var(--cream);font-weight:600;font-size:15px;font-family:var(--serif);}
+.foot a{color:#bdb6ac;}
+.foot .disc{margin-top:12px;padding-top:12px;border-top:1px solid #333;color:#918b80;font-size:11.5px;}
+/* ---- symmetric strips ---- */
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;text-align:center;}
+.trio .n{width:34px;height:34px;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:16px;}
+.trio h3{font-family:var(--serif);font-size:19px;margin-bottom:6px;}
+.trio p{font-size:15.5px;color:var(--mute);}
+.quad{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.quad i{font-style:normal;text-align:center;font-size:15px;font-weight:700;color:var(--green);background:rgba(58,125,82,.09);border-radius:12px;padding:16px 10px;}
+@media(max-width:900px){.twin{grid-template-columns:1fr;}.trio,.quad{grid-template-columns:1fr;}}
+
+.head4{text-align:center;padding:52px 0 26px;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:18px;}
+.eyebrow span{font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--coral-d);white-space:nowrap;}
+.eyebrow i{display:block;height:1px;background:var(--line);width:90px;}
+.head4 h1{font-family:var(--serif);font-weight:500;font-size:50px;line-height:1.08;letter-spacing:-1px;margin:0 auto 14px;max-width:840px;}
+.head4 p{font-size:19.5px;color:var(--mute);max-width:680px;margin:0 auto;}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:0 0 34px;}
+.stats div{padding:20px 14px;text-align:center;border-left:1px solid var(--line);}
+.stats div:first-child{border-left:none;}
+.stats b{display:block;font-family:var(--serif);font-size:27px;color:var(--coral-d);}
+.stats span{font-size:14px;color:var(--mute);font-weight:600;}
+.close4{margin-top:48px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:30px;text-align:center;}
+.close4 h3{font-family:var(--serif);font-size:24px;margin-bottom:8px;}
+.close4 p{color:var(--mute);font-size:16.5px;}
+.close4 .ph{display:inline-block;margin-top:14px;font-size:21px;font-weight:800;color:var(--coral-d);}
+@media(max-width:900px){.head4 h1{font-size:33px;}.stats{grid-template-columns:1fr;}.stats div{border-left:none;border-top:1px solid var(--line);}.stats div:first-child{border-top:none;}}
+.mocklabel{position:fixed;left:0;top:0;background:var(--coral);color:#fff;font-weight:700;font-size:12px;padding:6px 14px;z-index:99;}</style></head><body>
+<div class="mocklabel">V4 · Stat Strip</div>
+<div class="ustrip"><div class="wrap">
+<span>📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</span>
+<span class="rate"><span class="stars">★★★★★</span> 5.0 on Google</span>
+</div></div>
+<nav class="nav"><div class="wrap">
+<a class="brand" href="/"><img class="brand-logo" src="/assets/logo.png" alt="Bluegrass Medicare Help" height="46"></a>
+<div class="navlinks">
+<a href="/turning-65/">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/kentucky/">Kentucky</a>
+<a href="/reviews/">Reviews</a><a href="/schedule/" class="active">Schedule</a><a href="/about/">About</a>
+</div>
+<a class="navcta" href="tel:18596186443">Call</a>
+</div></nav><section class="head4"><div class="wrap">
+<div class="eyebrow"><i></i><span>Free 30-minute Medicare review</span><i></i></div>
+<h1>Let's make sure you're in the right plan.</h1>
+<p>Pick a time that works for you. I'll do the homework before we talk, and tell you honestly if what you have already fits.</p>
+</div></section>
+<section><div class="wrap">
+<div class="stats">
+<div><b>30 min</b><span>Phone or video</span></div>
+<div><b>$0</b><span>Cost to you, ever</span></div>
+<div><b>5.0 ★</b><span>Rated on Google</span></div>
+</div>
+<div class="twin">
+<div class="panel"><div class="who"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler">
+<div><b>Austin Tyler</b><span>Licensed Kentucky Medicare agent · Lexington</span></div></div><ul class="vlist"><li><b>A plan built around your doctors</b><span>We confirm the doctors and hospital you already use are in-network before you enroll, not after.</span></li><li><b>Your prescriptions priced, drug by drug</b><span>We run your exact medication list through every plan so a low premium can't hide a high drug bill.</span></li><li><b>Every option on the table</b><span>Advantage, Supplement, and drug plans side by side in plain English, trade-offs said out loud.</span></li><li><b>One person to call, all year</b><span>Not a call center. A local agent in Lexington who answers the phone in March when a claim goes sideways.</span></li></ul><div class="pfoot"><b>Rather just call?</b> Dial <a href="tel:18596186443">(859) 618-6443</a> and you'll get a real person, usually me.</div></div>
+<div class="calbox">
+  <div class="calhead"><b>Pick a time that works for you</b><span>Free · 30 minutes · phone or video</span></div>
+  <div class="calgrid">
+    <div class="calmonth">August 2026 <span>&lsaquo; &rsaquo;</span></div>
+    <div class="caldays"><i>S</i><i>M</i><i>T</i><i>W</i><i>T</i><i>F</i><i>S</i></div>
+    <div class="calnums"><i class="">1</i><i class="">2</i><i class="">3</i><i class="">4</i><i class="on">5</i><i class="on">6</i><i class="on">7</i><i class="">8</i><i class="">9</i><i class="">10</i><i class="">11</i><i class="on">12</i><i class="on sel">13</i><i class="on">14</i><i class="">15</i><i class="">16</i><i class="">17</i><i class="">18</i><i class="on">19</i><i class="on">20</i><i class="on">21</i><i class="">22</i><i class="">23</i><i class="">24</i><i class="">25</i><i class="">26</i><i class="">27</i><i class="">28</i></div>
+    <div class="calslots"><b>Thursday, August 13</b>
+      <span>9:00 AM</span><span>10:30 AM</span><span>1:00 PM</span><span>2:30 PM</span><span>4:00 PM</span>
+    </div>
+  </div>
+  <p class="calnote">Booking widget loads here</p>
+</div>
+</div>
+<div class="close4"><h3>Not ready to book?</h3><p>Call and ask one question. No appointment, no form, no follow-up unless you want one.</p>
+<span class="ph">(859) 618-6443</span></div>
+</div></section><footer class="foot"><div class="wrap">
+<div class="fnm">Tyler Insurance Group</div>
+1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
+<a href="tel:8596186443">(859) 618-6443</a>
+<div class="disc">We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</div>
+</div></footer></body></html>
