@@ -46,7 +46,7 @@ a{color:var(--coral-d);text-decoration:none;}
 .foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
 .foot a{color:#bdb6ac;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#918b80;font-size:12px;}
-.schedwrap{max-width:1160px;margin:0 auto;padding:0 24px;}
+.schedwrap{max-width:1320px;margin:0 auto;padding:0 24px;}
 .schead{text-align:center;padding:52px 0 30px;}
 .schead h1{font-family:var(--serif);font-weight:500;font-size:50px;line-height:1.08;letter-spacing:-1px;margin:0 auto 14px;max-width:840px;color:var(--ink);}
 .schead .lede{font-size:19.5px;color:var(--mute);max-width:680px;margin:0 auto 20px;}
@@ -54,10 +54,16 @@ a{color:var(--coral-d);text-decoration:none;}
 .headmeta span{display:inline-flex;align-items:center;gap:7px;}
 .headmeta b{color:var(--green);font-size:17px;}
 .unified{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 20px 46px rgba(80,60,30,.10);overflow:hidden;}
-.twin{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;}
+/* single column by default; the calendar only sits beside the value rail when
+   there is enough room left over for Calendly's wide day+times layout */
+.twin{display:grid;grid-template-columns:1fr;align-items:stretch;}
 .twin>*{min-width:0;}
 .uleft{padding:36px;display:flex;flex-direction:column;}
-.uright{padding:30px;border-left:1px solid var(--line);background:var(--cream2);}
+.uright{padding:30px;border-top:1px solid var(--line);background:var(--cream2);}
+@media(min-width:1241px){
+  .twin{grid-template-columns:420px 1fr;}
+  .uright{border-top:none;border-left:1px solid var(--line);}
+}
 .who{display:flex;gap:15px;align-items:center;padding-bottom:20px;margin-bottom:22px;border-bottom:1px solid var(--line);}
 .who img{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--coral);flex-shrink:0;}
 .who b{font-family:var(--serif);font-size:19px;display:block;color:var(--ink);}
@@ -73,7 +79,7 @@ a{color:var(--coral-d);text-decoration:none;}
 .pfoot b{font-family:var(--serif);color:var(--ink);}
 .pfoot a{font-weight:700;white-space:nowrap;}
 /* booking widget: space reserved up front so nothing jumps when it arrives */
-.calwrap{position:relative;min-height:640px;display:flex;flex-direction:column;}
+.calwrap{position:relative;min-height:680px;display:flex;flex-direction:column;}
 .calwrap iframe{width:100%;border:none;overflow:hidden;position:relative;z-index:1;}
 .calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;}
 /* loader sits on top of the reserved space until the widget reports it is ready */
@@ -103,8 +109,7 @@ a{color:var(--coral-d);text-decoration:none;}
 .scdisc{font-size:13.5px;color:var(--faint);font-style:italic;line-height:1.5;margin:34px 0 0;padding-top:20px;border-top:1px solid var(--line);}
 @media(max-width:900px){
   .schead{padding:34px 0 24px;} .schead h1{font-size:33px;}
-  .twin{grid-template-columns:1fr;}
-  .uright{border-left:none;border-top:1px solid var(--line);padding:22px;}
+  .uright{padding:22px;}
   .uleft{padding:26px;}
   .quad{grid-template-columns:1fr 1fr;} .faqgrid{grid-template-columns:1fr;}
 }
@@ -237,9 +242,12 @@ a{color:var(--coral-d);text-decoration:none;}
   var wrap=document.getElementById('calwrap'),
       state=document.getElementById('calstate'),
       help=document.getElementById('calhelp'),
-      CAL_URL='https://calendly.com/austin-tylerinsurancegroup/medicare-appointment-with-tyler-insurance-group'
-             +'?background_color=faf6ef&text_color=2a2620&primary_color=b3431d',
-      started=false, confirmed=false, cleared=false, helpTimer=null;
+      BOOK_URL='https://calendly.com/austin-tylerinsurancegroup/medicare-appointment-with-tyler-insurance-group',
+      /* hide_event_type_details: the panel beside the calendar already shows the
+         headshot, name and length, so Calendly repeating it only adds scrolling */
+      CAL_URL=BOOK_URL+'?hide_event_type_details=1&hide_gdpr_banner=1'
+             +'&background_color=faf6ef&text_color=2a2620&primary_color=b3431d',
+      started=false, confirmed=false, cleared=false, helpTimer=null, frame=null;
   if(!wrap||!state) return;
 
   function clearLoader(){
@@ -259,11 +267,24 @@ a{color:var(--coral-d);text-decoration:none;}
     if(help) help.hidden=false;
     if(typeof gtag==='function'){gtag('event','booking_widget_slow');}
   }
+  /* exact origin match, so a lookalike domain cannot fake a booking event */
+  var CAL_ORIGIN=/^https:\/\/([a-z0-9-]+\.)*calendly\.com$/;
   function isCalendly(e){
-    return e && e.origin && e.origin.indexOf('calendly.com') > -1
+    return e && typeof e.origin === 'string' && CAL_ORIGIN.test(e.origin.toLowerCase())
         && e.data && typeof e.data.event === 'string'
         && e.data.event.indexOf('calendly.') === 0;
   }
+  /* Calendly reports how tall its page is as the user moves through the steps.
+     Growing the frame to match means the booking flow never gets its own
+     scrollbar: the whole calendar, and then the times, are always in view. */
+  function fit(px){
+    var h=parseInt(px,10);
+    if(!(h>300 && h<4000)) return;
+    if(box) box.style.height=h+'px';
+    if(!frame) frame=wrap.querySelector('iframe');
+    if(frame) frame.style.height=h+'px';
+  }
+  var box=null;
   function start(){
     if(started) return; started=true;
 
@@ -271,6 +292,10 @@ a{color:var(--coral-d);text-decoration:none;}
       if(!isCalendly(e)) return;
       /* any Calendly event means the embed is alive */
       confirm();
+      /* keep the frame exactly as tall as its contents */
+      if(e.data.event === 'calendly.page_height' && e.data.payload){
+        fit(e.data.payload.height);
+      }
       /* someone actually booked: report it once */
       if(e.data.event === 'calendly.event_scheduled'){
         if(typeof fbq==='function'){fbq('track','Schedule',{content_name:'Medicare review'});}
@@ -282,8 +307,9 @@ a{color:var(--coral-d);text-decoration:none;}
     d.className='calendly-inline-widget';
     d.setAttribute('data-url', CAL_URL);
     d.style.minWidth='320px';
-    d.style.height='700px';
+    d.style.height='680px';
     wrap.appendChild(d);
+    box=d;
 
     var s=document.createElement('script');
     s.src='https://assets.calendly.com/assets/external/widget.js';
