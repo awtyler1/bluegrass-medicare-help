@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>CONCEPT B · Trust Wall | Schedule page concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f4efe7;--cream2:#faf6ef;--warm:#efe6d6;--ink:#2a2620;--dark:#1f1d1a;--coral:#d05528;--coral-d:#b3431d;--mute:#5f594f;--faint:#6f6a60;--line:#e2d9c8;--white:#fff;--green:#3a7d52;--serif:'Fraunces',Georgia,serif;--sans:'Source Sans 3',-apple-system,sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;}
+img{max-width:100%;display:block;} a{color:var(--coral-d);text-decoration:none;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+/* calendar placeholder */
+.calbox{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 18px 40px rgba(80,60,30,.10);}
+.calhead{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px;}
+.calhead b{display:block;font-family:var(--serif);font-size:21px;}
+.calhead span{font-size:14.5px;color:var(--mute);}
+.calmonth{font-weight:700;font-size:16px;margin-bottom:10px;display:flex;justify-content:space-between;}
+.calmonth span{color:var(--faint);letter-spacing:6px;}
+.caldays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px;}
+.caldays i{font-style:normal;text-align:center;font-size:12px;color:var(--faint);font-weight:700;}
+.calnums{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:18px;}
+.calnums i{font-style:normal;text-align:center;font-size:14px;padding:8px 0;border-radius:8px;color:#b9b1a4;}
+.calnums i.on{color:var(--ink);background:var(--cream2);border:1px solid var(--line);font-weight:600;}
+.calnums i.sel{background:var(--coral);color:#fff;border-color:var(--coral);}
+.calslots b{display:block;font-size:14.5px;margin-bottom:8px;}
+.calslots span{display:inline-block;border:1.5px solid var(--coral);color:var(--coral-d);font-weight:700;font-size:14.5px;padding:9px 14px;border-radius:9px;margin:0 6px 6px 0;}
+.calnote{margin-top:14px;font-size:12px;color:#c2b9ab;text-align:center;font-style:italic;}
+/* chrome */
+.ustrip{background:var(--dark);color:#cfc7bb;font-size:13px;padding:7px 0;}
+.ustrip .wrap{display:flex;justify-content:space-between;}
+.ustrip .stars{color:#e9b949;}
+.nav{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;}
+.nav .wrap{display:flex;align-items:center;gap:26px;padding-top:12px;padding-bottom:12px;}
+.brand-logo{height:42px;width:auto;}
+.navlinks{display:flex;gap:22px;margin-left:auto;}
+.navlinks a{color:var(--ink);font-weight:600;font-size:15px;}
+.navlinks a.active{color:var(--coral-d);}
+.navcta{background:var(--green);color:#fff;font-weight:700;padding:10px 18px;border-radius:10px;font-size:14.5px;}
+.foot{background:var(--dark);color:#9a948c;padding:28px 0 34px;font-size:13px;margin-top:56px;}
+.foot .fnm{color:var(--cream);font-weight:600;font-size:15px;font-family:var(--serif);}
+.foot a{color:#bdb6ac;}
+.foot .disc{margin-top:12px;padding-top:12px;border-top:1px solid #333;color:#918b80;font-size:11.5px;}
+.mocklabel{position:fixed;left:0;top:0;background:var(--coral);color:#fff;font-weight:700;font-size:12px;padding:6px 14px;z-index:99;letter-spacing:.5px;}
+
+.hero{padding:44px 0 18px;}
+.hgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+h1{font-family:var(--serif);font-weight:500;font-size:42px;line-height:1.1;letter-spacing:-.8px;margin-bottom:14px;}
+.sub{font-size:18.5px;color:var(--mute);margin-bottom:26px;}
+.proofcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:22px;box-shadow:0 10px 26px rgba(80,60,30,.06);}
+.pchead{display:flex;gap:16px;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px;}
+.pchead img{width:88px;height:88px;border-radius:14px;object-fit:cover;object-position:center top;}
+.pchead b{font-family:var(--serif);font-size:21px;display:block;}
+.pchead .cred{font-size:14.5px;color:var(--mute);display:block;margin-top:2px;}
+.pchead .stars{color:#e9b949;font-size:15px;letter-spacing:2px;margin-top:6px;display:block;}
+.pchead .stars small{color:var(--mute);letter-spacing:0;font-size:13.5px;}
+.quote{border-left:3px solid var(--warm);padding-left:16px;margin-bottom:16px;}
+.quote p{font-size:16px;font-style:italic;color:#4a443b;margin-bottom:5px;}
+.quote span{font-size:13.5px;color:var(--faint);font-weight:600;}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.badges i{font-style:normal;font-size:13px;font-weight:700;background:var(--cream2);border:1px solid var(--line);border-radius:20px;padding:6px 12px;color:var(--mute);}
+.vlist{list-style:none;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;}
+.vlist>b{font-family:var(--serif);font-size:18px;display:block;margin-bottom:14px;}
+.vlist li{position:relative;padding-left:30px;margin-bottom:13px;font-size:16.5px;}
+.vlist li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800;}
+.stickycal{position:sticky;top:88px;}
+@media(max-width:900px){.hgrid{grid-template-columns:1fr;gap:30px;}h1{font-size:32px;}.stickycal{position:static;}}
+</style></head><body>
+<div class="mocklabel">CONCEPT B · Trust Wall</div>
+<div class="ustrip"><div class="wrap">
+<span>📍 <strong>Lexington, Kentucky</strong> &nbsp;·&nbsp; Serving Fayette &amp; surrounding counties</span>
+<span class="rate"><span class="stars">★★★★★</span> 5.0 on Google</span>
+</div></div>
+<nav class="nav"><div class="wrap">
+<a class="brand" href="/"><img class="brand-logo" src="/assets/logo.png" alt="Bluegrass Medicare Help" height="46"></a>
+<div class="navlinks">
+<a href="/turning-65/">Turning 65?</a>
+<a href="/articles/">Learning Center</a>
+<a href="/kentucky/">Kentucky</a>
+<a href="/reviews/">Reviews</a>
+<a href="/schedule/" class="active">Schedule</a>
+<a href="/about/">About</a>
+</div>
+<a class="navcta" href="tel:18596186443">Call</a>
+</div></nav>
+<section class="hero"><div class="wrap"><div class="hgrid">
+<div>
+<h1>Book 20 minutes with the agent your neighbors already trust.</h1>
+<p class="sub">Free, no pressure, and no obligation to change a thing.</p>
+<div class="proofcard">
+<div class="pchead"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler">
+<div><b>Austin Tyler</b><span class="cred">Licensed Kentucky Medicare agent · Lexington</span>
+<span class="stars">★★★★★ <small>5.0 on Google</small></span></div></div>
+<div class="quote"><p>&ldquo;Austin was extremely knowledgeable and explained everything in great detail so I could easily understand. I know that my insurance needs are in good hands!&rdquo;</p><span>Doug S. · Google review</span></div>
+<div class="quote"><p>&ldquo;Austin is such a pleasant man to talk to. He cares about his clients and finds ways to get what we need.&rdquo;</p><span>Robert E. · Google review</span></div>
+<div class="badges"><i>Independent, not captive</i><i>6 carriers represented</i><i>Lexington based</i><i>No fee to you, ever</i></div>
+</div>
+<ul class="vlist"><b>What you get out of the call</b>
+<li>A plan built around your doctors</li><li>Your prescriptions priced, drug by drug</li><li>Every option on the table</li><li>One person to call, all year</li>
+<li>An honest answer, even when it is "keep what you have"</li>
+</ul>
+</div>
+<div class="stickycal"><div class="calbox" style="min-height:560px">
+  <div class="calhead"><b>Pick a time that works for you</b><span>Free · 20 minutes · phone or video</span></div>
+  <div class="calgrid">
+    <div class="calmonth">August 2026 <span>&lsaquo; &rsaquo;</span></div>
+    <div class="caldays"><i>S</i><i>M</i><i>T</i><i>W</i><i>T</i><i>F</i><i>S</i></div>
+    <div class="calnums"><i class="">1</i><i class="">2</i><i class="">3</i><i class="">4</i><i class="on">5</i><i class="on">6</i><i class="on">7</i><i class="">8</i><i class="">9</i><i class="">10</i><i class="">11</i><i class="on">12</i><i class="on sel">13</i><i class="on">14</i><i class="">15</i><i class="">16</i><i class="">17</i><i class="">18</i><i class="on">19</i><i class="on">20</i><i class="on">21</i><i class="">22</i><i class="">23</i><i class="">24</i><i class="">25</i><i class="">26</i><i class="">27</i><i class="">28</i></div>
+    <div class="calslots"><b>Thursday, August 13</b>
+      <span>9:00 AM</span><span>10:30 AM</span><span>1:00 PM</span><span>2:30 PM</span><span>4:00 PM</span>
+    </div>
+  </div>
+  <p class="calnote">Booking widget loads here</p>
+</div></div>
+</div></div></section>
+<footer class="foot"><div class="wrap">
+<div class="fnm">Tyler Insurance Group</div>
+1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
+<a href="tel:8596186443">(859) 618-6443</a>
+<div class="disc">We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</div>
+</div></footer>
+</body></html>
