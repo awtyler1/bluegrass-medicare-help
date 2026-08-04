@@ -74,7 +74,8 @@ a{color:var(--coral-d);text-decoration:none;}
 .pfoot a{font-weight:700;white-space:nowrap;}
 /* booking widget: space reserved up front so nothing jumps when it arrives */
 .calwrap{position:relative;min-height:640px;display:flex;flex-direction:column;}
-.calwrap iframe{width:100%;border:none;overflow:hidden;min-height:640px;position:relative;z-index:1;}
+.calwrap iframe{width:100%;border:none;overflow:hidden;position:relative;z-index:1;}
+.calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;}
 /* loader sits on top of the reserved space until the widget reports it is ready */
 .calstate{position:absolute;inset:0;z-index:2;background:var(--cream2);border-radius:12px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px 20px;
@@ -180,7 +181,7 @@ a{color:var(--coral-d);text-decoration:none;}
             </div>
           </div>
           <p class="calhelp" id="calhelp" hidden>Trouble seeing the calendar?
-            <a href="https://link.runonforge.us/widget/booking/d8bRC0hzOnha9XAdaCoD" target="_blank" rel="noopener">Open it in a new tab</a>
+            <a href="https://calendly.com/austin-tylerinsurancegroup/medicare-appointment-with-tyler-insurance-group" target="_blank" rel="noopener">Open it in a new tab</a>
             or call <a href="tel:18596186443">(859) 618-6443</a>.</p>
         </div>
       </div>
@@ -227,19 +228,18 @@ a{color:var(--coral-d);text-decoration:none;}
 (function(){var tog=document.getElementById('navtog'),links=document.getElementById('navlinks');if(!tog||!links)return;tog.addEventListener('click',function(){var o=links.classList.toggle('open');tog.setAttribute('aria-expanded',o?'true':'false');});links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');tog.setAttribute('aria-expanded','false');}});})();
 </script>
 <script>
-/* Booking widget.
+/* Booking widget (Calendly inline embed).
    The page paints first and the calendar's space is reserved, so nothing shifts.
-   A loader covers the space until the widget confirms it rendered (it posts a
-   message once it sizes itself). A cross-origin iframe fires "load" even when it
-   fails, so that event is not trusted on its own: instead the loader clears on a
-   timer, and a small helper line appears offering a direct link and the phone
-   number. That way the fallback never hides a calendar that actually worked. */
+   A loader covers that space until Calendly confirms it rendered, then clears.
+   Calendly posts events to the parent window, so we get a real ready signal
+   rather than guessing, and a real booking signal we can report as a conversion. */
 (function(){
   var wrap=document.getElementById('calwrap'),
       state=document.getElementById('calstate'),
       help=document.getElementById('calhelp'),
-      started=false, confirmed=false, cleared=false,
-      clearTimer=null, helpTimer=null;
+      CAL_URL='https://calendly.com/austin-tylerinsurancegroup/medicare-appointment-with-tyler-insurance-group'
+             +'?background_color=faf6ef&text_color=2a2620&primary_color=b3431d',
+      started=false, confirmed=false, cleared=false, helpTimer=null;
   if(!wrap||!state) return;
 
   function clearLoader(){
@@ -259,38 +259,46 @@ a{color:var(--coral-d);text-decoration:none;}
     if(help) help.hidden=false;
     if(typeof gtag==='function'){gtag('event','booking_widget_slow');}
   }
+  function isCalendly(e){
+    return e && e.origin && e.origin.indexOf('calendly.com') > -1
+        && e.data && typeof e.data.event === 'string'
+        && e.data.event.indexOf('calendly.') === 0;
+  }
   function start(){
     if(started) return; started=true;
 
     window.addEventListener('message', function(e){
-      if(typeof e.origin==='string' && e.origin.indexOf('runonforge') > -1){ confirm(); }
+      if(!isCalendly(e)) return;
+      /* any Calendly event means the embed is alive */
+      confirm();
+      /* someone actually booked: report it once */
+      if(e.data.event === 'calendly.event_scheduled'){
+        if(typeof fbq==='function'){fbq('track','Schedule',{content_name:'Medicare review'});}
+        if(typeof gtag==='function'){gtag('event','appointment_booked',{event_category:'booking'});}
+      }
     });
 
-    var f=document.createElement('iframe');
-    f.src='https://link.runonforge.us/widget/booking/d8bRC0hzOnha9XAdaCoD';
-    f.id='d8bRC0hzOnha9XAdaCoD_1785875909017';
-    f.title='Book an appointment with Austin Tyler';
-    f.setAttribute('allow','payment');
-    f.setAttribute('scrolling','no');
-    wrap.appendChild(f);
+    var d=document.createElement('div');
+    d.className='calendly-inline-widget';
+    d.setAttribute('data-url', CAL_URL);
+    d.style.minWidth='320px';
+    d.style.height='700px';
+    wrap.appendChild(d);
 
     var s=document.createElement('script');
-    s.src='https://link.runonforge.us/js/form_embed.js';
+    s.src='https://assets.calendly.com/assets/external/widget.js';
     s.async=true;
     document.body.appendChild(s);
 
-    /* second signal: form_embed.js resizes the iframe once the widget is alive,
-       so a height change is proof even if no message we recognise arrives */
-    var baseH=f.offsetHeight;
+    /* second signal: Calendly injects its own iframe once the script runs */
     var poll=setInterval(function(){
-      if(confirmed || !document.body.contains(f)){ clearInterval(poll); return; }
-      if(f.style.height || f.offsetHeight > baseH + 20){ clearInterval(poll); confirm(); }
-    }, 500);
+      if(confirmed){ clearInterval(poll); return; }
+      if(wrap.querySelector('iframe')){ clearInterval(poll); clearLoader(); }
+    }, 400);
     setTimeout(function(){ clearInterval(poll); }, 12000);
 
-    /* uncover the calendar even if nothing confirms, then offer a hand if it
-       still has not confirmed shortly after */
-    clearTimer=setTimeout(clearLoader, 6000);
+    /* never let the loader hide a calendar that did render */
+    setTimeout(clearLoader, 6000);
     helpTimer=setTimeout(offerHelp, 9000);
   }
 
