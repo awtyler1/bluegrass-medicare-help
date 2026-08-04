@@ -345,7 +345,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
    GOHIGHLEVEL WIRING
    Workflow: "Advantage vs Supplement Quiz, Intake"
    ============================================================ */
-const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/1916f80e-cc2d-42b6-81b3-aedffe7a75c2";
+const GHL_WEBHOOK_URL = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";
 
 const CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans (Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance). Messages may be sent via automatic dialing system or prerecorded voice. Msg & data rates may apply. Consent is not required to purchase. Reply STOP to opt out, HELP for help. See our Privacy Policy and Terms.";
 
@@ -780,8 +780,8 @@ document.getElementById('quizform').addEventListener('submit', function(e){
   if (GHL_WEBHOOK_URL) {
     fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(payload)
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(Object.assign({},payload,{_subject:'Supplement vs Advantage quiz lead',_template:'table',_captcha:'false'}))
     })
     .then(function(){ finish(); })
     .catch(function(err){

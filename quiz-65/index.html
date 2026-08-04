@@ -356,7 +356,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
    Paste your GHL Inbound Webhook URL between the quotes below.
    Until you do, the quiz still works; it just won't transmit.
    ============================================================ */
-const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/f96944a6-10c1-40b4-853a-4c3c370d6c3d";  // GHL inbound webhook
+const GHL_WEBHOOK_URL = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";  // GHL inbound webhook
 
 const CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.";
 
@@ -518,8 +518,8 @@ document.getElementById('quizform').addEventListener('submit', function(e){
     // it normally with the JSON content-type GHL expects.
     fetch(GHL_WEBHOOK_URL, {
       method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify(payload)
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(Object.assign({},payload,{_subject:'Turning 65 quiz lead',_template:'table',_captcha:'false'}))
     })
     .then(function(){ finish(); })
     .catch(function(err){

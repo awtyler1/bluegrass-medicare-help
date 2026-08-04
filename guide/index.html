@@ -329,7 +329,7 @@ a{color:var(--coral-d);text-decoration:none;}
 </script>
 <script>
 (function(){
-  var GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/b2b5e80c-e2ce-4479-aa96-613e9abe0bfe";
+  var GHL_WEBHOOK_URL = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";
   var CONSENT_TEXT = "This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.";
 
   var TOTAL=3, cur=1, initial=true;
@@ -407,7 +407,7 @@ a{color:var(--coral-d);text-decoration:none;}
       window.location.href='/guide/thankyou/';
     }
     if(GHL_WEBHOOK_URL){
-      fetch(GHL_WEBHOOK_URL,{ method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) })
+      fetch(GHL_WEBHOOK_URL,{ method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'}, body:JSON.stringify(Object.assign({},payload,{_subject:'Free Guide request',_template:'table',_captcha:'false'})) })
         .then(finish).catch(function(err){ console.error('Webhook error:',err); finish(); });
     } else { console.log('LEAD PAYLOAD:', payload); finish(); }
   });
