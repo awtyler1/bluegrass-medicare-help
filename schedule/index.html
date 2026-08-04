@@ -78,10 +78,14 @@ a{color:var(--coral-d);text-decoration:none;}
 .pfoot{margin-top:auto;padding-top:20px;border-top:1px solid var(--line);font-size:16px;color:var(--mute);}
 .pfoot b{font-family:var(--serif);color:var(--ink);}
 .pfoot a{font-weight:700;white-space:nowrap;}
-/* booking widget: space reserved up front so nothing jumps when it arrives */
-.calwrap{position:relative;min-height:680px;display:flex;flex-direction:column;}
-.calwrap iframe{width:100%;border:none;overflow:hidden;position:relative;z-index:1;}
-.calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;}
+/* booking widget: space reserved up front so nothing jumps when it arrives.
+   --calcap keeps the frame inside one screen. A day with a lot of open times
+   scrolls its own list inside the frame rather than stretching the page, so
+   the header, the value panel and the calendar all stay put. */
+.calwrap{--calcap:clamp(560px,calc(100vh - 150px),760px);
+  position:relative;min-height:560px;display:flex;flex-direction:column;}
+.calwrap iframe{width:100%;border:none;position:relative;z-index:1;max-height:var(--calcap);}
+.calwrap .calendly-inline-widget{position:relative;z-index:1;width:100%;max-height:var(--calcap);}
 /* loader sits on top of the reserved space until the widget reports it is ready */
 .calstate{position:absolute;inset:0;z-index:2;background:var(--cream2);border-radius:12px;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:30px 20px;
@@ -274,17 +278,34 @@ a{color:var(--coral-d);text-decoration:none;}
         && e.data && typeof e.data.event === 'string'
         && e.data.event.indexOf('calendly.') === 0;
   }
-  /* Calendly reports how tall its page is as the user moves through the steps.
-     Growing the frame to match means the booking flow never gets its own
-     scrollbar: the whole calendar, and then the times, are always in view. */
+  /* Calendly reports how tall each step is. Short steps shrink the frame so
+     there is no empty gap, but nothing grows past one screenful: a long list
+     of times scrolls inside the frame instead of stretching the whole page.
+     The same ceiling is set in CSS, so it holds even if Calendly's own script
+     tries to resize the frame itself. */
+  var box=null, wanted=0;
+  function cap(){
+    var vh=window.innerHeight||800;
+    return Math.max(560, Math.min(760, vh-150));
+  }
   function fit(px){
     var h=parseInt(px,10);
-    if(!(h>300 && h<4000)) return;
+    if(!(h>300 && h<6000)) return;
+    wanted=h;
+    apply();
+  }
+  function apply(){
+    if(!wanted) return;
+    var h=Math.min(wanted, cap());
     if(box) box.style.height=h+'px';
     if(!frame) frame=wrap.querySelector('iframe');
     if(frame) frame.style.height=h+'px';
   }
-  var box=null;
+  /* keep the ceiling honest if the window is resized or the phone is turned */
+  var rz=null;
+  window.addEventListener('resize', function(){
+    clearTimeout(rz); rz=setTimeout(apply, 150);
+  });
   function start(){
     if(started) return; started=true;
 
@@ -307,7 +328,7 @@ a{color:var(--coral-d);text-decoration:none;}
     d.className='calendly-inline-widget';
     d.setAttribute('data-url', CAL_URL);
     d.style.minWidth='320px';
-    d.style.height='680px';
+    d.style.height=cap()+'px';
     wrap.appendChild(d);
     box=d;
 
