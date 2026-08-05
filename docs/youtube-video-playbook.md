@@ -22,12 +22,21 @@ and for the people who expand it.
 
 1. One-sentence hook that repeats the main keyword naturally
 2. Primary link (the matching article), with UTM tags
-3. Longer summary, 100 to 200 words, using the phrases people actually search
-4. Chapters (timestamps) once the video is cut
-5. Related reading, 3 to 5 site links
-6. Booking + phone
-7. Credentials line (this is an E-E-A-T signal, worth the space)
+3. Summary, 150 to 200 words, using the phrases people actually search
+4. Chapters (timestamps)
+5. Booking link + phone
+6. One-line credentials (an E-E-A-T signal, worth the space)
+7. Hashtags
 8. CMS disclaimer
+
+**Keep it to two links.** The matching article and the booking page. It is tempting
+to list every related article, but a description with eight links reads as spam to a
+human even when YouTube does not care, and it splits the click until nobody takes
+any of them. Related reading belongs on the article, which is what the first link is
+for. Aim for roughly 2,000 to 2,600 characters all in, against YouTube's 5,000 limit.
+
+Only the first two or three lines show before "show more," so the hook and the
+primary link go at the very top.
 
 ## UTM tags
 
@@ -54,41 +63,35 @@ gives a clean reason to re-shoot and re-rank it every year.
 
 ### Description (paste as-is)
 
-Written against the actual transcript. Every claim below is something Austin says
-in the video, so the description and the video match.
+Written against the actual transcript, so the description and the video match.
+
+Two links only: the matching article and the booking page. An earlier draft carried
+eight and read like a link farm. More links do not mean more clicks, they mean the
+click gets split until nobody takes any of them. Everything else the video sets up
+lives on the article, which is where a reader who wants more should end up anyway.
 
 ```
 Medicare covers 80% of your Part B costs. What almost nobody tells you is that
-Original Medicare has no cap on the other 20%. A Medicare Supplement and a Medicare
-Advantage plan are two different answers to that one problem.
+Original Medicare has no cap on the other 20%.
 
 Full written breakdown: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 
-Most people on Medicare have already chosen between these two, whether they realized
-it or not. In this video I walk through what each one is actually doing.
+A Medicare Supplement and a Medicare Advantage plan are two different answers to
+that one problem. On a $100 bill, the 20% is manageable. On a $100,000 cancer
+treatment it is $20,000, and unlike employer or Affordable Care Act plans, Original
+Medicare has no maximum out-of-pocket to stop it.
 
-Start with the gap. On a $100 bill, Medicare pays its share and you cover the rest,
-which sounds manageable. But employer plans and Affordable Care Act plans all have a
-maximum out-of-pocket, a safety net where the billing stops. Original Medicare has
-no such cap. Run the same math on a $100,000 cancer treatment and the 20% is
-$20,000, with nothing to stop it. That is the problem both plan types exist to fix.
-
-A Medicare Supplement, also called Medigap, is pay regardless. You send a premium
-every month and the insurance company picks up your 20%. There are no networks, so
-you can see any doctor in the country who accepts Medicare, which is roughly 99% of
-them, and generally no referrals. You pay that premium whether you use it or not,
-even if you are the healthiest person you know. A Supplement does not include drug,
-dental, vision, or hearing coverage, so a separate Part D drug plan has to go with it.
+A Medicare Supplement, also called Medigap, is pay regardless. A premium every
+month, the insurance company covers your 20%, no networks, any doctor in the country
+who accepts Medicare, and generally no referrals. It does not include drug, dental,
+vision, or hearing coverage, so a separate Part D drug plan goes with it.
 
 A Medicare Advantage plan is Part C. Think C for complete: medical, drugs, dental,
-vision, and hearing wrapped into one plan and one card. It is pay as you go, with a
-flat copay when you actually use something, and every Advantage plan has a maximum
-out-of-pocket built in. The trade-off is the network. The plan decides which doctors
-it will pay for, and many still require referrals, though some carriers are dropping
-that.
+vision, and hearing on one card. Pay as you go with copays, and a maximum
+out-of-pocket built in. The trade-off is the network, and often referrals.
 
-Neither one is better. It comes down to your preferences, your lifestyle, your
-health today, your doctors, and your prescriptions.
+Neither one is better. It comes down to your health, your doctors, and your
+prescriptions.
 
 CHAPTERS
 0:00 Advantage or Supplement: the same job, done differently
@@ -104,22 +107,12 @@ CHAPTERS
 5:31 The trade-off: networks and referrals
 6:12 Talk it through with a local advisor
 
-KEEP READING
-The different types of Supplement plans, Plan G vs. Plan N: https://bluegrassmedicarehelp.com/articles/medicare-supplement-plan-g-vs-plan-n/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
-The Part D drug plan that pairs with a Supplement: https://bluegrassmedicarehelp.com/articles/medicare-part-d-prescription-drug-plans/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
-Which Lexington hospitals take Medicare Advantage: https://bluegrassmedicarehelp.com/articles/lexington-hospitals-medicare-advantage-networks/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
-The Kentucky Medigap Birthday Rule: https://bluegrassmedicarehelp.com/articles/kentucky-medigap-birthday-rule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
-Turning 65 soon, and when to enroll: https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
-
-TALK IT THROUGH
-Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
+Want someone to walk through your own doctors and prescriptions? Book a free
+30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 Or call the office at (859) 618-6443.
 
-ABOUT
 Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
-Medicare advisory firm in Lexington, Kentucky. We help seniors and people turning 65
-compare their Medicare options against the doctors they already see and the
-prescriptions they already take.
+Medicare advisory firm in Lexington, Kentucky.
 
 #Medicare #MedicareAdvantage #Medigap
 
