@@ -295,6 +295,20 @@ the word from the video that carries no such claim.
 Neither is worth a re-shoot on a 61 second video. Both are worth adjusting in the
 next one.
 
+### Where it is embedded
+
+- `/articles/free-medicare-help-lexington-ky/`, under the heading "And the free help
+  that comes with a sales angle: agents like me". Placed there rather than at the top
+  of the article on purpose: that article's whole credibility rests on leading with
+  the government counsellors who have no sales angle, so a video about hiring an
+  agent belongs in the section that owns that trade-off, not above it.
+- `/schedule/`, as "What does this cost?" between the badge row and the FAQ. Below
+  the calendar, so the booking widget is still the first thing on the page.
+
+Full `VideoObject` schema and the sitemap video entry live on the article only. Two
+pages claiming to be the canonical home of one video splits the signal, so the
+schedule page carries a plain embed.
+
 ### Accuracy note
 
 The description says commissions are built into plan pricing so the premium is the
