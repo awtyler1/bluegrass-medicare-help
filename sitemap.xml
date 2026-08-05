@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://bluegrassmedicarehelp.com/</loc><lastmod>2026-06-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://bluegrassmedicarehelp.com/turning-65/</loc><lastmod>2026-07-18</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://bluegrassmedicarehelp.com/about/</loc><lastmod>2026-06-17</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -28,7 +28,18 @@
   <url><loc>https://bluegrassmedicarehelp.com/articles/medicare-advantage-central-kentucky-counties/</loc><lastmod>2026-07-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://bluegrassmedicarehelp.com/articles/lexington-hospitals-medicare-advantage-networks/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority><video:video>
+<video:thumbnail_loc>https://i.ytimg.com/vi/5kUI3xlSHVM/maxresdefault.jpg</video:thumbnail_loc>
+<video:title>Medicare Advantage vs. Medicare Supplement: What Is the Difference? (2026)</video:title>
+<video:description>Medicare covers 80% of your Part B costs, and Original Medicare has no cap on the other 20%. How a Medicare Supplement and a Medicare Advantage plan each answer that problem.</video:description>
+<video:player_loc>https://www.youtube.com/embed/5kUI3xlSHVM</video:player_loc>
+<video:duration>413</video:duration>
+<video:publication_date>2026-08-05</video:publication_date>
+<video:uploader info="https://www.youtube.com/@tylerinsurancegroup">Tyler Insurance Group</video:uploader>
+<video:family_friendly>yes</video:family_friendly>
+<video:live>no</video:live>
+</video:video>
+</url>
   <url><loc>https://bluegrassmedicarehelp.com/articles/working-past-65-medicare/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://bluegrassmedicarehelp.com/guide/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://bluegrassmedicarehelp.com/review/</loc><lastmod>2026-06-11</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>

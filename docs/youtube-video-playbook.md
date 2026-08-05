@@ -207,12 +207,31 @@ Optional but useful: the auto-transcript (open the video, "..." then "Show
 transcript", copy). With it, accurate chapter timestamps and pull quotes for the
 article can be written without guessing.
 
+## Published
+
+| Field | Value |
+|---|---|
+| Title | Medicare Advantage vs. Medicare Supplement: What Is the Difference? (2026) |
+| URL | https://youtu.be/5kUI3xlSHVM |
+| Video ID | 5kUI3xlSHVM |
+| Duration | 6:53 (413s, `PT6M53S`) |
+| Published | 5 August 2026 |
+| Article | `/articles/medicare-advantage-vs-medigap/` |
+
 ## After upload: what gets built
 
-1. Video embedded at the top of the matching article, click-to-play against a
-   thumbnail so it costs nothing on page load and sets no cookies until played
-   (`youtube-nocookie.com`)
-2. `VideoObject` JSON-LD added to that article's `@graph`
-3. Video URL added to `sitemap.xml`
-4. `/videos/` library page, once there are three or more videos
-5. Cross-links from the related articles listed above
+- [x] Video embedded at the top of the matching article, click-to-play against a
+      thumbnail so it costs nothing on page load and sets no cookies until played
+      (`youtube-nocookie.com`). Verified: only the thumbnail is requested before a
+      click, the player only after.
+- [x] `VideoObject` JSON-LD added to that article's `@graph`, including all twelve
+      chapters as `Clip` nodes so Google can surface key moments
+- [x] Video sitemap extension added to the article's `sitemap.xml` entry
+- [ ] Cross-links from the related articles. The articles have no shared
+      related-links block, so each needs its own placement. Separate pass.
+- [ ] `/videos/` library page, once there are three or more videos
+
+## Next videos
+
+Working down `docs/video-priority-list-2026.md`. Number 3 is the Baptist Health
+network video, which is the one no national channel can shoot.

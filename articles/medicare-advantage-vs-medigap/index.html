@@ -105,6 +105,34 @@ a{color:var(--coral-d);text-decoration:none;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#918b80;font-size:12px;}
 
 @media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+
+/* video: a still image and a play button until it is clicked, so the page costs
+   nothing extra to load and YouTube sets no cookies for readers who never play it */
+.vid{margin:0 0 30px;}
+.vidbtn{display:block;position:relative;width:100%;padding:0;border:1px solid var(--line);
+  background:var(--dark);border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;}
+.vidbtn img{width:100%;height:auto;display:block;opacity:.85;transition:opacity .25s ease,transform .25s ease;}
+.vidbtn:hover img,.vidbtn:focus-visible img{opacity:1;transform:scale(1.02);}
+.vidbtn:focus-visible{outline:3px solid var(--coral);outline-offset:3px;}
+.vidplay{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;
+  border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:background .2s ease;}
+.vidplay svg{width:30px;height:30px;margin-left:5px;fill:#fff;}
+.vidbtn:hover .vidplay,.vidbtn:focus-visible .vidplay{background:var(--coral-d);}
+.vidmeta{position:absolute;left:0;right:0;bottom:0;padding:36px 22px 16px;color:#fff;
+  background:linear-gradient(to top,rgba(20,18,15,.93),rgba(20,18,15,0));}
+.vidmeta b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.25;}
+.vidmeta span{display:block;font-size:14.5px;color:#e6ded1;margin-top:4px;}
+.vidframe{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;}
+.vidframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.vid figcaption{font-size:15px;color:var(--mute);margin-top:11px;}
+@media(max-width:600px){
+  .vidplay{width:58px;height:58px;} .vidplay svg{width:23px;height:23px;}
+  .vidmeta{padding:28px 16px 13px;} .vidmeta b{font-size:17px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .vidbtn img{transition:none;} .vidbtn:hover img,.vidbtn:focus-visible img{transform:none;}
+}
 </style>
 
 <!-- SEO / canonical / social -->
@@ -123,7 +151,7 @@ a{color:var(--coral-d);text-decoration:none;}
 <meta name="twitter:title" content="Medicare Advantage vs. Medigap: The Real Difference | Bluegrass Medicare Help">
 <meta name="twitter:description" content="Medicare Advantage or a Medigap supplement? A plain-English breakdown of how they really differ — networks, costs, and the underwriting trap most people don&#x27;t see coming.">
 <meta name="twitter:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#article","headline":"Medicare Advantage vs. Medigap: The Real Difference","description":"Medicare Advantage or a Medigap supplement? A plain-English breakdown of how they really differ in networks, cost, and the underwriting trap.","image":["https://bluegrassmedicarehelp.com/assets/og-image.png"],"datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","@id":"https://bluegrassmedicarehelp.com/#austin-tyler","name":"Austin Tyler","url":"https://bluegrassmedicarehelp.com/about/"},"publisher":{"@type":"Organization","@id":"https://bluegrassmedicarehelp.com/#org","name":"Tyler Insurance Group","alternateName":"Bluegrass Medicare Help","url":"https://bluegrassmedicarehelp.com/","logo":{"@type":"ImageObject","url":"https://bluegrassmedicarehelp.com/assets/logo-mark.png"},"telephone":"+1-859-618-6443","sameAs":["https://www.tylerinsurancegroup.com","https://www.yelp.com/biz/tyler-insurance-group-lexington","https://share.google/t5kgf6RBxLldnNVcX"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/"},"articleSection":"Compare Plans","inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bluegrassmedicarehelp.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://bluegrassmedicarehelp.com/articles/"},{"@type":"ListItem","position":3,"name":"Medicare Advantage vs. Medigap: The Real Difference","item":"https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#article", "headline": "Medicare Advantage vs. Medigap: The Real Difference", "description": "Medicare Advantage or a Medigap supplement? A plain-English breakdown of how they really differ in networks, cost, and the underwriting trap.", "image": ["https://bluegrassmedicarehelp.com/assets/og-image.png"], "datePublished": "2026-06-03", "dateModified": "2026-06-03", "author": {"@type": "Person", "@id": "https://bluegrassmedicarehelp.com/#austin-tyler", "name": "Austin Tyler", "url": "https://bluegrassmedicarehelp.com/about/"}, "publisher": {"@type": "Organization", "@id": "https://bluegrassmedicarehelp.com/#org", "name": "Tyler Insurance Group", "alternateName": "Bluegrass Medicare Help", "url": "https://bluegrassmedicarehelp.com/", "logo": {"@type": "ImageObject", "url": "https://bluegrassmedicarehelp.com/assets/logo-mark.png"}, "telephone": "+1-859-618-6443", "sameAs": ["https://www.tylerinsurancegroup.com", "https://www.yelp.com/biz/tyler-insurance-group-lexington", "https://share.google/t5kgf6RBxLldnNVcX"]}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/"}, "articleSection": "Compare Plans", "inLanguage": "en-US"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluegrassmedicarehelp.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://bluegrassmedicarehelp.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "Medicare Advantage vs. Medigap: The Real Difference", "item": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/"}]}, {"@type": "VideoObject", "@id": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#video", "name": "Medicare Advantage vs. Medicare Supplement: What Is the Difference? (2026)", "description": "Medicare covers 80% of your Part B costs, and Original Medicare has no cap on the other 20%. Austin Tyler explains how a Medicare Supplement (Medigap) and a Medicare Advantage plan each answer that problem: pay regardless versus pay as you go, networks and referrals, and what a Supplement does not cover.", "thumbnailUrl": ["https://i.ytimg.com/vi/5kUI3xlSHVM/maxresdefault.jpg"], "uploadDate": "2026-08-05", "duration": "PT6M53S", "embedUrl": "https://www.youtube.com/embed/5kUI3xlSHVM", "contentUrl": "https://youtu.be/5kUI3xlSHVM", "publisher": {"@type": "Organization", "name": "Tyler Insurance Group"}, "creator": {"@type": "Person", "name": "Austin Tyler"}, "isPartOf": {"@id": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#article"}, "hasPart": [{"@type": "Clip", "name": "Advantage or Supplement: the same job, done differently", "startOffset": 0, "endOffset": 17, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=0"}, {"@type": "Clip", "name": "The 80/20 gap in Original Medicare", "startOffset": 17, "endOffset": 49, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=17"}, {"@type": "Clip", "name": "Why Original Medicare has no out-of-pocket maximum", "startOffset": 49, "endOffset": 100, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=49"}, {"@type": "Clip", "name": "A $100,000 bill and the $20,000 you would owe", "startOffset": 100, "endOffset": 130, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=100"}, {"@type": "Clip", "name": "Two answers to the same problem", "startOffset": 130, "endOffset": 147, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=130"}, {"@type": "Clip", "name": "Medicare Supplement: no networks, go anywhere", "startOffset": 147, "endOffset": 204, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=147"}, {"@type": "Clip", "name": "Pay regardless: the premium is due either way", "startOffset": 204, "endOffset": 223, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=204"}, {"@type": "Clip", "name": "What a Supplement does not cover", "startOffset": 223, "endOffset": 254, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=223"}, {"@type": "Clip", "name": "Medicare Advantage (Part C): one card for everything", "startOffset": 254, "endOffset": 290, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=254"}, {"@type": "Clip", "name": "Pay as you go: copays and a max out-of-pocket", "startOffset": 290, "endOffset": 331, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=290"}, {"@type": "Clip", "name": "The trade-off: networks and referrals", "startOffset": 331, "endOffset": 372, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=331"}, {"@type": "Clip", "name": "Talk it through with a local advisor", "startOffset": 372, "endOffset": 413, "url": "https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/#t=372"}]}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -170,6 +198,21 @@ a{color:var(--coral-d);text-decoration:none;}
       <div class="b"><a href="/about/" style="color:inherit;text-decoration:none;"><b>Austin Tyler</b></a>Local Kentucky Medicare agent · June 3, 2026 · 6 min read</div>
     </div>
   </header>
+
+  <figure class="vid">
+    <button class="vidbtn" id="vidbtn" type="button"
+      aria-label="Play the video, Medicare Advantage vs. Medicare Supplement, What Is the Difference, 6 minutes 53 seconds">
+      <img src="https://i.ytimg.com/vi/5kUI3xlSHVM/maxresdefault.jpg" alt="" width="1280" height="720"
+        loading="lazy" decoding="async"
+        onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/5kUI3xlSHVM/hqdefault.jpg';">
+      <span class="vidplay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vidmeta">
+        <b>Watch: Medicare Advantage vs. Medicare Supplement</b>
+        <span>6:53 &middot; Austin Tyler, Tyler Insurance Group, Lexington KY</span>
+      </span>
+    </button>
+    <figcaption>Prefer to read? The full written breakdown is below.</figcaption>
+  </figure>
 
   <div class="body">
     <p>This is the question I get more than any other: <strong>"Should I go with a Medicare Advantage plan or a supplement?"</strong> Both are popular, both are legitimate, and the right answer genuinely depends on the person. But most folks are comparing them on the wrong things — usually just the monthly premium. Let me show you what actually matters.</p>
@@ -278,5 +321,24 @@ a{color:var(--coral-d);text-decoration:none;}
 })();
 </script>
 <script src="/assets/site.js"></script>
+<script>
+/* swap the still for the real player only once the reader asks for it */
+(function(){
+  var b=document.getElementById('vidbtn');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var d=document.createElement('div');
+    d.className='vidframe';
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/5kUI3xlSHVM?autoplay=1&rel=0';
+    f.title='Medicare Advantage vs. Medicare Supplement: What Is the Difference? (2026)';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.setAttribute('allowfullscreen','');
+    d.appendChild(f);
+    b.parentNode.replaceChild(d, b);
+    if(typeof gtag==='function'){gtag('event','video_play',{video_title:'Medicare Advantage vs Medicare Supplement'});}
+  });
+})();
+</script>
 </body>
 </html>
