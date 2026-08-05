@@ -91,16 +91,18 @@ Neither one is better. It comes down to your preferences, your lifestyle, your
 health today, your doctors, and your prescriptions.
 
 CHAPTERS
-(estimated from the transcript, check against the finished cut)
 0:00 Advantage or Supplement: the same job, done differently
-0:29 The 80/20 gap in Original Medicare
-0:54 Why no max out-of-pocket is the real risk
-2:02 Neither one is better, it depends on you
-2:28 Medicare Supplement (Medigap): pay regardless, go anywhere
-4:00 What a Supplement does not cover
-4:30 Medicare Advantage (Part C): one card, pay as you go
-5:52 The trade-off: networks and referrals
-6:53 Talk it through with a local advisor
+0:17 The 80/20 gap in Original Medicare
+0:49 Why Original Medicare has no out-of-pocket maximum
+1:40 A $100,000 bill and the $20,000 you would owe
+2:10 Two answers to the same problem
+2:27 Medicare Supplement: no networks, go anywhere
+3:24 "Pay regardless": the premium is due either way
+3:43 What a Supplement does not cover
+4:14 Medicare Advantage (Part C): one card for everything
+4:50 "Pay as you go": copays and a max out-of-pocket
+5:31 The trade-off: networks and referrals
+6:12 Talk it through with a local advisor
 
 KEEP READING
 The different types of Supplement plans, Plan G vs. Plan N: https://bluegrassmedicarehelp.com/articles/medicare-supplement-plan-g-vs-plan-n/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
@@ -131,25 +133,37 @@ Program (SHIP) to get information on all of your options.
 
 ### Chapter timestamps
 
-The times above assume a 7:30 runtime. They come from where each section sits in the
-transcript, so if the finished cut is a different length, scale them. Percentage
-through the video for each chapter:
+Confirmed against the finished cut, not estimated. Source beats:
 
-| % in | Chapter |
+| Time | Beat in the video |
 |---|---|
-| 0.0% | Advantage or Supplement: the same job, done differently |
-| 6.4% | The 80/20 gap in Original Medicare |
-| 11.9% | Why no max out-of-pocket is the real risk |
-| 27.0% | Neither one is better, it depends on you |
-| 33.0% | Medicare Supplement (Medigap): pay regardless, go anywhere |
-| 53.3% | What a Supplement does not cover |
-| 59.9% | Medicare Advantage (Part C): one card, pay as you go |
-| 78.3% | The trade-off: networks and referrals |
-| 91.8% | Talk it through with a local advisor |
+| 0:00 | Intro, Advantage vs. Supplement overview |
+| 0:17 | The gaps in Original Medicare, the 80/20 split |
+| 0:49 | No max out-of-pocket on Original Medicare |
+| 1:16 | The 80/20 split applied to a serious illness |
+| 1:40 | The $100,000 bill and the $20,000 exposure |
+| 2:10 | Same problem, two different solutions |
+| 2:27 | Medigap explained, no networks, flexibility |
+| 3:00 | Supplement recap, monthly premium, no referrals |
+| 3:24 | "Pay regardless" |
+| 3:43 | No drug, dental, vision, or hearing coverage |
+| 4:14 | Transition to Medicare Advantage |
+| 4:28 | Part C as "complete", everything in one plan |
+| 4:50 | "Pay as you go", the copay concept |
+| 5:13 | Advantage plans do have a max out-of-pocket |
+| 5:31 | Tied to the plan's network |
+| 5:55 | Referral requirements |
+| 6:12 | Invitation to reach out |
+| 6:24 | Outro, contact info |
 
-YouTube rules: the first chapter must be 0:00, there must be at least three, and each
-must run at least 10 seconds. If a timestamp is off, chapters silently stop working,
-so it is worth scrubbing the video once to confirm.
+Nineteen beats is too granular for a chapter list, so the published chapters merge
+them into twelve. The 1:16 illness setup folds into the $100,000 payoff at 1:40, the
+3:00 recap folds into the Supplement section at 2:27, the 5:13 max out-of-pocket
+folds into the copay section at 4:50, and 6:24 folds into the invitation at 6:12.
+
+YouTube rules the merged list still satisfies: first chapter is 0:00, there are at
+least three, and the shortest gap is 17 seconds against a 10 second minimum. If any
+timestamp is wrong, chapters silently stop working, so confirm once after publishing.
 
 ### Tags
 
