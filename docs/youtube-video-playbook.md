@@ -218,6 +218,104 @@ article can be written without guessing.
 | Published | 5 August 2026 |
 | Article | `/articles/medicare-advantage-vs-medigap/` |
 
+## Video: "What Does It Cost to Work with a Medicare Advisor" (1:01)
+
+Published 4 August 2026 | https://youtu.be/tsKZm1X8wEo | ID `tsKZm1X8wEo` | 1:01
+Campaign slug: `advisor-cost`
+
+This one answers an objection rather than teaching a topic, so the primary link is
+the booking page, not an article. Reverse of the usual order.
+
+**No chapters.** YouTube needs at least three and the video is 61 seconds. Three
+chapter marks on a one minute video is clutter, and the key-moments benefit in search
+is nil at that length.
+
+**Length.** Roughly 1,200 characters. A one minute video does not earn a 2,700
+character description, and padding it out with keywords readers will not see is the
+kind of thing that makes a channel look automated.
+
+### Description (paste as-is)
+
+```
+What does it cost to sit down with a Medicare advisor? Not a penny. No checkbook, no
+bill, ever.
+
+Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
+
+Here is how that works. Independent Medicare advisors are paid a commission by the
+insurance company you enroll with, and that commission is already built into the
+plan's pricing whether you use an advisor or not. The premium is the same either way.
+So the choice is not "pay for help or save money." It is "use the help that is
+already paid for, or leave it on the table."
+
+What you actually get for it: someone who sits down with your current situation, your
+doctors, and your prescriptions, and points you toward the plan that fits, acting as
+an advocate between you and the insurance company.
+
+More free Medicare help in Lexington, including the state's SHIP counselors and other
+resources that cost nothing: https://bluegrassmedicarehelp.com/articles/free-medicare-help-lexington-ky/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
+
+Or call the office at (859) 618-6443.
+
+Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
+Medicare advisory firm in Lexington, Kentucky.
+
+#Medicare #MedicareHelp #Turning65
+
+We respect your privacy. This is a solicitation for insurance. Tyler Insurance
+Group is not connected with or endorsed by the United States government or the
+federal Medicare program. We do not offer every plan available in your area.
+Currently we represent 6 organizations which offer 158 products in your area.
+Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance
+Program (SHIP) to get information on all of your options.
+```
+
+### Tags
+
+`what does a medicare advisor cost, medicare agent fees, is a medicare broker free,
+how do medicare agents get paid, medicare broker commission, free medicare help,
+independent medicare agent, medicare advisor lexington ky, medicare help kentucky`
+
+### Two compliance notes on this one
+
+**"Contracted with most large carriers in the state of Kentucky and really the nation
+as a whole."** This sits in tension with the disclaimer the same description carries,
+which states we represent 6 organizations and do not offer every plan in the area.
+Breadth-of-representation claims are exactly what CMS looks at in agent marketing.
+The disclaimer resolves it in writing, but the safer spoken line in future videos is
+something like "we are contracted with the major carriers serving this area," with
+the specific count left to the disclaimer.
+
+**"Unbiased as possible."** An advisor paid by carriers describing the advice as
+unbiased is a claim worth softening. "Independent" and "we represent you, not one
+carrier" say the same thing without asserting an absence of incentive that the
+compensation model does not support. The description above uses "advocate," which is
+the word from the video that carries no such claim.
+
+Neither is worth a re-shoot on a 61 second video. Both are worth adjusting in the
+next one.
+
+### Where it is embedded
+
+- `/articles/free-medicare-help-lexington-ky/`, under the heading "And the free help
+  that comes with a sales angle: agents like me". Placed there rather than at the top
+  of the article on purpose: that article's whole credibility rests on leading with
+  the government counsellors who have no sales angle, so a video about hiring an
+  agent belongs in the section that owns that trade-off, not above it.
+- `/schedule/`, as "What does this cost?" between the badge row and the FAQ. Below
+  the calendar, so the booking widget is still the first thing on the page.
+
+Full `VideoObject` schema and the sitemap video entry live on the article only. Two
+pages claiming to be the canonical home of one video splits the signal, so the
+schedule page carries a plain embed.
+
+### Accuracy note
+
+The description says commissions are built into plan pricing so the premium is the
+same either way. That is correct, and for Medicare Advantage and Part D the maximum
+commission is set by CMS. Medigap commissions are not CMS-set, they are regulated at
+state level, so the description avoids attributing the rate-setting to CMS.
+
 ## After upload: what gets built
 
 - [x] Video embedded at the top of the matching article, click-to-play against a
