@@ -98,6 +98,19 @@ a{color:var(--coral-d);text-decoration:none;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#918b80;font-size:12px;}
 
 @media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+
+/* pointer to the video that covers this ground, hosted on its own article */
+.vlink{display:flex;gap:16px;align-items:center;margin:26px 0 30px;padding:16px 18px;
+  background:var(--cream2);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:12px;}
+.vlink .vlico{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--coral);
+  display:flex;align-items:center;justify-content:center;}
+.vlink .vlico svg{width:19px;height:19px;margin-left:3px;fill:#fff;}
+.vlink b{display:block;font-family:var(--serif);font-size:17.5px;line-height:1.3;color:var(--ink);}
+.vlink b a{color:inherit;}
+.vlink b a:hover{color:var(--coral-d);}
+.vlink span{display:block;font-size:15.5px;color:var(--mute);margin-top:3px;}
+.vlink em{font-style:normal;color:var(--faint);white-space:nowrap;}
+@media(max-width:520px){.vlink{gap:12px;padding:14px;} .vlink b{font-size:16px;}}
 </style>
 
 <!-- SEO / canonical / social -->
@@ -140,8 +153,8 @@ a{color:var(--coral-d);text-decoration:none;}
     <div class="navlinks" id="navlinks">
       <a href="/turning-65/">Turning 65?</a>
       <a href="/articles/" class="active" aria-current="page">Learning Center</a>
+      <a href="/videos/">Videos</a>
       <a href="/kentucky/">Kentucky</a>
-      <a href="/reviews/">Reviews</a>
       <a href="/about/">About</a>
     </div>
     <a class="navbook" href="/schedule/"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span class="nb-full">Schedule</span><span class="nb-short">Book</span></a>
@@ -167,7 +180,14 @@ a{color:var(--coral-d);text-decoration:none;}
   <div class="body">
     <p>Medicare is a <strong>federal</strong> program, so the rules are the same whether you live in Lexington, Louisville, or Los Angeles. But the <strong>choices</strong> in front of you — which plans are sold here, which doctors and hospitals are in-network, where to get free local help — are very much a Bluegrass question. This is the plain-English local guide I wish every Fayette County neighbor had before they signed anything.</p>
 
-    <p>I'm a licensed agent based right here in Lexington. Here's how Medicare actually works in our corner of Kentucky in 2026.</p>
+        <aside class="vlink">
+      <span class="vlico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span>
+        <b><a href="/articles/free-medicare-help-lexington-ky/">Watch: What Does It Cost to Work with a Medicare Advisor?</a></b>
+        <span>What it costs to sit down with a local advisor. The short answer is nothing. <em>(1:01)</em></span>
+      </span>
+    </aside>
+<p>I'm a licensed agent based right here in Lexington. Here's how Medicare actually works in our corner of Kentucky in 2026.</p>
 
     <h2>The two roads: Original Medicare vs. Medicare Advantage</h2>
     <p>No matter where you live, every person on Medicare picks one of two basic paths. This is the single most important decision you'll make, so it's worth getting right.</p>
