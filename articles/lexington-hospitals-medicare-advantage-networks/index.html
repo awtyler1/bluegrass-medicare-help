@@ -101,6 +101,19 @@ a{color:var(--coral-d);text-decoration:none;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#918b80;font-size:12px;}
 
 @media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+
+/* pointer to the video that covers this ground, hosted on its own article */
+.vlink{display:flex;gap:16px;align-items:center;margin:26px 0 30px;padding:16px 18px;
+  background:var(--cream2);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:12px;}
+.vlink .vlico{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--coral);
+  display:flex;align-items:center;justify-content:center;}
+.vlink .vlico svg{width:19px;height:19px;margin-left:3px;fill:#fff;}
+.vlink b{display:block;font-family:var(--serif);font-size:17.5px;line-height:1.3;color:var(--ink);}
+.vlink b a{color:inherit;}
+.vlink b a:hover{color:var(--coral-d);}
+.vlink span{display:block;font-size:15.5px;color:var(--mute);margin-top:3px;}
+.vlink em{font-style:normal;color:var(--faint);white-space:nowrap;}
+@media(max-width:520px){.vlink{gap:12px;padding:14px;} .vlink b{font-size:16px;}}
 </style>
 
 <!-- SEO / canonical / social -->
@@ -170,7 +183,14 @@ a{color:var(--coral-d);text-decoration:none;}
   <div class="body">
     <p>It's the question I get more than any other in Lexington: <em>"Will my plan let me keep going to UK?"</em> Or Baptist. Or my doctor at Saint Joseph. And it's the right question to ask — because with Medicare Advantage, the hospital and doctor networks are the whole ballgame. Pick the wrong plan and you can find out, at the worst possible moment, that your hospital is "out of network."</p>
 
-    <p>Let me explain how networks actually work in our city, and exactly how to check before you commit.</p>
+        <aside class="vlink">
+      <span class="vlico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span>
+        <b><a href="/articles/medicare-advantage-vs-medigap/">Watch: Medicare Advantage vs. Medicare Supplement: What Is the Difference?</a></b>
+        <span>Why networks matter so much on an Advantage plan, and what a Supplement does instead. <em>(6:53)</em></span>
+      </span>
+    </aside>
+<p>Let me explain how networks actually work in our city, and exactly how to check before you commit.</p>
 
     <h2>First, the answer depends on which kind of Medicare you have</h2>
     <p>This trips up a lot of people, so it's worth being crystal clear:</p>

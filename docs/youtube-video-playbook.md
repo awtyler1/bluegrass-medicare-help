@@ -448,8 +448,11 @@ how to enroll in medicare online, medicare help lexington ky`
 - [x] `VideoObject` JSON-LD added to that article's `@graph`, including all twelve
       chapters as `Clip` nodes so Google can surface key moments
 - [x] Video sitemap extension added to the article's `sitemap.xml` entry
-- [ ] Cross-links from the related articles. The articles have no shared
-      related-links block, so each needs its own placement. Separate pass.
+- [x] Cross-links from the related articles, done as a `.vlink` callout placed after
+      each article's opening paragraph, which is the one anchor every article shares.
+      Ten articles point at whichever video covers their ground. The callout links to
+      the article hosting the video rather than to YouTube, so the click stays on the
+      site and lands on the page with the embed at the top.
 - [x] `/videos/` library page, live at `/videos/`
 
 ## The video library

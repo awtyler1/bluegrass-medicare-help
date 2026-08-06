@@ -72,6 +72,19 @@ img{max-width:100%;display:block;} a{color:var(--coral-d);text-decoration:none;}
 .foot .fnm{color:var(--cream);font-weight:600;font-size:15px;margin-bottom:6px;font-family:var(--serif);}
 .foot a{color:#bdb6ac;} .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#918b80;font-size:12px;}
 @media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+
+/* pointer to the video that covers this ground, hosted on its own article */
+.vlink{display:flex;gap:16px;align-items:center;margin:26px 0 30px;padding:16px 18px;
+  background:var(--cream2);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:12px;}
+.vlink .vlico{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--coral);
+  display:flex;align-items:center;justify-content:center;}
+.vlink .vlico svg{width:19px;height:19px;margin-left:3px;fill:#fff;}
+.vlink b{display:block;font-family:var(--serif);font-size:17.5px;line-height:1.3;color:var(--ink);}
+.vlink b a{color:inherit;}
+.vlink b a:hover{color:var(--coral-d);}
+.vlink span{display:block;font-size:15.5px;color:var(--mute);margin-top:3px;}
+.vlink em{font-style:normal;color:var(--faint);white-space:nowrap;}
+@media(max-width:520px){.vlink{gap:12px;padding:14px;} .vlink b{font-size:16px;}}
 </style>
 </head>
 <body>
@@ -115,7 +128,14 @@ img{max-width:100%;display:block;} a{color:var(--coral-d);text-decoration:none;}
   <div class="body">
     <p>Here is the short version, because it is genuinely good news: if you already have a Medicare Supplement (Medigap) plan in Kentucky, state law now lets you switch to the <strong>same plan letter with a different insurer once a year, around your birthday, without answering a single health question</strong>. It is one of the friendliest consumer protections in Medicare, and a lot of Kentuckians have no idea it exists. This is how it works, who it helps, and how to actually use it.</p>
 
-    <h2>What the birthday rule is</h2>
+        <aside class="vlink">
+      <span class="vlico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span>
+        <b><a href="/articles/medicare-advantage-vs-medigap/">Watch: Medicare Advantage vs. Medicare Supplement: What Is the Difference?</a></b>
+        <span>What a Supplement actually does, and how it differs from an Advantage plan. <em>(6:53)</em></span>
+      </span>
+    </aside>
+<h2>What the birthday rule is</h2>
     <p>Kentucky passed the birthday rule in 2023 (it lives in the statute books as <strong>KRS 304.14-525</strong>), and it took effect on <strong>January 1, 2024</strong>. In plain English, it gives every Kentuckian who already owns a Medigap policy a yearly, no-questions-asked window to shop that policy:</p>
     <ul>
       <li><strong>Once a year</strong>, tied to your birthday.</li>

@@ -103,6 +103,19 @@ a{color:var(--coral-d);text-decoration:none;}
 .foot a{color:#bdb6ac;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#918b80;font-size:12px;}
 @media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+
+/* pointer to the video that covers this ground, hosted on its own article */
+.vlink{display:flex;gap:16px;align-items:center;margin:26px 0 30px;padding:16px 18px;
+  background:var(--cream2);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:12px;}
+.vlink .vlico{flex:0 0 auto;width:46px;height:46px;border-radius:50%;background:var(--coral);
+  display:flex;align-items:center;justify-content:center;}
+.vlink .vlico svg{width:19px;height:19px;margin-left:3px;fill:#fff;}
+.vlink b{display:block;font-family:var(--serif);font-size:17.5px;line-height:1.3;color:var(--ink);}
+.vlink b a{color:inherit;}
+.vlink b a:hover{color:var(--coral-d);}
+.vlink span{display:block;font-size:15.5px;color:var(--mute);margin-top:3px;}
+.vlink em{font-style:normal;color:var(--faint);white-space:nowrap;}
+@media(max-width:520px){.vlink{gap:12px;padding:14px;} .vlink b{font-size:16px;}}
 </style>
 </head>
 <body>
@@ -151,7 +164,14 @@ a{color:var(--coral-d);text-decoration:none;}
   <div class="body">
     <p>The scariest thing about Medicare isn't the coverage &mdash; it's the <strong>alphabet</strong>. Part A, Part B, Part C, Part D, plus "Medigap" and "Original Medicare." It sounds like a secret code. It isn't. Once you see how the pieces fit together, the whole thing gets a lot less intimidating. Let's take it one letter at a time.</p>
 
-    <h2>Part A &mdash; Hospital coverage</h2>
+        <aside class="vlink">
+      <span class="vlico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span>
+        <b><a href="/articles/turning-65-enrollment-window/">Watch: Turning 65? What You Need to Know About Medicare</a></b>
+        <span>Austin walks through Part A and Part B out loud, with what each one covers and costs. <em>(3:11)</em></span>
+      </span>
+    </aside>
+<h2>Part A &mdash; Hospital coverage</h2>
     <p>Part A is your <strong>hospital insurance</strong>. It covers inpatient hospital stays, skilled nursing facility care, hospice, and some home health care.</p>
     <p>The good news: <strong>most people pay $0 for Part A.</strong> If you or your spouse worked and paid Medicare taxes for about 10 years (40 "credits"), you've already paid for it. There's still a deductible when you're admitted &mdash; <strong>$1,736 per benefit period in 2026</strong> &mdash; but no monthly premium for most people.</p>
 
