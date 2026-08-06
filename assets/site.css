@@ -141,3 +141,27 @@ body .foot{padding-bottom:max(36px,env(safe-area-inset-bottom));}
   .nav .wrap{gap:5px;padding-left:10px;padding-right:10px;}
 }
 }
+
+/* ---- inline glossary terms -------------------------------------------------
+   A hard word inside an article. Tapping it opens the plain-English meaning
+   right there. With no JavaScript it is still an ordinary link to the glossary. */
+.gt{color:inherit;text-decoration:none;border-bottom:2px dotted var(--coral);
+  padding:1px 1px 0;border-radius:2px;cursor:pointer;}
+.gt::after{content:"?";font-size:.62em;font-weight:800;vertical-align:super;
+  color:var(--coral-d);margin-left:1px;line-height:0;}
+.gt:hover,.gt:focus-visible{background:rgba(208,85,40,.10);border-bottom-style:solid;}
+.gt:focus-visible{outline:3px solid var(--coral);outline-offset:2px;}
+.gt[aria-expanded="true"]{background:rgba(208,85,40,.15);border-bottom-style:solid;}
+.gtip{margin:16px 0 20px;background:var(--cream2);border:1px solid var(--line);
+  border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:16px 18px;}
+.gtip .gth{display:flex;align-items:baseline;justify-content:space-between;gap:14px;}
+.gtip b{font-family:var(--serif);font-size:18.5px;color:var(--ink);}
+.gtip .gtx{flex:0 0 auto;background:none;border:0;font:inherit;font-size:15px;
+  color:var(--mute);cursor:pointer;padding:2px 6px;border-radius:6px;}
+.gtip .gtx:hover{background:var(--warm);color:var(--ink);}
+.gtip p{font-size:16.5px;color:var(--mute);margin-top:5px;}
+.gtip .gtmore{margin-top:9px;font-size:16px;font-weight:700;}
+@media(prefers-reduced-motion:no-preference){
+  .gtip{animation:gtin .18s ease-out;}
+  @keyframes gtin{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
+}
