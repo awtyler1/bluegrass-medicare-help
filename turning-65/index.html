@@ -179,6 +179,34 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
   section.band{padding:44px 0;}
 }
 @media(max-width:520px){ .fromaustin{flex-direction:column;align-items:center;text-align:center;} .fromaustin .sig{transform:none;} }
+
+/* video: a still image and a play button until it is clicked, so the page costs
+   nothing extra to load and YouTube sets no cookies for readers who never play it */
+.vid{margin:0 0 30px;}
+.vidbtn{display:block;position:relative;width:100%;padding:0;border:1px solid var(--line);
+  background:var(--dark);border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;}
+.vidbtn img{width:100%;height:auto;display:block;opacity:.85;transition:opacity .25s ease,transform .25s ease;}
+.vidbtn:hover img,.vidbtn:focus-visible img{opacity:1;transform:scale(1.02);}
+.vidbtn:focus-visible{outline:3px solid var(--coral);outline-offset:3px;}
+.vidplay{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;
+  border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:background .2s ease;}
+.vidplay svg{width:30px;height:30px;margin-left:5px;fill:#fff;}
+.vidbtn:hover .vidplay,.vidbtn:focus-visible .vidplay{background:var(--coral-d);}
+.vidmeta{position:absolute;left:0;right:0;bottom:0;padding:36px 22px 16px;color:#fff;
+  background:linear-gradient(to top,rgba(20,18,15,.93),rgba(20,18,15,0));}
+.vidmeta b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.25;}
+.vidmeta span{display:block;font-size:14.5px;color:#e6ded1;margin-top:4px;}
+.vidframe{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;}
+.vidframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.vid figcaption{font-size:15px;color:var(--mute);margin-top:11px;}
+@media(max-width:600px){
+  .vidplay{width:58px;height:58px;} .vidplay svg{width:23px;height:23px;}
+  .vidmeta{padding:28px 16px 13px;} .vidmeta b{font-size:17px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .vidbtn img{transition:none;} .vidbtn:hover img,.vidbtn:focus-visible img{transform:none;}
+}
 </style>
 </head>
 <body>
@@ -303,6 +331,21 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
     <h2 class="sh">There is a window around your 65th birthday. Most people miss the edges of it.</h2>
     <div class="body">
       <p>You get a set enrollment window that opens a few months before your 65th birthday and closes a few months after. Inside it, you have the most choices and the fewest hurdles. Miss it and your options narrow. You do not need to become a Medicare expert to handle this well. You need one person who already is, on your side, before the window closes.</p>
+      <figure class="vid">
+    <button class="vidbtn" id="t65vid" type="button"
+      aria-label="Play the video, Turning 65, what you need to know about Medicare, 3 minutes 11 seconds">
+      <img src="https://i.ytimg.com/vi/NfmmHa-sN0M/maxresdefault.jpg" alt="" width="1280" height="720"
+        loading="lazy" decoding="async"
+        onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NfmmHa-sN0M/hqdefault.jpg';">
+      <span class="vidplay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vidmeta">
+        <b>Watch: Turning 65? What you need to know about Medicare</b>
+        <span>3:11 &middot; Austin Tyler, Tyler Insurance Group, Lexington KY</span>
+      </span>
+    </button>
+    <figcaption>Three minutes on how the window works, and what Part A and Part B actually cover.</figcaption>
+  </figure>
+
     </div>
   </div>
 </section>
@@ -500,6 +543,25 @@ document.getElementById('leadform').addEventListener('submit', function(e){
     document.getElementById('sent').style.display = 'block';
   }
 });
+</script>
+<script>
+/* swap the still for the real player only once the reader asks for it */
+(function(){
+  var b=document.getElementById('t65vid');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var d=document.createElement('div');
+    d.className='vidframe';
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/NfmmHa-sN0M?autoplay=1&rel=0';
+    f.title='Turning 65? What You Need to Know About Medicare (2026)';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.setAttribute('allowfullscreen','');
+    d.appendChild(f);
+    b.parentNode.replaceChild(d, b);
+    if(typeof gtag==='function'){gtag('event','video_play',{video_title:'Turning 65 what you need to know'});}
+  });
+})();
 </script>
 </body>
 </html>

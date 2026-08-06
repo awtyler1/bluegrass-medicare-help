@@ -316,9 +316,15 @@ same either way. That is correct, and for Medicare Advantage and Part D the maxi
 commission is set by CMS. Medigap commissions are not CMS-set, they are regulated at
 state level, so the description avoids attributing the rate-setting to CMS.
 
-## Video: Turning 65 overview (3:09, not yet published)
+## Video: Turning 65 overview
 
+Published 6 August 2026 | https://youtu.be/NfmmHa-sN0M | ID `NfmmHa-sN0M` | 3:11
 Campaign slug: `turning-65`
+
+Embedded at the top of `/articles/turning-65-enrollment-window/` (canonical, with the
+`VideoObject`, nine chapters as `Clip` nodes, and the sitemap video entry) and inside
+the "There is a window around your 65th birthday" band on `/turning-65/` as a plain
+embed, directly under the paragraph it illustrates.
 
 ### Title
 

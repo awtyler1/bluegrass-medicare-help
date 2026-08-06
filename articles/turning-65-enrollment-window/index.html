@@ -96,6 +96,34 @@ a{color:var(--coral-d);text-decoration:none;}
 .foot .disc{margin-top:14px;padding-top:14px;border-top:1px solid #333;color:#918b80;font-size:12px;}
 
 @media(max-width:580px){ .head h1{font-size:30px;} .body{font-size:17px;} }
+
+/* video: a still image and a play button until it is clicked, so the page costs
+   nothing extra to load and YouTube sets no cookies for readers who never play it */
+.vid{margin:0 0 30px;}
+.vidbtn{display:block;position:relative;width:100%;padding:0;border:1px solid var(--line);
+  background:var(--dark);border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;}
+.vidbtn img{width:100%;height:auto;display:block;opacity:.85;transition:opacity .25s ease,transform .25s ease;}
+.vidbtn:hover img,.vidbtn:focus-visible img{opacity:1;transform:scale(1.02);}
+.vidbtn:focus-visible{outline:3px solid var(--coral);outline-offset:3px;}
+.vidplay{position:absolute;top:44%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;
+  border-radius:50%;background:var(--coral);display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);transition:background .2s ease;}
+.vidplay svg{width:30px;height:30px;margin-left:5px;fill:#fff;}
+.vidbtn:hover .vidplay,.vidbtn:focus-visible .vidplay{background:var(--coral-d);}
+.vidmeta{position:absolute;left:0;right:0;bottom:0;padding:36px 22px 16px;color:#fff;
+  background:linear-gradient(to top,rgba(20,18,15,.93),rgba(20,18,15,0));}
+.vidmeta b{display:block;font-family:var(--serif);font-size:20px;font-weight:600;line-height:1.25;}
+.vidmeta span{display:block;font-size:14.5px;color:#e6ded1;margin-top:4px;}
+.vidframe{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000;}
+.vidframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.vid figcaption{font-size:15px;color:var(--mute);margin-top:11px;}
+@media(max-width:600px){
+  .vidplay{width:58px;height:58px;} .vidplay svg{width:23px;height:23px;}
+  .vidmeta{padding:28px 16px 13px;} .vidmeta b{font-size:17px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .vidbtn img{transition:none;} .vidbtn:hover img,.vidbtn:focus-visible img{transform:none;}
+}
 </style>
 
 <!-- SEO / canonical / social -->
@@ -114,7 +142,7 @@ a{color:var(--coral-d);text-decoration:none;}
 <meta name="twitter:title" content="When to Sign Up for Medicare: Your 7-Month Initial Enrollment Period">
 <meta name="twitter:description" content="Your Medicare Initial Enrollment Period is just 7 months. Miss it and the late penalty can follow you for life. Here&#x27;s exactly when to sign up — in plain English.">
 <meta name="twitter:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BlogPosting","@id":"https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#article","headline":"When to Sign Up for Medicare: Your 7-Month Initial Enrollment Period","description":"Your Medicare Initial Enrollment Period is just 7 months. Miss it and the late penalty can follow you for life. Here's exactly when to sign up.","image":["https://bluegrassmedicarehelp.com/assets/og-image.png"],"datePublished":"2026-06-03","dateModified":"2026-06-03","author":{"@type":"Person","@id":"https://bluegrassmedicarehelp.com/#austin-tyler","name":"Austin Tyler","url":"https://bluegrassmedicarehelp.com/about/"},"publisher":{"@type":"Organization","@id":"https://bluegrassmedicarehelp.com/#org","name":"Tyler Insurance Group","alternateName":"Bluegrass Medicare Help","url":"https://bluegrassmedicarehelp.com/","logo":{"@type":"ImageObject","url":"https://bluegrassmedicarehelp.com/assets/logo-mark.png"},"telephone":"+1-859-618-6443","sameAs":["https://www.tylerinsurancegroup.com","https://www.yelp.com/biz/tyler-insurance-group-lexington","https://share.google/t5kgf6RBxLldnNVcX"]},"mainEntityOfPage":{"@type":"WebPage","@id":"https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/"},"articleSection":"New to Medicare","inLanguage":"en-US"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://bluegrassmedicarehelp.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://bluegrassmedicarehelp.com/articles/"},{"@type":"ListItem","position":3,"name":"When to Sign Up for Medicare: The 7-Month Window","item":"https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "@id": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#article", "headline": "When to Sign Up for Medicare: Your 7-Month Initial Enrollment Period", "description": "Your Medicare Initial Enrollment Period is just 7 months. Miss it and the late penalty can follow you for life. Here's exactly when to sign up.", "image": ["https://bluegrassmedicarehelp.com/assets/og-image.png"], "datePublished": "2026-06-03", "dateModified": "2026-06-03", "author": {"@type": "Person", "@id": "https://bluegrassmedicarehelp.com/#austin-tyler", "name": "Austin Tyler", "url": "https://bluegrassmedicarehelp.com/about/"}, "publisher": {"@type": "Organization", "@id": "https://bluegrassmedicarehelp.com/#org", "name": "Tyler Insurance Group", "alternateName": "Bluegrass Medicare Help", "url": "https://bluegrassmedicarehelp.com/", "logo": {"@type": "ImageObject", "url": "https://bluegrassmedicarehelp.com/assets/logo-mark.png"}, "telephone": "+1-859-618-6443", "sameAs": ["https://www.tylerinsurancegroup.com", "https://www.yelp.com/biz/tyler-insurance-group-lexington", "https://share.google/t5kgf6RBxLldnNVcX"]}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/"}, "articleSection": "New to Medicare", "inLanguage": "en-US"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluegrassmedicarehelp.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://bluegrassmedicarehelp.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "When to Sign Up for Medicare: The 7-Month Window", "item": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/"}]}, {"@type": "VideoObject", "@id": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#video", "name": "Turning 65? What You Need to Know About Medicare (2026)", "description": "Turning 65 gives you a seven-month window to enroll in Medicare with no penalty, opening three months before your birthday month. Austin Tyler covers whether you can delay, the three ways to sign up, what Part A and Part B each cover, and the $202.90 standard Part B premium for 2026.", "thumbnailUrl": ["https://i.ytimg.com/vi/NfmmHa-sN0M/maxresdefault.jpg"], "uploadDate": "2026-08-06", "duration": "PT3M11S", "embedUrl": "https://www.youtube.com/embed/NfmmHa-sN0M", "contentUrl": "https://youtu.be/NfmmHa-sN0M", "publisher": {"@type": "Organization", "name": "Tyler Insurance Group"}, "creator": {"@type": "Person", "name": "Austin Tyler"}, "isPartOf": {"@id": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#article"}, "hasPart": [{"@type": "Clip", "name": "Do you have to take Medicare at 65, or can you delay?", "startOffset": 0, "endOffset": 25, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=0"}, {"@type": "Clip", "name": "Your seven-month enrollment window", "startOffset": 25, "endOffset": 42, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=25"}, {"@type": "Clip", "name": "Why to enroll three months early", "startOffset": 42, "endOffset": 61, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=42"}, {"@type": "Clip", "name": "Three ways to sign up, and the fastest one", "startOffset": 61, "endOffset": 80, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=61"}, {"@type": "Clip", "name": "Part A: your hospital coverage", "startOffset": 80, "endOffset": 104, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=80"}, {"@type": "Clip", "name": "Part B: your medical coverage and what it costs in 2026", "startOffset": 104, "endOffset": 131, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=104"}, {"@type": "Clip", "name": "How the premium comes out of your Social Security check", "startOffset": 131, "endOffset": 151, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=131"}, {"@type": "Clip", "name": "Advantage or Supplement: the next decision", "startOffset": 151, "endOffset": 162, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=151"}, {"@type": "Clip", "name": "Where to get help", "startOffset": 162, "endOffset": 191, "url": "https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/#t=162"}]}]}</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -161,6 +189,21 @@ a{color:var(--coral-d);text-decoration:none;}
       <div class="b"><a href="/about/" style="color:inherit;text-decoration:none;"><b>Austin Tyler</b></a>Local Kentucky Medicare agent · June 3, 2026 · 5 min read</div>
     </div>
   </header>
+
+  <figure class="vid">
+    <button class="vidbtn" id="vidbtn" type="button"
+      aria-label="Play the video, Turning 65, what you need to know about Medicare, 3 minutes 11 seconds">
+      <img src="https://i.ytimg.com/vi/NfmmHa-sN0M/maxresdefault.jpg" alt="" width="1280" height="720"
+        loading="lazy" decoding="async"
+        onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/NfmmHa-sN0M/hqdefault.jpg';">
+      <span class="vidplay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vidmeta">
+        <b>Watch: Turning 65? What you need to know about Medicare</b>
+        <span>3:11 &middot; Austin Tyler, Tyler Insurance Group, Lexington KY</span>
+      </span>
+    </button>
+    <figcaption>Prefer to read? The full write-up is below.</figcaption>
+  </figure>
 
   <div class="body">
     <p>Most of the Medicare mistakes I help people fix come down to one thing: <strong>timing</strong>. Medicare isn't something you can sign up for whenever you get around to it. There's a specific window, it's only seven months long, and missing it can cost you money every single month for the rest of your life.</p>
@@ -271,5 +314,24 @@ a{color:var(--coral-d);text-decoration:none;}
 })();
 </script>
 <script src="/assets/site.js"></script>
+<script>
+/* swap the still for the real player only once the reader asks for it */
+(function(){
+  var b=document.getElementById('vidbtn');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var d=document.createElement('div');
+    d.className='vidframe';
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/NfmmHa-sN0M?autoplay=1&rel=0';
+    f.title='Turning 65? What You Need to Know About Medicare (2026)';
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.setAttribute('allowfullscreen','');
+    d.appendChild(f);
+    b.parentNode.replaceChild(d, b);
+    if(typeof gtag==='function'){gtag('event','video_play',{video_title:'Turning 65 what you need to know'});}
+  });
+})();
+</script>
 </body>
 </html>
