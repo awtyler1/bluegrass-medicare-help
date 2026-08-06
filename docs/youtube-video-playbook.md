@@ -316,6 +316,129 @@ same either way. That is correct, and for Medicare Advantage and Part D the maxi
 commission is set by CMS. Medigap commissions are not CMS-set, they are regulated at
 state level, so the description avoids attributing the rate-setting to CMS.
 
+## Video: Turning 65 overview
+
+Published 6 August 2026 | https://youtu.be/NfmmHa-sN0M | ID `NfmmHa-sN0M` | 3:11
+Campaign slug: `turning-65`
+
+Embedded at the top of `/articles/turning-65-enrollment-window/` (canonical, with the
+`VideoObject`, nine chapters as `Clip` nodes, and the sitemap video entry) and inside
+the "There is a window around your 65th birthday" band on `/turning-65/` as a plain
+embed, directly under the paragraph it illustrates.
+
+### Title
+
+> **Turning 65? What You Need to Know About Medicare (2026)**
+
+"Turning 65" is the phrase this audience actually types, so it leads. 54 characters,
+so nothing truncates anywhere. The year gives a reason to re-shoot it annually.
+
+Alternative if a longer-tail angle is wanted:
+**Turning 65 and Medicare: When to Enroll and What It Costs (2026)**
+
+### Where it goes
+
+1. **`/articles/turning-65-enrollment-window/`** as the canonical home. The article is
+   "When to Sign Up for Medicare: Your 7-Month Initial Enrollment Period" and already
+   covers the window, working past 65, and the lifetime penalty, which is the spine of
+   the video. Full `VideoObject` plus the sitemap video entry go here.
+2. **`/turning-65/`** as a plain embed. It is the destination behind "Turning 65?" in
+   the nav and it is a conversion page, so a video of Austin explaining the window is
+   worth more there than anywhere else on the site for trust.
+
+As before, schema on one page only so nothing splits the signal.
+
+### Description (paste as-is)
+
+Three links rather than the usual two, because the video makes two explicit promises
+("I wrote the full turning 65 guide, I'm gonna link that below" and "on our website
+there's a link where you can do a deeper dive in these key differences") and then
+gives a phone CTA. Every link answers something said out loud.
+
+```
+Turning 65 in the next year? You get a seven-month window to enroll in Medicare with
+no penalty and no gap in coverage, and it opens three months before your birthday
+month, not on it.
+
+The full write-up on the window: https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+
+Here is what this video covers.
+
+First, whether you even need to take Medicare at 65. If you are still working and have
+qualifying coverage, or you are on a working spouse's coverage, you can usually delay
+without a penalty.
+
+If you do need to enroll, the window is three months before your 65th birthday month,
+the birth month itself, and three months after. Enroll in the first three months and
+your coverage starts the first day of your birth month. It pays to be proactive here.
+There are three ways to sign up: call Social Security, visit a local office, or do it
+online, which takes most of our clients 15 to 20 minutes.
+
+Then there is what you are actually enrolling in. Part A is your hospital coverage,
+and for most people over 65 it costs nothing each month, because you already paid for
+it through payroll taxes during your working life. Part B is your medical coverage,
+anything outside the hospital, and the standard premium is $202.90 a month in 2026.
+Higher earners pay more, and some state programs will cover it for you. If you are
+already drawing Social Security, it comes straight out of your check.
+
+Last, the decision nobody warns you about: Medicare Advantage or a Medicare Supplement.
+There are real trade-offs both ways, and it is worth understanding before you pick.
+
+The deeper dive on Advantage vs. Supplement: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+
+CHAPTERS
+0:00 Do you have to take Medicare at 65, or can you delay?
+0:25 Your seven-month enrollment window
+0:42 Why to enroll three months early
+1:01 Three ways to sign up, and the fastest one
+1:20 Part A: your hospital coverage
+1:44 Part B: your medical coverage and what it costs in 2026
+2:11 How the premium comes out of your Social Security check
+2:31 Advantage or Supplement: the next decision
+2:42 Where to get help
+
+Want someone to look at your situation? Call the office at (859) 618-6443, or book a
+free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+
+Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
+Medicare advisory firm on Beaumont Circle in Lexington, Kentucky.
+
+#Medicare #Turning65 #MedicareEnrollment
+
+We respect your privacy. This is a solicitation for insurance. Tyler Insurance
+Group is not connected with or endorsed by the United States government or the
+federal Medicare program. We do not offer every plan available in your area.
+Currently we represent 6 organizations which offer 158 products in your area.
+Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance
+Program (SHIP) to get information on all of your options.
+```
+
+### Chapters
+
+Eleven source beats merged into nine. The 2:35 guide mention and the 2:59 office
+sign-off fold into neighbouring chapters rather than getting their own marks, since
+neither is something a viewer would skip to. Shortest gap is 11 seconds against
+YouTube's 10 second minimum, first mark is 0:00, so the list is valid.
+
+### Tags
+
+`turning 65 medicare, medicare when you turn 65, what to do when you turn 65,
+medicare enrollment period, 7 month enrollment window medicare, medicare part a and
+part b explained, part b premium 2026, do i need medicare if i am still working,
+how to enroll in medicare online, medicare help lexington ky`
+
+### Accuracy check
+
+- **$202.90 Part B premium for 2026** matches the figure used in 47 places across this
+  site. Consistent, and correctly framed in the video as the standard premium with
+  higher earners paying more.
+- **Part A at no cost** is right for people with 40 quarters of Medicare-covered work.
+  The video says "typically," which covers the exception.
+- **The seven-month window** and **coverage starting the first day of the birth month**
+  are both correct. One edge case not mentioned and not worth a re-shoot: if a birthday
+  falls on the 1st of a month, Medicare treats it as the prior month, so the window and
+  the start date shift back by one.
+
 ## After upload: what gets built
 
 - [x] Video embedded at the top of the matching article, click-to-play against a
