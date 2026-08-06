@@ -450,7 +450,22 @@ how to enroll in medicare online, medicare help lexington ky`
 - [x] Video sitemap extension added to the article's `sitemap.xml` entry
 - [ ] Cross-links from the related articles. The articles have no shared
       related-links block, so each needs its own placement. Separate pass.
-- [ ] `/videos/` library page, once there are three or more videos
+- [x] `/videos/` library page, live at `/videos/`
+
+## The video library
+
+`/videos/` lists every video newest first, each card playing in place (click-to-play,
+nocookie) with a link through to the matching article. Linked from the footer nav on
+every page and from the top of the Learning Center.
+
+Schema is `CollectionPage` + `ItemList` of `VideoObject`, and each item's `url` points
+at the **article**, not at `/videos/`. The library is a front door; the articles are
+what should rank.
+
+**Adding a video:** add a `.vcard` block to the `.vgrid` in `/videos/index.html`
+(newest first), add the matching entry to the `ItemList` in the JSON-LD, bump
+`numberOfItems`, and give the new button a unique `id`. The player script binds to
+every `.vthumb`, so nothing else needs touching.
 
 ## Next videos
 
