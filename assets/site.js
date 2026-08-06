@@ -43,3 +43,75 @@
     if (typeof gtag === 'function') gtag('event', 'knowledge_check_complete', { score: score, total: total });
   }
 })();
+
+/* ---- inline glossary terms --------------------------------------------------
+   Tapping a marked word opens its meaning under the paragraph it sits in, so a
+   reader never has to leave the sentence that confused them. The markup is a
+   plain link to the glossary, so this only ever adds to what already works. */
+(function () {
+  var open = null;
+
+  function close() {
+    if (!open) return;
+    if (open.panel.parentNode) open.panel.parentNode.removeChild(open.panel);
+    open.link.setAttribute('aria-expanded', 'false');
+    open = null;
+  }
+
+  function panelFor(link) {
+    var d = document.createElement('div');
+    d.className = 'gtip';
+    d.setAttribute('role', 'note');
+
+    var head = document.createElement('div');
+    head.className = 'gth';
+    var b = document.createElement('b');
+    b.textContent = link.getAttribute('data-n');
+    var x = document.createElement('button');
+    x.type = 'button';
+    x.className = 'gtx';
+    x.textContent = 'Close';
+    x.addEventListener('click', function () { close(); link.focus(); });
+    head.appendChild(b);
+    head.appendChild(x);
+
+    var p = document.createElement('p');
+    p.textContent = link.getAttribute('data-d');
+
+    var more = document.createElement('p');
+    more.className = 'gtmore';
+    var a = document.createElement('a');
+    a.href = link.getAttribute('href');
+    a.textContent = 'See an example in the glossary →';
+    more.appendChild(a);
+
+    d.appendChild(head);
+    d.appendChild(p);
+    d.appendChild(more);
+    return d;
+  }
+
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest ? e.target.closest('.gt') : null;
+    if (!link) {
+      if (open && !(e.target.closest && e.target.closest('.gtip'))) close();
+      return;
+    }
+    e.preventDefault();
+    var wasOpen = open && open.link === link;
+    close();
+    if (wasOpen) return;
+    var host = link.closest('p, li, td, blockquote') || link.parentNode;
+    var panel = panelFor(link);
+    host.parentNode.insertBefore(panel, host.nextSibling);
+    link.setAttribute('aria-expanded', 'true');
+    open = { link: link, panel: panel };
+    if (typeof gtag === 'function') {
+      gtag('event', 'glossary_term_opened', { term: link.getAttribute('data-n') });
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && open) { var l = open.link; close(); l.focus(); }
+  });
+})();
