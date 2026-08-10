@@ -20,23 +20,31 @@ Only the first two or three lines show before "show more." Put the hook and the
 single most important link there. Everything else is for YouTube's search index
 and for the people who expand it.
 
-1. One-sentence hook that repeats the main keyword naturally
-2. Primary link (the matching article), with UTM tags
-3. Summary, 150 to 200 words, using the phrases people actually search
-4. Chapters (timestamps)
-5. Booking link + phone
-6. One-line credentials (an E-E-A-T signal, worth the space)
-7. Hashtags
-8. CMS disclaimer
+**Do not summarize the video.** YouTube already has the transcript and understands the
+audio. A prose recap of what was said tells the ranking systems nothing they do not
+already know, and it reads like filler to a human. Every earlier description in this
+file made that mistake.
 
-**Keep it to two links.** The matching article and the booking page. It is tempting
-to list every related article, but a description with eight links reads as spam to a
-human even when YouTube does not care, and it splits the click until nobody takes
-any of them. Related reading belongs on the article, which is what the first link is
-for. Aim for roughly 2,000 to 2,600 characters all in, against YouTube's 5,000 limit.
+Write the body as **the questions people type, answered in a line or two each**. That
+covers the query phrasings the title cannot hold, it is scannable, and it does not
+require keyword stuffing because the questions are the keywords.
 
-Only the first two or three lines show before "show more," so the hook and the
-primary link go at the very top.
+1. **Hook, two lines max.** Only this and the primary link show before "show more."
+   Lead with the concrete number or the surprising fact, not with a topic sentence.
+2. **Primary link**, UTM tagged.
+3. **Four or five question headings in caps**, each answered in one or two sentences.
+   Draw the questions from how people search, not from the order of the video.
+4. **Chapters.**
+5. **Booking link and phone.**
+6. **A service-area line** naming the towns. Cheap, and it is the only local signal a
+   YouTube description carries.
+7. **One-line credentials**, hashtags, CMS disclaimer.
+
+**Two links.** The matching article and the booking page. Related reading belongs on
+the article, which is what the first link is for. Aim for 2,000 to 2,800 characters.
+
+**US spelling.** "Enroll", not "enrol". Worth stating because it has already gone
+wrong once here, in the single most important word in Medicare copy.
 
 ## UTM tags
 
@@ -243,7 +251,7 @@ bill, ever.
 Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
 
 Here is how that works. Independent Medicare advisors are paid a commission by the
-insurance company you enroll with, and that commission is already built into the
+insurance company you enrolll with, and that commission is already built into the
 plan's pricing whether you use an advisor or not. The premium is the same either way.
 So the choice is not "pay for help or save money." It is "use the help that is
 already paid for, or leave it on the table."
@@ -321,7 +329,7 @@ state level, so the description avoids attributing the rate-setting to CMS.
 Published 6 August 2026 | https://youtu.be/NfmmHa-sN0M | ID `NfmmHa-sN0M` | 3:11
 Campaign slug: `turning-65`
 
-Embedded at the top of `/articles/turning-65-enrollment-window/` (canonical, with the
+Embedded at the top of `/articles/turning-65-enrolllment-window/` (canonical, with the
 `VideoObject`, nine chapters as `Clip` nodes, and the sitemap video entry) and inside
 the "There is a window around your 65th birthday" band on `/turning-65/` as a plain
 embed, directly under the paragraph it illustrates.
@@ -338,7 +346,7 @@ Alternative if a longer-tail angle is wanted:
 
 ### Where it goes
 
-1. **`/articles/turning-65-enrollment-window/`** as the canonical home. The article is
+1. **`/articles/turning-65-enrolllment-window/`** as the canonical home. The article is
    "When to Sign Up for Medicare: Your 7-Month Initial Enrollment Period" and already
    covers the window, working past 65, and the lifetime penalty, which is the spine of
    the video. Full `VideoObject` plus the sitemap video entry go here.
@@ -356,11 +364,11 @@ there's a link where you can do a deeper dive in these key differences") and the
 gives a phone CTA. Every link answers something said out loud.
 
 ```
-Turning 65 in the next year? You get a seven-month window to enroll in Medicare with
+Turning 65 in the next year? You get a seven-month window to enrolll in Medicare with
 no penalty and no gap in coverage, and it opens three months before your birthday
 month, not on it.
 
-The full write-up on the window: https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+The full write-up on the window: https://bluegrassmedicarehelp.com/articles/turning-65-enrolllment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
 Here is what this video covers.
 
@@ -368,13 +376,13 @@ First, whether you even need to take Medicare at 65. If you are still working an
 qualifying coverage, or you are on a working spouse's coverage, you can usually delay
 without a penalty.
 
-If you do need to enroll, the window is three months before your 65th birthday month,
+If you do need to enrolll, the window is three months before your 65th birthday month,
 the birth month itself, and three months after. Enroll in the first three months and
 your coverage starts the first day of your birth month. It pays to be proactive here.
 There are three ways to sign up: call Social Security, visit a local office, or do it
 online, which takes most of our clients 15 to 20 minutes.
 
-Then there is what you are actually enrolling in. Part A is your hospital coverage,
+Then there is what you are actually enrollling in. Part A is your hospital coverage,
 and for most people over 65 it costs nothing each month, because you already paid for
 it through payroll taxes during your working life. Part B is your medical coverage,
 anything outside the hospital, and the standard premium is $202.90 a month in 2026.
@@ -388,8 +396,8 @@ The deeper dive on Advantage vs. Supplement: https://bluegrassmedicarehelp.com/a
 
 CHAPTERS
 0:00 Do you have to take Medicare at 65, or can you delay?
-0:25 Your seven-month enrollment window
-0:42 Why to enroll three months early
+0:25 Your seven-month enrolllment window
+0:42 Why to enrolll three months early
 1:01 Three ways to sign up, and the fastest one
 1:20 Part A: your hospital coverage
 1:44 Part B: your medical coverage and what it costs in 2026
@@ -423,9 +431,9 @@ YouTube's 10 second minimum, first mark is 0:00, so the list is valid.
 ### Tags
 
 `turning 65 medicare, medicare when you turn 65, what to do when you turn 65,
-medicare enrollment period, 7 month enrollment window medicare, medicare part a and
+medicare enrolllment period, 7 month enrolllment window medicare, medicare part a and
 part b explained, part b premium 2026, do i need medicare if i am still working,
-how to enroll in medicare online, medicare help lexington ky`
+how to enrolll in medicare online, medicare help lexington ky`
 
 ### Accuracy check
 
@@ -447,54 +455,37 @@ Campaign slug: `why-an-advisor`
 
 > **Do You Need a Medicare Advisor? What You Actually Get (2026)**
 
-59 characters. The question form matches how people search this ("do I need a
-Medicare broker", "why use a Medicare agent").
-
-Alternative if the contrast is the stronger hook:
-**Medicare on Your Own vs. With an Advisor: A Weekend, or 30 Minutes**
-
-### Keeping it distinct from the cost video
-
-The 1:01 advisor cost video already owns "it costs nothing." If this one leads with
-the same line, the two compete for the same query and neither wins. So the hook here
-is the **time trade** (a weekend of your work against 30 minutes of ours) and the
-payload is **what happens after you enrol**: a line you can call all year, and a plan
-review every October. Cost is the second beat, not the first.
-
-### Where it goes
-
-1. **`/articles/annual-medicare-review-aep/`** as the canonical home. That article is
-   "Your Yearly Medicare Plan Review (Annual Notice of Change)" and has no video yet.
-   The second half of this video is exactly that promise, which makes it a proof point
-   rather than a repeat.
-2. **`/about/`** as a plain embed. It is the "why work with me" page, and a video of
-   Austin explaining what he does year-round is the strongest trust signal available
-   for it.
-
 ### Description (paste as-is)
 
 ```
-You could compare every Medicare plan yourself. Find out which ones cover your drugs,
-then which ones take your doctors. You are smart enough to do it. It will take you a
-weekend. It takes us 25 or 30 minutes, because we do it every day.
+You could compare every Medicare plan yourself. It will take you a weekend. It takes
+us 25 or 30 minutes, because we do it every day, and it costs you nothing either way.
 
-What a yearly review actually looks like: https://bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+What a yearly plan review actually looks like: https://bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
 
-And it never costs you a penny to sit down with us.
+DO I NEED A MEDICARE ADVISOR?
+No. You can absolutely do this on your own. The question is whether you want to spend
+a weekend cross-checking every plan in your county against your drug list and your
+doctors, and then do it again next year.
 
-Here is the part most people do not realise they are missing. The work does not stop
-the day you enrol. Medicare plans change every single year: the drug list moves, the
-doctors in the network move, the copays move. If nobody is watching that for you, you
-find out at the pharmacy counter in January.
+WHAT DOES A MEDICARE AGENT ACTUALLY DO?
+Prices your exact prescriptions against every plan available where you live, confirms
+your doctors and hospital are in network before you enroll, and lays the options out
+side by side in plain English.
 
-If we enrol you, you have our line all year. You have a question in March, you call.
-And every October, when the Annual Enrollment Period opens, we go back through your
-plan against what changed for the coming year. We have systems for getting to the
-clients who need to hear from us first.
+HOW MUCH DOES A MEDICARE BROKER COST?
+Nothing. Agents are paid a commission by the insurance company, and it is built into
+plan pricing whether you use an agent or not. Your premium is identical either way.
 
-That is the whole point of having someone in your corner. You worked your whole life.
-You should be able to go enjoy it instead of sorting through the mail and the phone
-calls and wondering whether you are still in the right plan.
+WHAT HAPPENS AFTER I ENROLL?
+This is the part people miss. Medicare plans change every January: drug lists,
+networks, copays. If nobody is watching that for you, you find out at the pharmacy
+counter. Our clients have our direct line all year, and every October we review the
+plan against what changed for the coming year.
+
+IS IT WORTH USING AN AGENT INSTEAD OF DOING IT MYSELF?
+You worked your whole life. The mail, the phone calls, and the annual second-guessing
+are the part you can hand off.
 
 CHAPTERS
 0:00 You could do this yourself. Here is what it would cost you.
@@ -503,9 +494,11 @@ CHAPTERS
 1:18 Why not have someone in your corner
 1:45 Come in and meet us
 
-Want to talk it through, or just come meet us and see how it works? Book a free
-30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
 Or call Austin directly at (859) 618-6443.
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
 
 Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
 Medicare advisory firm on Beaumont Circle in Lexington, Kentucky.
@@ -520,29 +513,30 @@ Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insuranc
 Program (SHIP) to get information on all of your options.
 ```
 
-### Chapters
+### Where it goes
 
-Eight source beats merged into five. The 0:09 mark had to go: it sits nine seconds
-after 0:00 and YouTube requires at least ten between chapters, so the whole list would
-have been silently dropped. It folds into the opening chapter, which is where the
-weekend-versus-30-minutes line lives anyway. Shortest remaining gap is 16 seconds.
+1. **`/articles/annual-medicare-review-aep/`** as the canonical home. That article is
+   "Your Yearly Medicare Plan Review" and has no video yet, and the second half of
+   this video is exactly that promise.
+2. **`/about/`** as a plain embed. Strongest trust signal available for that page.
 
 ### Tags
 
 `do i need a medicare advisor, why use a medicare agent, medicare broker vs doing it
-yourself, what does a medicare agent do, medicare agent free, medicare annual review,
-medicare plan changes every year, medicare help all year, medicare advisor lexington
-ky, medicare agent kentucky`
+yourself, what does a medicare agent do, is a medicare agent free, medicare annual
+review, medicare plan changes every year, medicare advisor lexington ky, medicare
+agent kentucky`
+
+### Chapters
+
+Eight source beats merged into five. The 0:09 mark had to go: it sits nine seconds
+after 0:00 and YouTube requires ten, so leaving it in would have silently disabled the
+whole list. Shortest remaining gap is 16 seconds.
 
 ### Compliance
 
-Educational: no plan named, no benefit or premium quoted, so this sits in CMS
-communications rather than marketing. The disclaimer is included because the
-description asks people to contact an agent.
-
-One line to keep an eye on in future videos: "we will review your plan every single
-year" is a service promise rather than a claim about coverage, which is fine, but it
-should stay true for every client who enrols, not just the ones who ask.
+Educational: no plan named, no benefit or premium quoted. The disclaimer is included
+because the description asks people to contact an agent.
 
 ## After upload: what gets built
 
