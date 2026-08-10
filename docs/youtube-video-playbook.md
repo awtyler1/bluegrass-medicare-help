@@ -264,20 +264,35 @@ bill, ever.
 
 Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
 
-Here is how that works. Independent Medicare advisors are paid a commission by the
-insurance company you enroll with, and that commission is already built into the
-plan's pricing whether you use an advisor or not. The premium is the same either way.
-So the choice is not "pay for help or save money." It is "use the help that is
-already paid for, or leave it on the table."
+HOW MUCH DOES A MEDICARE ADVISOR COST?
+Nothing. We will never ask you to pull out a checkbook and we will never send you a
+bill.
 
-What you actually get for it: someone who sits down with your current situation, your
-doctors, and your prescriptions, and points you toward the plan that fits, acting as
-an advocate between you and the insurance company.
+HOW DO MEDICARE AGENTS GET PAID, THEN?
+By the insurance company, when someone enrolls. That commission is already built into
+the plan's pricing whether an agent is involved or not.
 
-More free Medicare help in Lexington, including the state's SHIP counselors and other
-resources that cost nothing: https://bluegrassmedicarehelp.com/articles/free-medicare-help-lexington-ky/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
+WILL I PAY MORE FOR A PLAN IF I USE AN AGENT?
+No. The premium is identical either way. So the real choice is not "pay for help or
+save money." It is "use the help that is already paid for, or leave it on the table."
+
+ARE MEDICARE BROKERS ACTUALLY INDEPENDENT?
+Fair question, given who pays us. Judge it by behavior, not by the word. Ask how many
+carriers someone represents, ask whether they will tell you to keep the plan you
+already have, and ask what happens in March when you have a problem. An independent
+agent works for you across many carriers. A captive agent has one company's products
+to sell.
+
+WHAT DO I ACTUALLY GET FOR IT?
+Someone who sits down with your situation, your doctors and your prescriptions, and
+acts as an advocate between you and the insurance company.
+
+Other free Medicare help in Lexington, including the state's SHIP counselors: https://bluegrassmedicarehelp.com/articles/free-medicare-help-lexington-ky/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
 
 Or call the office at (859) 618-6443.
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
 
 Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
 Medicare advisory firm in Lexington, Kentucky.
