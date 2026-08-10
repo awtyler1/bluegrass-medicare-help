@@ -71,35 +71,46 @@ gives a clean reason to re-shoot and re-rank it every year.
 
 ### Description (paste as-is)
 
-Written against the actual transcript, so the description and the video match.
-
-Two links only: the matching article and the booking page. An earlier draft carried
-eight and read like a link farm. More links do not mean more clicks, they mean the
-click gets split until nobody takes any of them. Everything else the video sets up
-lives on the article, which is where a reader who wants more should end up anyway.
+Rewritten in the query-shaped structure. The old version summarized the video, which
+told YouTube nothing it did not already have from the transcript.
 
 ```
-Medicare covers 80% of your Part B costs. What almost nobody tells you is that
-Original Medicare has no cap on the other 20%.
+Medicare pays 80% of your Part B costs and leaves you the other 20%. What almost
+nobody tells you: Original Medicare puts no cap on that 20%, no matter how big the
+bill gets.
 
 Full written breakdown: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 
-A Medicare Supplement and a Medicare Advantage plan are two different answers to
-that one problem. On a $100 bill, the 20% is manageable. On a $100,000 cancer
-treatment it is $20,000, and unlike employer or Affordable Care Act plans, Original
-Medicare has no maximum out-of-pocket to stop it.
+WHY DOES THE 20% MATTER SO MUCH?
+On a $100 bill it is $20. On a $100,000 cancer treatment it is $20,000. Employer plans
+and Affordable Care Act plans all have a maximum out-of-pocket, a point where the
+billing stops. Original Medicare does not. Both a Supplement and an Advantage plan
+exist to fix that one problem, they just do it differently.
 
-A Medicare Supplement, also called Medigap, is pay regardless. A premium every
-month, the insurance company covers your 20%, no networks, any doctor in the country
-who accepts Medicare, and generally no referrals. It does not include drug, dental,
-vision, or hearing coverage, so a separate Part D drug plan goes with it.
+WHAT IS A MEDICARE SUPPLEMENT, OR MEDIGAP?
+Pay regardless. You send a premium every month and the insurance company covers your
+20%. No networks, so any doctor in the country who accepts Medicare, which is roughly
+99% of them, and generally no referrals. You pay that premium whether you use it or
+not, even if you are the healthiest person you know.
 
-A Medicare Advantage plan is Part C. Think C for complete: medical, drugs, dental,
-vision, and hearing on one card. Pay as you go with copays, and a maximum
-out-of-pocket built in. The trade-off is the network, and often referrals.
+DOES A MEDICARE SUPPLEMENT COVER DRUGS, DENTAL, VISION OR HEARING?
+No. None of them. A separate Part D drug plan has to go alongside it, and dental,
+vision and hearing are bought separately or paid out of pocket.
 
-Neither one is better. It comes down to your health, your doctors, and your
-prescriptions.
+WHAT IS A MEDICARE ADVANTAGE PLAN, OR PART C?
+Think C for complete. Medical, drugs, dental, vision and hearing on one card, used at
+the doctor, the pharmacy and the dentist. Pay as you go with flat copays, and every
+Advantage plan has a maximum out-of-pocket built in.
+
+WHAT IS THE CATCH WITH MEDICARE ADVANTAGE?
+The network. The plan decides which doctors it will pay for, so a plan that does not
+include your doctor or your hospital is the wrong plan no matter what it costs. Many
+still require referrals to see a specialist, though some carriers are dropping that.
+
+SO WHICH ONE IS BETTER?
+Neither. It comes down to your health today, your doctors, your prescriptions, and how
+much you travel. Anyone who answers that question before asking about those four
+things is selling, not advising.
 
 CHAPTERS
 0:00 Advantage or Supplement: the same job, done differently
@@ -115,9 +126,12 @@ CHAPTERS
 5:31 The trade-off: networks and referrals
 6:12 Talk it through with a local advisor
 
-Want someone to walk through your own doctors and prescriptions? Book a free
+Want someone to check your own doctors and prescriptions against both? Book a free
 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 Or call the office at (859) 618-6443.
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
 
 Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
 Medicare advisory firm in Lexington, Kentucky.
