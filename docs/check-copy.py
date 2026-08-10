@@ -34,6 +34,19 @@ for p in html + docs:
               % (p, body[:m.start()].count('\n') + 1, m.group(0)))
         fails += 1
 
+# a letter repeated three times is almost always a scripted find-and-replace that
+# matched inside a word it should not have ("enrol" -> "enroll" turning "enroll"
+# into "enrolll"). Docs only, since HTML carries class names like "callline".
+for p in docs:
+    body = open(p, encoding='utf-8').read()
+    for m in re.finditer(r'\b[a-z]*?([a-z])\1\1[a-z]*\b', body):
+        word = m.group(0)
+        if all(c in 'abcdef' for c in word):   # a hex colour, not a word
+            continue
+        print('REPEATED LETTER  %s:%d  "%s"'
+              % (p, body[:m.start()].count('\n') + 1, word))
+        fails += 1
+
 # paste-ready blocks in docs must be spotless
 for p in docs:
     text = open(p, encoding='utf-8').read()

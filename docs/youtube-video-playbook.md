@@ -265,7 +265,7 @@ bill, ever.
 Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
 
 Here is how that works. Independent Medicare advisors are paid a commission by the
-insurance company you enrolll with, and that commission is already built into the
+insurance company you enroll with, and that commission is already built into the
 plan's pricing whether you use an advisor or not. The premium is the same either way.
 So the choice is not "pay for help or save money." It is "use the help that is
 already paid for, or leave it on the table."
@@ -343,7 +343,7 @@ state level, so the description avoids attributing the rate-setting to CMS.
 Published 6 August 2026 | https://youtu.be/NfmmHa-sN0M | ID `NfmmHa-sN0M` | 3:11
 Campaign slug: `turning-65`
 
-Embedded at the top of `/articles/turning-65-enrolllment-window/` (canonical, with the
+Embedded at the top of `/articles/turning-65-enrollment-window/` (canonical, with the
 `VideoObject`, nine chapters as `Clip` nodes, and the sitemap video entry) and inside
 the "There is a window around your 65th birthday" band on `/turning-65/` as a plain
 embed, directly under the paragraph it illustrates.
@@ -360,7 +360,7 @@ Alternative if a longer-tail angle is wanted:
 
 ### Where it goes
 
-1. **`/articles/turning-65-enrolllment-window/`** as the canonical home. The article is
+1. **`/articles/turning-65-enrollment-window/`** as the canonical home. The article is
    "When to Sign Up for Medicare: Your 7-Month Initial Enrollment Period" and already
    covers the window, working past 65, and the lifetime penalty, which is the spine of
    the video. Full `VideoObject` plus the sitemap video entry go here.
@@ -378,40 +378,46 @@ there's a link where you can do a deeper dive in these key differences") and the
 gives a phone CTA. Every link answers something said out loud.
 
 ```
-Turning 65 in the next year? You get a seven-month window to enrolll in Medicare with
-no penalty and no gap in coverage, and it opens three months before your birthday
-month, not on it.
+Turning 65 in the next year? Your seven-month window to enroll in Medicare without a
+penalty opens three months BEFORE your birthday month, not on it. Most people find
+that out late.
 
-The full write-up on the window: https://bluegrassmedicarehelp.com/articles/turning-65-enrolllment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+The full write-up on the window: https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
-Here is what this video covers.
+DO I HAVE TO TAKE MEDICARE AT 65 IF I AM STILL WORKING?
+Usually not. If you are still working and have qualifying coverage, or you are on a
+working spouse's coverage, you can typically delay without a penalty. Confirm your
+coverage actually counts before you decide, because getting that wrong is expensive
+and permanent.
 
-First, whether you even need to take Medicare at 65. If you are still working and have
-qualifying coverage, or you are on a working spouse's coverage, you can usually delay
-without a penalty.
+WHEN EXACTLY CAN I SIGN UP?
+Three months before your 65th birthday month, the birth month itself, and three
+months after. Seven months in total. Enroll in the first three and your coverage
+starts the first day of your birth month. It pays to be proactive here.
 
-If you do need to enrolll, the window is three months before your 65th birthday month,
-the birth month itself, and three months after. Enroll in the first three months and
-your coverage starts the first day of your birth month. It pays to be proactive here.
-There are three ways to sign up: call Social Security, visit a local office, or do it
-online, which takes most of our clients 15 to 20 minutes.
+HOW DO I ENROLL IN MEDICARE?
+Three ways: call Social Security, walk into a local Social Security office, or do it
+online. Online is the simplest and takes most of our clients 15 to 20 minutes.
 
-Then there is what you are actually enrollling in. Part A is your hospital coverage,
-and for most people over 65 it costs nothing each month, because you already paid for
-it through payroll taxes during your working life. Part B is your medical coverage,
-anything outside the hospital, and the standard premium is $202.90 a month in 2026.
-Higher earners pay more, and some state programs will cover it for you. If you are
-already drawing Social Security, it comes straight out of your check.
+WHAT ARE PART A AND PART B?
+Part A is hospital coverage, anything inside the hospital, and for most people over 65
+it costs nothing each month because you already paid for it through payroll taxes
+while you worked. Part B is medical coverage, anything outside the hospital: your
+primary care doctor, specialists, tests.
 
-Last, the decision nobody warns you about: Medicare Advantage or a Medicare Supplement.
-There are real trade-offs both ways, and it is worth understanding before you pick.
+HOW MUCH IS MEDICARE PART B IN 2026?
+The standard premium is $202.90 a month. Higher earners pay more. If you already draw
+Social Security it comes straight out of that check, out of sight and out of mind.
 
-The deeper dive on Advantage vs. Supplement: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+WHAT ABOUT PRESCRIPTIONS?
+Original Medicare does not include them. If you take neither a Medicare Advantage plan
+nor a Medicare Supplement, get a standalone Part D drug plan anyway. Skipping drug
+coverage is one of the more expensive mistakes people make at 65.
 
 CHAPTERS
 0:00 Do you have to take Medicare at 65, or can you delay?
-0:25 Your seven-month enrolllment window
-0:42 Why to enrolll three months early
+0:25 Your seven-month enrollment window
+0:42 Why to enroll three months early
 1:01 Three ways to sign up, and the fastest one
 1:20 Part A: your hospital coverage
 1:44 Part B: your medical coverage and what it costs in 2026
@@ -419,8 +425,13 @@ CHAPTERS
 2:31 Advantage or Supplement: the next decision
 2:42 Where to get help
 
-Want someone to look at your situation? Call the office at (859) 618-6443, or book a
-free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+The deeper dive on Advantage vs. Supplement: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+
+Want someone to look at your own situation? Call the office at (859) 618-6443, or book
+a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
 
 Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
 Medicare advisory firm on Beaumont Circle in Lexington, Kentucky.
@@ -445,9 +456,9 @@ YouTube's 10 second minimum, first mark is 0:00, so the list is valid.
 ### Tags
 
 `turning 65 medicare, medicare when you turn 65, what to do when you turn 65,
-medicare enrolllment period, 7 month enrolllment window medicare, medicare part a and
+medicare enrollment period, 7 month enrollment window medicare, medicare part a and
 part b explained, part b premium 2026, do i need medicare if i am still working,
-how to enrolll in medicare online, medicare help lexington ky`
+how to enroll in medicare online, medicare help lexington ky`
 
 ### Accuracy check
 
