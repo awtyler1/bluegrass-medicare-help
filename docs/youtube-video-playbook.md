@@ -439,6 +439,111 @@ how to enroll in medicare online, medicare help lexington ky`
   falls on the 1st of a month, Medicare treats it as the prior month, so the window and
   the start date shift back by one.
 
+## Video: Why use a Medicare advisor (2:00, not yet published)
+
+Campaign slug: `why-an-advisor`
+
+### Title
+
+> **Do You Need a Medicare Advisor? What You Actually Get (2026)**
+
+59 characters. The question form matches how people search this ("do I need a
+Medicare broker", "why use a Medicare agent").
+
+Alternative if the contrast is the stronger hook:
+**Medicare on Your Own vs. With an Advisor: A Weekend, or 30 Minutes**
+
+### Keeping it distinct from the cost video
+
+The 1:01 advisor cost video already owns "it costs nothing." If this one leads with
+the same line, the two compete for the same query and neither wins. So the hook here
+is the **time trade** (a weekend of your work against 30 minutes of ours) and the
+payload is **what happens after you enrol**: a line you can call all year, and a plan
+review every October. Cost is the second beat, not the first.
+
+### Where it goes
+
+1. **`/articles/annual-medicare-review-aep/`** as the canonical home. That article is
+   "Your Yearly Medicare Plan Review (Annual Notice of Change)" and has no video yet.
+   The second half of this video is exactly that promise, which makes it a proof point
+   rather than a repeat.
+2. **`/about/`** as a plain embed. It is the "why work with me" page, and a video of
+   Austin explaining what he does year-round is the strongest trust signal available
+   for it.
+
+### Description (paste as-is)
+
+```
+You could compare every Medicare plan yourself. Find out which ones cover your drugs,
+then which ones take your doctors. You are smart enough to do it. It will take you a
+weekend. It takes us 25 or 30 minutes, because we do it every day.
+
+What a yearly review actually looks like: https://bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+
+And it never costs you a penny to sit down with us.
+
+Here is the part most people do not realise they are missing. The work does not stop
+the day you enrol. Medicare plans change every single year: the drug list moves, the
+doctors in the network move, the copays move. If nobody is watching that for you, you
+find out at the pharmacy counter in January.
+
+If we enrol you, you have our line all year. You have a question in March, you call.
+And every October, when the Annual Enrollment Period opens, we go back through your
+plan against what changed for the coming year. We have systems for getting to the
+clients who need to hear from us first.
+
+That is the whole point of having someone in your corner. You worked your whole life.
+You should be able to go enjoy it instead of sorting through the mail and the phone
+calls and wondering whether you are still in the right plan.
+
+CHAPTERS
+0:00 You could do this yourself. Here is what it would cost you.
+0:16 It never costs you a penny
+0:39 Year-round support, and a plan review every October
+1:18 Why not have someone in your corner
+1:45 Come in and meet us
+
+Want to talk it through, or just come meet us and see how it works? Book a free
+30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+Or call Austin directly at (859) 618-6443.
+
+Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
+Medicare advisory firm on Beaumont Circle in Lexington, Kentucky.
+
+#Medicare #MedicareHelp #Retirement
+
+We respect your privacy. This is a solicitation for insurance. Tyler Insurance
+Group is not connected with or endorsed by the United States government or the
+federal Medicare program. We do not offer every plan available in your area.
+Currently we represent 6 organizations which offer 158 products in your area.
+Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance
+Program (SHIP) to get information on all of your options.
+```
+
+### Chapters
+
+Eight source beats merged into five. The 0:09 mark had to go: it sits nine seconds
+after 0:00 and YouTube requires at least ten between chapters, so the whole list would
+have been silently dropped. It folds into the opening chapter, which is where the
+weekend-versus-30-minutes line lives anyway. Shortest remaining gap is 16 seconds.
+
+### Tags
+
+`do i need a medicare advisor, why use a medicare agent, medicare broker vs doing it
+yourself, what does a medicare agent do, medicare agent free, medicare annual review,
+medicare plan changes every year, medicare help all year, medicare advisor lexington
+ky, medicare agent kentucky`
+
+### Compliance
+
+Educational: no plan named, no benefit or premium quoted, so this sits in CMS
+communications rather than marketing. The disclaimer is included because the
+description asks people to contact an agent.
+
+One line to keep an eye on in future videos: "we will review your plan every single
+year" is a service promise rather than a claim about coverage, which is fine, but it
+should stay true for every client who enrols, not just the ones who ask.
+
 ## After upload: what gets built
 
 - [x] Video embedded at the top of the matching article, click-to-play against a
