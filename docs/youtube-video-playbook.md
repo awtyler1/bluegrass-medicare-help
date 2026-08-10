@@ -20,23 +20,31 @@ Only the first two or three lines show before "show more." Put the hook and the
 single most important link there. Everything else is for YouTube's search index
 and for the people who expand it.
 
-1. One-sentence hook that repeats the main keyword naturally
-2. Primary link (the matching article), with UTM tags
-3. Summary, 150 to 200 words, using the phrases people actually search
-4. Chapters (timestamps)
-5. Booking link + phone
-6. One-line credentials (an E-E-A-T signal, worth the space)
-7. Hashtags
-8. CMS disclaimer
+**Do not summarize the video.** YouTube already has the transcript and understands the
+audio. A prose recap of what was said tells the ranking systems nothing they do not
+already know, and it reads like filler to a human. Every earlier description in this
+file made that mistake.
 
-**Keep it to two links.** The matching article and the booking page. It is tempting
-to list every related article, but a description with eight links reads as spam to a
-human even when YouTube does not care, and it splits the click until nobody takes
-any of them. Related reading belongs on the article, which is what the first link is
-for. Aim for roughly 2,000 to 2,600 characters all in, against YouTube's 5,000 limit.
+Write the body as **the questions people type, answered in a line or two each**. That
+covers the query phrasings the title cannot hold, it is scannable, and it does not
+require keyword stuffing because the questions are the keywords.
 
-Only the first two or three lines show before "show more," so the hook and the
-primary link go at the very top.
+1. **Hook, two lines max.** Only this and the primary link show before "show more."
+   Lead with the concrete number or the surprising fact, not with a topic sentence.
+2. **Primary link**, UTM tagged.
+3. **Four or five question headings in caps**, each answered in one or two sentences.
+   Draw the questions from how people search, not from the order of the video.
+4. **Chapters.**
+5. **Booking link and phone.**
+6. **A service-area line** naming the towns. Cheap, and it is the only local signal a
+   YouTube description carries.
+7. **One-line credentials**, hashtags, CMS disclaimer.
+
+**Two links.** The matching article and the booking page. Related reading belongs on
+the article, which is what the first link is for. Aim for 2,000 to 2,800 characters.
+
+**US spelling.** "Enroll", not "enrol". Worth stating because it has already gone
+wrong once here, in the single most important word in Medicare copy.
 
 ## UTM tags
 
@@ -63,35 +71,46 @@ gives a clean reason to re-shoot and re-rank it every year.
 
 ### Description (paste as-is)
 
-Written against the actual transcript, so the description and the video match.
-
-Two links only: the matching article and the booking page. An earlier draft carried
-eight and read like a link farm. More links do not mean more clicks, they mean the
-click gets split until nobody takes any of them. Everything else the video sets up
-lives on the article, which is where a reader who wants more should end up anyway.
+Rewritten in the query-shaped structure. The old version summarized the video, which
+told YouTube nothing it did not already have from the transcript.
 
 ```
-Medicare covers 80% of your Part B costs. What almost nobody tells you is that
-Original Medicare has no cap on the other 20%.
+Medicare pays 80% of your Part B costs and leaves you the other 20%. What almost
+nobody tells you: Original Medicare puts no cap on that 20%, no matter how big the
+bill gets.
 
 Full written breakdown: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 
-A Medicare Supplement and a Medicare Advantage plan are two different answers to
-that one problem. On a $100 bill, the 20% is manageable. On a $100,000 cancer
-treatment it is $20,000, and unlike employer or Affordable Care Act plans, Original
-Medicare has no maximum out-of-pocket to stop it.
+WHY DOES THE 20% MATTER SO MUCH?
+On a $100 bill it is $20. On a $100,000 cancer treatment it is $20,000. Employer plans
+and Affordable Care Act plans all have a maximum out-of-pocket, a point where the
+billing stops. Original Medicare does not. Both a Supplement and an Advantage plan
+exist to fix that one problem, they just do it differently.
 
-A Medicare Supplement, also called Medigap, is pay regardless. A premium every
-month, the insurance company covers your 20%, no networks, any doctor in the country
-who accepts Medicare, and generally no referrals. It does not include drug, dental,
-vision, or hearing coverage, so a separate Part D drug plan goes with it.
+WHAT IS A MEDICARE SUPPLEMENT, OR MEDIGAP?
+Pay regardless. You send a premium every month and the insurance company covers your
+20%. No networks, so any doctor in the country who accepts Medicare, which is roughly
+99% of them, and generally no referrals. You pay that premium whether you use it or
+not, even if you are the healthiest person you know.
 
-A Medicare Advantage plan is Part C. Think C for complete: medical, drugs, dental,
-vision, and hearing on one card. Pay as you go with copays, and a maximum
-out-of-pocket built in. The trade-off is the network, and often referrals.
+DOES A MEDICARE SUPPLEMENT COVER DRUGS, DENTAL, VISION OR HEARING?
+No. None of them. A separate Part D drug plan has to go alongside it, and dental,
+vision and hearing are bought separately or paid out of pocket.
 
-Neither one is better. It comes down to your health, your doctors, and your
-prescriptions.
+WHAT IS A MEDICARE ADVANTAGE PLAN, OR PART C?
+Think C for complete. Medical, drugs, dental, vision and hearing on one card, used at
+the doctor, the pharmacy and the dentist. Pay as you go with flat copays, and every
+Advantage plan has a maximum out-of-pocket built in.
+
+WHAT IS THE CATCH WITH MEDICARE ADVANTAGE?
+The network. The plan decides which doctors it will pay for, so a plan that does not
+include your doctor or your hospital is the wrong plan no matter what it costs. Many
+still require referrals to see a specialist, though some carriers are dropping that.
+
+SO WHICH ONE IS BETTER?
+Neither. It comes down to your health today, your doctors, your prescriptions, and how
+much you travel. Anyone who answers that question before asking about those four
+things is selling, not advising.
 
 CHAPTERS
 0:00 Advantage or Supplement: the same job, done differently
@@ -107,9 +126,12 @@ CHAPTERS
 5:31 The trade-off: networks and referrals
 6:12 Talk it through with a local advisor
 
-Want someone to walk through your own doctors and prescriptions? Book a free
+Want someone to check your own doctors and prescriptions against both? Book a free
 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 Or call the office at (859) 618-6443.
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
 
 Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
 Medicare advisory firm in Lexington, Kentucky.
@@ -356,35 +378,41 @@ there's a link where you can do a deeper dive in these key differences") and the
 gives a phone CTA. Every link answers something said out loud.
 
 ```
-Turning 65 in the next year? You get a seven-month window to enroll in Medicare with
-no penalty and no gap in coverage, and it opens three months before your birthday
-month, not on it.
+Turning 65 in the next year? Your seven-month window to enroll in Medicare without a
+penalty opens three months BEFORE your birthday month, not on it. Most people find
+that out late.
 
 The full write-up on the window: https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
-Here is what this video covers.
+DO I HAVE TO TAKE MEDICARE AT 65 IF I AM STILL WORKING?
+Usually not. If you are still working and have qualifying coverage, or you are on a
+working spouse's coverage, you can typically delay without a penalty. Confirm your
+coverage actually counts before you decide, because getting that wrong is expensive
+and permanent.
 
-First, whether you even need to take Medicare at 65. If you are still working and have
-qualifying coverage, or you are on a working spouse's coverage, you can usually delay
-without a penalty.
+WHEN EXACTLY CAN I SIGN UP?
+Three months before your 65th birthday month, the birth month itself, and three
+months after. Seven months in total. Enroll in the first three and your coverage
+starts the first day of your birth month. It pays to be proactive here.
 
-If you do need to enroll, the window is three months before your 65th birthday month,
-the birth month itself, and three months after. Enroll in the first three months and
-your coverage starts the first day of your birth month. It pays to be proactive here.
-There are three ways to sign up: call Social Security, visit a local office, or do it
-online, which takes most of our clients 15 to 20 minutes.
+HOW DO I ENROLL IN MEDICARE?
+Three ways: call Social Security, walk into a local Social Security office, or do it
+online. Online is the simplest and takes most of our clients 15 to 20 minutes.
 
-Then there is what you are actually enrolling in. Part A is your hospital coverage,
-and for most people over 65 it costs nothing each month, because you already paid for
-it through payroll taxes during your working life. Part B is your medical coverage,
-anything outside the hospital, and the standard premium is $202.90 a month in 2026.
-Higher earners pay more, and some state programs will cover it for you. If you are
-already drawing Social Security, it comes straight out of your check.
+WHAT ARE PART A AND PART B?
+Part A is hospital coverage, anything inside the hospital, and for most people over 65
+it costs nothing each month because you already paid for it through payroll taxes
+while you worked. Part B is medical coverage, anything outside the hospital: your
+primary care doctor, specialists, tests.
 
-Last, the decision nobody warns you about: Medicare Advantage or a Medicare Supplement.
-There are real trade-offs both ways, and it is worth understanding before you pick.
+HOW MUCH IS MEDICARE PART B IN 2026?
+The standard premium is $202.90 a month. Higher earners pay more. If you already draw
+Social Security it comes straight out of that check, out of sight and out of mind.
 
-The deeper dive on Advantage vs. Supplement: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+WHAT ABOUT PRESCRIPTIONS?
+Original Medicare does not include them. If you take neither a Medicare Advantage plan
+nor a Medicare Supplement, get a standalone Part D drug plan anyway. Skipping drug
+coverage is one of the more expensive mistakes people make at 65.
 
 CHAPTERS
 0:00 Do you have to take Medicare at 65, or can you delay?
@@ -397,8 +425,13 @@ CHAPTERS
 2:31 Advantage or Supplement: the next decision
 2:42 Where to get help
 
-Want someone to look at your situation? Call the office at (859) 618-6443, or book a
-free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+The deeper dive on Advantage vs. Supplement: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+
+Want someone to look at your own situation? Call the office at (859) 618-6443, or book
+a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
 
 Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
 Medicare advisory firm on Beaumont Circle in Lexington, Kentucky.
@@ -438,6 +471,97 @@ how to enroll in medicare online, medicare help lexington ky`
   are both correct. One edge case not mentioned and not worth a re-shoot: if a birthday
   falls on the 1st of a month, Medicare treats it as the prior month, so the window and
   the start date shift back by one.
+
+## Video: Why use a Medicare advisor (2:00, not yet published)
+
+Campaign slug: `why-an-advisor`
+
+### Title
+
+> **Do You Need a Medicare Advisor? What You Actually Get (2026)**
+
+### Description (paste as-is)
+
+```
+You could compare every Medicare plan yourself. It will take you a weekend. It takes
+us 25 or 30 minutes, because we do it every day, and it costs you nothing either way.
+
+What a yearly plan review actually looks like: https://bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+
+DO I NEED A MEDICARE ADVISOR?
+No. You can absolutely do this on your own. The question is whether you want to spend
+a weekend cross-checking every plan in your county against your drug list and your
+doctors, and then do it again next year.
+
+WHAT DOES A MEDICARE AGENT ACTUALLY DO?
+Prices your exact prescriptions against every plan available where you live, confirms
+your doctors and hospital are in network before you enroll, and lays the options out
+side by side in plain English.
+
+HOW MUCH DOES A MEDICARE BROKER COST?
+Nothing. Agents are paid a commission by the insurance company, and it is built into
+plan pricing whether you use an agent or not. Your premium is identical either way.
+
+WHAT HAPPENS AFTER I ENROLL?
+This is the part people miss. Medicare plans change every January: drug lists,
+networks, copays. If nobody is watching that for you, you find out at the pharmacy
+counter. Our clients have our direct line all year, and every October we review the
+plan against what changed for the coming year.
+
+IS IT WORTH USING AN AGENT INSTEAD OF DOING IT MYSELF?
+You worked your whole life. The mail, the phone calls, and the annual second-guessing
+are the part you can hand off.
+
+CHAPTERS
+0:00 You could do this yourself. Here is what it would cost you.
+0:16 It never costs you a penny
+0:39 Year-round support, and a plan review every October
+1:18 Why not have someone in your corner
+1:45 Come in and meet us
+
+Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+Or call Austin directly at (859) 618-6443.
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
+
+Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
+Medicare advisory firm on Beaumont Circle in Lexington, Kentucky.
+
+#Medicare #MedicareHelp #Retirement
+
+We respect your privacy. This is a solicitation for insurance. Tyler Insurance
+Group is not connected with or endorsed by the United States government or the
+federal Medicare program. We do not offer every plan available in your area.
+Currently we represent 6 organizations which offer 158 products in your area.
+Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance
+Program (SHIP) to get information on all of your options.
+```
+
+### Where it goes
+
+1. **`/articles/annual-medicare-review-aep/`** as the canonical home. That article is
+   "Your Yearly Medicare Plan Review" and has no video yet, and the second half of
+   this video is exactly that promise.
+2. **`/about/`** as a plain embed. Strongest trust signal available for that page.
+
+### Tags
+
+`do i need a medicare advisor, why use a medicare agent, medicare broker vs doing it
+yourself, what does a medicare agent do, is a medicare agent free, medicare annual
+review, medicare plan changes every year, medicare advisor lexington ky, medicare
+agent kentucky`
+
+### Chapters
+
+Eight source beats merged into five. The 0:09 mark had to go: it sits nine seconds
+after 0:00 and YouTube requires ten, so leaving it in would have silently disabled the
+whole list. Shortest remaining gap is 16 seconds.
+
+### Compliance
+
+Educational: no plan named, no benefit or premium quoted. The disclaimer is included
+because the description asks people to contact an agent.
 
 ## After upload: what gets built
 
