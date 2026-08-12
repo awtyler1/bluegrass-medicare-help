@@ -173,8 +173,18 @@ available in your area. Currently we represent [number] organizations which offe
 in your area."* ([PSM Brokerage — TPMO disclaimer requirements](https://www.psmbrokerage.com/blog/tpmo-disclaimer-requirements-for-insurance-agents-cms-rules-marketing-examples-compliance-guide),
 [Action Benefits — Stay compliant with the TPMO disclaimer](https://blog.actionbenefits.com/stay-compliant-with-medicares-tpmo-disclaimer))
 
-**27 public pages omit the organization/product count entirely.** Those pages carry a disclaimer
-that reads like the CMS disclaimer but is not it.
+**Correction issued during remediation (2026-08-12).** On closer inspection the severity above is
+overstated, and the shape of the problem is different. **Every public page already carried the full,
+correct disclaimer in its `<footer class="foot">` legal block.** The 27 "incomplete" instances were
+*additional in-body* disclaimers (`.disclaim` on articles, `.fineprint` / `.rfine` / `.fine` /
+`.tyfine` on landing pages) that stated a *different, shorter* version on the same page as the
+correct one. So this was a **self-contradiction problem, not a missing-disclaimer problem** — a page
+would say "we represent 6 organizations which offer 158 products" in the footer and "Currently we
+serve Kentucky residents" in the body. Still worth fixing, and now fixed, but it was not the
+exposure the first pass implied.
+
+The one genuine gap: **`/quiz-65/` had no TPMO disclaimer at all.** Its `.foot` block carried only
+the government-disclosure sentence. That page is indexable. Fixed.
 
 Two forward-looking notes, both **[T] verify against the final rule text before acting**:
 - CMS has relaxed the "first minute of the call" timing requirement to "before benefits are
@@ -230,7 +240,7 @@ truncated. The over-length problem is real; the under-length problem was not.*
 
 | Page | Defect |
 |---|---|
-| `/help/` | 15 words. **No `<h1>`. No JSON-LD. No Meta Pixel. No GA4. No `site.css`.** Canonicalizes to `/review/` — the only cross-canonical on the site. This page is a stub that should not exist. |
+| `/help/` | ~~15-word stub that should not exist.~~ **Corrected:** this is a deliberate client-side redirect shim to `/review/` that preserves the query string (`window.location.replace('/review/' + window.location.search)`), with a `meta refresh` fallback, `noindex`, and a cross-canonical to the target. That is a sound pattern on GitHub Pages, which has no server-side 301s. It is working as designed and should stay. The only real gap was that it rendered a marketing link with no TPMO disclaimer if JS was off — fixed. |
 | `/about/` | **Zero `<h1>` elements.** The page opens on an `<h2>`. This is the page that carries Austin's `Person` entity, his NPN, and his credibility — and it has no top-level heading. |
 | `/supp-advantage/` | Two `<h1>`s, the second one empty. |
 | `/quiz-65/` | Two `<h1>`s (the second is the quiz result heading "Your score"). |
@@ -461,7 +471,7 @@ Gaps where the site has zero coverage:
 | 3 | Confirm "6 organizations / 158 products" is current for plan year 2026 | Business fact | 5 | 1 | **Compliance** | Austin | Week 1 |
 | 4 | Add visible source citations + "Last reviewed by a licensed agent on [date]" to all 37 articles | Article template | 5 | 4 | Low | Austin + dev | Weeks 2–4 |
 | 5 | Promote the full `Person` entity (NPN, credentials, `sameAs`) onto every article instead of a dangling `@id` stub | Article JSON-LD template | 4 | 2 | Low | Dev | Week 1 |
-| 6 | Add `<h1>` to `/about/`; delete or rebuild `/help/`; fix duplicate `<h1>`s on `/supp-advantage/` and `/quiz-65/` | 4 pages | 4 | 1 | Low | Dev | Week 1 |
+| 6 | Add `<h1>` to `/about/`; fix duplicate `<h1>`s on `/supp-advantage/` and `/quiz-65/` | 3 pages | 4 | 1 | Low | Dev | Week 1 | **DONE** |
 | 7 | Rewrite 54 over-length titles and 38 over-length meta descriptions | All indexable pages | 4 | 3 | Low | Dev | Weeks 2–4 |
 | 8 | Decide 2026-vs-2027 changes page hierarchy before AEP opens | 2 articles | 4 | 1 | Low | Austin | Week 1 |
 | 9 | Rebuild or consolidate the 4 templated city pages | Nicholasville, Georgetown, Richmond, Winchester | 4 | 4 | Medium | Austin + dev | Months 2–3 |
@@ -473,7 +483,30 @@ Gaps where the site has zero coverage:
 
 ---
 
-## 0.16 Open questions
+## 0.16 Remediation log
+
+**Week 1 batch applied 2026-08-12** (88 files changed, validated: 0 tag-balance failures,
+0 JSON-LD parse failures across all 88 public pages):
+
+| Fix | Result |
+|---|---|
+| TPMO disclaimer consolidated to one exact string | 9 variants → **1**, across 123 instances |
+| Government-disclosure sentence normalized | 17 variants → **1** standard, plus 2 justified Social-Security-specific supersets |
+| `/quiz-65/` missing TPMO disclaimer | Full legal footer added |
+| `/help/` rendering marketing copy with no disclaimer | Disclaimer added; redirect behaviour untouched |
+| `/about/` had zero `<h1>` | Mission statement promoted to `<h1>`; CSS updated so rendering is pixel-identical |
+| `/about/` had `BreadcrumbList` schema but no visible breadcrumb | Visible `.crumb` added, matching the house pattern |
+| `/supp-advantage/`, `/quiz-65/` had two `<h1>`s | Quiz result heading demoted to `<h2 id="scoreHead">`; CSS selector retargeted so rendering is unchanged |
+| `/supp-advantage/` `<h1>` contained `&mdash;` | Replaced with a colon |
+| Two `tel:` formats | Normalized to `tel:18596186443` (328 instances) |
+| 15 pages missing a canonical | Self-referencing canonicals added (`/404.html` correctly left without one) |
+
+Deliberately **not** changed, pending Austin's input: DNS/`CNAME` and host canonicalization; the
+"6 organizations / 158 products" figures themselves.
+
+---
+
+## 0.17 Open questions
 
 1. **Does the live site serve on `www` or apex, and do 301s exist in both directions?** Everything in
    Phase 1 that touches canonicalization depends on this answer.

@@ -124,7 +124,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 /* results */
 .results{justify-content:flex-start;text-align:center;padding:34px 0 60px;align-items:center;}
 .results .badge{width:84px;height:84px;border-radius:50%;background:rgba(58,125,82,.14);color:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;}
-.results h1{font-family:var(--serif);font-weight:500;font-size:36px;letter-spacing:-.4px;}
+.results #scoreHead{font-family:var(--serif);font-weight:500;font-size:36px;letter-spacing:-.4px;}
 .results p{color:var(--mute);font-size:18px;line-height:1.5;max-width:540px;margin:14px auto 0;text-align:left;}
 .results .local{margin-top:36px;padding:24px;background:var(--warm);border-radius:14px;max-width:500px;}
 .results .local p{font-size:16px;line-height:1.5;margin-top:0;margin-bottom:16px;text-align:left;}
@@ -238,7 +238,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
   <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:18px 0 30px;">
     <button class="qback" id="backBtn" onclick="goBack()" hidden>← Back</button>
     <div class="leadin" id="leadin">
-      <h1 class="leadin-h">Advantage or Supplement &mdash; which fits you?</h1>
+      <h1 class="leadin-h">Advantage or Supplement: which fits you?</h1>
       <p class="leadin-sub">Takes less than 60 seconds. I&rsquo;ll email you a personal read on which one usually fits people who answer the way you do.</p>
     </div>
     <div class="qcount" id="qcount"></div>
@@ -274,7 +274,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
 <!-- RESULTS (recommendation shown first; email is an optional next step) -->
 <section class="screen results" id="results">
   <div class="badge"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-  <h1 id="scoreHead"></h1>
+  <h2 id="scoreHead"></h2>
   <p id="scoreSub"></p>
   <div class="whywrap" id="whyWrap" style="display:none;"><div class="whycard"><b>The biggest reason</b><p id="why1"></p></div></div>
 
@@ -319,8 +319,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
   </div>
   <div class="foot">
     Tyler Insurance Group · 1029 Monarch Street, Suite 110, Lexington, KY 40513 · (859) 618-6443<br>
-    We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.
-  </div>
+    We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</div>
 </section>
 
 </div>
