@@ -405,9 +405,9 @@ intent-modelling problem, and it is Phase 5's central question.
 | Finding | Evidence |
 |---|---|
 | **413 em dashes in body prose** across 42 pages, in direct violation of `CLAUDE.md`'s standing rule. Worst: `/articles/does-medicare-cover-nursing-homes/` (27), `/articles/medicare-in-lexington-ky/` (25), `/articles/` (22). Em dashes also appear in meta descriptions and in the `/quizzes/` title tag. | **[V]** |
-| **220 of 322 `<img>` elements lack `width`/`height`** — direct CLS exposure. | **[V]** |
-| **97 of 322 `<img>` elements have no `alt` text** — WCAG 2.2 AA 1.1.1 failure. | **[V]** |
-| **Only 11 of 322 images use `loading="lazy"`.** | **[V]** |
+| **220 of 322 `<img>` elements lack `width`/`height`** — direct CLS exposure. 164 were `/assets/logo.png` (in the shared header and footer, so on every page) and 45 were `/assets/austin-tyler.jpg`. **Fixed:** 209 now carry intrinsic dimensions; 11 remain, all base64 images on the oversized paid landing pages. | **[V]** |
+| ~~97 of 322 `<img>` elements have no `alt` text.~~ **Corrected during remediation:** 86 of those were the hidden 1×1 Meta Pixel `<noscript>` tracker (`display:none`), and the remaining 11 were YouTube thumbnails carrying a deliberate `alt=""` inside a `<button aria-label="Play the video, …">` — which is the *correct* accessible pattern, not a defect. The site had essentially no alt-text problem. The 86 pixels now carry `alt=""` for completeness. | **[V]** |
+| **Only 11 of 322 images use `loading="lazy"`.** Those 11 are the YouTube thumbnails, which are already correctly lazy-loaded with `decoding="async"` and an `hqdefault` fallback. The un-lazied remainder is mostly the logo and portrait, which are above the fold and should stay eager. Lower priority than the Phase 0 count implied. | **[V]** |
 | **Two `tel:` formats in use:** `tel:18596186443` (245 instances) and `tel:8596186443` (78, all in the legal footer). Three visible phone renderings: `(859) 618-6443` (249), `859-618-6443` (45). NAP consistency issue. | **[V]** |
 | **No `llms.txt`.** `robots.txt` is 6 lines: `User-agent: * / Allow: /`, one `Disallow: /certifications/`, one `Sitemap:`. | **[V]** |
 | **AI crawlers are not blocked** — the wildcard `Allow: /` permits `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot` and `Google-Extended`. No action needed defensively; opportunity in Phase 3. | **[V]** |
