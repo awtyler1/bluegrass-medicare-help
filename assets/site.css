@@ -165,3 +165,20 @@ body .foot{padding-bottom:max(36px,env(safe-area-inset-bottom));}
   .gtip{animation:gtin .18s ease-out;}
   @keyframes gtin{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:none;}}
 }
+
+/* ---------- video transcript disclosure ---------- */
+/* Progressive disclosure: the text ships in the raw HTML either way, so crawlers
+   and AI retrieval get it whether or not a reader expands it. */
+.vtx{margin:18px 0 0;border-top:1px solid var(--line);padding-top:6px;}
+.vtx summary{cursor:pointer;font-weight:700;font-size:16.5px;color:var(--coral-d);
+  padding:13px 2px;min-height:48px;display:flex;align-items:center;gap:8px;list-style:none;}
+.vtx summary::-webkit-details-marker{display:none;}
+.vtx summary::before{content:"";width:9px;height:9px;border-right:2.5px solid currentColor;
+  border-bottom:2.5px solid currentColor;transform:rotate(45deg);margin-right:4px;
+  transition:transform .18s ease;}
+.vtx[open] summary::before{transform:rotate(-135deg);}
+.vtx summary:hover,.vtx summary:focus-visible{text-decoration:underline;}
+.vtxbody{padding:4px 2px 14px;}
+.vtxbody p{font-size:17.5px;line-height:1.7;color:var(--ink);margin:0 0 14px;max-width:68ch;}
+.vtxbody .vtxnote{font-size:14px;color:var(--faint);font-style:italic;margin-bottom:16px;}
+@media(prefers-reduced-motion:reduce){.vtx summary::before{transition:none;}}

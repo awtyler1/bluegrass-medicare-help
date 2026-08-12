@@ -1,5 +1,16 @@
-import re, json, os
+import re, json, os, html as _html
 os.chdir('/home/user/bluegrass-medicare-help')
+TX = json.load(open('docs/video-transcripts.json', encoding='utf-8'))
+
+def transcript_html(vid, heading_id):
+    """Progressive-disclosure transcript. The text lives in the raw HTML either
+    way, so crawlers and AI retrieval get it whether or not anyone expands it."""
+    t = TX.get(vid)
+    if not t: return ''
+    paras = ''.join('<p>%s</p>' % _html.escape(x) for x in t['paras'])
+    return ('<details class="vtx"><summary id="%s">Read the transcript</summary>'
+            '<div class="vtxbody"><p class="vtxnote">Lightly edited for readability.</p>'
+            '%s</div></details>' % (heading_id, paras))
 src = open('articles/index.html', encoding='utf-8').read()
 
 def grab(pat):
@@ -75,8 +86,9 @@ for i, v in enumerate(VIDEOS):
             <p class="vdate">{shown}</p>
             <p class="vblurb">{blurb}</p>
             <a class="vread" href="{art}">Read the full article<span aria-hidden="true"> &rarr;</span></a>
+            {tx}
           </div>
-        </article>'''.format(i=i, **v))
+        </article>'''.format(i=i, tx=transcript_html(v['id'], 'tx%d' % i), **v))
 
 items = []
 for i, v in enumerate(VIDEOS, 1):
@@ -88,7 +100,10 @@ for i, v in enumerate(VIDEOS, 1):
         "contentUrl": "https://youtu.be/" + v['id'],
         "url": "https://bluegrassmedicarehelp.com" + v['art'],
         "publisher": {"@type": "Organization", "name": "Tyler Insurance Group"},
-        "creator": {"@type": "Person", "name": "Austin Tyler"}}})
+        "creator": {"@type": "Person", "@id": "https://bluegrassmedicarehelp.com/#austin-tyler",
+                    "name": "Austin Tyler"},
+        "transcript": " ".join(TX[v['id']]['paras']) if v['id'] in TX else None}})
+    if items[-1]['item']['transcript'] is None: del items[-1]['item']['transcript']
 
 graph = {"@context": "https://schema.org", "@graph": [
   {"@type": "CollectionPage", "@id": "https://bluegrassmedicarehelp.com/videos/",
