@@ -33,10 +33,14 @@ m = re.search(r'<script>[^<]*navtog.*?</script>', src, re.S)
 NAVJS = m.group(0) if m else ''
 
 VIDEOS = [
+ dict(id='Fl0OClAwgj8', title="Medicare Annual Notice of Change (2026): Don't Throw It Away",
+      dur='1:37', iso='PT1M37S', date='2026-08-12', shown='August 12, 2026',
+      blurb='Your plan has to mail you this booklet by September 30th. It is not junk mail: it is the one document that tells you what changes on your plan in January.',
+      art='/articles/annual-medicare-review-aep/'),
  dict(id='Qoee2FUy7LY', title='Do You Need a Medicare Advisor? What You Actually Get',
       dur='2:05', iso='PT2M5S', date='2026-08-10', shown='August 10, 2026',
       blurb='On your own it is a weekend of cross-checking drug lists and networks. With an advisor it is about 30 minutes, and it costs nothing either way.',
-      art='/articles/annual-medicare-review-aep/'),
+      art='/articles/what-is-a-medicare-advisor/'),
  dict(id='NfmmHa-sN0M', title='Turning 65? What You Need to Know About Medicare',
       dur='3:11', iso='PT3M11S', date='2026-08-06', shown='August 6, 2026',
       blurb='The seven-month window, whether you can delay if you are still working, the three ways to sign up, and what Part A and Part B each cover.',

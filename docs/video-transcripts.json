@@ -1,8 +1,6 @@
 {
   "_note": "Transcripts of the YouTube videos, lightly edited for readability (verbal fillers and false starts removed; wording and meaning unchanged). Keyed by YouTube video ID. Consumed by docs/build-videos.py and docs/build-video-transcripts.py.",
-
   "_COMPLIANCE_FLAG": "tsKZm1X8wEo says on camera: 'we're contracted with most large carriers in the state of Kentucky and really the nation as a whole.' Transcribed faithfully, but publishing it sits in tension with the TPMO disclaimer on the same page, which states we represent 6 organizations offering 158 products. AUSTIN TO DECIDE: (a) accept it, (b) add a short on-page note reconciling the two, or (c) re-record that line. Do not silently reword the transcript: a transcript that does not match the audio is worse than the problem it solves.",
-
   "Qoee2FUy7LY": {
     "title": "Do You Need a Medicare Advisor? What You Actually Get",
     "paras": [
@@ -15,7 +13,6 @@
       "If you would like a Medicare advisor, or you'd just like to come in, meet us, and understand a bit more how the process works, we would love for you to do that. My direct line is (859) 618-6443. Come in, speak with me. Hope to hear from you soon."
     ]
   },
-
   "NfmmHa-sN0M": {
     "title": "Turning 65? What You Need to Know About Medicare",
     "paras": [
@@ -31,7 +28,6 @@
       "My name is Austin with Tyler Insurance Group. We're right here in Lexington. Our office is in the Beaumont Circle. So if you're turning 65, we'd be happy to help you out. Have a great rest of the day."
     ]
   },
-
   "5kUI3xlSHVM": {
     "title": "Medicare Advantage vs. Medicare Supplement: What Is the Difference?",
     "paras": [
@@ -53,7 +49,6 @@
       "My name is Austin Tyler. I'm with Tyler Insurance Group here in Lexington, Kentucky. We're a local Medicare advisory firm that does this all day, every day. We help seniors and people turning 65 navigate their Medicare coverage. You can reach us at (859) 618-6443. Hope to hear from you soon, and as always, have a great rest of the day."
     ]
   },
-
   "tsKZm1X8wEo": {
     "title": "What Does It Cost to Work with a Medicare Advisor?",
     "paras": [
@@ -63,32 +58,15 @@
       "So to answer your question, what does it cost to sit with a Medicare advisor? The answer is that it never costs you a penny."
     ]
   },
-
-  "_PENDING_ANOC": {
+  "Fl0OClAwgj8": {
     "title": "Medicare Annual Notice of Change (2026): Don't Throw It Away",
-    "_status": "Transcript ready. Waiting on the YouTube video ID before this can be embedded and published.",
-    "sections": [
-      {
-        "heading": "What is the ANOC?",
-        "paras": [
-          "If you are in Kentucky, or really anywhere in the country, and you are on Medicare, you will receive something in the mail by September 30th from the insurance company your plan is with. It's called an Annual Notice of Change. They are legally obligated to send this out to you by September 30th, and what this booklet is going to outline for you is what is changing on your plan from one year to the next."
-        ]
-      },
-      {
-        "heading": "Why it matters",
-        "paras": [
-          "So it's not spam. It's actually a pretty valuable document to read. It's probably the most important thing the insurance company will send you each year.",
-          "I've probably helped over a thousand Kentuckians look through their Annual Notice of Change. It's confusing, it's full of insurance jargon. But that's what we're here for. It doesn't cost you a penny to come sit with us. What we can do is go over your Annual Notice of Change with you, just to make sure that plan is still the best fit for you going into the next year."
-        ]
-      },
-      {
-        "heading": "Don't ignore it",
-        "paras": [
-          "So what I suggest is, don't just discard it, don't throw it away. Your health insurance for the next year, in my opinion, is a very important topic, and you should know what is on it and what has changed.",
-          "What we don't want you to do is show up at the pharmacy in early January, or show up at the dentist thinking you had a certain amount of money for a procedure, and then it turns out you had less, meaning you have to pay more out of pocket. Or that prescription at the pharmacy has increased. Those are the things we want to prevent for everybody on Medicare here in Kentucky.",
-          "So when you get that document, feel free to bring it up to the office or give us a call. We're happy to help."
-        ]
-      }
+    "paras": [
+      "If you are in Kentucky, or really anywhere in the country, and you are on Medicare, you will receive something in the mail by September 30th from the insurance company your plan is with. It's called an Annual Notice of Change. They are legally obligated to send this out to you by September 30th, and what this booklet is going to outline for you is what is changing on your plan from one year to the next.",
+      "So it's not spam. It's actually a pretty valuable document to read. It's probably the most important thing the insurance company will send you each year.",
+      "I've probably helped over a thousand Kentuckians look through their Annual Notice of Change. It's confusing, it's full of insurance jargon. But that's what we're here for. It doesn't cost you a penny to come sit with us. What we can do is go over your Annual Notice of Change with you, just to make sure that plan is still the best fit for you going into the next year.",
+      "So what I suggest is, don't just discard it, don't throw it away. Your health insurance for the next year, in my opinion, is a very important topic, and you should know what is on it and what has changed.",
+      "What we don't want you to do is show up at the pharmacy in early January, or show up at the dentist thinking you had a certain amount of money for a procedure, and then it turns out you had less, meaning you have to pay more out of pocket. Or that prescription at the pharmacy has increased. Those are the things we want to prevent for everybody on Medicare here in Kentucky.",
+      "So when you get that document, feel free to bring it up to the office or give us a call. We're happy to help."
     ]
   }
 }
