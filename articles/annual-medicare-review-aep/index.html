@@ -183,6 +183,21 @@ img{max-width:100%;display:block;} a{color:var(--coral-d);text-decoration:none;}
     </ul>
     <p>Any change you make takes effect <strong>January 1</strong>. (Want the full calendar? See <a href="/articles/medicare-enrollment-periods-explained/">Medicare Enrollment Periods Explained</a>.)</p>
     <h2>Read your "Annual Notice of Change" (ANOC)</h2>
+    <figure class="vid">
+    <button class="vidbtn" id="anocvid" type="button"
+      aria-label="Play the video, Medicare Annual Notice of Change, do not throw it away, 1 minute 37 seconds">
+      <img src="https://i.ytimg.com/vi/Fl0OClAwgj8/maxresdefault.jpg" alt="" width="1280" height="720"
+        loading="lazy" decoding="async"
+        onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/Fl0OClAwgj8/hqdefault.jpg';">
+      <span class="vidplay" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      <span class="vidmeta">
+        <b>Watch: the letter that lands by September 30</b>
+        <span>1:37 &middot; Austin Tyler, Tyler Insurance Group, Lexington KY</span>
+      </span>
+    </button>
+    <figcaption>The letter itself, explained in a minute and a half.</figcaption>
+  </figure>
+
     <p>Each September, your plan sends an <strong><a class="gt" href="/glossary/#t-annual-notice-of-change" data-n="Annual Notice of Change" data-d="The letter every Advantage and Part D plan sends each September saying exactly what is changing in January." aria-expanded="false">Annual Notice of Change</a></strong> spelling out what's different next year &mdash; the premium, the <a class="gt" href="/glossary/#t-deductible" data-n="Deductible" data-d="The amount you pay yourself first, before the plan starts paying its share." aria-expanded="false">deductible</a>, the drug list, the network, the copays. Don't toss it. A plan can quietly change in ways that cost you hundreds, and the ANOC is your heads-up.</p>
     <h2>Your 4-point yearly check</h2>
     <ul>
@@ -271,6 +286,25 @@ img{max-width:100%;display:block;} a{color:var(--coral-d);text-decoration:none;}
     d.appendChild(f);
     b.parentNode.replaceChild(d, b);
     if(typeof gtag==='function'){gtag('event','video_play',{video_title:'Do you need a Medicare advisor'});}
+  });
+})();
+</script>
+<script>
+/* swap the still for the real player only once the reader asks for it */
+(function(){
+  var b=document.getElementById('anocvid');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var d=document.createElement('div');
+    d.className='vidframe';
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/Fl0OClAwgj8?autoplay=1&rel=0';
+    f.title="Medicare Annual Notice of Change (2026): Don't Throw It Away";
+    f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    f.setAttribute('allowfullscreen','');
+    d.appendChild(f);
+    b.parentNode.replaceChild(d, b);
+    if(typeof gtag==='function'){gtag('event','video_play',{video_title:'Annual Notice of Change'});}
   });
 })();
 </script>

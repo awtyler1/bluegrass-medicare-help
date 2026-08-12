@@ -22,6 +22,10 @@ m = re.search(r'<script>[^<]*navtog.*?</script>', src, re.S)
 NAVJS = m.group(0) if m else ''
 
 VIDEOS = [
+ dict(id='Fl0OClAwgj8', title="Medicare Annual Notice of Change (2026): Don't Throw It Away",
+      dur='1:37', iso='PT1M37S', date='2026-08-12', shown='August 12, 2026',
+      blurb='Your plan has to mail it by September 30, and it is the one letter that says exactly what changes in January. Ignore it and you find out at the pharmacy counter.',
+      art='/articles/medicare-annual-enrollment-period/'),
  dict(id='Qoee2FUy7LY', title='Do You Need a Medicare Advisor? What You Actually Get',
       dur='2:05', iso='PT2M5S', date='2026-08-10', shown='August 10, 2026',
       blurb='On your own it is a weekend of cross-checking drug lists and networks. With an advisor it is about 30 minutes, and it costs nothing either way.',
