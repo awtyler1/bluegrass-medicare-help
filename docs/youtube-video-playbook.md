@@ -578,6 +578,113 @@ whole list. Shortest remaining gap is 16 seconds.
 Educational: no plan named, no benefit or premium quoted. The disclaimer is included
 because the description asks people to contact an agent.
 
+## Video: Annual Notice of Change (not yet published)
+
+Campaign slug: `anoc`
+
+### Title
+
+> **Medicare Annual Notice of Change (2026): Don't Throw It Away**
+
+59 characters, keyword first. "Annual notice of change" is what people type once the
+envelope is in their hand, and "don't throw it away" is the reason to click.
+
+Seasonal: this one is worth pinning to the channel from early September through
+December, and re-uploading or refreshing every year around 1 September.
+
+### Where it goes
+
+**`/articles/medicare-annual-enrollment-period/`** as the canonical home. It mentions
+the Annual Notice of Change four times, has no video yet, and is the page that will
+carry the traffic from October to December. The yearly review article already has the
+advisor video at the top, so putting this one there would have two videos competing
+above the fold.
+
+A second plain embed inside the "Read your Annual Notice of Change" section of
+`/articles/annual-medicare-review-aep/` is worth doing too, since that is the exact
+section this video illustrates.
+
+### Description (paste as-is)
+
+```
+Your insurance company has to mail you an Annual Notice of Change by September 30.
+It is not junk mail. It is the one letter each year that tells you exactly what is
+changing on your plan in January.
+
+What to check when it arrives: https://bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
+
+WHAT IS THE ANNUAL NOTICE OF CHANGE?
+A booklet from your Medicare Advantage or Part D plan setting out what is different
+next year against this year. Plans are legally required to send it.
+
+WHEN DOES IT ARRIVE?
+By September 30 every year. That timing is deliberate: it lands just before the
+Annual Enrollment Period opens on October 15, so you have time to do something about
+what you read.
+
+IS IT JUNK MAIL?
+No, and it is the single most valuable thing your insurance company sends you all
+year. It is also dense and full of insurance jargon, which is why so much of it ends
+up in the recycling unopened.
+
+WHAT SHOULD I ACTUALLY LOOK FOR?
+Four things. Are all your prescriptions still covered, and at the same tier. Are your
+doctors and your hospital still in network. What happened to the total cost, meaning
+premium plus deductible plus the copays you actually use, not just the premium. And
+how the plan is rated.
+
+WHAT HAPPENS IF I IGNORE IT?
+You find out in January instead, at the counter. The prescription that cost $10 now
+costs $47, or the dental allowance you were counting on is smaller than last year, and
+by then the window to change plans has closed.
+
+WHAT IF I CANNOT MAKE SENSE OF IT?
+Bring it in or call. We read these all year and it costs nothing to have someone go
+through yours with you and say plainly whether the plan is still the right fit.
+
+Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
+Or call the office at (859) 618-6443.
+
+Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
+surrounding Kentucky counties.
+
+Austin Tyler is a licensed insurance agent with Tyler Insurance Group, a local
+Medicare advisory firm on Beaumont Circle in Lexington, Kentucky.
+
+#Medicare #AnnualNoticeOfChange #MedicareAdvantage
+
+We respect your privacy. This is a solicitation for insurance. Tyler Insurance
+Group is not connected with or endorsed by the United States government or the
+federal Medicare program. We do not offer every plan available in your area.
+Currently we represent 6 organizations which offer 158 products in your area.
+Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance
+Program (SHIP) to get information on all of your options.
+```
+
+### Tags
+
+`annual notice of change, ANOC medicare, medicare annual notice of change 2026, what
+is the annual notice of change, medicare letter september, medicare plan changes 2027,
+medicare mail explained, do i need to read my medicare mail, medicare help lexington
+ky, medicare agent kentucky`
+
+### Chapters
+
+None supplied yet. If the finished cut runs past about two minutes, send the
+timestamps and chapters get added. Under that, they are clutter.
+
+### Two notes
+
+**The four things to check** are not in the video. They come from the yearly review
+article on the site, and they are the most useful thing the description can add,
+because "read it" is advice and "here is what to look at" is help. Worth saying out
+loud in next year's version.
+
+**"Over a thousand Kentuckians"** is a volume claim rather than a coverage claim, so
+it sits outside CMS marketing rules, but it should be a number that can be stood
+behind. It is left out of the description, where it would read as boilerplate, and
+does more work spoken.
+
 ## After upload: what gets built
 
 - [x] Video embedded at the top of the matching article, click-to-play against a
