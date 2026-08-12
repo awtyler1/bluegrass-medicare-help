@@ -1,5 +1,16 @@
-import re, json, os
+import re, json, os, html as _html
 os.chdir('/home/user/bluegrass-medicare-help')
+TX = json.load(open('docs/video-transcripts.json', encoding='utf-8'))
+
+def transcript_html(vid, heading_id):
+    """Progressive-disclosure transcript. The text lives in the raw HTML either
+    way, so crawlers and AI retrieval get it whether or not anyone expands it."""
+    t = TX.get(vid)
+    if not t: return ''
+    paras = ''.join('<p>%s</p>' % _html.escape(x) for x in t['paras'])
+    return ('<details class="vtx"><summary id="%s">Read the transcript</summary>'
+            '<div class="vtxbody"><p class="vtxnote">Lightly edited for readability.</p>'
+            '%s</div></details>' % (heading_id, paras))
 src = open('articles/index.html', encoding='utf-8').read()
 
 def grab(pat):
@@ -29,7 +40,7 @@ VIDEOS = [
  dict(id='Qoee2FUy7LY', title='Do You Need a Medicare Advisor? What You Actually Get',
       dur='2:05', iso='PT2M5S', date='2026-08-10', shown='August 10, 2026',
       blurb='On your own it is a weekend of cross-checking drug lists and networks. With an advisor it is about 30 minutes, and it costs nothing either way.',
-      art='/articles/annual-medicare-review-aep/'),
+      art='/articles/what-is-a-medicare-advisor/'),
  dict(id='NfmmHa-sN0M', title='Turning 65? What You Need to Know About Medicare',
       dur='3:11', iso='PT3M11S', date='2026-08-06', shown='August 6, 2026',
       blurb='The seven-month window, whether you can delay if you are still working, the three ways to sign up, and what Part A and Part B each cover.',
@@ -79,8 +90,9 @@ for i, v in enumerate(VIDEOS):
             <p class="vdate">{shown}</p>
             <p class="vblurb">{blurb}</p>
             <a class="vread" href="{art}">Read the full article<span aria-hidden="true"> &rarr;</span></a>
+            {tx}
           </div>
-        </article>'''.format(i=i, **v))
+        </article>'''.format(i=i, tx=transcript_html(v['id'], 'tx%d' % i), **v))
 
 items = []
 for i, v in enumerate(VIDEOS, 1):
@@ -92,7 +104,10 @@ for i, v in enumerate(VIDEOS, 1):
         "contentUrl": "https://youtu.be/" + v['id'],
         "url": "https://bluegrassmedicarehelp.com" + v['art'],
         "publisher": {"@type": "Organization", "name": "Tyler Insurance Group"},
-        "creator": {"@type": "Person", "name": "Austin Tyler"}}})
+        "creator": {"@type": "Person", "@id": "https://bluegrassmedicarehelp.com/#austin-tyler",
+                    "name": "Austin Tyler"},
+        "transcript": " ".join(TX[v['id']]['paras']) if v['id'] in TX else None}})
+    if items[-1]['item']['transcript'] is None: del items[-1]['item']['transcript']
 
 graph = {"@context": "https://schema.org", "@graph": [
   {"@type": "CollectionPage", "@id": "https://bluegrassmedicarehelp.com/videos/",
