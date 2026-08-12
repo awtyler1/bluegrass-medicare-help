@@ -7,7 +7,7 @@ needs to build an on-brand page from scratch.
 - **Company:** Tyler Insurance Group **dba** Bluegrass Medicare Help
 - **Location:** 1029 Monarch Street, Suite 110, Lexington, KY 40513
 - **Phone:** (859) 618-6443 → link as `tel:18596186443`
-- **Domain:** `https://bluegrassmedicarehelp.com` (GitHub Pages, served at root)
+- **Domain:** `https://www.bluegrassmedicarehelp.com` (GitHub Pages, served at root)
 - **Tech:** Static HTML + CSS + vanilla JS. No build step, no frameworks, no npm.
 - **Audience:** Kentucky seniors turning 65 or already on Medicare.
 - **Philosophy:** **guide → educate → help.** Educate first, convert second.
@@ -97,7 +97,7 @@ Required in `<body>`, in order:
 ## 4. Page anatomy & file conventions
 
 - One folder per page, served as a clean directory URL:
-  `/<slug>/index.html` → `https://bluegrassmedicarehelp.com/<slug>/`.
+  `/<slug>/index.html` → `https://www.bluegrassmedicarehelp.com/<slug>/`.
 - A conversion landing page has a matching **thank-you** page at `/<slug>/thankyou/index.html`.
 - Current live pages for reference:
 

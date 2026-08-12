@@ -4,4 +4,4 @@ Allow: /
 # Internal directory: no crawl, no index
 Disallow: /certifications/
 
-Sitemap: https://bluegrassmedicarehelp.com/sitemap.xml
+Sitemap: https://www.bluegrassmedicarehelp.com/sitemap.xml

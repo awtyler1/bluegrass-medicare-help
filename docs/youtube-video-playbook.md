@@ -79,7 +79,7 @@ Medicare pays 80% of your Part B costs and leaves you the other 20%. What almost
 nobody tells you: Original Medicare puts no cap on that 20%, no matter how big the
 bill gets.
 
-Full written breakdown: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
+Full written breakdown: https://www.bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 
 WHY DOES THE 20% MATTER SO MUCH?
 On a $100 bill it is $20. On a $100,000 cancer treatment it is $20,000. Employer plans
@@ -127,7 +127,7 @@ CHAPTERS
 6:12 Talk it through with a local advisor
 
 Want someone to check your own doctors and prescriptions against both? Book a free
-30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
+30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
 Or call the office at (859) 618-6443.
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
@@ -262,7 +262,7 @@ kind of thing that makes a channel look automated.
 What does it cost to sit down with a Medicare advisor? Not a penny. No checkbook, no
 bill, ever.
 
-Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
+Book a free 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
 
 HOW MUCH DOES A MEDICARE ADVISOR COST?
 Nothing. We will never ask you to pull out a checkbook and we will never send you a
@@ -287,7 +287,7 @@ WHAT DO I ACTUALLY GET FOR IT?
 Someone who sits down with your situation, your doctors and your prescriptions, and
 acts as an advocate between you and the insurance company.
 
-Other free Medicare help in Lexington, including the state's SHIP counselors: https://bluegrassmedicarehelp.com/articles/free-medicare-help-lexington-ky/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
+Other free Medicare help in Lexington, including the state's SHIP counselors: https://www.bluegrassmedicarehelp.com/articles/free-medicare-help-lexington-ky/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
 
 Or call the office at (859) 618-6443.
 
@@ -397,7 +397,7 @@ Turning 65 in the next year? Your seven-month window to enroll in Medicare witho
 penalty opens three months BEFORE your birthday month, not on it. Most people find
 that out late.
 
-The full write-up on the window: https://bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+The full write-up on the window: https://www.bluegrassmedicarehelp.com/articles/turning-65-enrollment-window/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
 DO I HAVE TO TAKE MEDICARE AT 65 IF I AM STILL WORKING?
 Usually not. If you are still working and have qualifying coverage, or you are on a
@@ -440,10 +440,10 @@ CHAPTERS
 2:31 Advantage or Supplement: the next decision
 2:42 Where to get help
 
-The deeper dive on Advantage vs. Supplement: https://bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+The deeper dive on Advantage vs. Supplement: https://www.bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
 Want someone to look at your own situation? Call the office at (859) 618-6443, or book
-a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
+a free 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
 surrounding Kentucky counties.
@@ -501,7 +501,7 @@ Campaign slug: `why-an-advisor`
 You could compare every Medicare plan yourself. It will take you a weekend. It takes
 us 25 or 30 minutes, because we do it every day, and it costs you nothing either way.
 
-What a yearly plan review actually looks like: https://bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+What a yearly plan review actually looks like: https://www.bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
 
 DO I NEED A MEDICARE ADVISOR?
 No. You can absolutely do this on your own. The question is whether you want to spend
@@ -534,7 +534,7 @@ CHAPTERS
 1:18 Why not have someone in your corner
 1:45 Come in and meet us
 
-Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
+Book a free 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
 Or call Austin directly at (859) 618-6443.
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
@@ -611,7 +611,7 @@ Your insurance company has to mail you an Annual Notice of Change by September 3
 It is not junk mail. It is the one letter each year that tells you exactly what is
 changing on your plan in January.
 
-What to check when it arrives: https://bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
+What to check when it arrives: https://www.bluegrassmedicarehelp.com/articles/annual-medicare-review-aep/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
 
 WHAT IS THE ANNUAL NOTICE OF CHANGE?
 A booklet from your Medicare Advantage or Part D plan setting out what is different
@@ -649,7 +649,7 @@ CHAPTERS
 0:57 Do not toss it: the January surprises you are avoiding
 1:28 Call or visit us
 
-Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
+Book a free 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
 Or call the office at (859) 618-6443.
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the

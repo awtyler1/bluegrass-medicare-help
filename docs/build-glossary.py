@@ -224,25 +224,25 @@ for gname, gid, terms in GROUPS:
         rows.append('        </article>')
         defined.append({"@type": "DefinedTerm", "name": term,
                         "description": dfn + ((' For example: ' + ex) if ex else ''),
-                        "inDefinedTermSet": "https://bluegrassmedicarehelp.com/glossary/",
+                        "inDefinedTermSet": "https://www.bluegrassmedicarehelp.com/glossary/",
                         "termCode": slug(term),
-                        "url": "https://bluegrassmedicarehelp.com/glossary/#t-" + slug(term)})
+                        "url": "https://www.bluegrassmedicarehelp.com/glossary/#t-" + slug(term)})
     rows.append('      </div>')
 
 chips = ''.join('<a class="gchip" href="#g-%s">%s</a>' % (g[1], g[0]) for g in GROUPS)
 
 graph = {"@context": "https://schema.org", "@graph": [
-  {"@type": ["CollectionPage", "DefinedTermSet"], "@id": "https://bluegrassmedicarehelp.com/glossary/",
-   "url": "https://bluegrassmedicarehelp.com/glossary/",
+  {"@type": ["CollectionPage", "DefinedTermSet"], "@id": "https://www.bluegrassmedicarehelp.com/glossary/",
+   "url": "https://www.bluegrassmedicarehelp.com/glossary/",
    "name": "Medicare Terms in Plain English",
    "description": "Every Medicare and health insurance word you are likely to meet, explained without jargon, with a worked example for each.",
-   "isPartOf": {"@type": "WebSite", "@id": "https://bluegrassmedicarehelp.com/#website",
-                "name": "Bluegrass Medicare Help", "url": "https://bluegrassmedicarehelp.com/"},
+   "isPartOf": {"@type": "WebSite", "@id": "https://www.bluegrassmedicarehelp.com/#website",
+                "name": "Bluegrass Medicare Help", "url": "https://www.bluegrassmedicarehelp.com/"},
    "inLanguage": "en-US", "hasDefinedTerm": defined},
   {"@type": "BreadcrumbList", "itemListElement": [
-   {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluegrassmedicarehelp.com/"},
-   {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://bluegrassmedicarehelp.com/articles/"},
-   {"@type": "ListItem", "position": 3, "name": "Glossary", "item": "https://bluegrassmedicarehelp.com/glossary/"}]}]}
+   {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bluegrassmedicarehelp.com/"},
+   {"@type": "ListItem", "position": 2, "name": "Learning Center", "item": "https://www.bluegrassmedicarehelp.com/articles/"},
+   {"@type": "ListItem", "position": 3, "name": "Glossary", "item": "https://www.bluegrassmedicarehelp.com/glossary/"}]}]}
 
 HERO = '''<svg class="heroart" viewBox="0 0 480 280" role="img" aria-label="Illustration of a confusing insurance letter being turned into plain language">
         <ellipse cx="240" cy="256" rx="170" ry="13" fill="#e2d9c8" opacity=".7"/>
@@ -383,21 +383,21 @@ html = '''<!DOCTYPE html>
 <meta name="description" content="Every Medicare word you are likely to meet, explained without jargon. Deductible, coinsurance, formulary, prior authorization and more, each with a plain example and a simple picture of who pays what.">
 ''' + FONTS + '''
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="canonical" href="https://bluegrassmedicarehelp.com/glossary/">
+<link rel="canonical" href="https://www.bluegrassmedicarehelp.com/glossary/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bluegrass Medicare Help">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Medicare Terms in Plain English: A Glossary With Real Examples">
 <meta property="og:description" content="Deductible, coinsurance, formulary, prior authorization and more, each with a plain example and a simple picture of who pays what.">
-<meta property="og:url" content="https://bluegrassmedicarehelp.com/glossary/">
-<meta property="og:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
+<meta property="og:url" content="https://www.bluegrassmedicarehelp.com/glossary/">
+<meta property="og:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Medicare Terms in Plain English">
 <meta name="twitter:description" content="Every Medicare word you are likely to meet, explained without jargon, with a real example for each.">
-<meta name="twitter:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
+<meta name="twitter:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
 <script type="application/ld+json">''' + json.dumps(graph, ensure_ascii=False) + '''</script>
 ''' + CSS + '''
 </head>
