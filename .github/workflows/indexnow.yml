@@ -25,7 +25,7 @@ jobs:
   submit:
     runs-on: ubuntu-latest
     env:
-      HOST: bluegrassmedicarehelp.com
+      HOST: www.bluegrassmedicarehelp.com
       KEY: b6680aa195008b73387d72d39198aaa9
     steps:
       - uses: actions/checkout@v4

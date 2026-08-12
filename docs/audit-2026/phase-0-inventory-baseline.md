@@ -40,32 +40,37 @@ points at the **apex** domain `https://bluegrassmedicarehelp.com/…`. Zero page
 IndexNow workflow (`.github/workflows/indexnow.yml`, `HOST: bluegrassmedicarehelp.com`) are all
 apex. Internally the site is 100% consistent on apex.
 
-**[T] Live-side half, NOT confirmed.** The egress proxy in this environment blocks
-`bluegrassmedicarehelp.com` and `www.bluegrassmedicarehelp.com` (gateway returns 403 to CONNECT),
-so the live host resolution and redirect chain could not be tested. The claim "the page resolves at
-`www.`" is unverified here.
+**[V] RESOLVED 2026-08-12. The seed finding was correct.** The Vercel dashboard settles it:
 
-**[V] A related and separately serious finding: there is no `CNAME` file in the repository, and
-there never has been.** `git log --all -- CNAME` returns nothing. For a GitHub Pages site published
-from a branch, the custom domain is normally persisted as a `CNAME` file at the repo root; without
-it the custom domain lives only in repo settings and is not version-controlled.
+| Domain | State |
+|---|---|
+| `www.bluegrassmedicarehelp.com` | **Production** (serves the site) |
+| `bluegrassmedicarehelp.com` | redirect to `www` |
+| `bluegrass-medicare-help.vercel.app` | Production |
 
-**What to do, in order:**
+So the site serves at `www`, while 1,274 absolute URLs in the repo pointed at the apex, including
+every `<link rel="canonical">`. Each canonical named a URL that immediately redirected back to the
+page it was written on. Google had to resolve that contradiction on all 62 indexable URLs.
 
-1. Run these three commands from a machine with normal network access and paste the output back:
-   ```
-   curl -sSIL https://bluegrassmedicarehelp.com/     | grep -Ei '^(HTTP|location)'
-   curl -sSIL https://www.bluegrassmedicarehelp.com/ | grep -Ei '^(HTTP|location)'
-   curl -sSIL http://bluegrassmedicarehelp.com/      | grep -Ei '^(HTTP|location)'
-   ```
-2. Check Search Console: are **both** `bluegrassmedicarehelp.com` and
-   `www.bluegrassmedicarehelp.com` verified as properties, and does the `www` property show
-   impressions? If it does, the split is real and it is Priority 0.
-3. Regardless of the outcome, add a `CNAME` file containing the single chosen host so the domain
-   configuration is version-controlled.
+**A second defect, found in the same panel: the apex redirect was a `307`,** which is *Temporary
+Redirect* (Vercel's default). A temporary redirect tells search engines the apex is still the real
+home, so link equity does not consolidate onto `www`. Changed to **`308` Permanent Redirect**.
 
-If the apex is the canonical host (which all repo evidence points to), the only correct end state is
-`www` → apex 301, `http` → `https` 301, and one Search Console property as primary.
+**Resolution.** Neither host ranks better; Google assigns no preference and treats the choice as
+brand and infrastructure only ([Search Engine Journal](https://www.searchenginejournal.com/ranking-factors/www-vs-non-www/),
+[SE Ranking](https://seranking.com/blog/www-vs-non-www/)). What matters is picking one, permanently
+redirecting the other, and making every signal agree. Apex was briefly preferred here purely because
+the repo already used it in 1,274 places, but Vercel would not cleanly hand the Production role to
+the apex, so the code was moved to `www` instead. Same outcome, and the redirect was already correct.
+
+Rewritten to `www`: 94 files, 1,274 URLs. Canonicals, `og:url`, every JSON-LD `@id` and `url`,
+`sitemap.xml`, the `robots.txt` sitemap line, the IndexNow workflow `HOST`, and both build scripts.
+
+**Correction to an earlier claim in this section:** the missing `CNAME` file was reported above as a
+separate serious finding on the assumption this was GitHub Pages. It is not, it is Vercel, where
+domains are configured in the dashboard and a `CNAME` file is meaningless. That finding is withdrawn.
+Being on Vercel also means real server-side redirects are available, which was not true under the
+original assumption.
 
 ---
 

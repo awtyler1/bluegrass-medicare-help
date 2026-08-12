@@ -102,26 +102,26 @@ for i, v in enumerate(VIDEOS, 1):
         "uploadDate": v['date'], "duration": v['iso'],
         "embedUrl": "https://www.youtube.com/embed/" + v['id'],
         "contentUrl": "https://youtu.be/" + v['id'],
-        "url": "https://bluegrassmedicarehelp.com" + v['art'],
+        "url": "https://www.bluegrassmedicarehelp.com" + v['art'],
         "publisher": {"@type": "Organization", "name": "Tyler Insurance Group"},
-        "creator": {"@type": "Person", "@id": "https://bluegrassmedicarehelp.com/#austin-tyler",
+        "creator": {"@type": "Person", "@id": "https://www.bluegrassmedicarehelp.com/#austin-tyler",
                     "name": "Austin Tyler"},
         "transcript": " ".join(TX[v['id']]['paras']) if v['id'] in TX else None}})
     if items[-1]['item']['transcript'] is None: del items[-1]['item']['transcript']
 
 graph = {"@context": "https://schema.org", "@graph": [
-  {"@type": "CollectionPage", "@id": "https://bluegrassmedicarehelp.com/videos/",
-   "url": "https://bluegrassmedicarehelp.com/videos/", "name": "Medicare Video Library",
+  {"@type": "CollectionPage", "@id": "https://www.bluegrassmedicarehelp.com/videos/",
+   "url": "https://www.bluegrassmedicarehelp.com/videos/", "name": "Medicare Video Library",
    "description": "Short, plain-English Medicare videos from Austin Tyler, a licensed local agent in Lexington, Kentucky.",
-   "isPartOf": {"@type": "WebSite", "@id": "https://bluegrassmedicarehelp.com/#website",
-                "name": "Bluegrass Medicare Help", "url": "https://bluegrassmedicarehelp.com/"},
+   "isPartOf": {"@type": "WebSite", "@id": "https://www.bluegrassmedicarehelp.com/#website",
+                "name": "Bluegrass Medicare Help", "url": "https://www.bluegrassmedicarehelp.com/"},
    "inLanguage": "en-US"},
   {"@type": "ItemList", "name": "Medicare videos",
    "itemListOrder": "https://schema.org/ItemListOrderDescending",
    "numberOfItems": len(VIDEOS), "itemListElement": items},
   {"@type": "BreadcrumbList", "itemListElement": [
-   {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluegrassmedicarehelp.com/"},
-   {"@type": "ListItem", "position": 2, "name": "Videos", "item": "https://bluegrassmedicarehelp.com/videos/"}]}]}
+   {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bluegrassmedicarehelp.com/"},
+   {"@type": "ListItem", "position": 2, "name": "Videos", "item": "https://www.bluegrassmedicarehelp.com/videos/"}]}]}
 
 CSS = '''<style>
 /* base (site.css supplies tokens + header/footer chrome only) */
@@ -214,21 +214,21 @@ html = '''<!DOCTYPE html>
 <meta name="description" content="Short Medicare videos from Austin Tyler, a licensed agent in Lexington, Kentucky. Turning 65, Medicare Advantage vs. Supplement, and what working with an advisor costs. Each one paired with the full written guide.">
 ''' + FONTS + '''
 <link rel="stylesheet" href="/assets/site.css">
-<link rel="canonical" href="https://bluegrassmedicarehelp.com/videos/">
+<link rel="canonical" href="https://www.bluegrassmedicarehelp.com/videos/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bluegrass Medicare Help">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Medicare Videos: Plain-English Answers from a Lexington Agent">
 <meta property="og:description" content="Short Medicare videos from a licensed local agent in Lexington, Kentucky. Each one paired with the full written guide.">
-<meta property="og:url" content="https://bluegrassmedicarehelp.com/videos/">
-<meta property="og:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
+<meta property="og:url" content="https://www.bluegrassmedicarehelp.com/videos/">
+<meta property="og:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Medicare Videos: Plain-English Answers from a Lexington Agent">
 <meta name="twitter:description" content="Short Medicare videos from a licensed local agent in Lexington, Kentucky.">
-<meta name="twitter:image" content="https://bluegrassmedicarehelp.com/assets/og-image.png">
+<meta name="twitter:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
 <script type="application/ld+json">''' + json.dumps(graph, ensure_ascii=False) + '''</script>
 ''' + CSS + '''
 </head>
