@@ -210,8 +210,8 @@ html = '''<!DOCTYPE html>
 <link rel="apple-touch-icon" href="/assets/logo-mark.png">
 <meta name="theme-color" content="#1f1d1a">
 ''' + PIX + '\n' + GA + '''
-<title>Medicare Videos: Plain-English Answers from a Lexington Agent | Bluegrass Medicare Help</title>
-<meta name="description" content="Short Medicare videos from Austin Tyler, a licensed agent in Lexington, Kentucky. Turning 65, Medicare Advantage vs. Supplement, and what working with an advisor costs. Each one paired with the full written guide.">
+<title>Medicare Videos in Plain English | Lexington, KY</title>
+<meta name="description" content="Short Medicare videos from Austin Tyler, a licensed agent in Lexington, Kentucky. Each one paired with the full written guide and a transcript.">
 ''' + FONTS + '''
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="canonical" href="https://www.bluegrassmedicarehelp.com/videos/">
@@ -219,15 +219,15 @@ html = '''<!DOCTYPE html>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bluegrass Medicare Help">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Medicare Videos: Plain-English Answers from a Lexington Agent">
-<meta property="og:description" content="Short Medicare videos from a licensed local agent in Lexington, Kentucky. Each one paired with the full written guide.">
+<meta property="og:title" content="Medicare Videos in Plain English | Lexington, KY">
+<meta property="og:description" content="Short Medicare videos from Austin Tyler, a licensed agent in Lexington, Kentucky. Each one paired with the full written guide and a transcript.">
 <meta property="og:url" content="https://www.bluegrassmedicarehelp.com/videos/">
 <meta property="og:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Medicare Videos: Plain-English Answers from a Lexington Agent">
-<meta name="twitter:description" content="Short Medicare videos from a licensed local agent in Lexington, Kentucky.">
+<meta name="twitter:title" content="Medicare Videos in Plain English | Lexington, KY">
+<meta name="twitter:description" content="Short Medicare videos from Austin Tyler, a licensed agent in Lexington, Kentucky. Each one paired with the full written guide and a transcript.">
 <meta name="twitter:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
 <script type="application/ld+json">''' + json.dumps(graph, ensure_ascii=False) + '''</script>
 ''' + CSS + '''
