@@ -642,6 +642,13 @@ WHAT IF I CANNOT MAKE SENSE OF IT?
 Bring it in or call. We read these all year and it costs nothing to have someone go
 through yours with you and say plainly whether the plan is still the right fit.
 
+CHAPTERS
+0:00 What the Annual Notice of Change is
+0:34 Why it is the most important letter you get all year
+0:46 Getting help reading it
+0:57 Do not toss it: the January surprises you are avoiding
+1:28 Call or visit us
+
 Book a free 30-minute review: https://bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
 Or call the office at (859) 618-6443.
 
@@ -670,8 +677,12 @@ ky, medicare agent kentucky`
 
 ### Chapters
 
-None supplied yet. If the finished cut runs past about two minutes, send the
-timestamps and chapters get added. Under that, they are clutter.
+Six source beats merged into five. "Don't Toss It" at 0:57 and "Avoid Cost Surprises"
+at 1:00 are three seconds apart, and YouTube needs ten between chapters, so the raw
+list would have been rejected outright and no chapters would have shown at all. They
+are merged into one chapter starting at 0:57, which is the right call anyway: not
+tossing it and the January surprise are the same idea, one being the reason for the
+other. Shortest remaining gap is 11 seconds.
 
 ### Two notes
 
