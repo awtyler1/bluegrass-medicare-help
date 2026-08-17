@@ -40,6 +40,13 @@ the work. See **`docs/writing-standards.md`** for the full checklist. On every d
 - **Reader-first:** keep the lens on the reader, and **prime them up front** (lead with the answer / payoff).
 - **No em dashes:** never use `—`/`&mdash;`; use commas, colons, periods, or parentheses. Verify zero before shipping.
 
+## Local (county/town) pages
+Any page about a specific Kentucky county or town must follow **`docs/local-content-standards.md`**:
+every local claim decision-relevant, verifiable, dated; at least 5 Tier 1 facts + 1 phone-verified
+fact + 1 experience paragraph; body similarity to sibling county pages under 40%; no page ships
+without a filled county dossier. Local color (landmarks, names) only when attached to a fact the
+reader acts on. Never fabricate a local detail.
+
 ## Article requirements
 - YMYL accuracy: verify all dollar figures / rules against CMS / SSA before publishing.
 - End each article with a `.recap` summary and a 5-question knowledge check (`window.KCHECK` array + `<div id="kcheck">` + `/assets/site.js`).
