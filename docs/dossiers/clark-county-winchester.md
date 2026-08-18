@@ -13,19 +13,35 @@ Confidence key: **HIGH** = multiple consistent sources or an authoritative snipp
 
 ## 1. Plan counts, 2026 (Tier 1)
 
-| Fact | Value | Confidence |
+| Fact | Value | Source |
 |---|---|---|
-| Medicare Advantage plans in Clark County, 2026 | **39** | HIGH (two independent aggregators agree) |
-| $0-premium MA plans | **28 or 20, SOURCES CONFLICT** | LOW, must resolve |
-| SNP options / of which D-SNPs | 25 / 16 | MEDIUM |
-| Stand-alone Part D plans, KY (CMS Region 15) | **10 or 16, SOURCES CONFLICT** | LOW, must resolve |
-| MA plan types offered | HMO, HMO-POS, PPO, Regional PPO | MEDIUM |
-| MA enrollment in county | **2,987 or 5,249, SOURCES CONFLICT** | LOW, must resolve |
-| Carriers confirmed active | Humana, UnitedHealthcare, Aetna, Wellcare, Devoted Health | MEDIUM |
+| **Non-SNP Medicare Advantage plans, Clark County 2026** | **39** | CMS CY2026 Landscape, Aug 2026 refresh |
+| **$0-premium plans** | **20** | same |
+| **Average monthly premium (all 39)** | **$13.32** | same |
+| All MA plans incl. SNPs | 64 | same |
+| Special Needs Plans / of which D-SNP | 25 / 16 | same |
+| Carriers offering non-SNP plans | 7 | same |
+| **Medicare eligibles in county** | **8,736** | CMS State/County Penetration, Aug 2026 |
+| **Enrolled in Medicare Advantage** | **5,392** | same |
+| **MA penetration** | **61.72%** | same |
+| Rank among 120 KY counties by penetration | **38th** | same |
+| Stand-alone Part D plans (KY/IN region) | **10** | CMS CY2026 Landscape |
 
-**The headline contrast for this page: Clark County 39 plans vs Fayette County 47.** That single
-sentence is what a national site cannot write and what the old templated page lacked entirely.
-Both numbers must come from the CMS CY2026 landscape file with a pull date before publishing.
+**Carriers by non-SNP plan count:** Humana 15 · UnitedHealth 6 · Centene 5 · Elevance 5 ·
+CVS Health 4 · Lumeris (Essence) 2 · Devoted Health 2.
+
+All three earlier conflicts are resolved. The $0-premium count is **20**, not 28. Enrollment is
+**5,392**, and neither aggregator figure (2,987 or 5,249) was right. Kentucky has **10**
+stand-alone Part D plans, not 16.
+
+**Two headline contrasts, both now verified from the CMS file:**
+
+1. **Clark County has 39 Medicare Advantage plans. Fayette has 40.** Nearly the same menu, which
+   quietly undercuts the "big city, more choice" assumption.
+2. **Clark County's MA penetration is 61.72%. Fayette's is 54.53%.** A Winchester retiree is
+   materially more likely to be on Medicare Advantage than a Lexington one, and Clark ranks 38th
+   of 120 Kentucky counties while Fayette ranks 78th. That is the more interesting story, and no
+   national site tells it.
 
 Devoted Health entered Kentucky in 2025 and lists Clark County in its 2026 service area. A new
 entrant in a small county is genuinely local news.

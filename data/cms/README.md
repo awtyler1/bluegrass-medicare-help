@@ -34,7 +34,29 @@ a county page in October.
 
 ## Manifest
 
-Nothing pulled yet. Add a row when you drop a file in.
-
 | File | Dataset | Plan year / month | Pulled | Notes |
 |---|---|---|---|---|
+| `landscape_CY2026_KY.csv` | MA and Part D Landscape | CY2026, Aug 2026 refresh | 2026-08-18 | 6,789 KY rows from 138,260 national. 24 of 52 columns kept |
+| `ma-penetration_202608_KY.csv` | MA State/County Penetration | Aug 2026 | 2026-08-18 | All 120 KY counties |
+| `contract-info_202608_KY.csv` | CPSC Contract Info | Aug 2026 | 2026-08-18 | 1,660 rows, 35 KY contracts. Maps contract ID to parent organization |
+
+### Still to pull
+
+- **CY2025 landscape file.** Diffing it against CY2026 names exactly which plans left each county,
+  which is the most useful thing a county page can say in October.
+- **CPSC Enrollment file** (enrollment by contract/plan/state/county). `contract-info` gives the
+  carrier *names*; the enrollment file gives the *member counts* needed for county market share.
+- **CY2027 landscape file**, expected late September 2026.
+
+### Reading the landscape file
+
+It ships as `.xlsb` (Excel binary), which needs `pyxlsb`:
+
+```
+pip install pyxlsb
+```
+
+`Contract Category Type` separates `MA`, `MA-PD`, `SNP` and `PDP`. **Count non-SNP plans (MA plus
+MA-PD) for the headline "how many plans in my county" figure**, and report SNPs separately, since
+most people cannot join them. That definition reproduces the published third-party counts exactly:
+Clark County 39 plans, 20 at $0, $13.32 average.

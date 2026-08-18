@@ -29,20 +29,34 @@ Confidence key: **HIGH** = multiple consistent sources or an authoritative snipp
 
 ## 1. Plan counts, 2026 (Tier 1)
 
-| Fact | Value | Confidence |
+| Fact | Value | Source |
 |---|---|---|
-| **Jessamine County total MA plans, 2026** | **UNAVAILABLE** | must pull |
-| SNP options in Jessamine County | 25, of which 4 cost nothing beyond the Part B premium | MEDIUM |
-| D-SNPs in Jessamine County | ~16, ~852 enrollees. Leaders: Humana Dual Select H5619-075 (266), Aetna Medicare Partial Dual (104), UHC Dual Complete KY-S002 (92) | LOW, directional only |
-| Kentucky statewide MA plans | **108 or 116, SOURCES CONFLICT** | MEDIUM |
-| Kentucky carriers, 2026 | Anthem BCBS, Essence, Humana, Aetna, UnitedHealthcare, Wellcare, Cigna, Passport Advantage, Devoted Health, Signature Advantage, Provider Partners (11) | MEDIUM |
-| Average KY MA premium | $9.36/month | MEDIUM |
-| Stand-alone Part D plans, KY | **10 or 16, SOURCES CONFLICT** | LOW |
+| **Non-SNP Medicare Advantage plans, Jessamine County 2026** | **37** | CMS CY2026 Landscape, Aug 2026 refresh |
+| **$0-premium plans** | **19** | same |
+| **Average monthly premium (all 37)** | **$13.55** | same |
+| All MA plans incl. SNPs | 62 | same |
+| Special Needs Plans / of which D-SNP | 25 / 16 | same |
+| Carriers offering non-SNP plans | **6** | same |
+| **Medicare eligibles in county** | **11,627** | CMS State/County Penetration, Aug 2026 |
+| **Enrolled in Medicare Advantage** | **6,461** | same |
+| **MA penetration** | **55.57%** | same |
+| Rank among 120 KY counties by penetration | **73rd** | same |
+| Kentucky statewide MA plans | **108** | CMS CY2026 Landscape |
+| Stand-alone Part D plans (KY/IN region) | **10** | same |
 
-Every Kentucky resident with Medicare has access to at least one $0-premium MA plan in 2026
-(MEDIUM). The **county total is the missing number and the most important one**: it is what
-makes this a county page rather than a state page. For contrast once pulled: Clark County has
-39, and the site currently claims Fayette has 47.
+**Carriers by non-SNP plan count:** Humana 15 · UnitedHealth 6 · Centene 5 · Elevance 5 ·
+CVS Health 4 · Devoted Health 2.
+
+**Jessamine has one fewer carrier than Clark or Fayette: Lumeris (Essence) does not sell here.**
+That is a concrete, checkable county difference, and it matters because Essence goes
+out-of-network at Baptist Health on 1 January 2026 anyway.
+
+The statewide conflict is settled at **108** MA plans, and Kentucky has **10** stand-alone Part D
+plans, not 16. Kentucky's Part D region is shared with Indiana.
+
+**The county contrast, verified:** Jessamine 37 plans, Clark 39, Fayette 40. Barely different
+menus, which is itself worth saying, because the reflex assumption is that Lexington has far more
+choice. What actually differs is *which* carriers sell here and which hospitals they include.
 
 ## 2. Hospitals and networks (Tier 1)
 
