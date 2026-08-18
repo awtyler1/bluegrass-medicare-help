@@ -47,6 +47,13 @@ fact + 1 experience paragraph; body similarity to sibling county pages under 40%
 without a filled county dossier. Local color (landmarks, names) only when attached to a fact the
 reader acts on. Never fabricate a local detail.
 
+## CMS data
+County plan counts, penetration and carrier share come from public CMS files. Pull guide with
+links, click paths and the September refresh cadence: **`docs/data-sources.md`**. Filtered
+Kentucky extracts live in `data/cms/` (CSV only, raw national downloads gitignored, pull date
+recorded in the manifest). Never publish a county figure that is not traceable to a dated
+extract.
+
 ## Article requirements
 - YMYL accuracy: verify all dollar figures / rules against CMS / SSA before publishing.
 - End each article with a `.recap` summary and a 5-question knowledge check (`window.KCHECK` array + `<div id="kcheck">` + `/assets/site.js`).

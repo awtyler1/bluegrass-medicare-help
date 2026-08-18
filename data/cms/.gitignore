@@ -1,0 +1,7 @@
+# Raw national downloads: too large to commit. Filter to Kentucky first.
+*.zip
+*.xlsx
+*.xls
+*.7z
+*.gz
+!*_KY.csv
