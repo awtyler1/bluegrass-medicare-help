@@ -40,13 +40,32 @@ a county page in October.
 | `ma-penetration_202608_KY.csv` | MA State/County Penetration | Aug 2026 | 2026-08-18 | All 120 KY counties |
 | `contract-info_202608_KY.csv` | CPSC Contract Info | Aug 2026 | 2026-08-18 | 1,660 rows, 35 KY contracts. Maps contract ID to parent organization |
 
+### Shrinking a file before you move it
+
+The national downloads are too big to email or upload. Run them through the filter first:
+
+```
+pip install pyxlsb          # only needed for the .xlsb landscape files
+python3 docs/filter-cms-file.py <downloaded-file>
+```
+
+It finds the state column itself, streams rather than loading the file into memory, and writes
+a small Kentucky-only CSV next to wherever you run it. Tested on both the .xlsb landscape
+(138,260 rows in, 6,789 out) and the plain-CSV penetration file.
+
 ### Still to pull
 
-- **CY2025 landscape file.** Diffing it against CY2026 names exactly which plans left each county,
-  which is the most useful thing a county page can say in October.
-- **CPSC Enrollment file** (enrollment by contract/plan/state/county). `contract-info` gives the
-  carrier *names*; the enrollment file gives the *member counts* needed for county market share.
-- **CY2027 landscape file**, expected late September 2026.
+- **CY2027 landscape file**, expected late September 2026. **This is the only one that matters.**
+  Diffed against the CY2026 extract already here, it names exactly which plans leave each county
+  for 2027, which is the single most useful thing a county page can say during AEP.
+- **CPSC Enrollment file** (enrollment by contract/plan/state/county), optional. `contract-info`
+  gives carrier *names*; the enrollment file gives *member counts*, which would turn "Humana
+  offers 15 plans in Clark County" into "Humana has the largest share of Clark County members."
+  Nice to have, not required by the publish bar. Easiest route is the data.cms.gov browser
+  filter rather than the full download.
+
+**CY2025 is deliberately skipped.** A 2025-to-2026 diff is backward-looking and the plan year is
+already most of the way through. The forward-looking 2026-to-2027 diff replaces it in September.
 
 ### Reading the landscape file
 

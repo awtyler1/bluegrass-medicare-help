@@ -30,9 +30,14 @@ and SNP type. Confirms Clark County's 39 plans, gets Jessamine's missing count, 
 $0-premium conflict, and confirms or corrects the "47 plans in Fayette" figure the site repeats
 in eight places.
 
-**The important trick:** download **both** CY2026 and CY2025 and diff them by county. That tells
-you *exactly which plans left Clark and Jessamine this year*, which is the single most useful
-thing you can tell someone in October.
+**The important trick:** keep each year's extract and diff consecutive years by county. That
+tells you *exactly which plans left Clark and Jessamine*, which is the single most useful thing
+you can tell someone in October. The CY2026 Kentucky extract is already in `data/cms/`, so
+pulling CY2027 in late September completes the pair. There is no need to go back for CY2025:
+that diff looks backward at a plan year that is nearly over.
+
+**These files are large.** Run any download through `docs/filter-cms-file.py` to cut it to
+Kentucky before moving it anywhere.
 
 - Released 26 September 2025 for CY2026. **CY2027 expected late September 2026**, roughly five
   weeks out.
