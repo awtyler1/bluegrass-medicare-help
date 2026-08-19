@@ -73,9 +73,13 @@ in August 2027 for the following cycle.
   paragraph is worth more to a reader than everything else on the site.
 - **Also tell them:** doing nothing is a decision, and usually the worst one. Confirm exactly what
   is ending, since a plan can be discontinued while the carrier stays in the county.
-- **Verify before drafting:** the precise guaranteed-issue rights that attach to plan termination
-  under federal rules, and that state rules can be broader. Do not generalize a state rule
-  nationally.
+- **The specifics, now verified (see section 9).** The window is **63 days**. The plans an insurer
+  must sell you depend on when you became Medicare-eligible: **before 1 January 2020** it is Plans
+  A, B, C, F, K, L; **on or after 1 January 2020** it is Plans A, B, **D, G**, K, L, because MACRA
+  barred C and F for that group. Anyone turning 65 now is always in the second group. Give both
+  answers and tell the reader which one they are. **State rules can be broader than this federal
+  floor**, so point readers to their own state insurance department rather than implying the
+  federal list is the whole story.
 - **Bluegrass backlink:** `/articles/medicare-advantage-plan-ending-kentucky/`
 
 ### 1.2 What changes in Medicare in 2027
@@ -92,12 +96,17 @@ in August 2027 for the following cycle.
 - **Serves as the pillar** for the 2027 cluster. Everything else in Wave 1 links up to it.
 - **Bluegrass backlink:** `/articles/medicare-changes-2027-kentucky/`
 
-### 1.3 The 15 drugs that get cheaper on 1 January 2027
+### 1.3 The drugs that get cheaper on 1 January 2027
+
+**Working title deliberately avoids "the 15 drugs." Only about half the names corroborate so far
+(section 9). Do not promise a full list in a headline we cannot yet stand behind.**
 
 - **The news.** CMS announced negotiated maximum fair prices for the **second cycle of 15 Part D
   drugs on 25 November 2025**, effective **1 January 2027**, at roughly a **44% average reduction**
-  off list, with about **$685 million** in projected enrollee out-of-pocket savings. The list
-  includes the semaglutide products (Ozempic, Rybelsus, Wegovy), Trelegy Ellipta and Linzess.
+  off list, covering drugs used by about **5.3 million** Part D enrollees. Corroborated names so
+  far: the semaglutide products (Ozempic, Rybelsus, Wegovy), Trelegy Ellipta, Linzess, Ibrance,
+  Xtandi, Austedo, Trulicity and Xifaxan. Savings estimates conflict across sources, so give a
+  range or omit them (section 9).
 - **Intent.** "ozempic medicare price 2027," "medicare negotiated drug prices list 2027." Enormous
   consumer interest and a specific, low-competition framing.
 - **What we tell clients, and this is the whole differentiator.** Everyone else will publish
@@ -191,21 +200,69 @@ Not AEP-timed, but TIG has nothing on any of them and each is a well-defined que
 exists), **Extra Help / Low Income Subsidy**, and **Social Security claiming and how it interacts
 with Medicare timing**.
 
-## 9. Verify before drafting, do not write from this document
+## 9. Verification status
 
-Figures below came from secondary reporting during planning. **cms.gov is blocked from this
-environment's network, so none of these were confirmed against the primary source.** Confirm each
-against the CY2027 Rate Announcement (released 6 April 2026) and the CMS Part D benefit parameters
-before any of it is published:
+cms.gov, medicare.gov, kff.org, aarp.org and medicareinteractive.org are all blocked by this
+environment's network egress proxy, so **nothing here was read from a primary source**. The
+standard applied instead, at Austin's direction: **a figure is confirmed when two or three
+independent reputable sources agree.** Sources were chosen to be genuinely independent of one
+another (a specialist data publisher, the financial or trade press, and a law firm or standards
+body reading the primary documents) rather than three Medicare blogs echoing the same release.
 
-- **Part D annual out-of-pocket cap for 2027.** Reported as **$2,400**, up from $2,100 in 2026.
-- **Standard Part D deductible for 2027.** Reported as **$700**, up from $615 in 2026. This is a
-  large jump and deserves primary confirmation before it goes in a headline.
-- **2027 Part B premium.** The 2026 Trustees Report projects **$209.50**. **It is a projection, and
-  the article must say so.** CMS confirms in November. Some private forecasters are higher.
-- **The full list of 15 negotiated drugs and their effective prices**, and the 44% average figure.
-- **Guaranteed-issue Medigap rights on plan termination.** The most consequential claim in the
-  whole plan. Confirm the federal rights and note that states can be broader.
+Verified 19 August 2026. **Re-check anything still open before it is published.**
+
+### Confirmed
+
+| Fact | Value | Corroborating sources |
+|---|---|---|
+| Part D standard deductible, 2027 | **$700**, up from $615 | Q1Medicare, Kiplinger, Crowell & Moring |
+| Part D annual out-of-pocket cap, 2027 | **$2,400**, up from $2,100 | Q1Medicare, Kiplinger, Crowell & Moring, McDermott+ |
+| Retail drug value to reach the 2027 cap | about **$7,500** | Q1Medicare (single source, use carefully) |
+| CY2027 Rate Announcement date | **6 April 2026** | Crowell & Moring, McDermott+, AHA |
+| 2027 Part B premium, **projection only** | **$209.50**, up from the confirmed $202.90 | 2026 Trustees Report via MOAA, Kiplinger, KFF |
+| Humana MA exits for 2027 | plans covering about **600,000 members**, roughly 8% of its 7.2M; announced on the **29 July 2026** earnings call; letters in September; company expects to retain about 40% | Becker's, Healthcare Finance News, Forbes |
+| Round-two negotiated prices effective | **1 January 2027**, about **44%** average reduction, roughly **5.3 million** Part D users | AARP, AHA, Avalere Health |
+| Medigap guaranteed-issue right on MA plan termination | The right exists, and the window is **63 days** | KFF, Medicare Interactive, Center for Medicare Advocacy |
+
+### Corrected during verification, and this one mattered
+
+The first source returned for the guaranteed-issue question said a person whose plan terminates is
+guaranteed **"Plans A, B, C or F."** That is out of date, and publishing it would have told a
+65-year-old they could buy two plans that federal law forbids them from buying.
+
+**MACRA barred Plans C and F for anyone who became eligible for Medicare on or after 1 January
+2020**, and substituted **D and G** as the guaranteed-issue plans for that group. So the correct
+answer is two answers:
+
+- **Eligible before 1 January 2020:** Plans A, B, C, F, K, L
+- **Newly eligible on or after 1 January 2020:** Plans A, B, **D, G**, K, L
+
+Corroborated by the **NAIC** MACRA producer bulletin and MACRA implementation FAQ, **KFF**, and the
+**Center for Medicare Advocacy**. The article must give both answers and ask the reader which one
+they are, because for anyone turning 65 now it is always the second. **State rules can be broader
+than the federal floor**, so the national article points readers to their own state insurance
+department rather than implying the federal list is the whole story.
+
+### Still open, do not publish yet
+
+- **The full list of 15 negotiated drugs.** Only about half the names corroborate across sources:
+  the semaglutide products (Ozempic, Rybelsus, Wegovy), Trelegy Ellipta, Linzess, Ibrance, Xtandi,
+  Austedo, Trulicity and Xifaxan appear repeatedly. **Do not publish a "full list of 15" until
+  every name is verified.** Name only the confirmed drugs, or describe the categories.
+- **Savings figures conflict.** One set of reporting says about $12 billion in taxpayer savings
+  plus roughly $685 million in enrollee out-of-pocket savings; another says $8.5 to $12 billion a
+  year. Part D spending on these drugs is reported as both $42.5 billion and about $41 billion.
+  Use a range, attribute it, or leave it out. Do not pick the biggest number.
+- **The Tradjenta renegotiation** reported at an 84% decrease effective January 2027 is
+  single-source. Leave it out until corroborated.
+
+### A trap in the sources, flag for every draft
+
+**Round two and round three are being conflated in published coverage.** Round two is **IPAY 2027**:
+prices announced 25 November 2025, effective **1 January 2027**. Round three is **IPAY 2028**: drugs
+selected **27 January 2026**, prices not yet in effect. At least one search result labeled the
+2027 list as "Round 3." Anything written for this cycle is about **round two**. Check the initial
+price applicability year, not the announcement date, before citing any drug list.
 
 ## 10. One standing instruction that the CY2027 rule has changed
 
