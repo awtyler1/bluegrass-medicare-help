@@ -81,14 +81,24 @@ reorder next year.
 - **Preferred vs Standard class.** Bankers Fidelity showed both ($158.99 vs $190.79). Health
   answers decide which you get, outside your Medigap open enrollment window.
 
-## 4. Compliance, for Austin to resolve
+## 4. Compliance
 
-1. **State advertising filing.** Medicare Supplement advertising is regulated by the Kentucky
-   Department of Insurance, not CMS, and the NAIC Medicare Supplement model regulation requires
-   advertisements to be filed with the commissioner in adopting states. A public page naming
-   carriers and price ranges is likely an advertisement. **Confirm with KY DOI or your compliance
-   contact whether this page requires filing before or after it goes live.** Not a legal opinion.
-2. **Appointments.** The page names companies Austin may not be appointed with. It carries a line
-   saying we cannot offer every company and that a shopper should check more than one source.
-3. **No CSG output reproduced.** Ranges only, rounded, in our words, dated, per the handling rule
-   above.
+Both open items were **cleared by Austin on 19 August 2026.**
+
+1. **State advertising filing.** ~~Open.~~ **Cleared.** Medicare Supplement advertising is
+   regulated by the Kentucky Department of Insurance, not CMS, and is a separate regime from the
+   CMS TPMO rules that govern Medicare Advantage and Part D marketing. The question raised was
+   whether a public page naming carriers and price ranges is an advertisement requiring filing
+   with the commissioner. Austin confirmed this is handled. Recorded as his call, not as a legal
+   determination made here.
+2. **Appointments.** ~~Open.~~ **Cleared.** Austin approved the wording as published: the page
+   states we are not appointed with every insurer selling Medicare Supplement coverage in
+   Kentucky, and points readers to Medicare.gov and the Kentucky Department of Insurance to
+   compare independently.
+3. **No quote-engine output reproduced.** Standing rule, not a decision. Ranges only, rounded,
+   in our words, dated, per the handling rule at the top of this file. Underwritten rate classes
+   stay excluded from every published range.
+
+**Re-check this at the next refresh.** These clearances apply to the page as it stands in August
+2026. If a future version adds per-carrier premiums, a ranked table, or carrier logos, that is a
+materially different page and item 1 has to be asked again.
