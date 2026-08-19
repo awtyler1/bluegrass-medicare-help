@@ -115,6 +115,13 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
   NO before/after or weight-loss-result imagery, NO alarming needle close-ups. Generic pens/pills,
   signposts, icons, price badges are fine.
 
+## 4a. What to write next
+
+The AEP 2026 / plan-year-2027 editorial plan lives in **`docs/tig-editorial-plan-aep-2027.md`**:
+topics in publish order, the fixed calendar they have to clear, the cluster structure, and the
+figures that must be confirmed against CMS before drafting. Wave 1 has to be live by 10 September
+to catch this cycle.
+
 ## 5. Produced so far
 
 - `Does Medicare Cover Ozempic, Wegovy & Zepbound? The 2026 GLP-1 Bridge`: HTML + docx + gold/gray
