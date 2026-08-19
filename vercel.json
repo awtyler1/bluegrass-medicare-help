@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/articles/medicare-in-lexington-ky",
+      "destination": "/medicare-lexington-ky/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/medicare-in-lexington-ky/",
+      "destination": "/medicare-lexington-ky/",
+      "permanent": true
+    }
+  ]
+}

@@ -80,6 +80,28 @@ fact the reader acts on.
 10. **One kitchen-table observation per page.** A specific, true thing Austin knows from sitting
     with people in that county: the plan everyone seems to arrive with, the benefit people
     there ask about first, the misconception that keeps coming up locally. One is enough.
+
+    **The one-county test, and it is strict.** Swap the county name out of the observation. If it
+    is still true, it is not a county observation and it does not belong on a county page. Move it
+    to the one page where that truth lives and link to it.
+
+    This rule exists because we broke it. The first Winchester and Nicholasville notes were the
+    same observation twice: people did not know local help existed and did not know who to trust.
+    Austin's own read, when asked for a third one for Fayette, was that all three were the same
+    thing, and the real version is that **people consistently do not understand what a Medicare
+    advisor does, or that the role exists at all.** True everywhere he works. So it went to
+    `/articles/what-is-a-medicare-advisor/`, once, at full strength, and the county pages link to
+    it.
+
+    What passes the test is an observation about a **circumstance**, not a feeling. Feelings
+    generalize; circumstances do not. Clark County splits its care between Winchester and
+    Lexington, so people check one hospital and stop. Jessamine has no inpatient hospital, so the
+    plan choice silently decides which Lexington system admits you. Neither sentence survives a
+    county-name swap. Both attach to something the reader does next.
+
+    Watch for the failure mode: three differently-worded versions of one truth will pass the
+    40 percent similarity check, because the wording differs. The metric cannot see manufactured
+    differentiation. Only this test can.
 11. **Local help infrastructure, with real details.** The county senior center by name with its
     address and phone, the SHIP counseling schedule, the Area Agency on Aging contact, where
     and when Austin holds local office hours or events. Details that are checkable by calling.
@@ -122,7 +144,8 @@ A county or town page ships only if it has:
 
 - [ ] At least **5 Tier 1 items**, each sourced and dated
 - [ ] At least **1 phone-verified fact** ("we called, [month year]")
-- [ ] At least **1 anonymized experience paragraph** (Tier 2, item 9 or 10)
+- [ ] At least **1 anonymized experience paragraph** (Tier 2, item 9 or 10) that passes the
+      **one-county test**: swap the county name out and the sentence must stop being true
 - [ ] Local help contacts (Tier 2, item 11)
 - [ ] A named human author with credentials, and a review stamp
 - [ ] Zero paragraphs that fail the Texas test

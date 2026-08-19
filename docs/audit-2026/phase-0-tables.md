@@ -1,4 +1,4 @@
-# Phase 0 — Full URL Inventory
+# Phase 0: Full URL Inventory
 
 Generated 2026-08-12 from commit `ab76921` by static parse of every HTML file.
 Companion to `phase-0-inventory-baseline.md`.

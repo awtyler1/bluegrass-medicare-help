@@ -12,6 +12,9 @@ and each dossier ends with a pull list of what only Austin can confirm.
 |---|---|---|---|
 | Clark | Winchester | **page rebuilt and shipped** | Was crawled and refused by Google, July 2026 |
 | Jessamine | Nicholasville, Wilmore | **page rebuilt and shipped** | Was crawled and refused by Google, July 2026 |
+| Fayette | Lexington | **partial, no rebuild** | City page already indexed at position 7; the network data shipped to the Baptist article instead |
+| Madison | Richmond | **research draft** | 70.6% identical to Georgetown; awaiting phone verification |
+| Scott | Georgetown | **research draft** | 70.6% identical to Richmond; awaiting phone verification |
 
 Both pages now clear the bar in `docs/local-content-standards.md`. Sibling similarity fell from
 64-72% to 13.9% (Winchester) and 27.6% (Jessamine); word counts rose from 612 and 666 to roughly
