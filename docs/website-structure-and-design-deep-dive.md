@@ -168,7 +168,7 @@ Home  /
 │   ├── Winchester / Clark County      /medicare-winchester-ky/     ← existing, de-orphaned
 │   ├── Nicholasville / Jessamine      /medicare-nicholasville-ky/  ← existing, de-orphaned
 │   ├── Georgetown / Scott County      /medicare-georgetown-ky/     ← existing, de-orphaned
-│   └── (county guides roll out slowly from here, each majority-unique — see risk note)
+│   └── (county guides roll out slowly from here, each majority-unique, see risk note)
 │
 ├── Reviews  /reviews/                     ← NEW, captures "Tyler Insurance Group reviews", E-E-A-T
 ├── Tools    /tools/                       ← NEW hub for calculators (Plan G vs N, IRMAA, hospital lookup)

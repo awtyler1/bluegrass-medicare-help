@@ -1,7 +1,7 @@
-# Tyler Insurance Group — article cross-post guide
+# Tyler Insurance Group: article cross-post guide
 
 **Standing workflow:** every article we publish on Bluegrass Medicare Help also gets a
-**Tyler Insurance Group (TIG) version** — same topic, rewritten for the parent agency and a
+**Tyler Insurance Group (TIG) version**: same topic, rewritten for the parent agency and a
 national audience. TIG operates in many states, so the TIG version must NOT be Kentucky-specific.
 
 This is the reference for producing that TIG version. Keep it in sync if the brand changes.
@@ -10,20 +10,20 @@ This is the reference for producing that TIG version. Keep it in sync if the bra
 
 ## 1. Brand colors (from the official TIG logo)
 
-Sampled directly from `TylerInsure_PMS_LOGO.pdf`. These are the TIG brand colors — **not** the
+Sampled directly from `TylerInsure_PMS_LOGO.pdf`. These are the TIG brand colors, **not** the
 Bluegrass coral/green palette.
 
 | Token | Hex | Use |
 |-------|-----|-----|
-| **TIG gold** | `#dbcf86` | primary brand color — headings accent, one of the two "choice" colors, key illustration objects |
+| **TIG gold** | `#dbcf86` | primary brand color, used for the headings accent and as one of the two "choice" colors, key illustration objects |
 | **TIG gold-dark** | `#b0a154` | outlines/borders on gold, darker accents |
 | **TIG gold-tint** | `#efe8cf` / `#f6f4ea` | light backgrounds, soft fills |
-| **TIG gray** | `#7e8082` | secondary brand color — the other "choice" color, neutral objects |
+| **TIG gray** | `#7e8082` | secondary brand color, the other "choice" color, neutral objects |
 | **TIG gray-dark** | `#5c5e60` | outlines/borders on gray, body-ish accents |
 | **White** | `#ffffff` | text on gold or gray blocks (matches the logo: white "TYLER" on gold) |
 
 Notes:
-- The logo sets **white text on the gold block** — that white-on-gold treatment is on-brand, so
+- The logo sets **white text on the gold block**, and that white-on-gold treatment is on-brand, so
   reuse it for signage/labels inside illustrations. Prefer white-on-gray for small body-size text
   (better contrast).
 - Fonts stay the same as Bluegrass: **Fraunces** (serif headings) + **Source Sans 3** (sans body).
@@ -31,7 +31,7 @@ Notes:
 ## 2. Voice & content rules
 
 - **Agency voice, not first-person.** Use "we / our team / our licensed agents," never "I / Austin"
-  in the body. The *authorship* is still credited to Austin Tyler (see below) — agency voice in the
+  in the body. The *authorship* is still credited to Austin Tyler (see below): agency voice in the
   prose, personal author on the byline.
 - **Author attribution (every TIG doc).** Credit Austin Tyler in two subtle spots:
   - **Byline** under the title: `By Austin Tyler · Tyler Insurance Group · Updated <Month Year>`.
@@ -71,10 +71,10 @@ Notes:
 ## 3. Deliverable formats
 
 For each TIG article, produce BOTH:
-1. **Styled HTML doc** — self-contained, brand fonts via Google Fonts, a "how to use" paste note at
+1. **Styled HTML doc**: self-contained, brand fonts via Google Fonts, a "how to use" paste note at
    the top, then the article. This is for pasting into the TIG website editor (headings, bold,
    tables, lists carry over). Uses the doc CSS pattern established in the scratchpad HTML files.
-2. **Editable Word `.docx`** — generated with `python-docx`; Heading 1/2/3 styles, real table,
+2. **Editable Word `.docx`**: generated with `python-docx`; Heading 1/2/3 styles, real table,
    numbered/bulleted lists, shaded callout/quick-answer boxes, gold/gray-aware accents.
 
 Both carry the **Austin Tyler byline + end author line** (see Voice & content rules), and both use
@@ -117,15 +117,15 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
 
 ## 5. Produced so far
 
-- `Does Medicare Cover Ozempic, Wegovy & Zepbound? The 2026 GLP-1 Bridge` — HTML + docx + gold/gray
+- `Does Medicare Cover Ozempic, Wegovy & Zepbound? The 2026 GLP-1 Bridge`: HTML + docx + gold/gray
   illustration (pen + capsule + "$50/month" badge).
-- `Medicare Advantage vs. Medigap: The Real Difference` — HTML + docx + gold/gray illustration
+- `Medicare Advantage vs. Medigap: The Real Difference`: HTML + docx + gold/gray illustration
   (fork-in-the-road signpost: gold "Medigap" / gray "Advantage").
-- `The Medigap Birthday Rule: How It Works and Which States Have It` — HTML + docx + gold/gray
+- `The Medigap Birthday Rule: How It Works and Which States Have It`: HTML + docx + gold/gray
   illustration (birthday calendar + cake, recurring-year arrow, "Same plan · No health questions"
   ribbon). National generalization of the Kentucky birthday-rule article; names example states
   rather than KY, and points readers to their own state Department of Insurance.
-- `How to Check If Your Hospital Takes Your Medicare Advantage Plan` — HTML + docx + gold/gray
+- `How to Check If Your Hospital Takes Your Medicare Advantage Plan`: HTML + docx + gold/gray
   illustration (gray hospital + gold checklist clipboard + magnifying glass, "Is your hospital
   in network?" ribbon). National generalization of the Bluegrass hospital-network articles: the
   three-check verification method, when to run it, and the options if a hospital goes

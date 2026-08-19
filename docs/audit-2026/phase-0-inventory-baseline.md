@@ -1,4 +1,4 @@
-# Phase 0 — Inventory and Baseline
+# Phase 0: Inventory and Baseline
 
 **Site:** bluegrassmedicarehelp.com
 **Audit date:** 2026-08-12
@@ -92,7 +92,7 @@ original assumption.
 
 The caveat: depth is flattered by shared chrome. The header and footer alone account for the top of
 the in-link table (`/` 300, `/articles/` 218, `/about/` 193, `/kentucky/` 173, `/schedule/` 158).
-Strip navigation links and the *editorial* in-link distribution is much thinner — 12 articles have
+Strip navigation links and the *editorial* in-link distribution is much thinner, 12 articles have
 6 or fewer inbound links, and `/articles/medicare-flex-card-truth/` (2,132 words, a high-intent
 commercial-adjacent topic) has exactly **one** inbound link in the entire site. That is the real
 internal-linking problem, and it is addressed in Phase 1.
@@ -132,9 +132,9 @@ The six pages that cite anything at all:
 | `/articles/medicare-irmaa-high-income-surcharge/` | 2 | 1,317 |
 | `/articles/medicare-flex-card-truth/` | 1 | 2,132 |
 
-Everything else — including `/articles/medicare-costs-2026/` (which asserts a $202.90 Part B
+Everything else, including `/articles/medicare-costs-2026/` (which asserts a $202.90 Part B
 premium and a $283 deductible), `/articles/medicare-late-enrollment-penalties/` (2,228 words of
-penalty math), and `/articles/help-paying-for-medicare/` (Extra Help income limits) — states
+penalty math), and `/articles/help-paying-for-medicare/` (Extra Help income limits), states
 specific dollar figures and federal rules with **no citation of any kind**.
 
 This is the highest-leverage finding in Phase 0. It hurts on three independent axes at once:
@@ -148,12 +148,12 @@ This is the highest-leverage finding in Phase 0. It hurts on three independent a
 
 **[V] Related:** there is no visible "last updated" or "last reviewed" stamp anywhere on the site.
 `dateModified` exists in JSON-LD on all 37 articles, but the human-readable byline reads
-`Austin Tyler · Local Kentucky Medicare agent · June 9, 2026 · 6 min read` — a publish date, not a
+`Austin Tyler · Local Kentucky Medicare agent · June 9, 2026 · 6 min read`: a publish date, not a
 review date, and not labelled as either.
 
 ---
 
-## 0.5 CMS / TPMO compliance — inconsistent disclaimers
+## 0.5 CMS / TPMO compliance: inconsistent disclaimers
 
 **[V] The disclaimer is not one string. It is nine.** Counting distinct variants of the
 "We do not offer every plan available in your area" sentence across the 88 public pages:
@@ -175,15 +175,15 @@ Social Security Administration.
 **Why this matters.** CMS's TPMO disclaimer, where a TPMO does not offer every plan in the service
 area, requires the count of organizations and products to be stated: *"We do not offer every plan
 available in your area. Currently we represent [number] organizations which offer [number] products
-in your area."* ([PSM Brokerage — TPMO disclaimer requirements](https://www.psmbrokerage.com/blog/tpmo-disclaimer-requirements-for-insurance-agents-cms-rules-marketing-examples-compliance-guide),
-[Action Benefits — Stay compliant with the TPMO disclaimer](https://blog.actionbenefits.com/stay-compliant-with-medicares-tpmo-disclaimer))
+in your area."* ([PSM Brokerage, TPMO disclaimer requirements](https://www.psmbrokerage.com/blog/tpmo-disclaimer-requirements-for-insurance-agents-cms-rules-marketing-examples-compliance-guide),
+[Action Benefits, Stay compliant with the TPMO disclaimer](https://blog.actionbenefits.com/stay-compliant-with-medicares-tpmo-disclaimer))
 
 **Correction issued during remediation (2026-08-12).** On closer inspection the severity above is
 overstated, and the shape of the problem is different. **Every public page already carried the full,
 correct disclaimer in its `<footer class="foot">` legal block.** The 27 "incomplete" instances were
 *additional in-body* disclaimers (`.disclaim` on articles, `.fineprint` / `.rfine` / `.fine` /
 `.tyfine` on landing pages) that stated a *different, shorter* version on the same page as the
-correct one. So this was a **self-contradiction problem, not a missing-disclaimer problem** — a page
+correct one. So this was a **self-contradiction problem, not a missing-disclaimer problem**: a page
 would say "we represent 6 organizations which offer 158 products" in the footer and "Currently we
 serve Kentucky residents" in the body. Still worth fixing, and now fixed, but it was not the
 exposure the first pass implied.
@@ -193,13 +193,13 @@ the government-disclosure sentence. That page is indexable. Fixed.
 
 Two forward-looking notes, both **[T] verify against the final rule text before acting**:
 - CMS has relaxed the "first minute of the call" timing requirement to "before benefits are
-  discussed." That is a call-script change, not a website change — no site action.
+  discussed." That is a call-script change, not a website change, no site action.
 - For **2027**, the SHIP reference may be removable from the disclaimer. Do **not** remove it now;
   the 2026 plan year language should stay intact through the 2026 AEP.
 
 **Recommendation (detail in Phase 1):** collapse to exactly one disclaimer string, rendered from a
 single source, so the counts can never drift. Never shrink it, hide it, or put it behind an
-accordion — the fix is typographic, not structural.
+accordion, the fix is typographic, not structural.
 
 **[T] Open compliance question for Austin:** are "6 organizations / 158 products" still accurate for
 the 2026 plan year in the Central Kentucky service area? These numbers change with contracting. If
@@ -227,8 +227,8 @@ Worst offenders:
 | 101 | `/articles/medicare-advantage-plan-ending-kentucky/` |
 
 **[V] 38 of 62 indexable pages have a meta description over 165 characters.** The longest is 343
-(`/articles/medicare-advantage-plan-ending-kentucky/`), followed by 289, 284, 280, 276 and 269 —
-all Kentucky-specific pages, i.e. the site's most differentiated content is the most truncated.
+(`/articles/medicare-advantage-plan-ending-kentucky/`), followed by 289, 284, 280, 276 and 269.
+Those are all Kentucky-specific pages, i.e. the site's most differentiated content is the most truncated.
 
 Full per-page numbers are in `phase-0-tables.md`.
 
@@ -245,17 +245,17 @@ truncated. The over-length problem is real; the under-length problem was not.*
 
 | Page | Defect |
 |---|---|
-| `/help/` | ~~15-word stub that should not exist.~~ **Corrected:** this is a deliberate client-side redirect shim to `/review/` that preserves the query string (`window.location.replace('/review/' + window.location.search)`), with a `meta refresh` fallback, `noindex`, and a cross-canonical to the target. That is a sound pattern on GitHub Pages, which has no server-side 301s. It is working as designed and should stay. The only real gap was that it rendered a marketing link with no TPMO disclaimer if JS was off — fixed. |
-| `/about/` | **Zero `<h1>` elements.** The page opens on an `<h2>`. This is the page that carries Austin's `Person` entity, his NPN, and his credibility — and it has no top-level heading. |
+| `/help/` | ~~15-word stub that should not exist.~~ **Corrected:** this is a deliberate client-side redirect shim to `/review/` that preserves the query string (`window.location.replace('/review/' + window.location.search)`), with a `meta refresh` fallback, `noindex`, and a cross-canonical to the target. That is a sound pattern on GitHub Pages, which has no server-side 301s. It is working as designed and should stay. The only real gap was that it rendered a marketing link with no TPMO disclaimer if JS was off, fixed. |
+| `/about/` | **Zero `<h1>` elements.** The page opens on an `<h2>`. This is the page that carries Austin's `Person` entity, his NPN, and his credibility, and it has no top-level heading. |
 | `/supp-advantage/` | Two `<h1>`s, the second one empty. |
 | `/quiz-65/` | Two `<h1>`s (the second is the quiz result heading "Your score"). |
 | `/404.html` | No Meta Pixel, no GA4, no canonical. |
 | 16 pages | No `<link rel="canonical">` at all: `/404.html`, `/certifications/`, and all 14 thank-you pages. |
-| 20 pages | Do not load `/assets/site.css` — every paid landing page and its thank-you page. They are visually and structurally detached from the site. |
+| 20 pages | Do not load `/assets/site.css`. Every paid landing page and its thank-you page. They are visually and structurally detached from the site. |
 
 **[V] Five paid landing pages are ~284 KB of HTML each** (`/keep-your-doctor/`, `/medicare-window/`,
 `/free-advisor/`, `/medicare-mail/`, `/two-lists/`), because each embeds two base64 `data:image`
-payloads directly in the markup. They are `noindex`, so this is not an SEO problem — it is a
+payloads directly in the markup. They are `noindex`, so this is not an SEO problem, it is a
 conversion problem, since paid traffic lands there and 284 KB of blocking HTML on a rural Kentucky
 LTE connection is a measurable bounce driver. Flagged for Phase 7.
 
@@ -273,8 +273,8 @@ Holes:
 
 1. **The `Person` entity is a dangling reference on 37 of 39 pages.** All 37 articles set
    `author.@id = https://bluegrassmedicarehelp.com/#austin-tyler` but supply only
-   `{@type, @id, name, url}`. The rich definition — `jobTitle`, `knowsAbout`, `sameAs`, `alumniOf`,
-   and the NPN as a `PropertyValue` identifier — exists on **`/about/` only**. `/schedule/` has a
+   `{@type, @id, name, url}`. The rich definition (`jobTitle`, `knowsAbout`, `sameAs`, `alumniOf`,
+   and the NPN as a `PropertyValue` identifier, exists on **`/about/` only**. `/schedule/` has a
    partial. A crawler that fetches an article and does not also fetch `/about/` sees an author with
    no credentials at all. The NPN, the strongest single trust token on the site, appears on exactly
    one page.
@@ -287,8 +287,8 @@ Holes:
    is reflected in the business entity.
 
 **[V] Also flag:** the homepage `LocalBusiness` embeds six first-party `Review` nodes and an
-`AggregateRating` of 5.0/6. Self-serving review markup on a `LocalBusiness` — reviews the business
-collects and publishes about itself — is outside what Google's structured data policy will render,
+`AggregateRating` of 5.0/6. Self-serving review markup on a `LocalBusiness`: reviews the business
+collects and publishes about itself, is outside what Google's structured data policy will render,
 and carries a small manual-action risk. The reviews themselves are genuine and should stay on the
 page as visible content; the question is only whether they should be marked up. Addressed in
 Phase 1.
@@ -304,25 +304,25 @@ the repo **[T]**.
 **[V] The hub's own accounting is correct.** All 7 topic-card counts on `/articles/index.html`
 match the actual `data-cat` membership exactly (basics 14, turning65 5, coverage 12, costs 9,
 onmedicare 3, ss 1, local 14). 18 of 37 articles carry more than one category. The topic cards are
-real `<a>` links to real static category pages, not JS-only filters — good for crawlability.
+real `<a>` links to real static category pages, not JS-only filters, good for crawlability.
 
 **Cluster shape:**
 
 | Cluster | Pillar | Supporting | Health |
 |---|---|---|---|
-| **Local / Kentucky** (14) | `/kentucky/` | 5 city pages + 14 tagged articles | **Strongest asset, weakest execution** — see 0.10 |
-| **Basics** (14) | `/articles/medicare-basics-parts-a-b-c-d/` | 13 | Overloaded — "basics" is being used as a catch-all, not a topic |
+| **Local / Kentucky** (14) | `/kentucky/` | 5 city pages + 14 tagged articles | **Strongest asset, weakest execution**: see 0.10 |
+| **Basics** (14) | `/articles/medicare-basics-parts-a-b-c-d/` | 13 | Overloaded: "basics" is being used as a catch-all, not a topic |
 | **Coverage choices** (12) | `/articles/medicare-advantage-vs-medigap/` (1,075 words) | 11, several longer than the pillar | **Pillar is too thin to be the pillar** |
 | **Costs** (9) | `/articles/medicare-costs-2026/` (802 words) | 8, several 2×–3× longer | **Pillar is too thin to be the pillar** |
-| **Turning 65** (5) | `/turning-65/` (site page) + `/articles/turning-65-medicare-roadmap/` | 5 | Split pillar — two pages competing for the same intent |
+| **Turning 65** (5) | `/turning-65/` (site page) + `/articles/turning-65-medicare-roadmap/` | 5 | Split pillar: two pages competing for the same intent |
 | **Already on Medicare** (3) | none | 3 | **Underbuilt.** This is the annual-review / AEP audience, the highest-value repeat-business segment |
 | **Social Security** (1) | none | 1 | **Effectively a stub cluster** |
 
-### Cannibalization — the specific checks requested
+### Cannibalization: the specific checks requested
 
 Measured by Jaccard similarity on title + H1 + slug tokens:
 
-- **`/articles/medicare-changes-2026-kentucky/` vs `/articles/medicare-changes-2027-kentucky/` —
+- **`/articles/medicare-changes-2026-kentucky/` vs `/articles/medicare-changes-2027-kentucky/`,
   similarity 1.00.** Identical titles apart from the year ("2026/2027 Medicare Changes Every
   Kentuckian Should Know"). Both indexable, both linked, both current. **[I]** These will compete
   directly. As of August 2026 the 2027 page is the forward-looking one that should own the query
@@ -347,7 +347,7 @@ Measured by Jaccard similarity on title + H1 + slug tokens:
   the four.
 - **Lexington hospital networks:** `/articles/lexington-hospitals-medicare-advantage-networks/`
   (1,373) vs `/articles/does-baptist-health-take-medicare-advantage/` (1,922), similarity 0.33.
-  **[I] This one is fine and should stay split** — the Baptist page targets a specific
+  **[I] This one is fine and should stay split**: the Baptist page targets a specific
   entity+carrier question, which is exactly the long-tail conversational shape AI search rewards.
 - **Lexington local:** `/articles/medicare-in-lexington-ky/` (1,541) vs
   `/medicare-lexington-ky/` (869) vs `/articles/free-medicare-help-lexington-ky/` (1,929). Three
@@ -357,7 +357,7 @@ Measured by Jaccard similarity on title + H1 + slug tokens:
 
 14 indexable pages under 600 words. The category pages (`/articles/social-security/` 237,
 `/articles/on-medicare/` 323, `/articles/turning-65/` 411, `/articles/costs/` 523) are legitimate
-navigational `CollectionPage`s and should not be judged as articles — but `/articles/social-security/`
+navigational `CollectionPage`s and should not be judged as articles, but `/articles/social-security/`
 listing a single article is a category page that does not deserve to exist yet.
 
 ---
@@ -370,13 +370,13 @@ word sequences, chrome included):
 |  | Nicholasville | Georgetown | Richmond | Winchester |
 |---|---|---|---|---|
 | **Lexington** | 39.9% | 38.4% | 46.9% | 39.6% |
-| **Nicholasville** | — | 64.7% | 69.3% | 67.1% |
-| **Georgetown** | — | — | 69.5% | 72.3% |
-| **Richmond** | — | — | — | 71.4% |
+| **Nicholasville** | n/a | 64.7% | 69.3% | 67.1% |
+| **Georgetown** | n/a | n/a | 69.5% | 72.3% |
+| **Richmond** | n/a | n/a | n/a | 71.4% |
 
 Lexington is genuinely differentiated. **The other four are 65–72% identical to one another** and
 run 598–701 words each. That is the signature of a template with the town name swapped, which is
-precisely the pattern current quality guidance treats as scaled low-value content — and it is
+precisely the pattern current quality guidance treats as scaled low-value content, and it is
 attached to the one topic (county-level plan availability) where this site could be uniquely
 authoritative.
 
@@ -392,11 +392,11 @@ senior-center contacts, county demographics) or consolidated into `/kentucky/`. 
 
 - Header `.nav`: logo + **5 content links** (Turning 65?, Learning Center, Videos, Kentucky, About) +
   Schedule CTA + Call.
-- Footer `.fnav`: **12 content links** — the 5 above plus **Home, Glossary, Reviews, Quizzes,
+- Footer `.fnav`: **12 content links**, the 5 above plus **Home, Glossary, Reviews, Quizzes,
   Free Guide, Free Review**.
 
-Six destinations exist only in the footer. **[I]** Two of those six — `/guide/` (Free Guide) and
-`/review/` (Free Review) — are lead-capture pages, i.e. conversion assets demoted below the fold on
+Six destinations exist only in the footer. **[I]** Two of those six (`/guide/`, the Free Guide, and
+`/review/`, the Free Review) are lead-capture pages, i.e. conversion assets demoted below the fold on
 every page. `/glossary/` is 2,741 words, the third-largest content asset on the site, and is
 header-invisible. Meanwhile `/quizzes/` is 202 words and gets equal footer billing.
 
@@ -410,18 +410,18 @@ intent-modelling problem, and it is Phase 5's central question.
 | Finding | Evidence |
 |---|---|
 | **413 em dashes in body prose** across 42 pages, in direct violation of `CLAUDE.md`'s standing rule. Worst: `/articles/does-medicare-cover-nursing-homes/` (27), `/articles/medicare-in-lexington-ky/` (25), `/articles/` (22). Em dashes also appear in meta descriptions and in the `/quizzes/` title tag. | **[V]** |
-| **220 of 322 `<img>` elements lack `width`/`height`** — direct CLS exposure. 164 were `/assets/logo.png` (in the shared header and footer, so on every page) and 45 were `/assets/austin-tyler.jpg`. **Fixed:** 209 now carry intrinsic dimensions; 11 remain, all base64 images on the oversized paid landing pages. | **[V]** |
-| ~~97 of 322 `<img>` elements have no `alt` text.~~ **Corrected during remediation:** 86 of those were the hidden 1×1 Meta Pixel `<noscript>` tracker (`display:none`), and the remaining 11 were YouTube thumbnails carrying a deliberate `alt=""` inside a `<button aria-label="Play the video, …">` — which is the *correct* accessible pattern, not a defect. The site had essentially no alt-text problem. The 86 pixels now carry `alt=""` for completeness. | **[V]** |
+| **220 of 322 `<img>` elements lack `width`/`height`**, which is direct CLS exposure. 164 were `/assets/logo.png` (in the shared header and footer, so on every page) and 45 were `/assets/austin-tyler.jpg`. **Fixed:** 209 now carry intrinsic dimensions; 11 remain, all base64 images on the oversized paid landing pages. | **[V]** |
+| ~~97 of 322 `<img>` elements have no `alt` text.~~ **Corrected during remediation:** 86 of those were the hidden 1×1 Meta Pixel `<noscript>` tracker (`display:none`), and the remaining 11 were YouTube thumbnails carrying a deliberate `alt=""` inside a `<button aria-label="Play the video, …">`, which is the *correct* accessible pattern, not a defect. The site had essentially no alt-text problem. The 86 pixels now carry `alt=""` for completeness. | **[V]** |
 | **Only 11 of 322 images use `loading="lazy"`.** Those 11 are the YouTube thumbnails, which are already correctly lazy-loaded with `decoding="async"` and an `hqdefault` fallback. The un-lazied remainder is mostly the logo and portrait, which are above the fold and should stay eager. Lower priority than the Phase 0 count implied. | **[V]** |
 | **Two `tel:` formats in use:** `tel:18596186443` (245 instances) and `tel:8596186443` (78, all in the legal footer). Three visible phone renderings: `(859) 618-6443` (249), `859-618-6443` (45). NAP consistency issue. | **[V]** |
 | **No `llms.txt`.** `robots.txt` is 6 lines: `User-agent: * / Allow: /`, one `Disallow: /certifications/`, one `Sitemap:`. | **[V]** |
-| **AI crawlers are not blocked** — the wildcard `Allow: /` permits `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot` and `Google-Extended`. No action needed defensively; opportunity in Phase 3. | **[V]** |
+| **AI crawlers are not blocked**: the wildcard `Allow: /` permits `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot` and `Google-Extended`. No action needed defensively; opportunity in Phase 3. | **[V]** |
 | **All content is server-rendered static HTML.** Word counts above were extracted from raw source with no JS execution. There is no client-side content injection anywhere. This is a real advantage for AI retrieval and it is already correct. | **[V]** |
 | **IndexNow is wired up** (`.github/workflows/indexnow.yml`) and correctly skips `noindex` and `/mockups/` pages. Feeds Bing, which grounds ChatGPT Search and Copilot. Already correct. | **[V]** |
 
 ---
 
-## 0.13 Gap analysis — questions the site does not answer
+## 0.13 Gap analysis: questions the site does not answer
 
 Derived from the site's own coverage measured against KY-specific query patterns. Sources consulted:
 [Kentucky SHIP via CHFS/DAIL](https://brevy.com/medicare/kentucky/plans-and-coverage),
@@ -438,7 +438,7 @@ Gaps where the site has zero coverage:
 | Gap | Why it matters here |
 |---|---|
 | **Medicaid / dual-eligible and Kentucky MSP (QMB, SLMB, QI)** | `/articles/help-paying-for-medicare/` covers Extra Help but there is no Kentucky Medicare Savings Program page and no state application detail. High-need, high-trust, zero competition from national sites. |
-| **UK HealthCare / Saint Joseph (CHI) network status** | The site has a Baptist Health page and a general Lexington hospitals page, but UK HealthCare — the largest system in the region — has no dedicated entity page. |
+| **UK HealthCare / Saint Joseph (CHI) network status** | The site has a Baptist Health page and a general Lexington hospitals page, but UK HealthCare, the largest system in the region, has no dedicated entity page. |
 | **Kentucky Medigap under-65 disability rights** | Mentioned in passing in the birthday-rule article's meta description; no standalone page. Kentucky-specific and almost never covered well. |
 | **What happens to my Medicare if I move** (in-county, out-of-state, to a KY nursing facility) | No coverage. Common SHIP question, generates a genuine SEP. |
 | **Part B give-back / reduction plans** | Adjacent to the flex-card article; heavily advertised on TV in this market; not addressed. |
@@ -446,7 +446,7 @@ Gaps where the site has zero coverage:
 | **End-stage renal disease / new-2021 MA eligibility** | No coverage. |
 | **Medicare + employer coverage past 65 for a spouse** | `/articles/working-past-65-medicare/` covers the enrollee; nothing on the spouse's position. |
 | **"Already on Medicare" cluster generally** | Only 3 articles. This is Austin's retention and referral audience. |
-| **Social Security cluster** | 1 article. Filing strategy, WEP/GPO repeal effects on KY public retirees, and the Part B premium deduction from the SS check are all uncovered — and KPPA/TRS retirees are already an established audience here. |
+| **Social Security cluster** | 1 article. Filing strategy, WEP/GPO repeal effects on KY public retirees, and the Part B premium deduction from the SS check are all uncovered, and KPPA/TRS retirees are already an established audience here. |
 
 ---
 
@@ -521,7 +521,7 @@ Deliberately **not** changed, pending Austin's input: DNS/`CNAME` and host canon
    claim in later phases is unverifiable, and I will keep labelling them **[T]** rather than
    guessing.
 4. **Is there a Google Business Profile, and can I see it?** Phase 4 is largely unwriteable without
-   it — GBP drives the map pack, and the map pack is where "Medicare agent near me" is decided.
+   it, GBP drives the map pack, and the map pack is where "Medicare agent near me" is decided.
 5. **Should the Kentucky DOI license number be published alongside the NPN?** It is a stronger local
    trust signal than the NPN for a consumer, but it is Austin's call.
 6. **What is the intent behind the 11 `noindex` paid landing pages?** Are they all currently running
