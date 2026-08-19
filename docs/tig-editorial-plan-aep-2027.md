@@ -53,6 +53,85 @@ in August 2027 for the following cycle.
    piece below has a "what we tell clients" spine. That is the differentiator and it should be
    the loudest thing in the drafts.
 
+## 2a. The titles
+
+**A caveat that has to come first: there is no search volume data behind these.** No Ahrefs,
+Semrush or Keyword Planner access, and the Search Console exports from earlier in this engagement
+were Bluegrass property data, not TIG. The queries below are reasoned from how people actually
+phrase Medicare problems, not measured. **Before committing, run the head terms through Search
+Console (Performance → Queries, the TIG property) and a volume tool.** Expect to reorder. What is
+solid here is the title *craft*; the priority order may move once real numbers land.
+
+### The rules these follow
+
+1. **Head term first.** Google bolds the query match and the eye finds it. "Medicare Part D in
+   2027" beats "Understanding Your 2027 Drug Coverage." Never open with "Understanding," "A Guide
+   to," or "Everything You Need to Know."
+2. **Under 60 characters** so the title does not truncate in results. Every title below is
+   computed and verified. Phase 0 had to rewrite 54 over-length titles on Bluegrass; this avoids
+   repeating that.
+3. **The title tag and the H1 are different jobs**, and it is fine for them to differ. The title
+   tag wins the click in a crowded result page, so it is terse and keyword-front. The H1 is read
+   after the click, so it can be warmer and carry the angle.
+4. **Match the query's grammar.** A "what happens if" search wants a "what happens" title. A "can
+   I" search wants a title that answers yes or no. Mirroring the question is why 4.1 below reads
+   the way it does.
+5. **Year only where the query carries it.** "medicare changes 2027" has the year in it, so the
+   title needs it. "how to stop medicare calls" does not, and adding 2027 there would just date an
+   evergreen page for no gain.
+6. **One primary term plus one modifier.** No stuffing. Secondary terms are earned in the H2s and
+   the body, not crammed into the title.
+7. **The differentiator belongs in the H1 and the meta description**, not the title tag. The title
+   has to win on relevance before our angle gets a chance to matter.
+
+### The set
+
+| # | Title tag (chars) | Primary query it targets |
+|---|---|---|
+| **1.1** | **Medicare Advantage Plan Ending in 2027? Your Options** (52) | medicare advantage plan ending / discontinued / not renewing |
+| **1.2** | **Medicare Changes in 2027: What You'll Actually Pay** (50) | medicare changes 2027 |
+| **1.3** | **Medicare Drug Prices in 2027: Will Your Copay Drop?** (51) | medicare negotiated drug prices 2027 |
+| **1.4** | **How to Stop Medicare Sales Calls and Spot a Real Agent** (54) | how to stop medicare calls |
+| **1.5** | **Medicare Part D in 2027: Deductible, Cap, and Costs** (51) | medicare part d 2027 cost |
+| **2.1** | **Medicare ANOC 2027: How to Read It in 15 Minutes** (48) | medicare anoc / annual notice of change |
+| **2.2** | **Medicare Flex Card and Dental Benefits: 2027 Reality** (52) | medicare flex card / MA dental coverage |
+| **2.3** | **Medicare AEP Checklist: What to Check Before Dec 7** (50) | medicare aep checklist |
+| **3.1** | **Medicare Star Ratings Explained, and What They Miss** (51) | medicare star ratings explained |
+| **3.2** | **Switching From Medicare Advantage to Medigap in 2027** (52) | switching from medicare advantage to medigap |
+| **4.1** | **Can I Change My Medicare Plan in January? Yes, Once** (51) | can i change my medicare plan in january |
+| **4.2** | **Why Your Prescription Cost More in January, and Fixes** (53) | why did my prescription cost go up |
+| **G1** | **2027 IRMAA Brackets: Medicare's High-Income Surcharge** (53) | irmaa 2027 brackets |
+| **G2** | **How to Appeal IRMAA With Form SSA-44** (36) | irmaa appeal / ssa-44 |
+| **G3** | **Extra Help for Medicare Drug Costs: 2027 Income Limits** (54) | extra help medicare income limits |
+| **G4** | **When to Claim Social Security: 62 vs 67 vs 70** (45) | when to claim social security |
+
+### Where the H1 differs from the title tag
+
+Only the ones where it should. Everywhere else the title tag doubles as the H1.
+
+- **1.1** H1: *Your Medicare Advantage Plan Is Ending in 2027: What the September Letter Means and
+  What to Do Next.* The title tag has to compete on the panic query; the H1 can name the letter,
+  which is the object the reader is holding.
+- **1.3** H1: *Medicare's Negotiated Drug Prices Start January 1, 2027. Here Is Whether Your Copay
+  Actually Changes.* The title tag asks the question; the H1 states that we are going to answer it
+  honestly, which is the entire differentiator.
+- **1.4** H1: *Why Medicare Marketing Got More Aggressive This Year, and How to Tell an Advisor
+  From a Lead Generator.* The searcher does not know a rule changed. They search the symptom, so
+  the title tag matches the symptom and the H1 delivers the cause.
+- **1.5** H1: *What Your Medicare Drug Plan Costs in 2027: the $700 Deductible and the $2,400 Cap.*
+  Numbers in the H1 because they are the answer, and because they are what gets quoted back by AI
+  answers.
+
+### Two notes on specific titles
+
+**4.1 is the sleeper.** "Can I change my Medicare plan in January?" is a real question people type,
+it is asked at exactly the moment the industry has stopped publishing, and it has a clean answer.
+Answering yes-or-no in the title itself is unusual and it earns the click.
+
+**G2 is small on purpose.** "IRMAA appeal" and "SSA-44" are low-volume, high-intent, and almost
+nobody covers the form properly. It does not need to be long. It needs to be the best page on the
+internet about one form, and it will pull links from the bigger IRMAA piece.
+
 ## 3. Wave 1: publish by 10 September, in this order
 
 ### 1.1 Your Medicare Advantage plan is ending in 2027
