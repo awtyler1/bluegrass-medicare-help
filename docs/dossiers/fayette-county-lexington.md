@@ -54,8 +54,15 @@ Anthem and Devoted also sell SNPs here on top of the counts above.
 Source: **CMS MA State/County Penetration**, `data/cms/ma-penetration_202608_KY.csv`.
 
 - Fayette: **54.53% MA penetration**, 30,598 of 56,114 eligibles. **78th of 120 Kentucky counties.**
-- The contrast that matters: Fayette has the most plans of the four counties we cover and the
-  *lowest* take-up. Clark is 61.72% (38th) on 39 plans. Confidence HIGH.
+  Kentucky overall is 55.55%. Confidence HIGH.
+
+**Do not build a "Lexington has the most choice and the least take-up" story on this.** It looked
+like a Fayette anomaly against the three neighboring counties, and it is not one. Ranked by
+eligibles, Kentucky's largest counties nearly all sit low: Jefferson 95th, Warren 86th, Daviess
+91st, Bullitt 97th, Hardin 118th, with Fayette 78th among them. Small counties skew high, which is
+why Clark lands at 38th on 39 plans. Fayette's rank is what county size predicts, so the "why is
+Lexington different" framing would have been a local insight invented out of a size effect. Flagged
+here because it nearly shipped.
 
 ## 3. Hospital networks (Tier 1)
 
@@ -120,10 +127,12 @@ links repointed. Awaiting Austin's decision, since it deletes a page he paid for
 1. **Are the UK HealthCare and CHI Saint Joseph carrier lists exhaustive?** Specifically: does
    either system accept **Devoted Health** or **Essence**? Right now both sit in a "not published"
    column, which is honest but weak. A yes or no on four cells finishes the table.
-2. **A Fayette County observation.** Winchester's is distrust in a noisy market. Nicholasville's is
-   not knowing local help exists. What is different about Lexington people? This is the experience
-   paragraph `docs/local-content-standards.md` requires, and no amount of CMS data substitutes for
-   it.
+2. ~~A Fayette County observation.~~ **Resolved, and it changed the standard.** Austin's answer was
+   that people consistently do not understand what a Medicare advisor does, or that the role
+   exists. That is true in every county he works, which is exactly why it is not a county
+   observation. It went to `/articles/what-is-a-medicare-advisor/` as that article's opening, and
+   the county pages now link to it instead of each restating it in local costume. See the new rule
+   in `docs/local-content-standards.md`.
 3. **A decision on `/articles/medicare-in-lexington-ky/`**: consolidate via 301, or rewrite it to
    the local content standard.
 4. **Confirm the Baptist status for Devoted.** Baptist publishes an explicit table, so a carrier's

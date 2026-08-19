@@ -464,7 +464,7 @@ Program (SHIP) to get information on all of your options.
 ### Chapters
 
 Eleven source beats merged into nine. The 2:35 guide mention and the 2:59 office
-sign-off fold into neighbouring chapters rather than getting their own marks, since
+sign-off fold into neighboring chapters rather than getting their own marks, since
 neither is something a viewer would skip to. Shortest gap is 11 seconds against
 YouTube's 10 second minimum, first mark is 0:00, so the list is valid.
 

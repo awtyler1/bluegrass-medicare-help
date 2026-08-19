@@ -242,4 +242,4 @@ Ranked by what unblocks the most. Items 1 and 2 alone make the page publishable.
 
 **Still outstanding: one phone-verified fact.** The page cannot ship without it. Cheapest options
 are the Clark Regional billing call (which is needed anyway for the network table) or the
-Generations Center AEP counselling schedule on (859) 744-3235.
+Generations Center AEP counseling schedule on (859) 744-3235.
