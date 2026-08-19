@@ -10,8 +10,14 @@ and each dossier ends with a pull list of what only Austin can confirm.
 
 | County | Town | Status | Why it exists |
 |---|---|---|---|
-| Clark | Winchester | research draft | Page crawled and refused by Google, July 2026 |
-| Jessamine | Nicholasville, Wilmore | research draft | Page crawled and refused by Google, July 2026 |
+| Clark | Winchester | **page rebuilt and shipped** | Was crawled and refused by Google, July 2026 |
+| Jessamine | Nicholasville, Wilmore | **page rebuilt and shipped** | Was crawled and refused by Google, July 2026 |
+
+Both pages now clear the bar in `docs/local-content-standards.md`. Sibling similarity fell from
+64-72% to 13.9% (Winchester) and 27.6% (Jessamine); word counts rose from 612 and 666 to roughly
+2,300 and 2,700. Each carries a hospital network table verified by phone, CMS plan and
+penetration figures with pull dates, an experience paragraph from Austin, local help contacts,
+and a dated reviewer stamp.
 
 ## Workflow
 

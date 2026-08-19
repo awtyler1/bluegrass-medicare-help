@@ -223,10 +223,32 @@ artifact, not a town count. **Do not publish that number.**
 10. **R.J. Corman retirees and the Railroad Retirement Board**: confirm the RRB Medicare
     enrollment path before writing it. If it holds, it is the best hyper-local hook in the county.
 
-## Kitchen-table material (only Austin can supply)
+## Kitchen-table material
 
-- **One anonymized client pattern**, e.g. what actually decides it for Nicholasville households:
-  the Lexington hospital they use, or the drive.
-- **One kitchen-table observation.** The Brannon Crossing confusion ("I have a Nicholasville
-  address but I go to Lexington for everything, which county am I?") is a strong candidate if it
-  matches what Austin hears.
+**SUPPLIED by Austin, 18 August 2026.** In his words, lightly tightened for the page:
+
+> The thing I hear over and over in Nicholasville is a version of the same sentence: we never
+> knew there was somebody local who would actually sit down with us and help us make this
+> decision.
+>
+> It is not that people here would not ask. They did not know the help was out there, and they
+> did not know where to start looking for it.
+
+**Editorial notes:**
+
+- **This is a different observation from Winchester's, and the difference is the point.** In
+  Clark County Austin hears distrust in a noisy market: too much mail, too many calls, nobody to
+  believe. In Jessamine he hears an awareness gap: people willing to ask who did not know there
+  was anything to ask about.
+- **It pairs with the penetration data.** Clark County runs 61.72% Medicare Advantage, 38th of
+  120 Kentucky counties. Jessamine runs 55.57%, 73rd, close to the state average of 55.55%. A
+  county that has been worked harder produces "who do I trust." A county closer to average
+  produces "we did not know help existed." State the pairing, do not claim causation.
+- **Placement matters.** On the page this sits immediately before the free-help section rather
+  than at the end, so the observation motivates the SHIP and senior center listings instead of
+  reading as a closing flourish. The section heading changed to "Where to start, if nobody has
+  ever told you" to answer the observation directly.
+- The page then says plainly that the answer to "where do I start" is not necessarily us, and
+  gives the two numbers that have no financial stake. That is the strongest possible response to
+  what Austin actually hears, and it costs nothing to make.
+
