@@ -245,7 +245,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
     <button class="qback" id="backBtn" onclick="goBack()" hidden>← Back</button>
     <div class="leadin" id="leadin">
       <h1 class="leadin-h">Turning 65? Most people make at least one costly Medicare mistake.</h1>
-      <p class="leadin-sub">A quick true-or-false quiz &mdash; less than 60 seconds. See where you stand before it costs you.</p>
+      <p class="leadin-sub">A quick true-or-false quiz, less than 60 seconds. See where you stand before it costs you.</p>
     </div>
     <div class="qcount" id="qcount"></div>
     <div class="qtext-lg" id="qtext"></div>
@@ -298,7 +298,7 @@ body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-heigh
         <div class="field"><label>Last name</label><input id="ln" autocomplete="family-name" placeholder="Last" required></div>
       </div>
       <div class="field"><label>Email address</label><input id="em" type="email" autocomplete="email" placeholder="you@email.com" required></div>
-      <div class="field"><label>Phone <span class="optional">(optional &mdash; for a quick call back)</span></label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="(859) 555-1234"></div>
+      <div class="field"><label>Phone <span class="optional">(optional, for a quick call back)</span></label><input id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="(859) 555-1234"></div>
       <div class="field"><label>Your ZIP code</label><input id="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="e.g. 40513" required></div>
       <div class="field"><label>Where are you with Medicare?</label>
         <select id="st" required>
@@ -456,9 +456,9 @@ function runCalc(){
 function showResults(){
   document.getElementById('scoreHead').textContent = 'You got ' + score + ' of ' + QUESTIONS.length + ' right';
   var sub;
-  if(score >= 8)      sub = "Great work — you really know your Medicare basics.";
+  if(score >= 8)      sub = "Great work, you really know your Medicare basics.";
   else if(score >= 5) sub = "Not bad! But a few of these trip up almost everyone.";
-  else                sub = "Medicare is genuinely confusing — these are exactly the things a quick chat can clear up.";
+  else                sub = "Medicare is genuinely confusing, these are exactly the things a quick chat can clear up.";
   document.getElementById('scoreSub').textContent = sub;
   setBar(100);
   show('results');
@@ -514,7 +514,7 @@ document.getElementById('quizform').addEventListener('submit', function(e){
   }
 
   if (GHL_WEBHOOK_URL) {
-    // Standard JSON POST — same request shape ReqBin used successfully.
+    // Standard JSON POST, same request shape ReqBin used successfully.
     // GHL accepts the cross-origin POST (it's behind Cloudflare), so we send
     // it normally with the JSON content-type GHL expects.
     fetch(GHL_WEBHOOK_URL, {
@@ -524,7 +524,7 @@ document.getElementById('quizform').addEventListener('submit', function(e){
     })
     .then(function(){ finish(); })
     .catch(function(err){
-      // Never punish the user if the network hiccups — still show results.
+      // Never punish the user if the network hiccups, still show results.
       console.error('Webhook error:', err);
       finish();
     });
