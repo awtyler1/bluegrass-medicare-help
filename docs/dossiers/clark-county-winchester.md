@@ -212,11 +212,34 @@ Ranked by what unblocks the most. Items 1 and 2 alone make the page publishable.
     program.
 13. **UK HealthCare 2026 MA in-network list** for referral guidance.
 
-## Kitchen-table material (only Austin can supply)
+## Kitchen-table material
 
-Per the standards doc, the page cannot ship without at least one of each:
+**SUPPLIED by Austin, 18 August 2026.** In his words, lightly tightened for the page:
 
-- **One anonymized client pattern.** e.g. "Of the Winchester households we sat with last year,
-  the deciding factor was almost always whether Clark Regional was in network."
-- **One kitchen-table observation.** The plan everyone in Clark County seems to arrive with, the
-  benefit people there ask about first, or the misconception that keeps coming up locally.
+> The people in Winchester are some of the most pleasant I get to sit with. Part of that is
+> just how they were raised, and Southern hospitality is still very much alive there. But part
+> of it is that they still see value in sitting down with someone who does this for a living.
+> They value a handshake and your time.
+>
+> What I hear most is that they feel left to fend for themselves. The phone calls, the mail,
+> the television commercials never stop, and they do not know who to trust. When they can put a
+> face to a name, look across a table, and have someone actually learn about their situation,
+> that is what they are grateful for.
+
+**Editorial notes:**
+
+- Dropped "some of my best clients live in Winchester." On a public page it reads as ranking
+  clients, and a reader who is not one wonders where they stand.
+- The publishable half is the second paragraph. The overwhelm and the not knowing who to trust
+  are decision-relevant and specific. "Nice people" alone is Tier 3 color that any agent in any
+  town would write.
+- **It pairs with the data.** Clark County is 61.72% Medicare Advantage, 38th of 120 Kentucky
+  counties, against Fayette's 54.53%. A county where six in ten are already on an MA plan has
+  been marketed to heavily. The observation and the penetration figure describe the same thing
+  from two directions. State the pairing, do not claim one causes the other.
+- No outcome is promised and no plan is named, so it stays on the educational side of the CMS
+  marketing line.
+
+**Still outstanding: one phone-verified fact.** The page cannot ship without it. Cheapest options
+are the Clark Regional billing call (which is needed anyway for the network table) or the
+Generations Center AEP counselling schedule on (859) 744-3235.
