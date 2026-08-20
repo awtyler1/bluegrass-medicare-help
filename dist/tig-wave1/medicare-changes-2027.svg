@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Tyler Insurance Group illustration"><rect width="1200" height="630" fill="#f6f4ea"/>
+<circle cx="120" cy="90" r="120" fill="#dbcf86" opacity=".28"/>
+<circle cx="1090" cy="560" r="140" fill="#7e8082" opacity=".14"/>
+<g transform="translate(95,140)">
+  <rect x="0" y="0" width="330" height="350" rx="18" fill="#ffffff" stroke="#5c5e60" stroke-width="4"/>
+  <rect x="0" y="0" width="330" height="86" rx="18" fill="#dbcf86"/>
+  <rect x="0" y="68" width="330" height="18" fill="#dbcf86"/>
+  <text x="165" y="62" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="46" font-weight="700" fill="#ffffff" text-anchor="middle">2027</text>
+  <rect x="70" y="-18" width="22" height="46" rx="11" fill="#5c5e60"/>
+  <rect x="238" y="-18" width="22" height="46" rx="11" fill="#5c5e60"/>
+  <g fill="#f6f4ea">
+    <rect x="34" y="120" width="52" height="42" rx="8"/><rect x="104" y="120" width="52" height="42" rx="8"/>
+    <rect x="174" y="120" width="52" height="42" rx="8"/><rect x="244" y="120" width="52" height="42" rx="8"/>
+    <rect x="34" y="180" width="52" height="42" rx="8"/><rect x="174" y="180" width="52" height="42" rx="8"/>
+    <rect x="244" y="180" width="52" height="42" rx="8"/>
+    <rect x="34" y="240" width="52" height="42" rx="8"/><rect x="104" y="240" width="52" height="42" rx="8"/>
+    <rect x="174" y="240" width="52" height="42" rx="8"/><rect x="244" y="240" width="52" height="42" rx="8"/>
+  </g>
+  <rect x="104" y="180" width="52" height="42" rx="8" fill="#dbcf86" stroke="#b0a154" stroke-width="3"/>
+  <text x="130" y="209" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+</g>
+<g transform="translate(510,140)">
+  <rect x="0" y="0" width="590" height="94" rx="16" fill="#ffffff" stroke="#b0a154" stroke-width="4"/>
+  <text x="34" y="42" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="25" fill="#5c5e60">Part B premium</text>
+  <text x="34" y="76" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="31" font-weight="700" fill="#5c5e60">about $209.50 projected</text>
+  <rect x="0" y="128" width="590" height="94" rx="16" fill="#ffffff" stroke="#b0a154" stroke-width="4"/>
+  <text x="34" y="170" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="25" fill="#5c5e60">Part D deductible</text>
+  <text x="34" y="204" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="31" font-weight="700" fill="#5c5e60">$615 rises to $700</text>
+  <rect x="0" y="256" width="590" height="94" rx="16" fill="#dbcf86" stroke="#b0a154" stroke-width="4"/>
+  <text x="34" y="298" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="25" fill="#ffffff">Part D out-of-pocket cap</text>
+  <text x="34" y="332" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="31" font-weight="700" fill="#ffffff">$2,100 rises to $2,400</text>
+</g>
+<text x="600" y="560" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="30" fill="#5c5e60" text-anchor="middle">What changes on January 1</text></svg>

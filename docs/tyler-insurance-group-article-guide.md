@@ -115,6 +115,13 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
   NO before/after or weight-loss-result imagery, NO alarming needle close-ups. Generic pens/pills,
   signposts, icons, price badges are fine.
 
+## 4a. What to write next
+
+The AEP 2026 / plan-year-2027 editorial plan lives in **`docs/tig-editorial-plan-aep-2027.md`**:
+topics in publish order, the fixed calendar they have to clear, the cluster structure, and the
+figures that must be confirmed against CMS before drafting. Wave 1 has to be live by 10 September
+to catch this cycle.
+
 ## 5. Produced so far
 
 - `Does Medicare Cover Ozempic, Wegovy & Zepbound? The 2026 GLP-1 Bridge`: HTML + docx + gold/gray
@@ -143,3 +150,18 @@ Both must be verified free of Kentucky/Bluegrass/Lexington references before sen
   - `Your ANOC Letter: The September Mail That Decides What You Pay Next Year` (Aug 25)
     → backlink `/articles/annual-medicare-review-aep/`. Envelope + notice + magnifier. Timed to
     tee up AEP; refresh yearly.
+- **Wave 1, AEP 2026 for plan year 2027** (5 articles, built by `docs/build-tig-wave1.py`,
+  validated by `docs/check-tig.py`, publish in order by 10 September per
+  `docs/tig-editorial-plan-aep-2027.md`):
+  - `Medicare Advantage Plan Ending in 2027? Your Options` → backlink
+    `/articles/medicare-advantage-plan-ending-kentucky/`. Termination letter + two doors + 63-day badge.
+  - `Medicare Changes in 2027: What You'll Actually Pay` → backlink
+    `/articles/medicare-changes-2027-kentucky/`. 2027 calendar + three change chips.
+  - `Medicare Drug Prices in 2027: Will Your Copay Drop?` → backlink
+    `/articles/does-medicare-cover-ozempic-wegovy-zepbound/`. Price tag -44% + copay question mark.
+  - `How to Stop Medicare Sales Calls and Spot a Real Agent` → backlink
+    `/articles/medicare-scams-how-to-protect-yourself/`. Ringing phone + licensed shield.
+  - `Medicare Part D in 2027: Deductible, Cap, and Costs` → backlink
+    `/articles/medicare-part-d-prescription-drug-plans/`. Phase stairs, $700 to $2,400 to $0.
+  Every figure corroboration-verified per the editorial plan's section 9. The 2027 Part B premium
+  is labeled a projection in all five and needs a refresh when CMS confirms it in November.
