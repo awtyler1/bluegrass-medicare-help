@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Tyler Insurance Group illustration"><rect width="1200" height="630" fill="#f6f4ea"/>
+<circle cx="1070" cy="120" r="140" fill="#dbcf86" opacity=".28"/>
+<circle cx="130" cy="560" r="120" fill="#7e8082" opacity=".15"/>
+<g transform="translate(140,170)">
+  <rect x="0" y="0" width="190" height="300" rx="26" fill="#7e8082" stroke="#5c5e60" stroke-width="4"/>
+  <rect x="16" y="34" width="158" height="230" rx="10" fill="#ffffff"/>
+  <circle cx="95" cy="282" r="10" fill="#ffffff" opacity=".8"/>
+  <text x="95" y="130" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="22" fill="#5c5e60" text-anchor="middle">Unknown</text>
+  <text x="95" y="162" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="22" fill="#5c5e60" text-anchor="middle">Caller</text>
+  <g stroke="#b0a154" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M-42 96 A 62 62 0 0 0 -42 204"/>
+    <path d="M-74 74 A 104 104 0 0 0 -74 226"/>
+    <path d="M232 96 A 62 62 0 0 1 232 204"/>
+    <path d="M264 74 A 104 104 0 0 1 264 226"/>
+  </g>
+</g>
+<g transform="translate(640,150)">
+  <path d="M150 0 L292 52 V190 C292 268 226 312 150 336 C74 312 8 268 8 190 V52 Z"
+        fill="#dbcf86" stroke="#b0a154" stroke-width="4"/>
+  <rect x="72" y="120" width="156" height="46" rx="10" fill="#ffffff"/>
+  <rect x="72" y="182" width="156" height="16" rx="8" fill="#ffffff" opacity=".85"/>
+  <rect x="72" y="212" width="110" height="16" rx="8" fill="#ffffff" opacity=".85"/>
+  <text x="150" y="153" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="24" font-weight="700" fill="#5c5e60" text-anchor="middle">LICENSED</text>
+  <circle cx="150" cy="272" r="26" fill="#ffffff"/>
+  <path d="M138 272 l9 9 17-18" fill="none" stroke="#b0a154" stroke-width="6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="600" y="560" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="30" fill="#5c5e60" text-anchor="middle">Ask for a name, an agency and a license number</text></svg>

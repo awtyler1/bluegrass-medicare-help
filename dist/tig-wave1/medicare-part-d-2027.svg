@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Tyler Insurance Group illustration"><rect width="1200" height="630" fill="#f6f4ea"/>
+<circle cx="1080" cy="110" r="130" fill="#dbcf86" opacity=".28"/>
+<circle cx="110" cy="560" r="110" fill="#7e8082" opacity=".14"/>
+<g transform="translate(120,150)">
+  <rect x="0" y="250" width="220" height="130" rx="12" fill="#7e8082" stroke="#5c5e60" stroke-width="4"/>
+  <text x="110" y="300" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="23" fill="#ffffff" text-anchor="middle">Deductible</text>
+  <text x="110" y="342" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">$700</text>
+
+  <rect x="248" y="170" width="220" height="210" rx="12" fill="#dbcf86" stroke="#b0a154" stroke-width="4"/>
+  <text x="358" y="228" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="23" fill="#ffffff" text-anchor="middle">Initial</text>
+  <text x="358" y="258" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="23" fill="#ffffff" text-anchor="middle">coverage</text>
+  <text x="358" y="308" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">copay or</text>
+  <text x="358" y="338" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff" text-anchor="middle">coinsurance</text>
+
+  <rect x="496" y="80" width="220" height="300" rx="12" fill="#ffffff" stroke="#b0a154" stroke-width="4"/>
+  <text x="606" y="140" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="23" fill="#5c5e60" text-anchor="middle">Cap reached</text>
+  <text x="606" y="196" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="44" font-weight="700" fill="#b0a154" text-anchor="middle">$2,400</text>
+  <text x="606" y="252" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="23" fill="#5c5e60" text-anchor="middle">then you pay</text>
+  <text x="606" y="300" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="40" font-weight="700" fill="#5c5e60" text-anchor="middle">$0</text>
+</g>
+<g transform="translate(120,545)">
+  <path d="M0 12 H830" stroke="#5c5e60" stroke-width="5" stroke-linecap="round"/>
+  <path d="M806 0 L836 12 L806 24" fill="none" stroke="#5c5e60" stroke-width="5"
+        stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="12" y="52" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="24" fill="#5c5e60">January</text>
+  <text x="836" y="52" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="24" fill="#5c5e60" text-anchor="end">December</text>
+</g>
+<text x="985" y="330" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="26" fill="#5c5e60" text-anchor="middle">Every phase</text>
+<text x="985" y="364" font-family="Source Sans 3, Helvetica, Arial, sans-serif" font-size="26" fill="#5c5e60" text-anchor="middle">resets Jan 1</text></svg>
