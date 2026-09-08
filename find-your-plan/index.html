@@ -79,7 +79,7 @@ h1 b{font-weight:700}
 
 /* funnel */
 .progress{height:6px;background:var(--warm);border-radius:99px;overflow:hidden;margin-bottom:8px}
-.pbar{height:100%;width:14%;background:var(--coral-d);border-radius:99px;transition:width .3s ease}
+.pbar{height:100%;width:11%;background:var(--coral-d);border-radius:99px;transition:width .3s ease}
 .prow{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;color:var(--faint);font-weight:600;margin-bottom:12px}
 .prow .pl{display:flex;align-items:center;gap:12px}
 .pback{background:none;border:0;color:var(--ink);font-weight:700;font-size:13.5px;cursor:pointer;padding:6px 0;font-family:var(--sans);min-height:32px;display:inline-flex;align-items:center;gap:4px}
@@ -106,7 +106,16 @@ h1 b{font-weight:700}
 .cta:hover{background:var(--green-d)}
 .cta:active{transform:scale(.98)}
 .cta.sending{opacity:.7;pointer-events:none}
-.consent{display:flex;gap:10px;align-items:flex-start;margin:10px 0 14px;font-size:13.5px;color:var(--mute);line-height:1.45}
+.lbl{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.lbl small{font-weight:600;color:var(--faint)}
+.qsub{font-size:15.5px;color:var(--mute);margin:-4px 0 14px;line-height:1.45}
+.iconinp{position:relative;margin-bottom:12px}
+.iconinp svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--faint);pointer-events:none}
+.iconinp .inp{padding-left:46px;margin-bottom:0;font-size:18px}
+.secure{display:flex;gap:10px;align-items:flex-start;background:var(--warm);border-radius:12px;padding:12px 14px;font-size:13.5px;color:var(--mute);line-height:1.45;margin-bottom:12px}
+.secure svg{flex-shrink:0;width:18px;height:18px;color:var(--mute);margin-top:2px}
+.consent-full{font-size:12px;color:var(--faint);line-height:1.45;margin:0 0 14px}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:10px 0 10px;font-size:13.5px;color:var(--mute);line-height:1.45}
 .consent input{margin-top:3px;width:20px;height:20px;flex-shrink:0;accent-color:var(--coral-d)}
 .back{background:none;border:0;color:var(--faint);font-weight:600;font-size:14px;cursor:pointer;margin-top:12px;padding:4px}
 .back:hover{color:var(--mute)}
@@ -245,7 +254,7 @@ h2 b{font-weight:700}
     <div class="grow"><span class="stars" aria-label="5 out of 5 stars">★★★★★</span> <span class="g"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.4z"/><path fill="#34A853" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1-2.6 0-4.8-1.8-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.4 14a6 6 0 0 1 0-3.9V7.5H3.1a10 10 0 0 0 0 9z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.9-2.9A10 10 0 0 0 3.1 7.5L6.4 10C7.2 7.8 9.4 6 12 6z"/></svg>5.0 stars from 71 Google reviews</span></div>
 
     <div class="progress"><div class="pbar" id="pbar"></div></div>
-    <div class="prow"><span class="pl"><button type="button" class="pback" id="pback" hidden>&larr; Back</button><span id="pstep">Step 1 of 7</span></span><span id="ppct">14% Complete</span></div>
+    <div class="prow"><span class="pl"><button type="button" class="pback" id="pback" hidden>&larr; Back</button><span id="pstep">Step 1 of 9</span></span><span id="ppct">11% Complete</span></div>
     <form id="leadform" novalidate>
       <div class="step is-active" data-step="1">
         <div class="zipwrap">
@@ -290,11 +299,35 @@ h2 b{font-weight:700}
         </div>
       </div>
       <div class="step" data-step="7">
-        <div class="q">Last step. Where should Austin reach you?</div>
-        <input class="inp" type="text" id="firstName" aria-label="First name" autocomplete="given-name" placeholder="First name">
-        <input class="inp" type="tel" id="phone" aria-label="Phone number" autocomplete="tel" inputmode="tel" placeholder="Phone number">
+        <div class="q">What is your date of birth?</div>
+        <label class="lbl" for="dob">Date of birth <small>(optional)</small></label>
+        <div class="iconinp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <input class="inp" type="text" id="dob" aria-label="Date of birth, optional" autocomplete="bday" inputmode="numeric" maxlength="10" placeholder="MM/DD/YYYY">
+        </div>
+        <button type="button" class="cta" data-go="8">Continue</button>
+      </div>
+      <div class="step" data-step="8">
+        <div class="q">What is your first name?</div>
+        <label class="lbl" for="firstName">First name</label>
+        <div class="iconinp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <input class="inp" type="text" id="firstName" aria-label="First name" autocomplete="given-name" placeholder="First name" required>
+        </div>
+        <button type="button" class="cta" data-go="9">Continue</button>
+      </div>
+      <div class="step" data-step="9">
+        <div class="q">Enter your phone number</div>
+        <p class="qsub">Austin will compare your options and call you with what fits.</p>
+        <label class="lbl" for="phone">Phone number</label>
+        <div class="iconinp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <input class="inp" type="tel" id="phone" aria-label="Phone number" autocomplete="tel" inputmode="tel" placeholder="(555) 000-0000" required>
+        </div>
+        <div class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Your information is secure and only used to match you with the right plans. It is never sold.</span></div>
         <label class="consent"><input type="checkbox" id="consent">
           <span>I agree to be contacted by phone or text about Medicare options. Consent isn&rsquo;t a condition of purchase.</span></label>
+        <p class="consent-full" id="consentfull">By checking the box and tapping the button, I give Tyler Insurance Group (dba Bluegrass Medicare Help) and licensed agent Austin Tyler my prior express written consent to receive marketing and non-marketing calls and text messages at the number provided regarding Medicare plans, including Medicare Advantage, Medicare Supplement, and Prescription Drug Plans, even if my number is on a Do Not Call list and even if an automated dialing system, pre-recorded message, or artificial voice is used. This is a solicitation of insurance. Contact will be made by a licensed insurance agent. Consent is not a condition of purchase; I may instead call (859) 618-6443 directly. I can revoke consent at any time by replying STOP or by calling that number. Message and data rates may apply.</p>
         <button type="button" class="cta" id="submitbtn">Have Austin call me</button>
       </div>
     </form>
@@ -399,7 +432,7 @@ h2 b{font-weight:700}
 
 <script>
 (function(){
-  var CONSENT_TEXT = "By checking this box and tapping the button, I give Tyler Insurance Group (dba Bluegrass Medicare Help) and licensed agent Austin Tyler my prior express consent to contact me at the phone number provided, including by autodialer, prerecorded or artificial voice, and text message, about Medicare insurance options. Consent is not a condition of purchase. Message and data rates may apply. I can opt out at any time by replying STOP.";
+  var CONSENT_TEXT = (document.getElementById('consentfull')||{}).textContent||'';
   var WEBHOOK = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";
   var SOURCE = "Find Your Plan LP (Meta)";
   var CONTENT = "Find Your Plan LP";
@@ -408,6 +441,7 @@ h2 b{font-weight:700}
   var pbar=document.getElementById('pbar'), pstep=document.getElementById('pstep'), ppct=document.getElementById('ppct'), pback=document.getElementById('pback');
   var steps=form.querySelectorAll('.step'), TOTAL=steps.length, cur=1;
   var state={hasMedicare:'',drugCoverage:'',hearingBenefits:'',visionBenefits:'',dentalBenefits:''};
+  var dob=document.getElementById('dob');
   function show(n){
     n=parseInt(n,10); if(n<1||n>TOTAL) return; cur=n;
     steps.forEach(function(s){s.classList.toggle('is-active', s.dataset.step==String(n));});
@@ -418,12 +452,31 @@ h2 b{font-weight:700}
     var first=form.querySelector('.step.is-active .inp'); if(first&&n>1){try{first.focus({preventScroll:true});}catch(e){}}
   }
   pback.addEventListener('click',function(){show(cur-1);});
+  function validDob(v){
+    if(!v) return true;
+    var m=/^(\d{2})\/(\d{2})\/(\d{4})$/.exec(v); if(!m) return false;
+    var mo=+m[1],d=+m[2],y=+m[3],now=new Date().getFullYear();
+    if(y<1900||y>now||mo<1||mo>12||d<1) return false;
+    return d<=new Date(y,mo,0).getDate();
+  }
+  dob.addEventListener('input',function(){
+    var v=dob.value.replace(/\D/g,'').slice(0,8);
+    if(v.length>4) v=v.slice(0,2)+'/'+v.slice(2,4)+'/'+v.slice(4);
+    else if(v.length>2) v=v.slice(0,2)+'/'+v.slice(2);
+    dob.value=v;
+  });
+  function stepValid(step){
+    var z=step.querySelector('#zip'); if(z&&!/^\d{5}$/.test(z.value.trim())){alert('Please enter your 5-digit ZIP code.');z.focus();return false;}
+    var d=step.querySelector('#dob'); if(d&&!validDob(d.value.trim())){alert('Please enter your date of birth as MM/DD/YYYY, or leave it blank.');d.focus();return false;}
+    var req=step.querySelector('.inp[required]'); if(req&&!req.value.trim()){alert('Please tell us your first name.');req.focus();return false;}
+    return true;
+  }
   form.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){
-    var zip=document.getElementById('zip').value.trim();
-    if(!/^\d{5}$/.test(zip)){alert('Please enter your 5-digit ZIP code.');document.getElementById('zip').focus();return;}
-    show(b.dataset.go);
+    if(stepValid(b.closest('.step'))) show(b.dataset.go);
   });});
-  document.getElementById('zip').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();form.querySelector('[data-go]').click();}});
+  form.querySelectorAll('.inp').forEach(function(i){i.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){e.preventDefault();var st=i.closest('.step');var go=st.querySelector('[data-go]')||st.querySelector('#submitbtn');if(go)go.click();}
+  });});
   form.querySelectorAll('.opts').forEach(function(g){g.querySelectorAll('.opt').forEach(function(o){o.addEventListener('click',function(){
     g.querySelectorAll('.opt').forEach(function(x){x.classList.remove('is-sel');}); o.classList.add('is-sel');
     state[g.dataset.field]=o.dataset.val;
@@ -439,15 +492,15 @@ h2 b{font-weight:700}
     var phone=document.getElementById('phone').value.trim();
     var zip=document.getElementById('zip').value.trim();
     var consent=document.getElementById('consent').checked;
-    if(!fn){alert('Please tell us your first name.');return;}
-    if(phone.replace(/\D/g,'').length<10){alert('Please enter a valid phone number.');return;}
     if(zip.length!==5){alert('Please enter your 5-digit ZIP code.');show(1);return;}
+    if(!fn){alert('Please tell us your first name.');show(8);return;}
+    if(phone.replace(/\D/g,'').length<10){alert('Please enter a valid phone number.');document.getElementById('phone').focus();return;}
     if(!consent){alert('Please check the box so Austin can call you.');return;}
     var btn=this; btn.classList.add('sending'); btn.textContent='Sending…';
     var stage=state.hasMedicare==='I have Medicare'?'Already on Medicare':(state.hasMedicare?'Not on Medicare yet':'');
     var wants=[state.drugCoverage==='Yes'?'Drug coverage':'',state.hearingBenefits==='Yes'?'Hearing':'',state.visionBenefits==='Yes'?'Vision':'',state.dentalBenefits==='Yes'?'Dental':''].filter(Boolean).join(', ')||'None selected';
     var payload={firstName:fn,lastName:'',email:'',phone:phone,zip:zip,
-      medicareStage:stage,hasMedicare:state.hasMedicare,drugCoverage:state.drugCoverage,
+      dateOfBirth:dob.value.trim(),medicareStage:stage,hasMedicare:state.hasMedicare,drugCoverage:state.drugCoverage,
       hearingBenefits:state.hearingBenefits,visionBenefits:state.visionBenefits,dentalBenefits:state.dentalBenefits,
       benefitsWanted:wants,topPriority:'',bestTimeToCall:'',
       consentGiven:true,consentText:CONSENT_TEXT,consentTimestamp:new Date().toISOString(),
