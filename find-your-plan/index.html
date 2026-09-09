@@ -456,7 +456,7 @@ dialog.dlg::backdrop{background:rgba(31,29,26,.55)}
 <script>
 (function(){
   var CONSENT_TEXT = (document.getElementById('consentfull')||{}).textContent||'';
-  var WEBHOOK = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";
+  var WEBHOOK = "https://services.leadconnectorhq.com/hooks/Sk1fSSIS0T4wBpJiADrK/webhook-trigger/0cfaa6b0-8e74-4053-b111-68002e470c77"; /* GoHighLevel: Find Your Plan funnel */
   var SOURCE = "Find Your Plan LP (Meta)";
   var CONTENT = "Find Your Plan LP";
   var SLUG = "find-your-plan";
@@ -560,7 +560,7 @@ dialog.dlg::backdrop{background:rgba(31,29,26,.55)}
       benefitsWanted:wants,topPriority:'',bestTimeToCall:'',
       consentGiven:true,consentText:CONSENT_TEXT,consentTimestamp:new Date().toISOString(),
       source:SOURCE,pageUrl:window.location.href};
-    fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(Object.assign({},payload,{_subject:'Find Your Plan page lead',_template:'table',_captcha:'false'}))})
+    fetch(WEBHOOK,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)})
       .then(function(){finish(fn);}).catch(function(){finish(fn);});
   }
 })();
