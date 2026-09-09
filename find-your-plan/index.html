@@ -425,7 +425,7 @@ dialog.dlg::backdrop{background:rgba(31,29,26,.55)}
         <label class="lbl" for="phone">Phone number</label>
         <div class="iconinp">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <input class="inp" type="tel" id="phone" aria-label="Phone number" autocomplete="tel" inputmode="tel" placeholder="(555) 000-0000" required>
+          <input class="inp" type="tel" id="phone" aria-label="Phone number" autocomplete="tel" inputmode="tel" maxlength="14" placeholder="(555) 000-0000" required>
         </div>
         <div class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span>Your information is secure and only used to match you with the right plans.</span></div>
         <p class="consent-full" id="consentfull">By submitting my phone number above and clicking &lsquo;Continue&rsquo;, I provide Tyler Insurance Group (dba Bluegrass Medicare Help) and licensed agent Austin Tyler with my express written consent to receive marketing and non-marketing calls and text messages at the number provided regarding Medicare plans, including Medicare Advantage, Medicare Supplement, and Prescription Drug Plans, even if my number is on a Do Not Call list and even if an automated dialing system, pre-recorded message, or artificial voice is used. This is a solicitation of insurance. Contact will be made by a licensed insurance agent. Consent is not a condition of purchase; I may instead call (859) 618-6443 directly. I can revoke consent at any time by replying STOP or by calling that number. Message and data rates may apply.</p>
@@ -530,10 +530,19 @@ dialog.dlg::backdrop{background:rgba(31,29,26,.55)}
     else if(v.length>2) v=v.slice(0,2)+'/'+v.slice(2);
     dob.value=v;
   });
+  var phoneEl=document.getElementById('phone');
+  function digits(v){ v=v.replace(/\D/g,''); if(v.charAt(0)==='1') v=v.slice(1); /* US area codes never start with 1 */ return v.slice(0,10); }
+  phoneEl.addEventListener('input',function(){
+    var d=digits(phoneEl.value), f=d;
+    if(d.length>6) f='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6);
+    else if(d.length>3) f='('+d.slice(0,3)+') '+d.slice(3);
+    else if(d.length>0) f='('+d;
+    phoneEl.value=f;
+  });
   function stepValid(st){
     var d=st.querySelector('#dob'); if(d&&!validDob(d.value.trim())){alert('Please enter your date of birth as MM/DD/YYYY, or leave it blank.');d.focus();return false;}
     var req=st.querySelector('#firstName'); if(req&&!req.value.trim()){alert('Please tell us your first name.');req.focus();return false;}
-    var ph=st.querySelector('#phone'); if(ph&&ph.value.replace(/\D/g,'').length<10){alert('Please enter a valid phone number.');ph.focus();return false;}
+    var ph=st.querySelector('#phone'); if(ph&&digits(ph.value).length!==10){alert('Please enter your 10-digit phone number.');ph.focus();return false;}
     return true;
   }
   function next(){
@@ -549,13 +558,14 @@ dialog.dlg::backdrop{background:rgba(31,29,26,.55)}
   }
   function submit(){
     var fn=document.getElementById('firstName').value.trim();
-    var phone=document.getElementById('phone').value.trim();
+    var phone='+1'+digits(phoneEl.value);
     var zip=zipEl.value.trim();
+    var dobRaw=dob.value.trim(), dm=/^(\d{2})\/(\d{2})\/(\d{4})$/.exec(dobRaw), dobIso=dm?(dm[3]+'-'+dm[1]+'-'+dm[2]):'';
     cont.classList.add('sending'); cont.textContent='Sending…';
     var stage=state.hasMedicare==='I have Medicare'?'Already on Medicare':(state.hasMedicare?'Not on Medicare yet':'');
     var wants=[state.drugCoverage==='Yes'?'Drug coverage':'',state.hearingBenefits==='Yes'?'Hearing':'',state.visionBenefits==='Yes'?'Vision':'',state.dentalBenefits==='Yes'?'Dental':''].filter(Boolean).join(', ')||'None selected';
     var payload={firstName:fn,lastName:'',email:'',phone:phone,zip:zip,
-      dateOfBirth:dob.value.trim(),medicareStage:stage,hasMedicare:state.hasMedicare,drugCoverage:state.drugCoverage,
+      dateOfBirth:dobRaw,dateOfBirthISO:dobIso,medicareStage:stage,hasMedicare:state.hasMedicare,drugCoverage:state.drugCoverage,
       hearingBenefits:state.hearingBenefits,visionBenefits:state.visionBenefits,dentalBenefits:state.dentalBenefits,
       benefitsWanted:wants,topPriority:'',bestTimeToCall:'',
       consentGiven:true,consentText:CONSENT_TEXT,consentTimestamp:new Date().toISOString(),
