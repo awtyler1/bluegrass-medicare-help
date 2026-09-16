@@ -207,6 +207,11 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
 @media(prefers-reduced-motion:reduce){
   .vidbtn img{transition:none;} .vidbtn:hover img,.vidbtn:focus-visible img{transform:none;}
 }
+.more{margin:2px 0 14px;background:var(--cream2);border:1px solid var(--line);border-radius:10px;}
+.more summary{font-size:16.5px;font-weight:700;padding:14px 44px 14px 16px;color:var(--ink);}
+.more summary:after{font-size:22px;right:16px;}
+.morebody{padding:4px 14px 6px;}
+.morebody .field{margin-bottom:12px;}
 </style>
 </head>
 <body>
@@ -227,7 +232,7 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
       <a href="/turning-65/" class="active" aria-current="page">Turning 65?</a>
       <a href="/articles/">Learning Center</a>
       <a href="/videos/">Videos</a>
-      <a href="/kentucky/">Kentucky</a>
+      <a href="/kentucky/">Your County</a>
       <a href="/about/">About</a>
     </div>
     <a class="navbook" href="/schedule/"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span class="nb-full">Schedule</span><span class="nb-short">Book</span></a>
@@ -262,40 +267,25 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
     <div class="formcard" id="lead">
       <h2>Get your no-cost quote.</h2>
       <form id="leadform" novalidate>
-        <div class="frow">
-          <div class="field"><label for="fn">First name</label><input id="fn" name="firstName" autocomplete="given-name" placeholder="First name" required></div>
-          <div class="field"><label for="ln">Last name</label><input id="ln" name="lastName" autocomplete="family-name" placeholder="Last name" required></div>
+      <div class="field"><label for="fn">First name</label><input id="fn" name="firstName" autocomplete="given-name" placeholder="First name" required></div>
+      <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(859) 555-1234" required></div>
+      <div class="field"><label for="dob">Date of birth <span style="font-weight:400;color:var(--faint);">(so I can find your window)</span></label><input id="dob" name="dob" type="date" autocomplete="bday" required></div>
+      <details class="more"><summary>Add a few details (optional)</summary>
+        <div class="morebody">
+          <div class="field"><label for="ln">Last name</label><input id="ln" name="lastName" autocomplete="family-name" placeholder="Last name"></div>
+          <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="40513"></div>
+          <div class="field"><label for="journey">Where are you in your Medicare journey?</label><select id="journey" name="journey"><option value="" selected>Choose one</option><option>Turning 65 soon</option><option>New to Medicare</option><option>Already on Medicare</option><option>Just exploring my options</option></select></div>
+          <div class="field"><label for="lookingFor">What are you looking for?</label><select id="lookingFor" name="lookingFor"><option value="" selected>Choose one</option><option>Medicare Supplement (Medigap)</option><option>Medicare Advantage</option><option>Not sure yet</option></select></div>
+          <div class="field"><label for="advisor">Are you currently working with a local advisor?</label><select id="advisor" name="advisor"><option value="" selected>Choose one</option><option>No</option><option>Yes</option></select></div>
+          <div class="field"><label for="notes">Anything else I should know?</label><textarea id="notes" name="notes" placeholder="Doctors you want to keep, prescriptions, questions..."></textarea></div>
         </div>
-        <div class="frow">
-          <div class="field"><label for="dob">Date of birth</label><input id="dob" name="dob" type="date" autocomplete="bday" required></div>
-          <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="40513" required></div>
-        </div>
-        <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(859) 555-1234" required></div>
-        <div class="field"><label for="journey">Where are you in your Medicare journey?</label><select id="journey" name="journey" required>
-          <option value="" disabled selected>Choose one</option>
-          <option>Turning 65 soon</option>
-          <option>New to Medicare</option>
-          <option>Already on Medicare</option>
-          <option>Just exploring my options</option>
-        </select></div>
-        <div class="field"><label for="lookingFor">What are you looking for?</label><select id="lookingFor" name="lookingFor" required>
-          <option value="" disabled selected>Choose one</option>
-          <option>Medicare Supplement (Medigap)</option>
-          <option>Medicare Advantage</option>
-          <option>Not sure yet</option>
-        </select></div>
-        <div class="field"><label for="advisor">Are you currently working with a local advisor?</label><select id="advisor" name="advisor" required>
-          <option value="" disabled selected>Choose one</option>
-          <option>No</option>
-          <option>Yes</option>
-        </select></div>
-        <div class="field"><label for="notes">Anything else I should know? <span style="font-weight:400;color:var(--faint);">(optional)</span></label><textarea id="notes" name="notes" placeholder="Doctors you want to keep, prescriptions, questions..."></textarea></div>
-        <div class="field hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="_honey" tabindex="-1" autocomplete="off"></div>
-        <button type="submit" class="submit">Get my no-cost quote</button>
-        <p class="risk"><b>No cost to you, ever.</b> &bull; <b>No obligation.</b> &bull; <b>Local, licensed, real Lexington office.</b></p>
-        <p class="consent">By submitting, you agree that Bluegrass Medicare Help may contact you by phone about Medicare plan options. This is not a condition of purchase. You can opt out at any time.</p>
-        <p class="reassure">We do not sell your information. One local advisor, not a call center.</p>
-      </form>
+      </details>
+      <div class="field hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="_honey" tabindex="-1" autocomplete="off"></div>
+      <button type="submit" class="submit">Get my no-cost quote</button>
+      <p class="risk"><b>No cost to you, ever.</b> &bull; <b>No obligation.</b> &bull; <b>Local, licensed, real Lexington office.</b></p>
+      <p class="consent">By submitting, you agree that Bluegrass Medicare Help may contact you by phone about Medicare plan options. This is not a condition of purchase. You can opt out at any time.</p>
+      <p class="reassure">Three fields is all I need. Austin calls you, not a call center.</p>
+    </form>
       <div class="sent" id="sent">
         <p class="big">Got it. You're on my list.</p>
         <p>I will call you to set up your free plan review. Talk soon.</p>
@@ -432,7 +422,7 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
 <nav class="fnav" aria-label="Footer">
   <div class="wrap">
     <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" width="806" height="220" onerror="this.closest('.fnav-logo').style.display='none'"></a>
-    <div class="fnav-links"><a href="/">Home</a><a href="/turning-65/" class="active" aria-current="page">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/videos/">Videos</a><a href="/glossary/">Glossary</a><a href="/kentucky/">Kentucky</a><a href="/reviews/">Reviews</a><a href="/schedule/">Schedule</a><a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/review/">Free Review</a><a href="/about/">About</a></div>
+    <div class="fnav-links"><a href="/">Home</a><a href="/turning-65/" class="active" aria-current="page">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/videos/">Videos</a><a href="/glossary/">Glossary</a><a href="/kentucky/">Your County</a><a href="/reviews/">Reviews</a><a href="/schedule/">Schedule</a><a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/review/">Free Review</a><a href="/about/">About</a></div>
     <a class="fcall" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (859) 618-6443</a>
   </div>
 </nav>
@@ -484,13 +474,8 @@ document.getElementById('leadform').addEventListener('submit', function(e){
   if(honey){ finish(); return; }
 
   if(!fn){ alert('Please enter your first name.'); return; }
-  if(!ln){ alert('Please enter your last name.'); return; }
   if(!dob){ alert('Please enter your date of birth.'); return; }
   if(ph.replace(/\D/g,'').length < 10){ alert('Please enter a 10-digit phone number.'); return; }
-  if(!/^\d{5}$/.test(zip)){ alert('Please enter a valid 5-digit ZIP code.'); return; }
-  if(!journey){ alert('Please tell us where you are in your Medicare journey.'); return; }
-  if(!lookingFor){ alert('Please tell us what you are looking for.'); return; }
-  if(!advisor){ alert('Please let us know if you already work with a local advisor.'); return; }
 
   var btn = e.target.querySelector('.submit');
   btn.disabled = true; btn.textContent = 'Sending…';
@@ -507,7 +492,7 @@ document.getElementById('leadform').addEventListener('submit', function(e){
 
   // Readable payload for the FormSubmit email to Austin.
   var emailBody = {
-    "Name": fn + ' ' + ln,
+    "Name": (fn + ' ' + ln).trim(),
     "Date of birth": dob,
     "Phone": ph,
     "ZIP": zip,
@@ -517,7 +502,7 @@ document.getElementById('leadform').addEventListener('submit', function(e){
     "Notes": notes || '(none)',
     "Consent to phone contact": 'Yes, ' + consentTs,
     "Source": 'Turning 65 page (' + window.location.href + ')',
-    "_subject": 'New no-cost quote request: ' + fn + ' ' + ln,
+    "_subject": 'New no-cost quote request: ' + (fn + ' ' + ln).trim(),
     "_template": 'table',
     "_captcha": 'false'
   };
