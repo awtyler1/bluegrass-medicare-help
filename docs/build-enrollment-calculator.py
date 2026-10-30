@@ -340,7 +340,7 @@ __FAQ__  </section>
 
   <p class="disclaim">This calculator is general information based on federal Medicare enrollment rules and is not advice for your specific situation. It does not calculate penalty amounts, disability enrollment dates, or state-specific Medicare Supplement rules. Confirm your dates with Social Security at 1-800-772-1213 or ssa.gov/medicare before making decisions. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 </main>
-<div class="sticky"><a href="tel:18596186443">Questions? Call Austin (859) 618-6443</a></div>
+<div class="sticky"><a href="tel:18597858289">Questions? Call Austin (859) 785-8289</a></div>
 <script src="/assets/iep-engine.js"></script>
 <script>
 (function(){
@@ -348,7 +348,7 @@ __FAQ__  </section>
   var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
   var F=$("#f"), R=$("#result"), TODAY=(function(){var d=new Date();return {y:d.getFullYear(),m:d.getMonth()+1,d:d.getDate()};})();
   var fmtD=IEP.fmtDate, fmtM=IEP.fmtMonth;
-  var PHONE='<a href="tel:18596186443">(859) 618-6443</a>';
+  var PHONE='<a href="tel:18597858289">(859) 785-8289</a>';
 
   function dob(){return {y:parseInt($("#yr").value,10),m:parseInt($("#mo").value,10),d:parseInt($("#dy").value,10)};}
   function show(id){
@@ -419,7 +419,7 @@ __FAQ__  </section>
     return '<span class="badge closed">Closed on '+fmtD(r.iep.end)+'</span>';
   }
   function actions(r){
-    var body="My Medicare enrollment window (from bluegrassmedicarehelp.com):%0D%0A%0D%0AWindow opens: "+fmtD(r.iep.start)+"%0D%0ALast day for on-time coverage: "+fmtD(r.bestBy)+"%0D%0ACoverage would start: "+fmtD(r.onTimeCoverage)+"%0D%0AWindow closes: "+fmtD(r.iep.end)+"%0D%0AMedigap open enrollment: "+fmtD(r.medigap.start)+" to "+fmtD(r.medigap.end)+"%0D%0A%0D%0AQuestions: Bluegrass Medicare Help, (859) 618-6443";
+    var body="My Medicare enrollment window (from bluegrassmedicarehelp.com):%0D%0A%0D%0AWindow opens: "+fmtD(r.iep.start)+"%0D%0ALast day for on-time coverage: "+fmtD(r.bestBy)+"%0D%0ACoverage would start: "+fmtD(r.onTimeCoverage)+"%0D%0AWindow closes: "+fmtD(r.iep.end)+"%0D%0AMedigap open enrollment: "+fmtD(r.medigap.start)+" to "+fmtD(r.medigap.end)+"%0D%0A%0D%0AQuestions: Bluegrass Medicare Help, (859) 785-8289";
     return '<div class="actions">'+
       '<button type="button" class="btn sec" id="ics">Add to my calendar</button>'+
       '<a class="btn sec" href="mailto:?subject=My%20Medicare%20enrollment%20dates&body='+body+'">Email me these dates</a>'+
@@ -427,7 +427,7 @@ __FAQ__  </section>
       '<button type="button" class="btn sec" id="again">Start over</button></div>';
   }
   function nudge(strong){
-    return '<div class="nudge"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><div class="tx"><b>'+(strong||"Every situation has a wrinkle. I check these dates for free.")+'</b><p>I am a licensed Kentucky agent with an office on Monarch Street in Lexington. No cost, no pressure, and if you already have this handled I will tell you so.</p></div><a class="btn" href="tel:18596186443">Call (859) 618-6443</a></div>';
+    return '<div class="nudge"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><div class="tx"><b>'+(strong||"Every situation has a wrinkle. I check these dates for free.")+'</b><p>I am a licensed Kentucky agent with an office on Monarch Street in Lexington. No cost, no pressure, and if you already have this handled I will tell you so.</p></div><a class="btn" href="tel:18597858289">Call (859) 785-8289</a></div>';
   }
   function common(r){
     return '<h3>Your window, month by month</h3>'+tiles(r)+

@@ -212,6 +212,12 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
 .more summary:after{font-size:22px;right:16px;}
 .morebody{padding:4px 14px 6px;}
 .morebody .field{margin-bottom:12px;}
+.fromaustin .faces{display:flex;flex:none;}
+.fromaustin .sig,.meet .sig{font-size:24px;font-weight:700;transform:none;}
+.fromaustin .faces .face{width:104px;height:128px;}
+.fromaustin .faces .face+.face{margin-left:-26px;}
+.meet .faces{display:flex;gap:12px;flex:none;}
+.meet .faces img{width:150px;height:170px;}
 </style>
 </head>
 <body>
@@ -235,7 +241,7 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
       <a href="/about/">About</a>
     </div>
     <a class="navbook" href="/schedule/"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span class="nb-full">Schedule</span><span class="nb-short">Book</span></a>
-    <a class="navcta" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call<span class="nc-num">&nbsp;(859) 618-6443</span></a>
+    <a class="navcta" href="tel:18597858289"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call<span class="nc-num">&nbsp;(859) 785-8289</span></a>
     <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -252,12 +258,12 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
       <h1>Walk into 65 knowing exactly what you're doing.</h1>
       <p class="sub">Bring your doctors and your prescription list. In one conversation, a local advisor lays out every plan you qualify for on a single page, so you can choose without reading 40 brochures or guessing.</p>
       <div class="fromaustin">
-        <img class="face" src="/assets/austin-tyler.jpg" alt="Austin Tyler, licensed Medicare advisor in Lexington, Kentucky" width="600" height="750">
+        <span class="faces"><img class="face" src="/assets/austin-tyler.jpg" alt="Austin Tyler, partner, Tyler Insurance Group" width="600" height="750"><img class="face" src="/assets/andrew-horn.jpg" alt="Andrew Horn, partner, Tyler Insurance Group" width="600" height="750"></span>
         <div>
-          <p class="hi">Hi, I'm Austin.</p>
-          <p class="promise">I do this for Kentucky families every day, right here in Lexington. When you call, you get me. No script, no call center, no pressure. Just a straight answer about your options.</p>
-          <span class="sig">Austin Tyler</span>
-          <p class="sigsub">Licensed insurance agent · Lexington, KY</p>
+          <p class="hi">Meet your advisors.</p>
+          <p class="promise">We do this for Kentucky families every day, right here in Lexington. When you call, you get a partner of the firm. No script, no call center, no pressure. Just a straight answer about your options.</p>
+          <span class="sig">Austin Tyler &amp; Andrew Horn</span>
+          <p class="sigsub">Tyler Insurance Group · Lexington, KY</p>
         </div>
       </div>
       <p class="proofline"><span class="stars" aria-hidden="true">★★★★★</span> Rated 5.0 on Google</p>
@@ -268,7 +274,7 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
       <form id="leadform" novalidate>
       <div class="field"><label for="fn">First name</label><input id="fn" name="firstName" autocomplete="given-name" placeholder="First name" required></div>
       <div class="field"><label for="ph">Phone</label><input id="ph" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(859) 555-1234" required></div>
-      <div class="field"><label for="dob">Date of birth <span style="font-weight:400;color:var(--faint);">(so I can find your window)</span></label><input id="dob" name="dob" type="date" autocomplete="bday" required></div>
+      <div class="field"><label for="dob">Date of birth <span style="font-weight:400;color:var(--faint);">(so we can find your window)</span></label><input id="dob" name="dob" type="date" autocomplete="bday" required></div>
       <details class="more"><summary>Add a few details (optional)</summary>
         <div class="morebody">
           <div class="field"><label for="ln">Last name</label><input id="ln" name="lastName" autocomplete="family-name" placeholder="Last name"></div>
@@ -283,11 +289,11 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
       <button type="submit" class="submit">Get my no-cost quote</button>
       <p class="risk"><b>No cost to you, ever.</b> &bull; <b>No obligation.</b> &bull; <b>Local, licensed, real Lexington office.</b></p>
       <p class="consent">By submitting, you agree that Bluegrass Medicare Help may contact you by phone about Medicare plan options. This is not a condition of purchase. You can opt out at any time.</p>
-      <p class="reassure">Three fields is all I need. Austin calls you, not a call center.</p>
+      <p class="reassure">Three fields is all we need. A licensed advisor calls you, not a call center.</p>
     </form>
       <div class="sent" id="sent">
-        <p class="big">Got it. You're on my list.</p>
-        <p>I will call you to set up your free plan review. Talk soon.</p>
+        <p class="big">Got it. You're on our list.</p>
+        <p>We will call you to set up your free plan review. Talk soon.</p>
       </div>
     </div>
   </div>
@@ -308,8 +314,8 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
   <div class="wrap">
     <span class="kicker">The part nobody explains</span>
     <div class="mech">
-      <h2>Here is exactly how I get paid, so you can trust the advice.</h2>
-      <p>On Medicare Advantage and drug plans, Medicare sets the commission, and it is the same no matter which carrier I place you with. So there is no plan I earn more to steer you into. My only job is finding the one that actually fits your doctors, your prescriptions, and your budget. That is why the review costs you nothing and why it is honest. The carriers pay me the same either way.</p>
+      <h2>Here is exactly how we get paid, so you can trust the advice.</h2>
+      <p>On Medicare Advantage and drug plans, Medicare sets the commission, and it is the same no matter which carrier we place you with. So there is no plan we earn more to steer you into. Our only job is finding the one that actually fits your doctors, your prescriptions, and your budget. That is why the review costs you nothing and why it is honest. The carriers pay us the same either way.</p>
     </div>
   </div>
 </section>
@@ -343,11 +349,11 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
 <!-- 5. HOW IT WORKS -->
 <section class="band">
   <div class="wrap">
-    <h2 class="sh">Three steps. I do the hard part.</h2>
+    <h2 class="sh">Three steps. We do the hard part.</h2>
     <div class="steps">
-      <div class="stepc"><div class="n">1</div><p><b>You tell me your doctors and prescriptions.</b> A quick call or a form. That is all I need to start.</p></div>
-      <div class="stepc"><div class="n">2</div><p><b>I compare every plan I offer that covers them.</b> All of it lands on one page, in plain English.</p></div>
-      <div class="stepc"><div class="n">3</div><p><b>You choose. I handle the paperwork.</b> And I am still here next year when things change.</p></div>
+      <div class="stepc"><div class="n">1</div><p><b>You tell us your doctors and prescriptions.</b> A quick call or a form. That is all we need to start.</p></div>
+      <div class="stepc"><div class="n">2</div><p><b>We compare every plan we offer that covers them.</b> All of it lands on one page, in plain English.</p></div>
+      <div class="stepc"><div class="n">3</div><p><b>You choose. We handle the paperwork.</b> And we are still here next year when things change.</p></div>
     </div>
   </div>
 </section>
@@ -370,11 +376,11 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
 <section class="band">
   <div class="wrap">
     <div class="meet">
-      <img src="/assets/austin-tyler.jpg" alt="Austin Tyler at his Lexington office" width="600" height="750">
+      <span class="faces"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="600" height="750"></span>
       <div>
-        <h2>Yes, I am younger than you might expect. Here is why that works for you.</h2>
-        <p>I answer my own phone. I am not retiring in three years, so I will still be your advisor when your plan changes in 2030 and 2035. My office is in Lexington, not a floor of headsets in another time zone. When you call, you get me.</p>
-        <span class="sig">Austin Tyler</span>
+        <h2>Yes, we are younger than you might expect. Here is why that works for you.</h2>
+        <p>We answer our own phone. We are not retiring in three years, so we will still be your advisors when your plan changes in 2030 and 2035. Our office is in Lexington, not a floor of headsets in another time zone. When you call, you get one of us.</p>
+        <span class="sig">Austin Tyler &amp; Andrew Horn</span>
       </div>
     </div>
   </div>
@@ -387,7 +393,7 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
     <div class="acc">
       <details>
         <summary>What does this cost me?</summary>
-        <div class="a">Nothing, now or ever. I am paid by the insurance carriers, and on Medicare Advantage and drug plans that amount is set by Medicare and equal across carriers, so it never comes out of your pocket and never biases the advice.</div>
+        <div class="a">Nothing, now or ever. We are paid by the insurance carriers, and on Medicare Advantage and drug plans that amount is set by Medicare and equal across carriers, so it never comes out of your pocket and never biases the advice.</div>
       </details>
       <details>
         <summary>I already have a plan. Should I still call?</summary>
@@ -422,14 +428,14 @@ details .a{padding:0 20px 18px;font-size:17.5px;}
   <div class="wrap">
     <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" width="806" height="220" onerror="this.closest('.fnav-logo').style.display='none'"></a>
     <div class="fnav-links"><a href="/">Home</a><a href="/turning-65/" class="active" aria-current="page">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/videos/">Videos</a><a href="/glossary/">Glossary</a><a href="/kentucky/">Your County</a><a href="/reviews/">Reviews</a><a href="/schedule/">Schedule</a><a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/review/">Free Review</a><a href="/about/">About</a></div>
-    <a class="fcall" href="tel:18596186443"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (859) 618-6443</a>
+    <a class="fcall" href="tel:18597858289"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (859) 785-8289</a>
   </div>
 </nav>
 <footer class="foot">
   <div class="wrap">
     <div class="fnm">Tyler Insurance Group</div>
     1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
-    <a href="tel:18596186443">(859) 618-6443</a> · <a href="https://www.tylerinsurancegroup.com">tylerinsurancegroup.com</a><br>
+    <a href="tel:18597858289">(859) 785-8289</a> · <a href="https://www.tylerinsurancegroup.com">tylerinsurancegroup.com</a><br>
     Austin Tyler, licensed insurance agent · National Producer Number (NPN) 20234188
     <div class="disc">We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</div>
   </div>

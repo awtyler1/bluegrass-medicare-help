@@ -13,7 +13,23 @@ tail = cur[cur.index('<link rel="canonical"'):cur.index("</head>")]
 
 TITLE = "Kentucky Medicare Help in Plain English | Bluegrass Medicare Help"
 DESC = ("Plain-English Medicare guides for every Kentucky county, checked against official sources, "
-        "plus free help from a licensed Lexington agent who picks up the phone.")
+        "plus free help from licensed Lexington advisors who pick up the phone.")
+def _team(m):
+    """Firm schema: both partners on the business node, Andrew as his own Person."""
+    d = json.loads(m.group(1)); g = d.get("@graph", [])
+    if not any(n.get("@id", "").endswith("#andrew-horn") for n in g):
+        g.append({"@type": "Person", "@id": "https://www.bluegrassmedicarehelp.com/#andrew-horn", "name": "Andrew Horn",
+                  "jobTitle": "Partner", "image": "https://www.bluegrassmedicarehelp.com/assets/andrew-horn.jpg",
+                  "url": "https://www.bluegrassmedicarehelp.com/about/", "worksFor": {"@id": "https://www.bluegrassmedicarehelp.com/#business"}})
+    for n in g:
+        if n.get("@id", "").endswith("#business"):
+            n["employee"] = [{"@id": "https://www.bluegrassmedicarehelp.com/#austin-tyler"}, {"@id": "https://www.bluegrassmedicarehelp.com/#andrew-horn"}]
+            n["description"] = ("Independent Medicare advisory firm in Lexington, Kentucky. Free help for Kentuckians "
+                                "turning 65 or already on Medicare. No call center, no pressure.")
+        if n.get("@id", "").endswith("#austin-tyler"):
+            n["jobTitle"] = "Founder and Partner, Licensed Medicare Agent"
+    return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False, separators=(",", ":")) + "</script>"
+tail = re.sub(r'<script type="application/ld\+json">(.*?)</script>', _team, tail, flags=re.S)
 tail = re.sub(r'(<meta property="og:title" content=")[^"]*', r'\g<1>' + TITLE, tail)
 tail = re.sub(r'(<meta name="twitter:title" content=")[^"]*', r'\g<1>' + TITLE, tail)
 tail = re.sub(r'(<meta property="og:description" content=")[^"]*', r'\g<1>' + DESC, tail)
@@ -35,8 +51,8 @@ INDEX += [
   {"t": "Medicare in Nicholasville and Jessamine County", "d": "Plans, hospitals and local help in Nicholasville.", "u": "/medicare-nicholasville-ky/"},
   {"t": "Medicare in Georgetown and Scott County", "d": "Plans, hospitals and local help in Georgetown.", "u": "/medicare-georgetown-ky/"},
   {"t": "Medicare in Winchester and Clark County", "d": "Plans, hospitals and local help in Winchester.", "u": "/medicare-winchester-ky/"},
-  {"t": "Free Medicare plan review", "d": "Have Austin check your current plan against what is available next year.", "u": "/review/"},
-  {"t": "Schedule a call with Austin", "d": "Pick a time that suits you for a free, no-pressure call.", "u": "/schedule/"},
+  {"t": "Free Medicare plan review", "d": "Have our advisors check your current plan against what is available next year.", "u": "/review/"},
+  {"t": "Schedule a call with our team", "d": "Pick a time that suits you for a free, no-pressure call.", "u": "/schedule/"},
   {"t": "Turning 65 in Kentucky", "d": "Your enrollment window, your first decisions and a free quote.", "u": "/turning-65/"},
 ]
 NGUIDES = len(rows)
@@ -116,7 +132,10 @@ h2{font-size:31px;margin-bottom:8px;}
 .results .none{padding:18px 22px;color:var(--mute);font-size:17px;}
 .results .all{font-weight:700;color:var(--link);}
 .human{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin-top:24px;color:var(--mute);font-size:18px;}
-.human img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center top;}
+.human .duo{display:inline-flex;}
+.human .duo img,.askband .duo img{border-radius:50%;object-fit:cover;object-position:center 20%;border:3px solid var(--surf);}
+.human .duo img{width:48px;height:48px;}
+.human .duo img+img,.askband .duo img+img{margin-left:-14px;}
 .human a{font-weight:700;white-space:nowrap;}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin-top:20px;color:var(--mute);font-size:16px;font-weight:600;}
 .trust .star{color:var(--star);letter-spacing:1px;margin-right:6px;}
@@ -137,7 +156,8 @@ h2{font-size:31px;margin-bottom:8px;}
 .chipdate{display:inline-block;background:var(--tint2);color:var(--ink);font-size:14px;font-weight:700;border-radius:999px;padding:4px 12px;margin-bottom:10px;}
 /* ask austin */
 .askband{display:flex;flex-wrap:wrap;align-items:center;gap:20px 26px;}
-.askband img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid var(--surf);}
+.askband .duo{display:inline-flex;flex-shrink:0;}
+.askband .duo img{width:92px;height:92px;border-width:4px;}
 .askband .t{flex:1;min-width:240px;}
 .askband h2{font-size:28px;margin-bottom:4px;}
 .askband p{color:var(--mute);font-size:17.5px;}
@@ -151,13 +171,16 @@ h2{font-size:31px;margin-bottom:8px;}
 .rev .star{color:var(--star);font-size:18px;letter-spacing:2px;}
 .rev p{font-size:18px;margin:10px 0 14px;line-height:1.5;}
 .rev b{font-size:16px;color:var(--mute);font-weight:600;}
-/* note */
-.note{display:grid;gap:22px;grid-template-columns:1fr;align-items:start;}
-@media(min-width:760px){.note{grid-template-columns:220px 1fr;}}
-.note img{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center top;}
-.note h2{font-size:30px;}
-.note p{margin-top:12px;font-size:18.5px;max-width:660px;}
-.note small{display:block;color:var(--mute);font-size:15px;margin-top:14px;}
+/* advisors */
+.team{display:grid;gap:18px;grid-template-columns:1fr;margin-top:6px;}
+@media(min-width:760px){.team{grid-template-columns:1fr 1fr;}}
+.adv{display:flex;gap:18px;align-items:center;background:var(--surf);border-radius:20px;padding:20px;color:var(--ink);box-shadow:0 1px 2px rgba(27,40,54,.06),0 8px 24px rgba(27,40,54,.06);}
+.adv img{width:104px;height:104px;border-radius:50%;object-fit:cover;object-position:center 20%;flex-shrink:0;}
+.adv b{display:block;font-family:var(--head);font-size:22px;}
+.adv span{display:block;color:var(--cta-d);font-weight:700;font-size:15px;margin:2px 0 6px;}
+.adv small{display:block;color:var(--mute);font-size:15px;line-height:1.45;}
+.firmnote{margin-top:22px;font-size:18px;color:var(--ink);max-width:760px;}
+.firmnote a{font-weight:700;}
 /* final */
 .final{background:var(--cta);color:#fff;padding-block:60px;text-align:center;}
 .final h2{color:#fff;}
@@ -179,7 +202,7 @@ h2{font-size:31px;margin-bottom:8px;}
 @media(min-width:900px){.sticky{display:none;}}
 """
 
-TEL = "tel:18596186443"; PN = "(859) 618-6443"
+TEL = "tel:18597858289"; PN = "(859) 785-8289"
 def ustrip():
     return ('<div class="ustrip">\n  <div class="wrap">\n    <span><strong>Free Medicare help for all of Kentucky</strong> &nbsp;&middot;&nbsp; Office in Lexington</span>\n'
             '    <span class="rate"><span class="stars">★★★★★</span> 5.0 on Google</span>\n  </div>\n</div>')
@@ -206,7 +229,7 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="hero"><div class="wrap">
   <span class="eyebrow">Free Medicare help for all of Kentucky</span>
   <h1>Kentucky's plain-English Medicare guide.</h1>
-  <p class="sub">Answers to the Medicare questions Kentuckians ask most, checked against official sources and dated. Written by a licensed Kentucky agent you can actually call.</p>
+  <p class="sub">Answers to the Medicare questions Kentuckians ask most, checked against official sources and dated. Written by licensed Kentucky advisors you can actually call.</p>
   <div class="find">
     <form class="ask" role="search" id="askform" action="/articles/">
       <label for="q">Search the Medicare guides</label>
@@ -215,8 +238,8 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
     </form>
     <div class="results" id="results" role="region" aria-live="polite" aria-label="Matching guides" hidden></div>
   </div>
-  <div class="human"><img src="/assets/austin-tyler.jpg" alt="" width="46" height="46"><span>Rather talk it through? Austin picks up.</span><a href="{TEL}">{PN}</a></div>
-  <div class="trust"><span><span class="star">★★★★★</span>5.0 on Google</span><span>Over 1,000 Kentuckians helped</span><span>KY licensed agent #1187780</span></div>
+  <div class="human"><span class="duo"><img src="/assets/austin-tyler.jpg" alt="" width="48" height="48"><img src="/assets/andrew-horn.jpg" alt="" width="48" height="48"></span><span>Rather talk it through? A licensed advisor picks up.</span><a href="{TEL}">{PN}</a></div>
+  <div class="trust"><span><span class="star">★★★★★</span>5.0 on Google</span><span>Over 1,000 Kentuckians helped</span><span>Independent Lexington firm</span></div>
 </div></header>
 
 <section class="band t1" aria-labelledby="topics-h"><div class="wrap">
@@ -232,8 +255,8 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 </div></section>
 
 <section class="band t2" aria-labelledby="ask-h"><div class="wrap askband">
-  <img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="96" height="96">
-  <div class="t"><h2 id="ask-h">Have a question the guides don't answer?</h2><p>Ask Austin. Licensed Kentucky agent with an office in Lexington. No cost, no pressure.</p></div>
+  <span class="duo"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="92" height="92"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="92" height="92"></span>
+  <div class="t"><h2 id="ask-h">Have a question the guides don't answer?</h2><p>Ask our advisors. Licensed in Kentucky, with an office in Lexington. No cost, no pressure.</p></div>
   <a class="pill" href="{TEL}">{PH}Call {PN}</a>
 </div></section>
 
@@ -265,20 +288,22 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
   <div class="grid c3">{''.join(f'<div class="rev"><div class="star" aria-label="5 out of 5 stars">★★★★★</div><p>“{t}”</p><b>{w}, Google review</b></div>' for t, w in REVIEWS)}</div>
 </div></section>
 
-<section class="band" aria-labelledby="note-h"><div class="wrap note">
-  <img src="/assets/austin-tyler.jpg" alt="Austin Tyler, licensed Kentucky Medicare agent" width="180" height="180">
-  <div><h2 id="note-h">A note from Austin</h2>
-  <p>I'm Austin Tyler, a licensed Kentucky agent based in Lexington. I built this site so Kentuckians could get straight answers about Medicare without a sales pitch. Reading is free. So is calling: the carriers pay licensed agents, so you never pay me, and I work with several companies rather than one.</p>
-  <p>If you'd rather sit across a table, the office is at 1029 Monarch Street, Suite 110, Lexington, right off Beaumont Circle. <a href="/about/">More about me &rarr;</a></p>
-  <small>Kentucky DOI license #1187780 &middot; NPN 20234188 &middot; Tyler Insurance Group</small></div>
+<section class="band" aria-labelledby="note-h"><div class="wrap">
+  <h2 id="note-h">Meet your advisors</h2>
+  <p class="lead">Tyler Insurance Group is an independent Medicare advisory firm in Lexington. We built this site so Kentuckians could get straight answers about Medicare without a sales pitch.</p>
+  <div class="team">
+    <a class="adv" href="/about/"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="104" height="104"><div><b>Austin Tyler</b><span>Founder and Partner</span><small>Licensed Medicare agent &middot; KY DOI #1187780 &middot; NPN 20234188</small></div></a>
+    <a class="adv" href="/about/"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="104" height="104"><div><b>Andrew Horn</b><span>Partner</span><small>Tyler Insurance Group &middot; Lexington, Kentucky</small></div></a>
+  </div>
+  <p class="firmnote">Reading is free. So is calling: the carriers pay licensed agents, so you never pay us, and we work with several companies rather than one. If you would rather sit across a table, our office is at 1029 Monarch Street, Suite 110, Lexington, right off Beaumont Circle. <a href="/about/">More about our firm &rarr;</a></p>
 </div></section>
 
-<section class="final" aria-labelledby="final-h"><div class="wrap"><h2 id="final-h">Still have a question?</h2><p>Call and you get Austin, not a queue. If reading is all you need today, that's fine too.</p>
-  <a class="pill" href="{TEL}">{PH}Call Austin</a><span class="num">{PN}</span>
+<section class="final" aria-labelledby="final-h"><div class="wrap"><h2 id="final-h">Still have a question?</h2><p>Call and you get a licensed advisor, not a queue. If reading is all you need today, that's fine too.</p>
+  <a class="pill" href="{TEL}">{PH}Call us</a><span class="num">{PN}</span>
   <p style="margin:16px auto 0;font-size:17px;">Prefer a set time? <a class="u" href="/schedule/">Schedule a call</a> or <a class="u" href="/review/">ask for a free plan review</a>.</p></div></section>
 </main>
 
-<div class="sticky"><a href="{TEL}">{PH}Call Austin {PN}</a></div>
+<div class="sticky"><a href="{TEL}">{PH}Call us {PN}</a></div>
 <nav class="fnav" aria-label="Footer">
   <div class="wrap">
     <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" width="806" height="220" onerror="this.closest('.fnav-logo').style.display='none'"></a>
@@ -332,7 +357,7 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
     if(text.length<2){{ out.hidden=true; out.innerHTML=''; return; }}
     var hits=search(text);
     if(!hits.length){{
-      out.innerHTML='<div class="none">No guide matches that yet. <a href="{TEL}" class="all">Call Austin at {PN}</a> or <a href="/articles/" class="all">browse every guide</a>.</div>';
+      out.innerHTML='<div class="none">No guide matches that yet. <a href="{TEL}" class="all">Call us at {PN}</a> or <a href="/articles/" class="all">browse every guide</a>.</div>';
     }} else {{
       out.innerHTML=hits.map(function(h){{return '<a href="'+h.u+'"><b>'+esc(h.t)+'</b><span>'+esc(h.d)+'</span></a>';}}).join('')+'<a href="/articles/" class="all">Browse all guides &rarr;</a>';
     }}

@@ -413,7 +413,7 @@ intent-modelling problem, and it is Phase 5's central question.
 | **220 of 322 `<img>` elements lack `width`/`height`**, which is direct CLS exposure. 164 were `/assets/logo.png` (in the shared header and footer, so on every page) and 45 were `/assets/austin-tyler.jpg`. **Fixed:** 209 now carry intrinsic dimensions; 11 remain, all base64 images on the oversized paid landing pages. | **[V]** |
 | ~~97 of 322 `<img>` elements have no `alt` text.~~ **Corrected during remediation:** 86 of those were the hidden 1×1 Meta Pixel `<noscript>` tracker (`display:none`), and the remaining 11 were YouTube thumbnails carrying a deliberate `alt=""` inside a `<button aria-label="Play the video, …">`, which is the *correct* accessible pattern, not a defect. The site had essentially no alt-text problem. The 86 pixels now carry `alt=""` for completeness. | **[V]** |
 | **Only 11 of 322 images use `loading="lazy"`.** Those 11 are the YouTube thumbnails, which are already correctly lazy-loaded with `decoding="async"` and an `hqdefault` fallback. The un-lazied remainder is mostly the logo and portrait, which are above the fold and should stay eager. Lower priority than the Phase 0 count implied. | **[V]** |
-| **Two `tel:` formats in use:** `tel:18596186443` (245 instances) and `tel:8596186443` (78, all in the legal footer). Three visible phone renderings: `(859) 618-6443` (249), `859-618-6443` (45). NAP consistency issue. | **[V]** |
+| **Two `tel:` formats in use:** `tel:18597858289` (245 instances) and `tel:8597858289` (78, all in the legal footer). Three visible phone renderings: `(859) 785-8289` (249), `859-785-8289` (45). NAP consistency issue. | **[V]** |
 | **No `llms.txt`.** `robots.txt` is 6 lines: `User-agent: * / Allow: /`, one `Disallow: /certifications/`, one `Sitemap:`. | **[V]** |
 | **AI crawlers are not blocked**: the wildcard `Allow: /` permits `GPTBot`, `OAI-SearchBot`, `ClaudeBot`, `PerplexityBot` and `Google-Extended`. No action needed defensively; opportunity in Phase 3. | **[V]** |
 | **All content is server-rendered static HTML.** Word counts above were extracted from raw source with no JS execution. There is no client-side content injection anywhere. This is a real advantage for AI retrieval and it is already correct. | **[V]** |
@@ -503,7 +503,7 @@ Gaps where the site has zero coverage:
 | `/about/` had `BreadcrumbList` schema but no visible breadcrumb | Visible `.crumb` added, matching the house pattern |
 | `/supp-advantage/`, `/quiz-65/` had two `<h1>`s | Quiz result heading demoted to `<h2 id="scoreHead">`; CSS selector retargeted so rendering is unchanged |
 | `/supp-advantage/` `<h1>` contained `&mdash;` | Replaced with a colon |
-| Two `tel:` formats | Normalized to `tel:18596186443` (328 instances) |
+| Two `tel:` formats | Normalized to `tel:18597858289` (328 instances) |
 | 15 pages missing a canonical | Self-referencing canonicals added (`/404.html` correctly left without one) |
 
 Deliberately **not** changed, pending Austin's input: DNS/`CNAME` and host canonicalization; the

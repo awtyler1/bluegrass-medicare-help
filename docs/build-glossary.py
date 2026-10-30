@@ -434,7 +434,7 @@ html = '''<!DOCTYPE html>
 ''' + '\n'.join(rows) + '''
       <div class="gnone" id="gnone">
         <b>No match for that one.</b>
-        <p>Try a shorter word, or just call and read us the sentence. We will tell you what it means, free, at <a href="tel:18596186443">(859) 618-6443</a>.</p>
+        <p>Try a shorter word, or just call and read us the sentence. We will tell you what it means, free, at <a href="tel:18597858289">(859) 785-8289</a>.</p>
       </div>
 
       <section class="gcta">
@@ -442,7 +442,7 @@ html = '''<!DOCTYPE html>
         <p>Read it to us over the phone. No cost, no obligation, and no assumption that you should already know this.</p>
         <div class="gbtns">
           <a class="gbtn" href="/schedule/">Book a free 30-minute review</a>
-          <a class="gbtn alt" href="tel:18596186443">Call (859) 618-6443</a>
+          <a class="gbtn alt" href="tel:18597858289">Call (859) 785-8289</a>
         </div>
       </section>
 

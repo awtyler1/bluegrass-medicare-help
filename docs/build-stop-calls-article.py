@@ -177,7 +177,7 @@ BODY = """
       <p>I am a licensed agent with an office on Monarch Street in Lexington. You can look me up, call me back on a number you found yourself, and sit across a table from me. There is no cost, and if the plan you have is the right one I will tell you that.</p>
       <div class="row">
         <a class="btn" href="/review/">Talk to a local agent &rarr;</a>
-        <p class="callline">Or call me directly: <a href="tel:18596186443">(859) 618-6443</a></p>
+        <p class="callline">Or call me directly: <a href="tel:18597858289">(859) 785-8289</a></p>
       </div>
     </div>
 

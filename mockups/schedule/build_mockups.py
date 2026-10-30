@@ -17,13 +17,13 @@ NAV = """<div class="ustrip"><div class="wrap">
 <a href="/schedule/" class="active">Schedule</a>
 <a href="/about/">About</a>
 </div>
-<a class="navcta" href="tel:18596186443">Call</a>
+<a class="navcta" href="tel:18597858289">Call</a>
 </div></nav>"""
 
 FOOT = """<footer class="foot"><div class="wrap">
 <div class="fnm">Tyler Insurance Group</div>
 1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
-<a href="tel:8596186443">(859) 618-6443</a>
+<a href="tel:8597858289">(859) 785-8289</a>
 <div class="disc">We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</div>
 </div></footer>"""
 
@@ -136,7 +136,7 @@ A_BODY = f"""<section class="hero"><div class="wrap"><div class="hgrid">
 <div class="who"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler">
 <div><b>Austin Tyler</b><span>Licensed Kentucky Medicare agent · Tyler Insurance Group · Lexington</span></div></div>
 <ul class="vlist">{''.join(f'<li><b>{t}</b><span>{d}</span></li>' for t,d in BULLETS)}</ul>
-<div class="callalt"><b>Rather just call?</b> Dial <a href="tel:18596186443">(859) 618-6443</a> and you will get a real person, usually me.</div>
+<div class="callalt"><b>Rather just call?</b> Dial <a href="tel:18597858289">(859) 785-8289</a> and you will get a real person, usually me.</div>
 </div>
 <div>{cal()}</div>
 </div></div></section>
@@ -224,7 +224,7 @@ C_BODY = f"""<section class="band"><div class="wrap">
 <div class="valcard"><h2>What the 20 minutes buys you</h2><ul>
 {''.join(f'<li><b>{t}</b><span>{d}</span></li>' for t,d in BULLETS)}
 </ul>
-<p class="mini">Prefer the phone? Call <a href="tel:18596186443">(859) 618-6443</a>. You will get a real person, usually me, not a menu.</p>
+<p class="mini">Prefer the phone? Call <a href="tel:18597858289">(859) 785-8289</a>. You will get a real person, usually me, not a menu.</p>
 </div>
 <div>{cal()}</div>
 </div></div></section>"""

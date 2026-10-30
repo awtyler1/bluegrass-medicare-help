@@ -222,7 +222,7 @@ BODY = r"""
       <p>Bring me your Annual Notice of Change, or the name of your plan, and I will read the dental row with you and tell you what a crown would actually cost on it next year. No charge. If your plan is still the right one, you will hear that too.</p>
       <div class="row">
         <a class="btn" href="/review/">Get a free plan review &rarr;</a>
-        <p class="callline">Or call me directly: <a href="tel:18596186443">(859) 618-6443</a></p>
+        <p class="callline">Or call me directly: <a href="tel:18597858289">(859) 785-8289</a></p>
       </div>
     </div>
 

@@ -259,7 +259,7 @@ html = '''<!DOCTYPE html>
         <p>If your question is not answered above, ask it. There is no cost, and no obligation to change anything.</p>
         <div class="vbtns">
           <a class="vbtn" href="/schedule/">Book a free 30-minute review</a>
-          <a class="vbtn alt" href="tel:18596186443">Call (859) 618-6443</a>
+          <a class="vbtn alt" href="tel:18597858289">Call (859) 785-8289</a>
         </div>
       </section>
 

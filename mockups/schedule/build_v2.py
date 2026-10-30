@@ -12,13 +12,13 @@ NAV = """<div class="ustrip"><div class="wrap">
 <a href="/turning-65/">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/kentucky/">Kentucky</a>
 <a href="/reviews/">Reviews</a><a href="/schedule/" class="active">Schedule</a><a href="/about/">About</a>
 </div>
-<a class="navcta" href="tel:18596186443">Call</a>
+<a class="navcta" href="tel:18597858289">Call</a>
 </div></nav>"""
 
 FOOT = """<footer class="foot"><div class="wrap">
 <div class="fnm">Tyler Insurance Group</div>
 1029 Monarch Street, Suite 110, Lexington, KY 40513<br>
-<a href="tel:8596186443">(859) 618-6443</a>
+<a href="tel:8597858289">(859) 785-8289</a>
 <div class="disc">We respect your privacy. This is a solicitation for insurance. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</div>
 </div></footer>"""
 
@@ -121,7 +121,7 @@ def page(label, css, body):
 VL = ''.join(f'<li><b>{t}</b><span>{d}</span></li>' for t,d in BULLETS)
 WHO = """<div class="who"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler">
 <div><b>Austin Tyler</b><span>Licensed Kentucky Medicare agent · Lexington</span></div></div>"""
-PHONE = """<div class="pfoot"><b>Rather just call?</b> Dial <a href="tel:18596186443">(859) 618-6443</a> and you'll get a real person, usually me.</div>"""
+PHONE = """<div class="pfoot"><b>Rather just call?</b> Dial <a href="tel:18597858289">(859) 785-8289</a> and you'll get a real person, usually me.</div>"""
 
 # ============================================================ V1 · Twin Cards
 V1_CSS = """
@@ -241,7 +241,7 @@ V4_BODY = f"""<section class="head4"><div class="wrap">
 {cal()}
 </div>
 <div class="close4"><h3>Not ready to book?</h3><p>Call and ask one question. No appointment, no form, no follow-up unless you want one.</p>
-<span class="ph">(859) 618-6443</span></div>
+<span class="ph">(859) 785-8289</span></div>
 </div></section>"""
 
 here=os.path.dirname(os.path.abspath(__file__))

@@ -4,6 +4,15 @@ Static site (HTML/CSS/vanilla JS) on GitHub Pages, served at the domain root.
 Brand: **Tyler Insurance Group** dba **Bluegrass Medicare Help**, Lexington, KY.
 Audience: Kentucky seniors approaching or on Medicare. Philosophy: **guide → educate → help.**
 
+## Voice and firm (October 2026)
+- **Firm voice everywhere:** "we", "our team", "our advisors", "Call us". Never "I", "me" or "Call Austin" in author
+  copy. Reader-voice buttons stay first person ("Get my free review"), and reviews and video transcripts stay verbatim.
+- **Partners:** Austin Tyler (Founder and Partner, licensed, KY DOI #1187780, NPN 20234188; credited as article author)
+  and Andrew Horn (Partner; photo `/assets/andrew-horn.jpg`). Do not state credentials for Andrew until he provides them.
+- **Phone:** (859) 785-8289, `tel:18597858289`, schema `+1-859-785-8289`.
+- Older article build scripts predate this; after rebuilding any page with them run `python3 docs/firm-voice-v3.py`
+  (idempotent), then `docs/build-hubs.py` and `docs/build-homepage-v3.py`.
+
 ## Design philosophy (follow this on every new page/section)
 - **Senior-first and intuitive.** Big tap targets, whole cards/tiles clickable (use `<a>`, not a `<div>` with a tiny link). Plain English, no jargon. Generous font sizes.
 - **Show, don't just label.** Topic tiles and section headers get a custom **illustrated SVG scene** in the brand palette (see `/articles/` topic cards and `mockups/learn-2/`), not bare text + pills. Illustrations are drawn inline in code (no image downloads — the build network blocks stock-photo CDNs). Real photos of Austin / Lexington / clients are welcome when provided and beat both stock and illustration for trust.

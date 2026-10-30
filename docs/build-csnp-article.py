@@ -162,7 +162,7 @@ BODY = r"""
       <p>I will pull every chronic condition plan sold in your county for 2027, check your doctors, your hospital and your prescriptions against each one, and tell you plainly whether any of them beats what you have. No cost, and if the answer is "keep your plan," that is what you will hear.</p>
       <div class="row">
         <a class="btn" href="/review/">Get a free plan comparison &rarr;</a>
-        <p class="callline">Or call me directly: <a href="tel:18596186443">(859) 618-6443</a></p>
+        <p class="callline">Or call me directly: <a href="tel:18597858289">(859) 785-8289</a></p>
       </div>
     </div>
 
