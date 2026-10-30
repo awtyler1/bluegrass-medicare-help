@@ -1,0 +1,219 @@
+#!/usr/bin/env python3
+"""Move the site from one agent's voice ("I", "Call Austin") to the firm's ("we", "our advisors"),
+and introduce partner Andrew Horn alongside Austin Tyler. Idempotent; run after any page rebuild.
+
+Kept as written on purpose: client reviews, video transcripts, quoted reader speech, FAQ questions,
+quiz and form choices (the reader's voice), consent text, and credential lines that name Austin as
+the licensed author of a guide. Usage: firm-voice-v3.py [report_path]"""
+import glob, json, re, sys
+sys.path.insert(0, "docs")
+from voice_lib import walk
+
+REPORT = sys.argv[1] if len(sys.argv) > 1 else None
+A_IMG = '<img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750">'
+DUO = ('<span class="duo"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750">'
+       '<img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="600" height="750"></span>')
+
+# ---- whole sentences the word-level rewrite would get wrong (applied to author text only)
+OVERRIDES = [
+    ("I'm a local, independent Kentucky agent.", "We're a local, independent Kentucky firm."),
+    ("I'm a local Kentucky agent, a real person you can verify and call any time.", "We're a local Kentucky firm, real people you can verify and call any time."),
+    ("I'm a local Kentucky agent, a real person you can verify and call.", "We're a local Kentucky firm, real people you can verify and call."),
+    ("I'm a local Kentucky agent, and I'm not paid to push one answer.", "We're a local Kentucky firm, and we're not paid to push one answer."),
+    ("I'm a local Kentucky agent, I'll walk you through", "We're a local Kentucky firm, and we'll walk you through"),
+    ("I'm a local Kentucky agent.", "We're a local Kentucky firm."),
+    ("I'm a local Lexington agent.", "We're a local Lexington firm."),
+    ("I'm a Medicare agent, not the Social Security Administration.", "we're Medicare advisors, not the Social Security Administration."),
+    ("I am a licensed agent with an office on Monarch Street in Lexington.", "We are licensed agents with an office on Monarch Street in Lexington."),
+    ("a local agent like me", "a local firm like ours"),
+    ("A local independent agent (that is me)", "A local independent agency (that is us)"),
+    ("I will be the same person who picks up the phone next year", "we will be the same people who pick up the phone next year"),
+    ("you'll get a real person, usually me.", "you'll get a real person, usually one of the partners."),
+    ("Austin is a licensed local agent who does this every day.", "Our licensed local advisors do this every day."),
+]
+# reader-voice lines that are not in quotation marks
+PROTECT = ["I did not know somebody like you existed", "I hang up and check with my person",
+           "I never give my Medicare number, or money, to anyone who contacts me first",
+           # calls to action written in the reader's voice
+           "Get my free review", "Book my review", "See my plan comparison", "Email me these dates",
+           "Get my no-cost quote", "Show my dates", "Send my free guide", "Find my dates",
+           # reader questions that run across a tag
+           "Is my dentist in the plan"]
+
+# ---- raw markup changes, every page
+GLOBAL = [
+    (re.compile(r'\bCall Austin\b'), "Call us"), (re.compile(r'\bcall Austin\b'), "call us"),
+    (re.compile(r'\bTalk to Austin\b'), "Talk to our team"), (re.compile(r'\bAsk Austin\b'), "Ask our team"),
+    (re.compile(r'\bOr call me directly:'), "Or call us directly:"),
+    (re.compile(r'(<div class="who">\s*)<img src="/assets/austin-tyler\.jpg" alt="Austin Tyler" width="600" height="750">(\s*<div><b>)A note from Austin(</b>)'),
+     r'\1' + DUO + r'\2A note from our advisors\3'),
+    (re.compile(r'<b>A note from Austin</b>'), "<b>A note from our advisors</b>"),
+    (re.compile(r'(<b>A note from our advisors</b><span>)Licensed Kentucky Medicare agent, Lexington(</span>)'), r'\1Tyler Insurance Group, Lexington\2'),
+    (re.compile(r'(</b></a>|</b>)Local Kentucky Medicare agent ·'), r'\1Partner, Tyler Insurance Group ·'),
+]
+
+# ---- page-specific markup
+PAGES = {
+ "turning-65/index.html": [
+  ('<img class="face" src="/assets/austin-tyler.jpg" alt="Austin Tyler, licensed Medicare advisor in Lexington, Kentucky" width="600" height="750">',
+   '<span class="faces"><img class="face" src="/assets/austin-tyler.jpg" alt="Austin Tyler, partner, Tyler Insurance Group" width="600" height="750"><img class="face" src="/assets/andrew-horn.jpg" alt="Andrew Horn, partner, Tyler Insurance Group" width="600" height="750"></span>'),
+  ('<p class="hi">Hi, I\'m Austin.</p>', '<p class="hi">Meet your advisors.</p>'),
+  ('<p class="promise">I do this for Kentucky families every day, right here in Lexington. When you call, you get me. No script, no call center, no pressure. Just a straight answer about your options.</p>',
+   '<p class="promise">We do this for Kentucky families every day, right here in Lexington. When you call, you get a partner of the firm. No script, no call center, no pressure. Just a straight answer about your options.</p>'),
+  ('<span class="sig">Austin Tyler</span>\n          <p class="sigsub">Licensed insurance agent · Lexington, KY</p>',
+   '<span class="sig">Austin Tyler &amp; Andrew Horn</span>\n          <p class="sigsub">Tyler Insurance Group · Lexington, KY</p>'),
+  ('Three fields is all I need. Austin calls you, not a call center.', 'Three fields is all we need. A licensed advisor calls you, not a call center.'),
+  ("Got it. You're on my list.", "Got it. You're on our list."),
+  ('<img src="/assets/austin-tyler.jpg" alt="Austin Tyler at his Lexington office" width="600" height="750">',
+   '<span class="faces"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="600" height="750"></span>'),
+  ('<h2>Yes, I am younger than you might expect. Here is why that works for you.</h2>', '<h2>Yes, we are younger than you might expect. Here is why that works for you.</h2>'),
+  ('<p>I answer my own phone. I am not retiring in three years, so I will still be your advisor when your plan changes in 2030 and 2035. My office is in Lexington, not a floor of headsets in another time zone. When you call, you get me.</p>\n        <span class="sig">Austin Tyler</span>',
+   '<p>We answer our own phone. We are not retiring in three years, so we will still be your advisors when your plan changes in 2030 and 2035. Our office is in Lexington, not a floor of headsets in another time zone. When you call, you get one of us.</p>\n        <span class="sig">Austin Tyler &amp; Andrew Horn</span>'),
+  ('</style>', '.fromaustin .faces{display:flex;flex:none;}\n.fromaustin .faces .face{width:104px;height:128px;}\n.fromaustin .faces .face+.face{margin-left:-26px;}\n.meet .faces{display:flex;gap:12px;flex:none;}\n.meet .faces img{width:150px;height:170px;}\n</style>'),
+ ],
+ "schedule/index.html": [
+  ('<img src="/assets/austin-tyler.jpg" alt="Austin Tyler, licensed Kentucky Medicare agent" width="600" height="750">\n            <div><b>Austin Tyler</b><span>Licensed Kentucky Medicare agent · Lexington</span>',
+   '<span class="duo"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="600" height="750"></span>\n            <div><b>Austin Tyler &amp; Andrew Horn</b><span>Partners, Tyler Insurance Group · Lexington</span>'),
+  ("Book a free 30-minute Medicare review with Austin Tyler, a licensed local agent in Lexington, Kentucky.", "Book a free 30-minute Medicare review with a licensed advisor at Tyler Insurance Group in Lexington, Kentucky."),
+  ("f.title='Book a free Medicare review with Austin Tyler';", "f.title='Book a free Medicare review with Tyler Insurance Group';"),
+  ('</style>', '.who .duo{display:flex;flex-shrink:0;}\n.who .duo img+img{margin-left:-18px;}\n</style>'),
+ ],
+ "quiz-65/index.html": [
+  ("Enter your info and Austin will email", "Enter your info and we'll email"),
+  ("have Austin follow up", "have an advisor follow up"),
+  ("Hi, it's Austin. If the quiz stirred up a question, or you'd rather just talk it through, call me directly.",
+   "Questions? If the quiz stirred something up, or you'd rather just talk it through, call us directly."),
+ ],
+ "supp-advantage/index.html": [
+  ("I&rsquo;ll email you a personal read", "We&rsquo;ll email you a personal read"),
+  ("Austin will send the complete side-by-side reasoning", "We'll send the complete side-by-side reasoning"),
+  ("have Austin follow up", "have an advisor follow up"),
+  ("Hi, it's Austin. This is a starting point", "This is a starting point"),
+  ("just call me. No script", "just call us. No script"),
+  ("so I can send your recommendation", "so we can send your recommendation"),
+ ],
+ "review/index.html": [
+  ("Austin will personally check your coverage", "a licensed advisor will personally check your coverage"),
+  ("So Austin can check the plans", "So we can check the plans"),
+  ("where should Austin ", "where should we "),
+  ("so Austin can share your review", "so we can share your review"),
+  ("so Austin can contact you", "so we can contact you"),
+ ],
+ "help/thankyou/index.html": [
+  ("Thank You: Austin Will Call You", "Thank You: We Will Call You"),
+  ("Austin will personally give you a call.", "a licensed advisor will personally give you a call."),
+  ("That's Austin: a real local Kentucky agent, not a call center.", "That's our office: real local Kentucky advisors, not a call center."),
+  ("leave a voicemail and he'll", "leave a voicemail and we'll"),
+ ],
+ "review/thankyou/index.html": [
+  ("Austin will call you personally.", "A licensed advisor will call you personally."),
+  ("Austin has your request and will personally put together", "We have your request and will personally put together"),
+  ("That's Austin: a real Kentucky agent, not a call center.", "That's our office: real Kentucky advisors, not a call center."),
+  ("leave a voicemail and he'll", "leave a voicemail and we'll"),
+ ],
+ "supp-advantage/thankyou/index.html": [("Austin's a call away", "we're a call away")],
+ "reviews/index.html": [
+  ("say about working with Austin.", "say about working with our team."),
+  ("from people Austin has helped.", "from people our team has helped."),
+  ("Worked with Austin?", "Worked with us?"),
+ ],
+ "medicare-enrollment-calculator/index.html": [
+  ('I check these dates for free.', 'We check these dates for free.'),
+  ('I am a licensed Kentucky agent with an office on Monarch Street in Lexington.', 'We are licensed Kentucky advisors with an office on Monarch Street in Lexington.'),
+  ('if you already have this handled I will tell you so', 'if you already have this handled we will tell you so'),
+  ('Call me. This is the situation calculators get wrong.', 'Call us. This is the situation calculators get wrong.'),
+  ('Ask HR, or call me and I will help you find out.', 'Ask HR, or call us and we will help you find out.'),
+  ('call me before you sign up for Part B', 'call us before you sign up for Part B'),
+ ],
+ "articles/medicare-annual-enrollment-period/index.html": [
+  ('I wrote a plain-English guide: <a href="/articles/what-is-a-medicare-advisor/">Local Broker vs. Captive Agent vs. Call Center: Who Should Help You?</a>',
+   'we wrote a plain-English guide: <a href="/articles/what-is-a-medicare-advisor/">What a Medicare Advisor Really Is (and Does)</a>'),
+ ],
+ "articles/what-is-a-medicare-advisor/index.html": [
+  ('I break down the three types in more detail in Local Broker vs. Captive Agent vs. Call Center.', 'We compare the three types side by side further down this page.'),
+ ],
+}
+
+def cap(word, start): return word[0].upper() + word[1:] if start else word
+
+def convert(seg, start):
+    def I(m):
+        w = m.group(0); pre = seg[:m.start()].rstrip()
+        s = (start and not pre) or (pre[-1:] in ".!?" if pre else start)
+        low = w.lower().replace("’", "'")
+        rep = {"i'm": "we're", "i've": "we've", "i'd": "we'd", "i'll": "we'll", "i am": "we are", "i was": "we were", "i": "we"}[low]
+        if "’" in w: rep = rep.replace("'", "’")
+        return cap(rep, s)
+    seg = re.sub(r"\b[Ll]et me\b", lambda m: "We'll" if m.group(0)[0] == "L" else "we'll", seg)
+    seg = re.sub(r"\bI(?:['’](?:m|ve|d|ll)\b| am\b| was\b|\b)(?![-‑]\d)", I, seg)
+    seg = re.sub(r"\bmyself\b", "ourselves", seg)
+    seg = re.sub(r"\bmine\b", "ours", seg)
+    seg = re.sub(r"\bMy\b", "Our", seg); seg = re.sub(r"\bmy\b", "our", seg)
+    seg = re.sub(r"\bme\b", "us", seg)
+    return seg
+
+QUOTE = re.compile(r'(“[^”]*”|&ldquo;.*?&rdquo;|"[^"]*"|&quot;.*?&quot;)', re.S)
+log = []
+
+def text_fn(text, ctx):
+    original = text
+    for a, b in OVERRIDES:
+        text = text.replace(a, b)
+    keep = {}
+    for i, ph in enumerate(PROTECT):
+        if ph in text: k = f"\x00{i}\x00"; text = text.replace(ph, k); keep[k] = ph
+    parts = QUOTE.split(text); out = []; start = ctx["start"]
+    for part in parts:
+        if QUOTE.fullmatch(part):
+            inner = re.sub(r'(&rdquo;|&quot;|[”"])$', '', part).rstrip()
+            out.append(part); start = inner[-1:] in ".!?"; continue
+        sents = re.split(r'(?<=[.!?])(\s+)', part); buf = []
+        for j, s in enumerate(sents):
+            if j % 2 == 1: buf.append(s); continue
+            if s.rstrip().endswith("?"):
+                buf.append(s)
+            else:
+                buf.append(convert(s, start if j == 0 else True))
+            start = s.rstrip()[-1:] in ".!?" if s.strip() else start
+        out.append("".join(buf))
+    text = "".join(out)
+    for k, ph in keep.items(): text = text.replace(k, ph)
+    if text.strip(): ctx["start"] = text.rstrip()[-1:] in ".!?:"
+    if text != original: log.append((original.strip(), text.strip()))
+    return text
+
+def fix_faq_schema(h):
+    def fix(m):
+        try: d = json.loads(m.group(1))
+        except Exception: return m.group(0)
+        changed = False
+        for n in (d.get("@graph", [d])):
+            if n.get("@type") == "FAQPage":
+                for q in n.get("mainEntity", []):
+                    a = q.get("acceptedAnswer", {}); t = a.get("text", "")
+                    nt = text_fn(t, {"start": True})
+                    if nt != t: a["text"] = nt; changed = True
+        if not changed: return m.group(0)
+        return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False, separators=(",", ":")) + "</script>"
+    return re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, h, flags=re.S)
+
+SKIP_PAGES = {"index.html", "about/index.html"}   # rebuilt / rewritten separately
+changed = 0
+for p in sorted(glob.glob("**/index.html", recursive=True)):
+    if p.startswith(("mockups/", "dist/")) or p in SKIP_PAGES: continue
+    h = open(p, encoding="utf-8").read(); o = h
+    for a, b in PAGES.get(p, []):
+        if a == "</style>":
+            if b.split("\n")[0] not in h: h = h.replace(a, b, 1)
+        elif a in h: h = h.replace(a, b)
+    for rx, b in GLOBAL: h = rx.sub(b, h)
+    head_end = h.find("<body"); before = len(log)
+    h = h[:head_end] + walk(h[head_end:], text_fn)
+    h = fix_faq_schema(h)
+    for i in range(before, len(log)): log[i] = (p,) + log[i]
+    if h != o:
+        open(p, "w", encoding="utf-8").write(h); changed += 1
+print("pages changed:", changed, "| text nodes rewritten:", len(log))
+if REPORT:
+    with open(REPORT, "w", encoding="utf-8") as f:
+        for p, a, b in log: f.write(f"## {p}\n- {a[:400]}\n+ {b[:400]}\n")

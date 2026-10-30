@@ -21,7 +21,7 @@ GOLD, GOLD_D, GOLD_T = "#dbcf86", "#b0a154", "#f6f4ea"
 GRAY, GRAY_D = "#7e8082", "#5c5e60"
 INK, MUTE, LINE, WHITE = "#2a2620", "#5f594f", "#e4e0d4", "#ffffff"
 
-PHONE = "(859) 618-6443"
+PHONE = "(859) 785-8289"
 UPDATED = "August 2026"
 
 DISCLAIMER = (

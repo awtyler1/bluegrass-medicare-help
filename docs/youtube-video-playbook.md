@@ -128,7 +128,7 @@ CHAPTERS
 
 Want someone to check your own doctors and prescriptions against both? Book a free
 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=ma-vs-medigap
-Or call the office at (859) 618-6443.
+Or call the office at (859) 785-8289.
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
 surrounding Kentucky counties.
@@ -289,7 +289,7 @@ acts as an advocate between you and the insurance company.
 
 Other free Medicare help in Lexington, including the state's SHIP counselors: https://www.bluegrassmedicarehelp.com/articles/free-medicare-help-lexington-ky/?utm_source=youtube&utm_medium=video&utm_campaign=advisor-cost
 
-Or call the office at (859) 618-6443.
+Or call the office at (859) 785-8289.
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
 surrounding Kentucky counties.
@@ -442,7 +442,7 @@ CHAPTERS
 
 The deeper dive on Advantage vs. Supplement: https://www.bluegrassmedicarehelp.com/articles/medicare-advantage-vs-medigap/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
-Want someone to look at your own situation? Call the office at (859) 618-6443, or book
+Want someone to look at your own situation? Call the office at (859) 785-8289, or book
 a free 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=turning-65
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
@@ -535,7 +535,7 @@ CHAPTERS
 1:45 Come in and meet us
 
 Book a free 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=why-an-advisor
-Or call Austin directly at (859) 618-6443.
+Or call Austin directly at (859) 785-8289.
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
 surrounding Kentucky counties.
@@ -650,7 +650,7 @@ CHAPTERS
 1:28 Call or visit us
 
 Book a free 30-minute review: https://www.bluegrassmedicarehelp.com/schedule/?utm_source=youtube&utm_medium=video&utm_campaign=anoc
-Or call the office at (859) 618-6443.
+Or call the office at (859) 785-8289.
 
 Serving Lexington, Nicholasville, Georgetown, Richmond, Winchester and the
 surrounding Kentucky counties.

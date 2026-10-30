@@ -219,3 +219,7 @@ body .foot{padding-bottom:max(36px,env(safe-area-inset-bottom));}
 @media(prefers-reduced-motion:reduce){
   .vidbtn img{transition:none;} .vidbtn:hover img,.vidbtn:focus-visible img{transform:none;}
 }
+
+/* ---------- 2026 firm voice: two advisors in the article note boxes ---------- */
+.note .who .duo{display:flex;flex-shrink:0;}
+.note .who .duo img+img{margin-left:-16px;}

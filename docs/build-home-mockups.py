@@ -6,7 +6,7 @@ import os, sys
 
 ART = sys.argv[1] if len(sys.argv) > 1 else "/tmp/home-mockups"
 os.makedirs(ART, exist_ok=True)
-PHONE_TXT = "(859) 618-6443"; TEL = "tel:18596186443"
+PHONE_TXT = "(859) 785-8289"; TEL = "tel:18597858289"
 
 BASE_CSS = """
 :root{--cream:#f4efe7;--cream2:#faf6ef;--warm:#efe6d6;--ink:#2a2620;--dark:#1f1d1a;--coral:#d05528;--coral-d:#b3431d;--mute:#5f594f;--faint:#938c80;--line:#e2d9c8;--green:#3a7d52;--green-d:#2f6844;--white:#fff;--serif:'Fraunces',Georgia,serif;--sans:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;}

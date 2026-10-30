@@ -220,7 +220,7 @@ BODY = r"""
       <p>Whether you got the $90 or not, the Annual Enrollment Period is the thing that matters this month. Bring your Annual Notice of Change and I will go through next year's numbers with you, no charge, and tell you plainly whether your plan still fits.</p>
       <div class="row">
         <a class="btn" href="/review/">Get a free plan review &rarr;</a>
-        <p class="callline">Or call me directly: <a href="tel:18596186443">(859) 618-6443</a></p>
+        <p class="callline">Or call me directly: <a href="tel:18597858289">(859) 785-8289</a></p>
       </div>
     </div>
 

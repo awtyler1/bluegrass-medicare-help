@@ -171,13 +171,13 @@
                  "PRODID:-//Bluegrass Medicare Help//Enrollment Window//EN", "CALSCALE:GREGORIAN"];
     lines.push(ev("iep-open", r.iep.start, "Medicare enrollment window opens",
       "Your 7-month Initial Enrollment Period starts today. Signing up this month means coverage starts " +
-      fmtDate(r.onTimeCoverage) + ". Questions: Bluegrass Medicare Help, (859) 618-6443."));
+      fmtDate(r.onTimeCoverage) + ". Questions: Bluegrass Medicare Help, (859) 785-8289."));
     lines.push(ev("iep-best", r.bestBy, "Last day to sign up for on-time Medicare coverage",
       "Sign up by today so Part A and Part B start " + fmtDate(r.onTimeCoverage) +
-      ". Bluegrass Medicare Help, (859) 618-6443."));
+      ". Bluegrass Medicare Help, (859) 785-8289."));
     lines.push(ev("iep-close", r.iep.end, "Medicare enrollment window closes",
       "Your Initial Enrollment Period ends today. After this, late penalties can apply. " +
-      "Bluegrass Medicare Help, (859) 618-6443."));
+      "Bluegrass Medicare Help, (859) 785-8289."));
     lines.push("END:VCALENDAR");
     return lines.join("\r\n") + "\r\n";
   }

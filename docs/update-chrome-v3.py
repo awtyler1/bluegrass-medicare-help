@@ -9,7 +9,7 @@ NAVLINKS = ('<div class="navlinks" id="navlinks">\n      <a href="/turning-65/">
             '      <a href="/kentucky/">Your County</a>\n      <a href="/about/">About</a>\n    </div>')
 STRIP_RE = re.compile(r'<span>(?:📍|&#128205;|\\U0001F4CD) <strong>Lexington, Kentucky</strong> (?:&nbsp;)?(?:·|&middot;)(?:&nbsp;)? Serving Fayette &amp; surrounding counties</span>')
 STRIP = '<span><strong>Free Medicare help for all of Kentucky</strong> &nbsp;&middot;&nbsp; Office in Lexington</span>'
-CALL_RE = re.compile(r'(<a class="navcta" href="tel:18596186443">\s*<svg.*?</svg>)\s*Call\s*</a>', re.S)
+CALL_RE = re.compile(r'(<a class="navcta" href="tel:18597858289">\s*<svg.*?</svg>)\s*Call\s*</a>', re.S)
 changed = 0
 for p in glob.glob("**/index.html", recursive=True):
     if p.startswith("mockups/") or p == "index.html":
@@ -23,7 +23,7 @@ for p in glob.glob("**/index.html", recursive=True):
             new = new.replace(f'<a href="{cur.group(1)}">', f'<a href="{cur.group(1)}" aria-current="page">', 1)
         h = h[:m.start()] + new + h[m.end():]
     h = STRIP_RE.sub(STRIP, h)
-    h = CALL_RE.sub(r'\1Call<span class="nc-num">&nbsp;(859) 618-6443</span></a>', h)
+    h = CALL_RE.sub(r'\1Call<span class="nc-num">&nbsp;(859) 785-8289</span></a>', h)
     if h != o:
         open(p, "w", encoding="utf-8").write(h); changed += 1
 print("pages updated:", changed)
