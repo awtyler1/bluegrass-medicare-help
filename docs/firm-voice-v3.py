@@ -181,7 +181,7 @@ def fix_faq_schema(h):
         return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False, separators=(",", ":")) + "</script>"
     return re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, h, flags=re.S)
 
-SKIP_PAGES = {"index.html", "about/index.html"}   # rebuilt / rewritten separately
+SKIP_PAGES = {"index.html", "about/index.html", "plancheck/index.html", "plancheck/thankyou/index.html"}  # campaign pages are managed separately   # rebuilt / rewritten separately
 changed = 0
 for p in sorted(glob.glob("**/index.html", recursive=True)):
     if p.startswith(("mockups/", "dist/")) or p in SKIP_PAGES: continue
