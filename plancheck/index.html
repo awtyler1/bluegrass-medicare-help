@@ -96,6 +96,10 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
 .ty h2{font-family:var(--head);font-weight:700;font-size:25px;margin:34px 0 6px;}
 .ty p.copy{font-size:19px;color:var(--mute);}
 .note{font-size:16px;color:var(--mute);margin-top:10px;}
+.ebox{background:var(--tint);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:18px;text-align:left;}
+.ebox h3{font-family:var(--head);font-weight:700;font-size:20px;margin-bottom:8px;}
+.ebox .btn{margin-top:10px;font-size:19px;min-height:54px;padding:13px;}
+.eok{font-weight:700;color:#2f6b45;font-size:18px;}
 </style>
 
 <link rel="canonical" href="https://www.bluegrassmedicarehelp.com/plancheck/">
@@ -186,7 +190,7 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
       utm_source:q('utm_source'), utm_medium:q('utm_medium'), utm_campaign:q('utm_campaign'), utm_content:q('utm_content'), fbclid:q('fbclid')};
     var done=false;
     function finish(){ if(done) return; done=true;
-      try{ sessionStorage.setItem('pc_name',name); }catch(x){}
+      try{ sessionStorage.setItem('pc_name',name); sessionStorage.setItem('pc_phone','+1'+digits); }catch(x){}
       location.href='/plancheck/thankyou/'; }
     function backup(){
       return fetch(BACKUP,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},

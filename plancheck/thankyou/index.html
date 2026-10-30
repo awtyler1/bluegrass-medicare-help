@@ -96,6 +96,10 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
 .ty h2{font-family:var(--head);font-weight:700;font-size:25px;margin:34px 0 6px;}
 .ty p.copy{font-size:19px;color:var(--mute);}
 .note{font-size:16px;color:var(--mute);margin-top:10px;}
+.ebox{background:var(--tint);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:18px;text-align:left;}
+.ebox h3{font-family:var(--head);font-weight:700;font-size:20px;margin-bottom:8px;}
+.ebox .btn{margin-top:10px;font-size:19px;min-height:54px;padding:13px;}
+.eok{font-weight:700;color:#2f6b45;font-size:18px;}
 </style>
 
 <link rel="canonical" href="https://www.bluegrassmedicarehelp.com/plancheck/thankyou/">
@@ -124,6 +128,13 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
   <h1 id="tyh">Got it. Your guide is on its way.</h1>
   <p class="sub">Look for a text from our office in the next minute.</p>
   <a class="btn" href="https://assets.cdn.filesafe.space/Sk1fSSIS0T4wBpJiADrK/media/6ae507ae64f4028be3ce70ae.pdf" data-track="guide">Open the guide now<small>Free PDF. Opens right on your phone.</small></a>
+  <form class="ebox" id="eform" novalidate>
+    <h3>Rather read it on your computer or print it?</h3>
+    <label for="email">Email address</label>
+    <input class="inp" id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="name@example.com">
+    <div class="err" id="eerr" role="alert"></div>
+    <button class="btn alt" id="ego" type="submit">Email me a copy</button>
+  </form>
 
   <h2>Rather we just check it for you?</h2>
   <p class="copy">We'll lay your plan options out, compare them together line by line, and let the numbers do the talking.</p>
@@ -151,6 +162,26 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
   try{ var nm=sessionStorage.getItem('pc_name'); if(nm){ document.getElementById('tyh').textContent='Got it, '+nm+'. Your guide is on its way.'; } }catch(e){}
   try{ if(window.fbq) fbq('track','Lead',{content_name:'2027 Plan Check Guide'}); }catch(e){}
   try{ if(window.gtag) gtag('event','generate_lead',{lead_source:'plancheck'}); }catch(e){}
+  var EMAIL_HOOK = "PASTE_GHL_EMAIL_WEBHOOK_URL", BACKUP = "https://formsubmit.co/ajax/austin@tylerinsurancegroup.com";
+  var ef=document.getElementById('eform'), em=document.getElementById('email'), ee=document.getElementById('eerr'), eg=document.getElementById('ego');
+  ef.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=em.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){ ee.textContent='Please check that email address.'; em.classList.add('bad'); em.focus(); return; }
+    ee.textContent=''; em.classList.remove('bad'); eg.disabled=true;
+    var ph='', nm=''; try{ ph=sessionStorage.getItem('pc_phone')||''; nm=sessionStorage.getItem('pc_name')||''; }catch(x){}
+    var payload={email:v, phone:ph, first_name:nm, source:'Plan Check Lander', step:'email copy', page:location.href};
+    function ok(){ ef.innerHTML='<p class="eok">Sent. Check your inbox for the guide.</p>';
+      try{ if(window.fbq) fbq('trackCustom','PlanCheck_email'); }catch(x){}
+      try{ if(window.gtag) gtag('event','plancheck_email'); }catch(x){} }
+    function backup(){ return fetch(BACKUP,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(Object.assign({},payload,{_subject:'Plan Check email copy (backup)',_template:'table',_captcha:'false'}))}); }
+    if(EMAIL_HOOK.indexOf('http')===0){
+      fetch(EMAIL_HOOK,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .then(function(r){ if(!r.ok) throw new Error(r.status); ok(); })
+        .catch(function(){ backup().then(ok,ok); });
+    } else { backup().then(ok,ok); }
+  });
   document.querySelectorAll('[data-track]').forEach(function(a){
     a.addEventListener('click',function(){
       var t=a.getAttribute('data-track');
