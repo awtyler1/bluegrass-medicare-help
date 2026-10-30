@@ -240,7 +240,7 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 <section class="band" aria-labelledby="month-h"><div class="wrap">
   <h2 id="month-h">This season in Medicare</h2><p class="lead">What changed, what is due, and what you can ignore.</p>
   <div class="grid c3">
-    <a class="card stack" href="/articles/annual-medicare-review-aep/"><span class="chipdate" id="aepchip">Ends December 7</span><span class="ch">Annual Enrollment: October 15 to December 7</span><span class="cp">How to read your Annual Notice of Change and decide whether to keep your plan.</span><span class="go">Read &rarr;</span></a>
+    <a class="card stack" href="/articles/medicare-annual-enrollment-period/"><span class="chipdate" id="aepchip">Ends December 7</span><span class="ch">Annual Enrollment: October 15 to December 7</span><span class="cp">How to read your Annual Notice of Change and decide whether to keep your plan.</span><span class="go">Read &rarr;</span></a>
     <a class="card stack" href="/articles/90-dollar-medicare-payment-kentucky/"><span class="chipdate">Updated October 8</span><span class="ch">The $90 Medicare payment</span><span class="cp">Who got it, why Advantage members didn't, and the scam calls to expect.</span><span class="go">Read &rarr;</span></a>
     <a class="card stack" href="/articles/medicare-changes-2027-kentucky/"><span class="chipdate">Plan year 2027</span><span class="ch">What changes in Kentucky for 2027</span><span class="cp">Part B premium, the $700 drug deductible, the $2,400 cap, and plans leaving.</span><span class="go">Read &rarr;</span></a>
   </div>

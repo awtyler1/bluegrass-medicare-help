@@ -67,3 +67,19 @@ ones are running ads cannot be seen from the code.
 
 Recommendation: retire any lander with no ad spend in the last 60 days (with its thank-you page),
 redirecting each to `/review/` so old ad links still land somewhere useful.
+
+## 6. Outcome (30 October 2026, approved by Austin)
+
+- All eight merges done. Sections and questions moved: emergencies and Lexington hospitals into the
+  Baptist article; ANOC, 4-point check and Advantage Open Enrollment into the AEP article (duplicate
+  ANOC video dropped); the side-by-side table, three questions and a new visible FAQ into the advisor
+  article; the full free-help directory with phone numbers into the Lexington page; the county
+  comparison steps and three questions into the Kentucky page; the six-step roadmap onto the
+  Turning 65 topic page, which also takes the Social Security article. 2026 changes redirects to 2027.
+- All ten paid landing pages and their thank-you pages removed (Austin is not running them), plus
+  the photo only they used. Each address redirects to `/review/`. Three article buttons that pointed
+  at `/talk-to-austin/` now point at `/review/`.
+- 58 permanent redirects in `vercel.json`. Pages: 95 to 67. Articles: 41 to 34. Sitemap: 59 URLs.
+- Topic pages are now generated from the Learning Center (`docs/build-hubs.py`).
+- `/schedule/` now embeds the Tyler Insurance Group booking calendar
+  (link.tylerinsurancegroup.com group widget) in place of Calendly.

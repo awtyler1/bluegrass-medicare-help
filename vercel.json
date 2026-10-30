@@ -10,6 +10,286 @@
       "source": "/articles/medicare-in-lexington-ky/",
       "destination": "/medicare-lexington-ky/",
       "permanent": true
+    },
+    {
+      "source": "/done-for-you",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/done-for-you/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/done-for-you/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/done-for-you/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/free-advisor",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/free-advisor/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/free-advisor/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/free-advisor/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctor",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctor/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctor/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctor/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctors",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctors/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctors/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/keep-your-doctors/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/local-medicare-help",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/local-medicare-help/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/local-medicare-help/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/local-medicare-help/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-mail",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-mail/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-mail/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-mail/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-window",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-window/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-window/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/medicare-window/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/two-lists",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/two-lists/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/two-lists/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/two-lists/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/find-your-plan",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/find-your-plan/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/find-your-plan/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/find-your-plan/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/talk-to-austin",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/talk-to-austin/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/talk-to-austin/thankyou",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/talk-to-austin/thankyou/",
+      "destination": "/review/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/lexington-hospitals-medicare-advantage-networks",
+      "destination": "/articles/does-baptist-health-take-medicare-advantage/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/lexington-hospitals-medicare-advantage-networks/",
+      "destination": "/articles/does-baptist-health-take-medicare-advantage/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/annual-medicare-review-aep",
+      "destination": "/articles/medicare-annual-enrollment-period/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/annual-medicare-review-aep/",
+      "destination": "/articles/medicare-annual-enrollment-period/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/medicare-changes-2026-kentucky",
+      "destination": "/articles/medicare-changes-2027-kentucky/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/medicare-changes-2026-kentucky/",
+      "destination": "/articles/medicare-changes-2027-kentucky/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/turning-65-medicare-roadmap",
+      "destination": "/articles/turning-65/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/turning-65-medicare-roadmap/",
+      "destination": "/articles/turning-65/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/free-medicare-help-lexington-ky",
+      "destination": "/medicare-lexington-ky/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/free-medicare-help-lexington-ky/",
+      "destination": "/medicare-lexington-ky/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/local-broker-vs-captive-agent-vs-call-center",
+      "destination": "/articles/what-is-a-medicare-advisor/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/local-broker-vs-captive-agent-vs-call-center/",
+      "destination": "/articles/what-is-a-medicare-advisor/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/medicare-advantage-central-kentucky-counties",
+      "destination": "/kentucky/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/medicare-advantage-central-kentucky-counties/",
+      "destination": "/kentucky/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/social-security",
+      "destination": "/articles/turning-65/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/social-security/",
+      "destination": "/articles/turning-65/",
+      "permanent": true
     }
   ]
 }
