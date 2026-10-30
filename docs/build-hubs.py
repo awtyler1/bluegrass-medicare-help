@@ -6,8 +6,7 @@ from datetime import date
 
 SITE = "https://www.bluegrassmedicarehelp.com"
 HUBS = {"basics": ("basics", "Medicare Basics"), "coverage": ("coverage", "Coverage Choices"),
-        "costs": ("costs", "Costs &amp; Savings"), "on-medicare": ("onmedicare", "Already on Medicare"),
-        "turning-65": ("turning65", "Turning 65")}
+        "costs": ("costs", "Costs &amp; Savings"), "on-medicare": ("onmedicare", "Already on Medicare")}
 lc = open("articles/index.html", encoding="utf-8").read()
 rows = re.findall(r'<a class="lcrow" data-cat="([^"]+)" data-date="([^"]+)" href="([^"]+)">.*?<h2 class="lcrow-title">(.*?)</h2>\s*<p class="lcrow-dek">(.*?)</p>', lc, re.S)
 plain = lambda s: re.sub(r"\s+", " ", H.unescape(re.sub(r"<[^>]+>", "", s))).strip()
@@ -37,3 +36,12 @@ for slug, (cat, tag) in HUBS.items():
     h = re.sub(r'<script type="application/ld\+json">(.*?)</script>', fix, h, flags=re.S)
     open(p, "w", encoding="utf-8").write(h)
     print(f"{slug:12s} {len(mine)} guides")
+
+# /turning-65/ (audience page, built by build-turning65-v3.py) carries its guide list between markers
+t65 = sorted([r for r in rows if "turning65" in r[0].split()], key=lambda r: r[1], reverse=True)
+items = "".join(f'<a href="{u}"><div><b>{t.strip()}</b><small>{plain(d)}</small></div><span class="arrow">&rarr;</span></a>'
+                for c, dt, u, t, d in t65)
+p = "turning-65/index.html"; h = open(p, encoding="utf-8").read()
+h = re.sub(r"<!--T65-GUIDES-->.*?<!--/T65-GUIDES-->", "<!--T65-GUIDES--><div class=\"glist\">" + items + "</div><!--/T65-GUIDES-->", h, flags=re.S)
+open(p, "w", encoding="utf-8").write(h)
+print(f"turning-65   {len(t65)} guides (audience page)")

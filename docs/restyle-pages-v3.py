@@ -21,7 +21,7 @@ MAP = {
     "--serif": "'Figtree','Source Sans 3',-apple-system,sans-serif",
     "--hand": "'Source Sans 3',-apple-system,sans-serif",
 }
-SKIP = ("index.html",)
+SKIP = ("index.html", "turning-65/index.html", "plancheck/index.html", "plancheck/thankyou/index.html")   # generated pages carry the 2026 tokens already
 changed = []
 for p in sorted(glob.glob("**/index.html", recursive=True)):
     if p.startswith(("mockups/", "dist/")) or p in SKIP:
