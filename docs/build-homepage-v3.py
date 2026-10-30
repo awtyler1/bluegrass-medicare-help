@@ -51,9 +51,8 @@ INDEX += [
   {"t": "Medicare in Nicholasville and Jessamine County", "d": "Plans, hospitals and local help in Nicholasville.", "u": "/medicare-nicholasville-ky/"},
   {"t": "Medicare in Georgetown and Scott County", "d": "Plans, hospitals and local help in Georgetown.", "u": "/medicare-georgetown-ky/"},
   {"t": "Medicare in Winchester and Clark County", "d": "Plans, hospitals and local help in Winchester.", "u": "/medicare-winchester-ky/"},
-  {"t": "Free Medicare plan review", "d": "Have our advisors check your current plan against what is available next year.", "u": "/review/"},
-  {"t": "Schedule a call with our team", "d": "Pick a time that suits you for a free, no-pressure call.", "u": "/schedule/"},
-  {"t": "Turning 65 in Kentucky", "d": "Your enrollment window, your first decisions and a free quote.", "u": "/turning-65/"},
+  {"t": "Book a free review", "d": "Pick a time to talk with a licensed advisor, or have us call you. Free, no pressure.", "u": "/schedule/"},
+  {"t": "Turning 65 in Kentucky", "d": "Your enrollment window, your first decisions and the guides to read, in order.", "u": "/turning-65/"},
 ]
 NGUIDES = len(rows)
 
@@ -219,7 +218,7 @@ NAV = ('<nav class="nav">\n  <div class="wrap">\n'
  '      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>\n'
  '    </button>\n  </div>\n</nav>')
 
-t65 = "/articles/turning-65/" if os.path.exists("articles/turning-65/index.html") else "/turning-65/"
+t65 = "/turning-65/"
 BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 {ustrip()}
 
@@ -300,7 +299,7 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 
 <section class="final" aria-labelledby="final-h"><div class="wrap"><h2 id="final-h">Still have a question?</h2><p>Call and you get a licensed advisor, not a queue. If reading is all you need today, that's fine too.</p>
   <a class="pill" href="{TEL}">{PH}Call us</a><span class="num">{PN}</span>
-  <p style="margin:16px auto 0;font-size:17px;">Prefer a set time? <a class="u" href="/schedule/">Schedule a call</a> or <a class="u" href="/review/">ask for a free plan review</a>.</p></div></section>
+  <p style="margin:16px auto 0;font-size:17px;">Prefer a set time? <a class="u" href="/schedule/">Book a free review</a>.</p></div></section>
 </main>
 
 <div class="sticky"><a href="{TEL}">{PH}Call us {PN}</a></div>
@@ -376,5 +375,8 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel
 page = (head_top + f"<title>{TITLE}</title>\n<meta name=\"description\" content=\"{DESC}\">\n{FONTS}\n"
         '<link rel="stylesheet" href="/assets/site.css">\n<style>' + CSS + "</style>\n" + tail + "</head>\n<body>\n" + BODY + "</body>\n</html>\n")
 page = page.replace('<meta name="theme-color" content="#1f1d1a">', '<meta name="theme-color" content="#cf461e">')
+import sys as _s; _s.path.insert(0, "docs")
+from chrome_v4 import apply as _chrome
+page = _chrome(page)
 open(SRC, "w", encoding="utf-8").write(page)
 print("wrote index.html", len(page), "bytes;", NGUIDES, "guides;", len(INDEX), "search entries; counts", count)

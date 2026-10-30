@@ -149,6 +149,25 @@ a{color:var(--coral-d);text-decoration:none;}
 @media(prefers-reduced-motion:reduce){.scvidbtn img{transition:none;}}
 .who .duo{display:flex;flex-shrink:0;}
 .who .duo img+img{margin-left:-18px;}
+
+/* call-back option (replaces the old review form) */
+.cback{margin-top:14px;border:1px solid var(--line);border-radius:14px;background:var(--white);}
+.cback summary{cursor:pointer;list-style:none;padding:14px 16px;font-weight:700;color:var(--coral-d);min-height:48px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.cback summary::-webkit-details-marker{display:none;}
+.cback summary::after{content:"+";font-size:22px;}
+.cback[open] summary::after{content:"\2212";}
+#cbform{display:grid;gap:6px;padding:0 16px 16px;}
+#cbform label{font-weight:700;font-size:15px;color:var(--ink);margin-top:6px;}
+#cbform input:not([type=checkbox]),#cbform select{font:inherit;font-size:17px;min-height:50px;padding:0 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--cream2);color:var(--ink);}
+#cbform .cbconsent{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:12.5px;line-height:1.45;color:var(--mute);margin-top:10px;}
+#cbform .cbconsent input{margin-top:3px;width:20px;height:20px;flex-shrink:0;}
+.cbbtn{margin-top:10px;min-height:54px;border:0;border-radius:999px;background:var(--coral);color:#fff;font:inherit;font-weight:700;font-size:18px;cursor:pointer;}
+.cbbtn:hover{background:var(--coral-d);} .cbbtn[disabled]{opacity:.7;}
+.cberr{color:#b3261e;font-size:15px;font-weight:600;}
+.cbdone{padding:0 16px 16px;font-weight:700;color:var(--green-d,#2f6844);}
+
+/* phones: the calendar (the page's one job) comes first; call and call-back options follow it */
+@media(max-width:1240px){ .twin .uright{order:-1;border-top:none;border-bottom:1px solid var(--line);} }
 </style>
 </head>
 <body>
@@ -171,8 +190,8 @@ a{color:var(--coral-d);text-decoration:none;}
       <a href="/kentucky/">Your County</a>
       <a href="/about/">About</a>
     </div>
-    <a class="navbook" href="/schedule/" aria-current="page"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span class="nb-full">Schedule</span><span class="nb-short">Book</span></a>
-    <a class="navcta" href="tel:18597858289"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call<span class="nc-num">&nbsp;(859) 785-8289</span></a>
+    <a class="navcta" href="tel:18597858289" aria-label="Call (859) 785-8289"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nc-lbl">Call</span><span class="nc-num">(859) 785-8289</span></a>
+    <a class="navbook" href="/schedule/" aria-current="page">Book a free review</a>
     <button class="navtog" id="navtog" aria-label="Open menu" aria-expanded="false" aria-controls="navlinks">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
@@ -208,6 +227,20 @@ a{color:var(--coral-d);text-decoration:none;}
             <li><b>One person to call, all year</b><span>Not a call center. A local agent in Lexington who answers the phone in March when a claim goes sideways.</span></li>
           </ul>
           <p class="pfoot"><b>Rather just call?</b> Dial <a href="tel:18597858289">(859) 785-8289</a> and you'll get a real person, usually one of the partners.</p>
+          <details class="cback" id="cback">
+            <summary>Rather we call you? Leave your number</summary>
+            <form id="cbform" novalidate>
+              <label for="cbname">First name</label><input id="cbname" autocomplete="given-name" required>
+              <label for="cbphone">Phone</label><input id="cbphone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(859) 555-1234" required>
+              <label for="cbtime">Best time to call</label>
+              <select id="cbtime"><option>Anytime</option><option>Morning</option><option>Afternoon</option><option>Evening</option></select>
+              <input id="cbco" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
+              <label class="cbconsent"><input type="checkbox" id="cbok"> <span>This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.</span></label>
+              <p class="cberr" id="cberr" role="alert" hidden></p>
+              <button type="submit" class="cbbtn" id="cbbtn">Call me back</button>
+            </form>
+            <p class="cbdone" id="cbdone" hidden>Thank you. A licensed advisor will call you, usually within one business day.</p>
+          </details>
         </div>
         <div class="uright">
           <div class="calwrap" id="calwrap">
@@ -267,7 +300,7 @@ a{color:var(--coral-d);text-decoration:none;}
 <nav class="fnav" aria-label="Footer">
   <div class="wrap">
     <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" width="806" height="220" onerror="this.closest('.fnav-logo').style.display='none'"></a>
-    <div class="fnav-links"><a href="/">Home</a><a href="/turning-65/">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/videos/">Videos</a><a href="/glossary/">Glossary</a><a href="/kentucky/">Your County</a><a href="/reviews/">Reviews</a>Schedule<a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/review/">Free Review</a><a href="/about/">About</a></div>
+    <div class="fnav-links"><a href="/articles/">Learning Center</a><a href="/turning-65/">Turning 65</a><a href="/kentucky/">Your County</a><a href="/videos/">Videos</a><a href="/glossary/">Glossary</a><a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/reviews/">Reviews</a><a href="/about/">About</a><a href="/schedule/">Book a free review</a></div>
     <a class="fcall" href="tel:18597858289"><svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg> Call (859) 785-8289</a>
   </div>
 </nav>
@@ -339,6 +372,32 @@ a{color:var(--coral-d);text-decoration:none;}
     d.appendChild(f);
     b.parentNode.replaceChild(d, b);
     if(typeof gtag==='function'){gtag('event','video_play',{video_title:'What does it cost to work with a Medicare advisor'});}
+  });
+})();
+</script>
+<script>
+/* call-back request: same email delivery and consent wording the old review form used */
+(function(){
+  var f=document.getElementById('cbform'); if(!f) return;
+  var CONSENT_TEXT='This is a solicitation for insurance. By providing my name and contact information, I consent to receive calls, text messages, and/or emails from tylerinsurancegroup.com, including contact by a licensed sales agent, to discuss Medicare insurance plans, including Medicare Advantage, Prescription Drug Plans, and Medicare Supplement Insurance. I understand that I may be contacted using the contact method(s) I have provided (phone call, text message, and/or email), which may include the use of an automatic telephone dialing system and/or prerecorded voice messages. Msg & data rates may apply. My consent is not required as a condition of enrollment or the purchase of any goods or services. I may revoke consent at any time by replying STOP to text messages or contacting tylerinsurancegroup.com directly. Reply HELP for assistance.';
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var err=document.getElementById('cberr'), n=document.getElementById('cbname').value.trim(), ph=document.getElementById('cbphone').value.trim();
+    function bad(m){ err.textContent=m; err.hidden=false; }
+    if(document.getElementById('cbco').value){ done(); return; }
+    if(!n) return bad('Please enter your first name.');
+    if(ph.replace(/\D/g,'').length<10) return bad('Please enter a 10-digit phone number.');
+    if(!document.getElementById('cbok').checked) return bad('Please check the consent box so we can call you.');
+    err.hidden=true; var b=document.getElementById('cbbtn'); b.disabled=true; b.textContent='Sending…';
+    var ts=new Date().toISOString();
+    fetch('https://formsubmit.co/ajax/austin@tylerinsurancegroup.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({"Name":n,"Phone":ph,"Best time to call":document.getElementById('cbtime').value,
+        "Consent":'Yes, '+ts,"Consent text":CONSENT_TEXT,"Source":'Call-back request (schedule page)',
+        _subject:'Call-back request: '+n,_template:'table',_captcha:'false'})})
+      .then(done).catch(done);
+    function done(){ if(typeof fbq==='function'){fbq('track','Lead',{content_name:'Call-back request'});}
+      if(typeof gtag==='function'){gtag('event','generate_lead',{method:'call_back'});}
+      f.hidden=true; document.getElementById('cbdone').hidden=false; }
   });
 })();
 </script>

@@ -223,3 +223,27 @@ body .foot{padding-bottom:max(36px,env(safe-area-inset-bottom));}
 /* ---------- 2026 firm voice: two advisors in the article note boxes ---------- */
 .note .who .duo{display:flex;flex-shrink:0;}
 .note .who .duo img+img{margin-left:-16px;}
+
+/* ---------- 2026 header: phone number + one primary action (Devoted pattern) ---------- */
+.navcta{background:transparent;color:var(--c-ink);box-shadow:none;padding:10px 4px;margin-left:24px;font-size:16.5px;}
+.navcta:hover{background:transparent;color:var(--c-cta-d);box-shadow:none;transform:none;}
+.navcta .cta-ico{color:var(--c-cta);}
+.navcta .nc-lbl{display:none;}
+.navcta .nc-num{display:inline;}
+.navcta+.navbook{margin-left:14px;}
+.navbook{background:var(--c-cta);color:#fff;border:0;padding:13px 22px;box-shadow:0 6px 16px rgba(207,70,30,.24);}
+.navbook:hover{background:var(--c-cta-d);color:#fff;border:0;}
+@media(max-width:860px){
+  .navcta{margin-left:auto;background:var(--c-cta);color:#fff;padding:12px 20px;font-size:16px;box-shadow:0 6px 16px rgba(207,70,30,.24);}
+  .navcta:hover{background:var(--c-cta-d);color:#fff;}
+  .navcta .cta-ico{color:#fff;}
+  .navcta .nc-lbl{display:inline;} .navcta .nc-num{display:none;}
+  .navbook{display:none;}
+  .navtog{margin-left:8px;}
+}
+/* tablet widths: keep the four menu labels on one line; the phone shows as "Call" */
+@media(min-width:861px) and (max-width:1100px){
+  .navlinks{gap:18px;}
+  .navlinks a{white-space:nowrap;font-size:15.5px;}
+  .navcta .nc-num{display:none;} .navcta .nc-lbl{display:inline;}
+}

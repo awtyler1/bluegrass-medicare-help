@@ -13,202 +13,202 @@
     },
     {
       "source": "/done-for-you",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/done-for-you/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/done-for-you/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/done-for-you/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/free-advisor",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/free-advisor/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/free-advisor/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/free-advisor/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctor",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctor/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctor/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctor/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctors",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctors/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctors/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/keep-your-doctors/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/local-medicare-help",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/local-medicare-help/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/local-medicare-help/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/local-medicare-help/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-mail",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-mail/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-mail/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-mail/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-window",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-window/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-window/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/medicare-window/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/two-lists",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/two-lists/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/two-lists/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/two-lists/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/find-your-plan",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/find-your-plan/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/find-your-plan/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/find-your-plan/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/talk-to-austin",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/talk-to-austin/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/talk-to-austin/thankyou",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
       "source": "/talk-to-austin/thankyou/",
-      "destination": "/review/",
+      "destination": "/schedule/",
       "permanent": true
     },
     {
@@ -243,12 +243,12 @@
     },
     {
       "source": "/articles/turning-65-medicare-roadmap",
-      "destination": "/articles/turning-65/",
+      "destination": "/turning-65/",
       "permanent": true
     },
     {
       "source": "/articles/turning-65-medicare-roadmap/",
-      "destination": "/articles/turning-65/",
+      "destination": "/turning-65/",
       "permanent": true
     },
     {
@@ -283,12 +283,62 @@
     },
     {
       "source": "/articles/social-security",
-      "destination": "/articles/turning-65/",
+      "destination": "/turning-65/",
       "permanent": true
     },
     {
       "source": "/articles/social-security/",
-      "destination": "/articles/turning-65/",
+      "destination": "/turning-65/",
+      "permanent": true
+    },
+    {
+      "source": "/review",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/review/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/review/thankyou",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/review/thankyou/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/help",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/help/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/help/thankyou",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/help/thankyou/",
+      "destination": "/schedule/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/turning-65",
+      "destination": "/turning-65/",
+      "permanent": true
+    },
+    {
+      "source": "/articles/turning-65/",
+      "destination": "/turning-65/",
       "permanent": true
     }
   ]
