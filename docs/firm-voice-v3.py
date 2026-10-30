@@ -204,7 +204,7 @@ for p in sorted(glob.glob("**/index.html", recursive=True)):
     h = open(p, encoding="utf-8").read(); o = h
     for a, b in PAGES.get(p, []):
         if a == "</style>":
-            if b.replace("</style>", "") not in h: h = h.replace(a, b, 1)
+            if b.split("\n")[0] not in h: h = h.replace(a, b, 1)
         elif a in h: h = h.replace(a, b)
     for rx, b in GLOBAL: h = rx.sub(b, h)
     head_end = h.find("<body"); before = len(log)
