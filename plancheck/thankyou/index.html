@@ -99,8 +99,9 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
 .tywho{display:flex;gap:12px;align-items:center;justify-content:center;margin:14px auto 0;}
 .tywho .pics{display:flex;flex:none;} .tywho img{width:56px;height:56px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 0 0 2px var(--coral);}
 .tywho img+img{margin-left:-12px;} .tywho p{font-size:16px;color:var(--mute);text-align:left;margin:0;}
-.calwrap{position:relative;margin-top:14px;min-height:620px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;}
-.calwrap iframe{position:relative;z-index:1;min-height:620px;}
+.calwrap{position:relative;margin-top:14px;min-height:420px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;}
+.calwrap iframe{position:relative;z-index:1;min-height:420px;display:block;}
+.calwrap.ready{min-height:0;} .calwrap.ready .calload{display:none;}
 .calload{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:18px;}
 .quiet{font-size:17px;color:var(--mute);margin-top:14px;} .quiet a{font-weight:700;text-decoration:underline;}
 </style>
@@ -137,7 +138,7 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
   <p class="dead">December 7 is the last day to change for 2027.</p>
   <div class="calwrap">
     <div class="calload" id="calload">Loading available times&hellip;</div>
-    <iframe src="https://link.tylerinsurancegroup.com/widget/group/OuwFMmumrGHln3dKOQ0T" allow="payment" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="OuwFMmumrGHln3dKOQ0T_1793399307859" title="Book your plan review"></iframe>
+    <iframe src="https://link.tylerinsurancegroup.com/widget/group/OuwFMmumrGHln3dKOQ0T" allow="payment" style="width:100%;border:none;overflow:hidden;" scrolling="no" id="OuwFMmumrGHln3dKOQ0T_1793399307859" title="Book your plan review" onload="this.parentNode.classList.add('ready')"></iframe>
   </div>
   <p class="quiet">Rather talk first? <a href="tel:18597858289" data-track="call">Call (859) 785-8289</a></p>
   <p class="quiet">We texted your guide. Want it now? <a href="https://assets.cdn.filesafe.space/Sk1fSSIS0T4wBpJiADrK/media/6ae507ae64f4028be3ce70ae.pdf" data-track="guide">Open it here</a></p>
