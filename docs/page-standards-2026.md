@@ -27,12 +27,13 @@ network, so it was not inspected live) and from the senior-usability research in
 | Local | `/kentucky/` and five county pages | Book a free review |
 | Talk to us (the only contact page) | `/schedule/` | Pick a time; call and call-back sit beneath it |
 | Trust | `/about/`, `/reviews/` | Book a free review |
-| Tools | calculator, glossary, quizzes, videos, free guide | Use the tool |
+| Tools | calculator, glossary, quizzes, free guide | Use the tool |
 | Campaigns | `/plancheck/` | Its own campaign action (managed separately) |
 
 Retired in this pass, each with a 301: the five-step `/review/` form and `/help/` (now the
 call-back on `/schedule/`), the Turning 65 quote form, `/articles/turning-65/` (folded into
-`/turning-65/`), and the old `/articles/medicare-in-lexington-ky/` redirect page.
+`/turning-65/`), and the old `/articles/medicare-in-lexington-ky/` redirect page. Later in October
+2026 every video came off the site and `/videos/` was retired to `/articles/`.
 
 ## Rules every page meets
 
@@ -43,11 +44,11 @@ call-back on `/schedule/`), the Turning 65 quote form, `/articles/turning-65/` (
 - **Body:** built from the shared blocks only (steps, cards, list rows, question accordion, final
   band). Section headings say what the section is.
 - **Questions** use the accordion and carry matching FAQPage schema.
-- **Footer:** one row of ten links, then the legal footer with the CMS disclaimer.
+- **Footer:** one row of nine links, then the legal footer with the CMS disclaimer.
 - **Firm voice** ("we", "our advisors"); reader-voice buttons stay first person.
 - **Phones first:** the page's primary action is the first thing after the hero on a phone.
 
 ## Build order after any content change
 
 `build-homepage-v3.py` → `update-chrome-v4.py` → `build-turning65-v3.py` → `build-hubs.py`
-→ `firm-voice-v3.py` → `restyle-pages-v3.py`. Every step is idempotent.
+→ `firm-voice-v3.py` → `restyle-pages-v3.py` → `remove-videos.py`. Every step is idempotent.

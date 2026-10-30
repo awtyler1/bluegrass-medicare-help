@@ -5,7 +5,7 @@ import re
 TEL = "tel:18597858289"; PN = "(859) 785-8289"
 PHONE_SVG_RE = r'<svg class="cta-ico"[^>]*>(?:(?!</svg>).)*?<path d="M22 16\.92.*?</svg>'
 FOOT_LINKS = ('<div class="fnav-links"><a href="/articles/">Learning Center</a><a href="/turning-65/">Turning 65</a>'
-              '<a href="/kentucky/">Your County</a><a href="/videos/">Videos</a><a href="/glossary/">Glossary</a>'
+              '<a href="/kentucky/">Your County</a><a href="/glossary/">Glossary</a>'
               '<a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/reviews/">Reviews</a>'
               '<a href="/about/">About</a><a href="/schedule/">Book a free review</a></div>')
 

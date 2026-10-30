@@ -108,8 +108,8 @@ BODY = f"""{chrome_top}<main id="main">
   <h2 id="team-h">Your advisors</h2>
   <p class="lead">Independent, licensed in Kentucky, with an office in Lexington. The carriers pay us, never you, and we work with several companies rather than one.</p>
   <div class="team">
-    <a class="adv" href="/about/"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="104" height="104"><div><b>Austin Tyler</b><span>Founder and Partner</span><small>Licensed Medicare agent &middot; KY DOI #1187780 &middot; NPN 20234188</small></div></a>
-    <a class="adv" href="/about/"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="104" height="104"><div><b>Andrew Horn</b><span>Partner</span><small>Tyler Insurance Group &middot; Lexington, Kentucky</small></div></a>
+    <a class="adv" href="/about/"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="104" height="104"><div><b>Austin Tyler</b><span>Licensed Medicare Advisor</span><small>KY DOI #1187780 &middot; NPN 20234188</small></div></a>
+    <a class="adv" href="/about/"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="104" height="104"><div><b>Andrew Horn</b><span>Licensed Medicare Advisor</span><small>Tyler Insurance Group &middot; Lexington, Kentucky</small></div></a>
   </div>
 </div></section>
 

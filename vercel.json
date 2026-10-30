@@ -340,6 +340,16 @@
       "source": "/articles/turning-65/",
       "destination": "/turning-65/",
       "permanent": true
+    },
+    {
+      "source": "/videos",
+      "destination": "/articles/",
+      "permanent": true
+    },
+    {
+      "source": "/videos/",
+      "destination": "/articles/",
+      "permanent": true
     }
   ]
 }
