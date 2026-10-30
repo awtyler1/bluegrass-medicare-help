@@ -88,3 +88,50 @@ Recommendation: **B's structure with A's hero discipline** is the strongest fit 
 information for all of Kentucky" that still converts; C is the safest if Austin wants the
 least cognitive load above all. Mockups are in `/mockups/home-v3/` and as private artifacts for
 phone review.
+
+## 5. Round 2 (30 October 2026): direction B chosen, Devoted lessons, brighter palettes
+
+### What Devoted Health's site does well
+
+devoted.com could not be opened from the build container (host not in the session's allowed
+network). The points below come from knowledge of the site and from search results, not a live
+inspection on this date. Re-check once the host is allowed.
+
+1. **One job per screen.** The hero carries a single task and the phone number, and little else.
+2. **The phone number lives in the header with a label**, not as a bare icon, so it is always one
+   glance away without being repeated down the page.
+3. **Large, friendly headings and very short paragraphs.** Most sections are a heading, one or
+   two sentences and an action.
+4. **Colour-blocked sections.** Soft full-width tints separate sections instead of borders, rules
+   and boxed cards, which is a large part of why it feels calm.
+5. **Warm photography of real-looking older adults**, never clip-art. (We should use real photos
+   of Austin, the office and Kentucky clients with consent, not stock.)
+6. **Pill-shaped buttons and one signature colour** used for every action, so "what can I tap"
+   is never in doubt.
+7. **Generous white space.** Fewer things per screen; nothing competes with the primary action.
+
+What we deliberately do not copy: Devoted's signature orange-red and heart mark. We are an
+independent agency that may represent Devoted among other carriers, and CMS marketing rules
+for third-party marketing organizations prohibit materials that could mislead about who we are
+or imply a carrier's endorsement. Our site should look like us, not like a carrier.
+
+Applied to mockup B (version 2): labelled phone number in the header, a rounded search pill in
+the hero, a single "Austin picks up" line instead of a second big button, colour-blocked bands,
+borderless white cards with soft shadow, pill buttons, a coloured final call band.
+
+### Colour
+
+The logo is a deep teal-blue (about #1a5572) and a red (about #d9493d). The current site uses
+cream, coral and green and never uses the logo's blue, which is part of why it reads as
+assembled rather than designed. Four palettes were built and checked against WCAG 2.2 contrast:
+
+| Palette | Action colour | White text on action | Body text on page | Notes |
+|---|---|---|---|---|
+| **Logo blue** (recommended) | #1f62a8 | 6.2:1 | 16.3:1 | Matches the logo; blue reads as trust and calm; red kept as a small accent from the logo |
+| Meadow green | #1c7a4b | 5.3:1 | 15.8:1 | "Bluegrass" in feel; sunflower and sky tints |
+| Bright coral | #d2481f | 4.5:1 | 15.0:1 | Closest to the current brand, on white; nearest to Devoted's orange |
+| Current | #d05528 | 4.2:1 (passes only as large text) | 13.1:1 | Cream background lowers contrast and reads dated |
+
+All three new palettes put every text pairing at 4.5:1 or better and body text at 7:1 or better
+(AAA). Heading type can be toggled between the current serif and a rounded sans (Figtree) to
+test the friendlier Devoted-style feel.

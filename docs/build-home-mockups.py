@@ -359,8 +359,245 @@ BODY_C = lambda a: f"""{nav(a,'C')}
 {final()}
 {FOOT}"""
 
-FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">'
-DESIGNS = {"a": ("The Front Desk", CSS_A, BODY_A), "b": ("The Library", CSS_B, BODY_B), "c": ("The Kitchen Table", CSS_C, BODY_C)}
+# ---------------------------------------------------------------- B v2: The Library, Devoted-style refinements + palette switcher
+# Layout: colour-blocked full-width bands (no borders between sections), white cards floating on soft tints,
+# pill buttons, one signature colour used for every action. Palettes swap through data-palette on <html>.
+CSS_B2 = """
+:root{
+  --bg:#ffffff;--surf:#ffffff;--tint1:#eaf3fb;--tint2:#fdf3e1;--tint3:#eaf6ef;--ink:#14212e;--mute:#45525f;--line:#d9e3ec;
+  --cta:#1f62a8;--cta-d:#174f8a;--link:#1a5a9c;--accent:#c9382d;--glyph:#1f62a8;--glyphbg:#eaf3fb;--foot:#14212e;--star:#e09a1a;
+  --serif:'Fraunces',Georgia,serif;--sans:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;--rounded:'Figtree','Source Sans 3',-apple-system,sans-serif;
+  --head:var(--serif);--headw:500;
+  color-scheme:light;
+}
+html[data-palette="meadow"]{--tint1:#e9f6ee;--tint2:#fff4d6;--tint3:#e8f2fb;--ink:#17261d;--mute:#46544b;--line:#d8e6dc;--cta:#1c7a4b;--cta-d:#145f3a;--link:#17683f;--accent:#8a5a00;--glyph:#1c7a4b;--glyphbg:#e9f6ee;--foot:#17261d;}
+html[data-palette="coral"]{--tint1:#fff0e8;--tint2:#e9f3fb;--tint3:#fff7df;--ink:#1b2836;--mute:#4a5563;--line:#eadfd6;--cta:#d2481f;--cta-d:#b23c17;--link:#b23c17;--accent:#1b6f8f;--glyph:#d2481f;--glyphbg:#fff0e8;--foot:#1b2836;}
+html[data-palette="current"]{--bg:#f4efe7;--tint1:#faf6ef;--tint2:#efe6d6;--tint3:#faf6ef;--ink:#2a2620;--mute:#5f594f;--line:#e2d9c8;--cta:#d05528;--cta-d:#b3431d;--link:#b3431d;--accent:#b3431d;--glyph:#2f6844;--glyphbg:#efe6d6;--foot:#1f1d1a;}
+html[data-head="sans"]{--head:var(--rounded);--headw:700;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-text-size-adjust:100%;}
+body{font-family:var(--sans);font-size:19px;line-height:1.55;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:var(--link);text-decoration:none;}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px;}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));}
+h1,h2,h3{font-family:var(--head);font-weight:var(--headw);line-height:1.12;letter-spacing:-.4px;text-wrap:balance;color:var(--ink);}
+h2{font-size:32px;margin-bottom:8px;}
+.lead{color:var(--mute);font-size:19px;max-width:620px;margin-bottom:28px;}
+.band{padding-block:60px;} .t1{background:var(--tint1);} .t2{background:var(--tint2);} .t3{background:var(--tint3);} .plain{background:var(--bg);}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 28px;border-radius:999px;background:var(--cta);color:#fff;font-weight:700;font-size:19px;border:0;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent;}
+.pill:hover{background:var(--cta-d);}
+.pill svg{width:21px;height:21px;flex-shrink:0;}
+.eyebrow{display:inline-block;color:var(--accent);font-weight:700;font-size:15px;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:14px;}
+/* review switcher (mockup only) */
+.switch{background:#111;color:#eee;font-size:14px;padding-block:8px;}
+.switch .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;}
+.switch b{font-weight:700;letter-spacing:.5px;text-transform:uppercase;font-size:12px;color:#aaa;margin-right:2px;}
+.switch button{font:inherit;font-size:14px;font-weight:600;border:1px solid #555;background:#222;color:#eee;border-radius:999px;padding:6px 12px;min-height:34px;cursor:pointer;}
+.switch button[aria-pressed="true"]{background:#fff;color:#111;border-color:#fff;}
+.switch .sep{width:1px;height:20px;background:#444;margin:0 4px;}
+/* header */
+.nav{background:var(--surf);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;}
+.nav .wrap{display:flex;align-items:center;gap:18px;min-height:76px;}
+.brand img{height:46px;width:auto;}
+.navlinks{display:none;gap:28px;margin-left:auto;font-weight:600;font-size:17px;}
+.navlinks a{color:var(--ink);padding:10px 2px;}
+.navlinks a:hover{color:var(--link);}
+.navcall{margin-left:auto;display:inline-flex;flex-direction:column;align-items:flex-end;line-height:1.15;color:var(--ink);}
+.navcall small{font-size:13px;color:var(--mute);font-weight:600;}
+.navcall span{display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:18px;color:var(--cta);}
+.navcall svg{width:17px;height:17px;}
+.navtog{width:48px;height:48px;border:1px solid var(--line);border-radius:999px;background:var(--surf);display:inline-flex;align-items:center;justify-content:center;color:var(--ink);}
+@media(min-width:900px){.navlinks{display:flex;} .navcall{margin-left:12px;} .navtog{display:none;}}
+@media(max-width:420px){.navcall small{display:none;} .navcall span{font-size:16.5px;}}
+/* hero */
+.hero{background:var(--bg);padding-block:52px 56px;text-align:center;}
+@media(min-width:900px){.hero{padding-block:76px 72px;}}
+.hero h1{font-size:42px;max-width:780px;margin:0 auto;}
+@media(min-width:900px){.hero h1{font-size:58px;}}
+.hero .sub{font-size:20.5px;color:var(--mute);margin:16px auto 30px;max-width:600px;}
+.ask{display:flex;align-items:center;max-width:660px;margin:0 auto;background:var(--surf);border:2px solid var(--line);border-radius:999px;padding:6px;box-shadow:0 10px 30px rgba(20,33,46,.08);}
+.ask:focus-within{border-color:var(--cta);}
+.ask input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:19px;padding:0 18px;min-height:52px;color:var(--ink);}
+.ask input:focus{outline:none;}
+.ask button{flex-shrink:0;}
+.ask button svg{width:19px;height:19px;}
+@media(max-width:480px){.ask .lbl{display:none;} .ask button{padding:0 18px;}}
+.human{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 14px;margin-top:22px;color:var(--mute);font-size:17.5px;}
+.human img{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:center top;}
+.human a{font-weight:700;color:var(--link);white-space:nowrap;}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin-top:22px;color:var(--mute);font-size:16px;font-weight:600;}
+.trust .star{color:var(--star);letter-spacing:1px;margin-right:6px;}
+/* cards */
+.grid{display:grid;gap:18px;grid-template-columns:1fr;}
+@media(min-width:640px){.grid.c2{grid-template-columns:1fr 1fr;} .grid.c3{grid-template-columns:1fr 1fr;}}
+@media(min-width:960px){.grid.c3{grid-template-columns:repeat(3,1fr);}}
+.card{display:flex;gap:16px;align-items:flex-start;background:var(--surf);border-radius:20px;padding:24px;color:var(--ink);box-shadow:0 1px 2px rgba(20,33,46,.06),0 8px 24px rgba(20,33,46,.06);transition:transform .15s,box-shadow .15s;min-width:0;}
+.card:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(20,33,46,.08),0 14px 32px rgba(20,33,46,.10);}
+.card > div{min-width:0;}
+.card h3{font-size:23px;margin-bottom:4px;}
+.card p{color:var(--mute);font-size:17px;line-height:1.5;}
+.card small{display:block;color:var(--mute);font-size:15px;font-weight:600;margin-bottom:4px;}
+.card .go{display:inline-block;margin-top:12px;font-weight:700;color:var(--link);font-size:17px;}
+.glyph{flex-shrink:0;width:54px;height:54px;border-radius:50%;background:var(--glyphbg);display:flex;align-items:center;justify-content:center;color:var(--glyph);}
+.t1 .glyph{background:var(--tint1);}
+.glyph svg{width:27px;height:27px;}
+.chipdate{display:inline-block;background:var(--tint2);color:var(--ink);font-size:14px;font-weight:700;border-radius:999px;padding:4px 12px;margin-bottom:10px;}
+.stack{flex-direction:column;gap:6px;}
+/* ask austin band */
+.askband{display:flex;flex-wrap:wrap;align-items:center;gap:20px 26px;}
+.askband img{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid var(--surf);}
+.askband .t{flex:1;min-width:240px;}
+.askband h2{font-size:28px;margin-bottom:4px;}
+.askband p{color:var(--mute);font-size:17.5px;}
+/* counties */
+.chips{display:flex;flex-wrap:wrap;gap:10px;}
+.chip{display:inline-flex;align-items:center;min-height:50px;padding:0 20px;border-radius:999px;background:var(--surf);color:var(--ink);font-weight:600;font-size:17px;box-shadow:0 1px 2px rgba(20,33,46,.08);}
+.chip:hover{color:var(--link);}
+.chip.more{background:var(--cta);color:#fff;}
+/* reviews */
+.rev{background:var(--surf);border-radius:20px;padding:24px;box-shadow:0 1px 2px rgba(20,33,46,.06),0 8px 24px rgba(20,33,46,.06);}
+.rev .star{color:var(--star);font-size:18px;letter-spacing:2px;}
+.rev p{font-size:18px;margin:10px 0 14px;line-height:1.5;}
+.rev b{font-size:16px;color:var(--mute);font-weight:600;}
+/* note */
+.note{display:grid;gap:22px;grid-template-columns:1fr;align-items:start;}
+@media(min-width:760px){.note{grid-template-columns:220px 1fr;}}
+.note img{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center top;}
+.note h2{font-size:30px;}
+.note p{margin-top:12px;font-size:18.5px;max-width:640px;}
+.note small{display:block;color:var(--mute);font-size:15px;margin-top:14px;}
+/* final */
+.final{background:var(--cta);color:#fff;padding-block:60px;text-align:center;}
+.final h2{color:#fff;font-size:36px;}
+.final p{color:rgba(255,255,255,.92);font-size:19.5px;margin:10px auto 26px;max-width:560px;}
+.final .pill{background:#fff;color:var(--cta);}
+.final .pill:hover{background:rgba(255,255,255,.9);}
+.final .num{display:block;margin-top:16px;font-size:30px;font-weight:700;letter-spacing:.3px;}
+.final a.u{color:#fff;text-decoration:underline;}
+/* footer */
+.foot{background:var(--foot);color:rgba(255,255,255,.72);font-size:15px;padding-block:30px 104px;}
+.foot .links{display:flex;flex-wrap:wrap;gap:6px 22px;margin-bottom:18px;}
+.foot .links a{color:#fff;font-weight:600;padding:8px 0;}
+.foot .disc{max-width:900px;line-height:1.55;}
+.foot b{color:#fff;}
+@media(min-width:900px){.foot{padding-bottom:36px;}}
+/* sticky call (phones) */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px max(14px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-right,0px));background:var(--surf);box-shadow:0 -6px 20px rgba(20,33,46,.10);}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;border-radius:999px;background:var(--cta);color:#fff;font-weight:700;font-size:19.5px;}
+.sticky svg{width:20px;height:20px;}
+@media(min-width:900px){.sticky{display:none;}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;}}
+"""
+
+SWITCH = """<div class="switch" role="region" aria-label="Mockup review controls"><div class="wrap">
+  <b>Mockup B</b><b>Colors</b>
+  <button type="button" data-p="blue" aria-pressed="true">Logo blue</button>
+  <button type="button" data-p="meadow" aria-pressed="false">Meadow green</button>
+  <button type="button" data-p="coral" aria-pressed="false">Bright coral</button>
+  <button type="button" data-p="current" aria-pressed="false">Current</button>
+  <span class="sep"></span><b>Headings</b>
+  <button type="button" data-h="serif" aria-pressed="true">Serif</button>
+  <button type="button" data-h="sans" aria-pressed="false">Rounded sans</button>
+</div></div>"""
+SWITCH_JS = """<script>
+(function(){
+  var root=document.documentElement;
+  function setP(p){ if(p==='blue'){root.removeAttribute('data-palette');}else{root.setAttribute('data-palette',p);}
+    document.querySelectorAll('[data-p]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-p')===p?'true':'false');});
+    try{localStorage.setItem('bmh-pal',p);}catch(e){} }
+  function setH(h){ if(h==='serif'){root.removeAttribute('data-head');}else{root.setAttribute('data-head',h);}
+    document.querySelectorAll('[data-h]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-h')===h?'true':'false');});
+    try{localStorage.setItem('bmh-head',h);}catch(e){} }
+  document.querySelectorAll('[data-p]').forEach(function(b){b.addEventListener('click',function(){setP(b.getAttribute('data-p'));});});
+  document.querySelectorAll('[data-h]').forEach(function(b){b.addEventListener('click',function(){setH(b.getAttribute('data-h'));});});
+  try{var p=localStorage.getItem('bmh-pal'); if(p) setP(p); var h=localStorage.getItem('bmh-head'); if(h) setH(h);}catch(e){}
+  var f=document.querySelector('.ask'); if(f) f.addEventListener('submit',function(e){e.preventDefault();});
+})();
+</script>"""
+
+def card(g, h, small, p, go=None):
+    return (f'<a class="card" href="#">{glyph(g)}<div><h3>{h}</h3>' + (f'<small>{small}</small>' if small else '') +
+            f'<p>{p}</p>' + (f'<span class="go">{go} &rarr;</span>' if go else '') + '</div></a>')
+
+BODY_B2 = lambda a: f"""{SWITCH}
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#"><img src="{a}logo.png" alt="Bluegrass Medicare Help"></a>
+  <div class="navlinks"><a href="#">Start here</a><a href="#">Learning Center</a><a href="#">Your county</a><a href="#">About Austin</a></div>
+  <a class="navcall" href="{TEL}"><small>Talk to Austin, free</small><span>{PHONE_SVG}{PHONE_TXT}</span></a>
+  <button class="navtog" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Free Medicare help for all of Kentucky</span>
+  <h1>Kentucky's plain-English Medicare guide.</h1>
+  <p class="sub">Every Medicare question answered in plain English, checked against official sources. Written by a licensed Kentucky agent you can actually call.</p>
+  <form class="ask" role="search"><input id="q" type="search" placeholder="Type your Medicare question" aria-label="Search the guides"><button class="pill" type="submit">{G['search']}<span class="lbl">Search</span></button></form>
+  <div class="human"><img src="{a}austin-tyler.jpg" alt=""><span>Rather talk it through? Austin picks up.</span><a href="{TEL}">{PHONE_TXT}</a></div>
+  <div class="trust"><span><span class="star">★★★★★</span>5.0 on Google</span><span>1,000+ Kentuckians helped</span><span>KY licensed agent #1187780</span></div>
+</div></header>
+
+<section class="band t1"><div class="wrap">
+  <h2>Start with a topic</h2><p class="lead">Forty-five guides, each with a short recap and a five-question check.</p>
+  <div class="grid c3">
+    {card('book','Medicare basics','16 guides','Parts A, B, C and D, and the five cost words, explained once and clearly.')}
+    {card('cake','Turning 65','5 guides + calculator','Your enrollment window, your first decisions, the penalties to avoid.')}
+    {card('fork','Choosing coverage','14 guides','Advantage, Medigap, Part D, chronic-condition plans, dental fine print.')}
+    {card('dollar','Costs and savings','12 guides','2027 premiums, IRMAA, Extra Help, and what a $0 plan really costs.')}
+    {card('card','Already on Medicare','7 guides','Your Annual Notice of Change, switching, and this year’s changes.')}
+    {card('map','Your Kentucky county','18 local pages','Plan counts, hospital networks and $0 options where you live.')}
+  </div>
+</div></section>
+
+<section class="band t2"><div class="wrap askband">
+  <img src="{a}austin-tyler.jpg" alt="Austin Tyler">
+  <div class="t"><h2>Have a question the guides don't answer?</h2><p>Ask Austin. Licensed Kentucky agent, Lexington office, no cost and no pressure.</p></div>
+  <a class="pill" href="{TEL}">{PHONE_SVG}Call {PHONE_TXT}</a>
+</div></section>
+
+<section class="band plain"><div class="wrap">
+  <h2>This month in Medicare</h2><p class="lead">What changed, what is due, and what you can ignore.</p>
+  <div class="grid c3">
+    <a class="card stack" href="#"><span class="chipdate">Due December 7</span><h3>Annual Enrollment ends in 38 days</h3><p>How to read your Annual Notice of Change and decide whether to stay.</p><span class="go">Read &rarr;</span></a>
+    <a class="card stack" href="#"><span class="chipdate">Updated October 8</span><h3>The $90 Medicare payment</h3><p>Who got it, why Advantage members didn't, and the scam calls to expect.</p><span class="go">Read &rarr;</span></a>
+    <a class="card stack" href="#"><span class="chipdate">Plan year 2027</span><h3>What changes in Kentucky for 2027</h3><p>Part B premium, the $700 drug deductible, the $2,400 cap, plans leaving.</p><span class="go">Read &rarr;</span></a>
+  </div>
+</div></section>
+
+<section class="band t3"><div class="wrap">
+  <h2>Two free tools</h2><p class="lead">Each takes about a minute.</p>
+  <div class="grid c2">
+    {card('calendar','Enrollment date calculator','','Type your birthday. Get your 7-month window, your coverage start date and a calendar reminder. Nothing is saved.','Find my dates')}
+    {card('chat','Five-question knowledge checks','','Every guide ends with one. Try the Medicare basics check and see where you stand.','Take the quiz')}
+  </div>
+</div></section>
+
+<section class="band plain"><div class="wrap">
+  <h2>Medicare help in your county</h2><p class="lead">Plan counts, hospital networks and $0-premium options change from county to county. Pick yours.</p>
+  <div class="chips">{''.join(f'<a class="chip" href="#">{c}</a>' for c in COUNTIES)}<a class="chip more" href="#">All 120 Kentucky counties &rarr;</a></div>
+</div></section>
+
+<section class="band t1"><div class="wrap">
+  <h2>What Kentuckians say</h2><p class="lead">5.0 on Google from more than 1,000 Kentuckians helped since 2019. <a href="#">Read all reviews &rarr;</a></p>
+  <div class="grid c3">{''.join(f'<div class="rev"><div class="star">★★★★★</div><p>“{t}”</p><b>{w}</b></div>' for t, w in REVIEWS)}</div>
+</div></section>
+
+<section class="band plain"><div class="wrap note">
+  <img src="{a}austin-tyler.jpg" alt="Austin Tyler, licensed Kentucky Medicare agent">
+  <div><h2>A note from Austin</h2>
+  <p>I'm Austin Tyler, a licensed Kentucky agent based in Lexington. I built this site so Kentuckians could get straight answers about Medicare without a sales pitch. Reading is free. So is calling: the carriers pay licensed agents, so you never pay me, and I represent several companies rather than one.</p>
+  <p>If you'd rather sit across a table, the office is at 1029 Monarch Street, Suite 110, Lexington, right off Beaumont Circle.</p>
+  <small>Kentucky DOI license #1187780 · NPN 20234188 · Tyler Insurance Group</small></div>
+</div></section>
+
+<section class="final"><div class="wrap"><h2>Still have a question?</h2><p>Call and you get Austin, not a queue. If reading is all you need today, that's fine too.</p>
+  <a class="pill" href="{TEL}">{PHONE_SVG}Call Austin</a><span class="num">{PHONE_TXT}</span>
+  <p style="margin-top:16px;font-size:17px;">Prefer a set time? <a class="u" href="#">Schedule a call</a></p></div></section>
+{FOOT}
+{SWITCH_JS}"""
+
+FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">'
+DESIGNS = {"a": ("The Front Desk", CSS_A, BODY_A), "b": ("The Library", CSS_B2, BODY_B2), "c": ("The Kitchen Table", CSS_C, BODY_C)}
 for key, (name, css, body) in DESIGNS.items():
     title = f"Homepage mockup {key.upper()}: {name}"
     repo = f"""<!DOCTYPE html>
