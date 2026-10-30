@@ -34,6 +34,8 @@ Rationale and contrast checks: `docs/homepage-audit-2026-10.md`.
 ## Learning Center (`/articles/`) — current IA (Design 2)
 - Hero (`.intro`) → illustrated **topic cards** (`.m2grid`/`.m2cat`, one per category) → list header (`#m2title` + "Show all topics") → scannable **list** (`.lclist` of `.lcrow`).
 - Each `.lcrow` carries `data-cat` (basics | turning65 | coverage | costs | onmedicare | ss | local) and `data-date="YYYY-MM-DD"`. `data-cat` may hold **multiple space-separated categories** (e.g. `data-cat="costs local"`) so one article can appear under more than one topic card; the filter matches by membership. JS auto-sorts newest-first; clicking a topic card filters via `window.__lcset(filter,label)` and scrolls to `#guides`.
+- **Topic pages** (`/articles/basics/`, coverage, costs, on-medicare, turning-65) are generated from the Learning Center rows: after adding, merging or retiring an article run `python3 docs/build-hubs.py`, then `python3 docs/build-homepage-v3.py` (homepage search index and counts). Social Security now lives under Turning 65 (`data-cat` keeps `ss` but there is no Social Security topic card).
+- **Retiring a page:** add a 301 in `vercel.json` (with and without trailing slash), repoint internal links, drop its Learning Center row and sitemap entry. See `docs/site-inventory-2026-10.md`.
 - **Adding an article:** create `/articles/<slug>/index.html` (copy an existing one — it includes recap + 5-question knowledge check + FAQ schema), add a `.lcrow` to `/articles/index.html` with the right `data-cat`/`data-date`, bump **each** matching topic card's `.m2n` count, and add the URL to `sitemap.xml`.
 
 ## Writing standards (every consumer article, both sites)

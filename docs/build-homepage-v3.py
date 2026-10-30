@@ -73,8 +73,8 @@ CSS = """
 /* Layout: full-width colour bands (no rules between sections); white cards float on soft tints; one coral action colour; pill buttons. */
 :root{
   --bg:#ffffff;--surf:#ffffff;--tint1:#fff0e8;--tint2:#e9f3fb;--tint3:#fff7df;
-  --ink:#1b2836;--mute:#4a5563;--line:#eadfd6;--cta:#d2481f;--cta-d:#b23c17;--link:#b23c17;--accent:#1b6f8f;
-  --glyph:#d2481f;--glyphbg:#fff0e8;--foot:#1b2836;--star:#e09a1a;
+  --ink:#1b2836;--mute:#4a5563;--line:#eadfd6;--cta:#cf461e;--cta-d:#b23c17;--link:#b23c17;--accent:#1b6f8f;
+  --glyph:#cf461e;--glyphbg:#fff0e8;--foot:#1b2836;--star:#e09a1a;
   --head:'Figtree','Source Sans 3',-apple-system,'Segoe UI',sans-serif;--sans:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -240,7 +240,7 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 <section class="band" aria-labelledby="month-h"><div class="wrap">
   <h2 id="month-h">This season in Medicare</h2><p class="lead">What changed, what is due, and what you can ignore.</p>
   <div class="grid c3">
-    <a class="card stack" href="/articles/annual-medicare-review-aep/"><span class="chipdate" id="aepchip">Ends December 7</span><span class="ch">Annual Enrollment: October 15 to December 7</span><span class="cp">How to read your Annual Notice of Change and decide whether to keep your plan.</span><span class="go">Read &rarr;</span></a>
+    <a class="card stack" href="/articles/medicare-annual-enrollment-period/"><span class="chipdate" id="aepchip">Ends December 7</span><span class="ch">Annual Enrollment: October 15 to December 7</span><span class="cp">How to read your Annual Notice of Change and decide whether to keep your plan.</span><span class="go">Read &rarr;</span></a>
     <a class="card stack" href="/articles/90-dollar-medicare-payment-kentucky/"><span class="chipdate">Updated October 8</span><span class="ch">The $90 Medicare payment</span><span class="cp">Who got it, why Advantage members didn't, and the scam calls to expect.</span><span class="go">Read &rarr;</span></a>
     <a class="card stack" href="/articles/medicare-changes-2027-kentucky/"><span class="chipdate">Plan year 2027</span><span class="ch">What changes in Kentucky for 2027</span><span class="cp">Part B premium, the $700 drug deductible, the $2,400 cap, and plans leaving.</span><span class="go">Read &rarr;</span></a>
   </div>
@@ -350,6 +350,6 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel
          '<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">')
 page = (head_top + f"<title>{TITLE}</title>\n<meta name=\"description\" content=\"{DESC}\">\n{FONTS}\n"
         '<link rel="stylesheet" href="/assets/site.css">\n<style>' + CSS + "</style>\n" + tail + "</head>\n<body>\n" + BODY + "</body>\n</html>\n")
-page = page.replace('<meta name="theme-color" content="#1f1d1a">', '<meta name="theme-color" content="#d2481f">')
+page = page.replace('<meta name="theme-color" content="#1f1d1a">', '<meta name="theme-color" content="#cf461e">')
 open(SRC, "w", encoding="utf-8").write(page)
 print("wrote index.html", len(page), "bytes;", NGUIDES, "guides;", len(INDEX), "search entries; counts", count)
