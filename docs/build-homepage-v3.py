@@ -19,15 +19,15 @@ def _team(m):
     d = json.loads(m.group(1)); g = d.get("@graph", [])
     if not any(n.get("@id", "").endswith("#andrew-horn") for n in g):
         g.append({"@type": "Person", "@id": "https://www.bluegrassmedicarehelp.com/#andrew-horn", "name": "Andrew Horn",
-                  "jobTitle": "Partner", "image": "https://www.bluegrassmedicarehelp.com/assets/andrew-horn.jpg",
+                  "jobTitle": "Licensed Medicare Advisor", "image": "https://www.bluegrassmedicarehelp.com/assets/andrew-horn.jpg",
                   "url": "https://www.bluegrassmedicarehelp.com/about/", "worksFor": {"@id": "https://www.bluegrassmedicarehelp.com/#business"}})
     for n in g:
         if n.get("@id", "").endswith("#business"):
             n["employee"] = [{"@id": "https://www.bluegrassmedicarehelp.com/#austin-tyler"}, {"@id": "https://www.bluegrassmedicarehelp.com/#andrew-horn"}]
             n["description"] = ("Independent Medicare advisory firm in Lexington, Kentucky. Free help for Kentuckians "
                                 "turning 65 or already on Medicare. No call center, no pressure.")
-        if n.get("@id", "").endswith("#austin-tyler"):
-            n["jobTitle"] = "Founder and Partner, Licensed Medicare Agent"
+        if n.get("@id", "").endswith(("#austin-tyler", "#andrew-horn")):
+            n["jobTitle"] = "Licensed Medicare Advisor"
     return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False, separators=(",", ":")) + "</script>"
 tail = re.sub(r'<script type="application/ld\+json">(.*?)</script>', _team, tail, flags=re.S)
 tail = re.sub(r'(<meta property="og:title" content=")[^"]*', r'\g<1>' + TITLE, tail)
@@ -291,8 +291,8 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
   <h2 id="note-h">Meet your advisors</h2>
   <p class="lead">Tyler Insurance Group is an independent Medicare advisory firm in Lexington. We built this site so Kentuckians could get straight answers about Medicare without a sales pitch.</p>
   <div class="team">
-    <a class="adv" href="/about/"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="104" height="104"><div><b>Austin Tyler</b><span>Founder and Partner</span><small>Licensed Medicare agent &middot; KY DOI #1187780 &middot; NPN 20234188</small></div></a>
-    <a class="adv" href="/about/"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="104" height="104"><div><b>Andrew Horn</b><span>Partner</span><small>Tyler Insurance Group &middot; Lexington, Kentucky</small></div></a>
+    <a class="adv" href="/about/"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="104" height="104"><div><b>Austin Tyler</b><span>Licensed Medicare Advisor</span><small>KY DOI #1187780 &middot; NPN 20234188</small></div></a>
+    <a class="adv" href="/about/"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="104" height="104"><div><b>Andrew Horn</b><span>Licensed Medicare Advisor</span><small>Tyler Insurance Group &middot; Lexington, Kentucky</small></div></a>
   </div>
   <p class="firmnote">Reading is free. So is calling: the carriers pay licensed agents, so you never pay us, and we work with several companies rather than one. If you would rather sit across a table, our office is at 1029 Monarch Street, Suite 110, Lexington, right off Beaumont Circle. <a href="/about/">More about our firm &rarr;</a></p>
 </div></section>
@@ -306,7 +306,7 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 <nav class="fnav" aria-label="Footer">
   <div class="wrap">
     <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" width="806" height="220" onerror="this.closest('.fnav-logo').style.display='none'"></a>
-    <div class="fnav-links"><a href="/">Home</a><a href="/turning-65/">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/videos/">Videos</a><a href="/glossary/">Glossary</a><a href="/kentucky/">Your County</a><a href="/reviews/">Reviews</a><a href="/schedule/">Schedule</a><a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/review/">Free Review</a><a href="/about/">About</a></div>
+    <div class="fnav-links"><a href="/">Home</a><a href="/turning-65/">Turning 65?</a><a href="/articles/">Learning Center</a><a href="/glossary/">Glossary</a><a href="/kentucky/">Your County</a><a href="/reviews/">Reviews</a><a href="/schedule/">Schedule</a><a href="/quizzes/">Quizzes</a><a href="/guide/">Free Guide</a><a href="/review/">Free Review</a><a href="/about/">About</a></div>
     <a class="fcall" href="{TEL}">{PH}Call {PN}</a>
   </div>
 </nav>
