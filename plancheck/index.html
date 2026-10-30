@@ -72,6 +72,9 @@ a{color:var(--coral-d);text-decoration:none;}
 .pclist li:before{content:"";position:absolute;left:4px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--coral);}
 .pcnote{text-align:center;color:var(--mute);font-size:17px;}
 .pccard{display:flex;gap:16px;align-items:center;background:var(--cream2);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:26px;}
+.pccard{flex-direction:column;text-align:center;}
+.pcpics{display:flex;flex:none;justify-content:center;}
+.pcpics img+img{margin-left:-18px;}
 .pccard img{width:84px;height:84px;border-radius:50%;object-fit:cover;border:3px solid var(--coral);flex:none;}
 .pccard p{color:var(--mute);font-size:17px;line-height:1.45;}
 .pccard b{display:block;color:var(--ink);font-size:19px;}
@@ -157,8 +160,8 @@ a{color:var(--coral-d);text-decoration:none;}
       <a class="pcbtn solid" href="https://link.tylerinsurancegroup.com/widget/group/OuwFMmumrGHln3dKOQ0T" data-track="book">Book my review<small>Tap to pick a time</small></a>
       <p class="pcnote">30 minutes by phone, or 45 at our office on Monarch Street. It never costs you a penny.</p>
       <div class="pccard">
-        <img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="84" height="84">
-        <p><b>Austin Tyler</b>Tyler Insurance Group, Lexington. Your call comes straight to my office.</p>
+        <div class="pcpics"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="84" height="84"><img src="/plancheck/andrew-horn.jpg" alt="Andrew Horn" width="84" height="84"></div>
+        <p><b>Austin Tyler and Andrew Horn</b>Tyler Insurance Group, Lexington. Your call comes straight to our office.</p>
       </div>
       <div class="pcdead">December 7<b>is the last day to change for 2027.</b></div>
     </div>
