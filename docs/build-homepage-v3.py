@@ -73,8 +73,8 @@ CSS = """
 /* Layout: full-width colour bands (no rules between sections); white cards float on soft tints; one coral action colour; pill buttons. */
 :root{
   --bg:#ffffff;--surf:#ffffff;--tint1:#fff0e8;--tint2:#e9f3fb;--tint3:#fff7df;
-  --ink:#1b2836;--mute:#4a5563;--line:#eadfd6;--cta:#d2481f;--cta-d:#b23c17;--link:#b23c17;--accent:#1b6f8f;
-  --glyph:#d2481f;--glyphbg:#fff0e8;--foot:#1b2836;--star:#e09a1a;
+  --ink:#1b2836;--mute:#4a5563;--line:#eadfd6;--cta:#cf461e;--cta-d:#b23c17;--link:#b23c17;--accent:#1b6f8f;
+  --glyph:#cf461e;--glyphbg:#fff0e8;--foot:#1b2836;--star:#e09a1a;
   --head:'Figtree','Source Sans 3',-apple-system,'Segoe UI',sans-serif;--sans:'Source Sans 3',-apple-system,'Segoe UI',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -350,6 +350,6 @@ FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel
          '<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">')
 page = (head_top + f"<title>{TITLE}</title>\n<meta name=\"description\" content=\"{DESC}\">\n{FONTS}\n"
         '<link rel="stylesheet" href="/assets/site.css">\n<style>' + CSS + "</style>\n" + tail + "</head>\n<body>\n" + BODY + "</body>\n</html>\n")
-page = page.replace('<meta name="theme-color" content="#1f1d1a">', '<meta name="theme-color" content="#d2481f">')
+page = page.replace('<meta name="theme-color" content="#1f1d1a">', '<meta name="theme-color" content="#cf461e">')
 open(SRC, "w", encoding="utf-8").write(page)
 print("wrote index.html", len(page), "bytes;", NGUIDES, "guides;", len(INDEX), "search entries; counts", count)

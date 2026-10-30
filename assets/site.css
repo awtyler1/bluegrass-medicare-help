@@ -7,14 +7,18 @@
 :root{
   /* 2026 chrome tokens: header, footer nav and focus ring. Pages never redefine these,
      so the shared chrome stays bright coral + navy even where a page keeps its own palette. */
-  --c-cta:#d2481f; --c-cta-d:#b23c17; --c-ink:#1b2836; --c-mute:#4a5563; --c-line:#eadfd6; --c-tint:#fff0e8;
+  --c-cta:#cf461e; --c-cta-d:#b23c17; --c-ink:#1b2836; --c-mute:#4a5563; --c-line:#eadfd6; --c-tint:#fff0e8;
   --c-head:'Figtree','Source Sans 3',-apple-system,sans-serif;
-  --cream:#f4efe7; --cream2:#faf6ef; --warm:#efe6d6; --ink:#2a2620; --dark:#1f1d1a;
-  --coral:#d05528; --coral-d:#b3431d; --mute:#5f594f; --faint:#6f6a60;
-  --line:#e2d9c8; --white:#fff; --green:#3a7d52; --green-d:#2f6844;
-  --serif:'Fraunces',Georgia,serif; --sans:'Source Sans 3',-apple-system,sans-serif;
-  --hand:'Caveat',cursive;
+  --cream:#ffffff; --cream2:#f5f8fb; --warm:#fff0e8; --ink:#1b2836; --dark:#1b2836;
+  --coral:#cf461e; --coral-d:#b23c17; --mute:#4a5563; --faint:#5d6773;
+  --line:#e3e8ee; --white:#fff; --green:#3a7d52; --green-d:#2f6844;
+  --serif:'Figtree','Source Sans 3',-apple-system,sans-serif; --sans:'Source Sans 3',-apple-system,sans-serif;
+  --hand:'Source Sans 3',-apple-system,sans-serif;
 }
+
+/* ---------- 2026 type: Figtree headings; emphasis in headings is colour, not slant ---------- */
+h1 em,h2 em,h3 em{font-style:normal;}
+h1,h2,h3{letter-spacing:-.3px;}
 
 /* ---------- accessibility baseline ---------- */
 .skip-link{position:absolute;left:8px;top:-60px;z-index:200;background:var(--c-ink);color:#fff;
