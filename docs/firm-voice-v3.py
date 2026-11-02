@@ -38,7 +38,9 @@ PROTECT = ["I did not know somebody like you existed", "I hang up and check with
            "Get my free review", "Book my review", "See my plan comparison", "Email me these dates",
            "Get my no-cost quote", "Show my dates", "Send my free guide", "Find my dates",
            # reader questions that run across a tag
-           "Is my dentist in the plan"]
+           "Is my dentist in the plan",
+           # product names
+           "my Social Security", "my Medicare", "My Social Security"]
 
 # ---- raw markup changes, every page
 GLOBAL = [
