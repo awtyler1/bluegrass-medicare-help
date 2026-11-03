@@ -28,6 +28,7 @@ def _team(m):
                                 "turning 65 or already on Medicare. No call center, no pressure.")
         if n.get("@id", "").endswith(("#austin-tyler", "#andrew-horn")):
             n["jobTitle"] = "Licensed Medicare Advisor"
+            n["honorificSuffix"] = "MBA" if n["@id"].endswith("#austin-tyler") else "MHA"
     return '<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False, separators=(",", ":")) + "</script>"
 tail = re.sub(r'<script type="application/ld\+json">(.*?)</script>', _team, tail, flags=re.S)
 tail = re.sub(r'(<meta property="og:title" content=")[^"]*', r'\g<1>' + TITLE, tail)
@@ -273,8 +274,8 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
   </div>
   <div class="duocard">
     <div class="ph">
-      <figure><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><figcaption><b>Austin Tyler</b>Licensed Medicare Advisor</figcaption></figure>
-      <figure><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="768" height="960"><figcaption><b>Andrew Horn</b>Licensed Medicare Advisor</figcaption></figure>
+      <figure><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><figcaption><b>Austin Tyler, MBA</b>Licensed Medicare Advisor</figcaption></figure>
+      <figure><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="768" height="960"><figcaption><b>Andrew Horn, MHA</b>Licensed Medicare Advisor</figcaption></figure>
     </div>
     <p class="office">Your call is answered by one of us, not a call center. Office: 1029 Monarch Street, Lexington.</p>
   </div>

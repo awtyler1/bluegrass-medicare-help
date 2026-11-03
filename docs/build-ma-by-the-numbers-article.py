@@ -325,7 +325,7 @@ BODY = r"""
       Checked November 3, 2026. Per-1,000 counts and the 20-year model are our own calculations and are labeled as such.
     </div>
 
-    <p class="stamp"><b>Written and reviewed by Austin Tyler</b>, Licensed Medicare Advisor, NPN 20234188, Kentucky DOI license #1187780.</p>
+    <p class="stamp"><b>Written and reviewed by Austin Tyler, MBA</b>, Licensed Medicare Advisor, NPN 20234188, Kentucky DOI license #1187780.</p>
 
     <p class="disclaim">This article is general information, not advice for your specific situation. National averages hide wide differences by state, insurer, age and health; your own costs will differ. The 20-year figures are illustrations built on stated assumptions, not predictions. No specific plan is named or recommended. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 """

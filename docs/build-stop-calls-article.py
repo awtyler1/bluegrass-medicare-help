@@ -209,7 +209,7 @@ BODY = """
       Verified August 2026.
     </div>
 
-    <p class="stamp"><b>Written and reviewed by Austin Tyler</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Phone numbers and complaint channels checked in August 2026.</p>
+    <p class="stamp"><b>Written and reviewed by Austin Tyler, MBA</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Phone numbers and complaint channels checked in August 2026.</p>
 
     <p class="disclaim">This article is general information, not advice for your specific situation, and it is not legal advice. Rules, phone numbers, and complaint procedures can change; confirm current details with the agency before relying on them. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 """

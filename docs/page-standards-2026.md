@@ -51,4 +51,4 @@ call-back on `/schedule/`), the Turning 65 quote form, `/articles/turning-65/` (
 ## Build order after any content change
 
 `build-homepage-v3.py` → `update-chrome-v4.py` → `build-turning65-v3.py` → `build-hubs.py`
-→ `firm-voice-v3.py` → `restyle-pages-v3.py` → `remove-videos.py`. Every step is idempotent.
+→ `firm-voice-v3.py` → `restyle-pages-v3.py` → `remove-videos.py` → `name-credentials.py`. Every step is idempotent.

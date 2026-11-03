@@ -196,7 +196,7 @@ BODY = r"""
       Checked October 2026.
     </div>
 
-    <p class="stamp"><b>Written and reviewed by Austin Tyler</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Plan details taken from the carriers' 2027 Summaries of Benefits and the CMS plan file; health figures from Kentucky DPH and BRFSS reports, October 2026.</p>
+    <p class="stamp"><b>Written and reviewed by Austin Tyler, MBA</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Plan details taken from the carriers' 2027 Summaries of Benefits and the CMS plan file; health figures from Kentucky DPH and BRFSS reports, October 2026.</p>
 
     <p class="disclaim">This article is general information, not advice for your specific situation. Plans are named for factual eligibility information only; this is not an endorsement, a comparison of benefits, or a statement about plan quality, and benefits, premiums, networks and service areas can change each year. Eligibility for a Chronic Condition Special Needs Plan requires a qualifying diagnosis verified by your physician. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 """

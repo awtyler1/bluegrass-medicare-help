@@ -386,7 +386,7 @@ BODY = r"""
       Checked October 2026. The sample plan and Ruth's year are illustrations, not quotes from any plan.
     </div>
 
-    <p class="stamp"><b>Written and reviewed by Austin Tyler</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Federal limits from the CMS CY2027 rate announcement; plan-landscape figures from KFF; Kentucky plan counts from the CMS landscape file, October 2026.</p>
+    <p class="stamp"><b>Written and reviewed by Austin Tyler, MBA</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Federal limits from the CMS CY2027 rate announcement; plan-landscape figures from KFF; Kentucky plan counts from the CMS landscape file, October 2026.</p>
 
     <p class="disclaim">This article is general information, not advice for your specific situation. The sample plan and the year walk-through are illustrations of how premiums, deductibles, copays, coinsurance and out-of-pocket maximums work and are not quotes from any plan; your plan's actual costs are in its Summary of Benefits and Evidence of Coverage and can change each year. No specific plan is named or recommended. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 """
