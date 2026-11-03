@@ -41,6 +41,15 @@ out = src
 old_title = re.search(r"<title>(.*?)</title>", out).group(1)
 old_desc = re.search(r'<meta name="description" content="([^"]*)"', out).group(1)
 out = out.replace(old_title, TITLE).replace(old_desc, DESC).replace(OLD_URL, URL)
+# own social card, rendered from docs/og/medicare-advantage-by-the-numbers.html
+OG = "https://www.bluegrassmedicarehelp.com/assets/og/medicare-advantage-by-the-numbers.png"
+OG_ALT = ("Medicare Advantage, by the Numbers: 55% of eligible people on Medicare Advantage in 2026; 77 of 1,000 "
+          "prior authorization requests denied in 2024; $87k to $133k for 20 years of a supplement plus a drug plan.")
+out = out.replace("https://www.bluegrassmedicarehelp.com/assets/og-image.png", OG)
+out = out.replace('<meta property="og:image:height" content="630">',
+                  f'<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="{OG_ALT}">', 1)
+out = out.replace(f'<meta name="twitter:image" content="{OG}">',
+                  f'<meta name="twitter:image" content="{OG}">\n<meta name="twitter:image:alt" content="{OG_ALT}">', 1)
 out = out.replace("</style>", """
 .dek{font-size:20px;line-height:1.5;color:var(--mute);margin:10px 0 0;max-width:680px;}
 .findings{border-top:3px solid var(--ink);border-bottom:1px solid var(--line);padding:18px 0 6px;margin:0 0 30px;}
