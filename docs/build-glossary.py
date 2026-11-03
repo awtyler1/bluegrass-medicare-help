@@ -375,7 +375,7 @@ html = '''<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" type="image/png" href="/assets/logo-mark.png">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
 <link rel="apple-touch-icon" href="/assets/logo-mark.png">
 <meta name="theme-color" content="#1f1d1a">
 ''' + PIX + '\n' + GA + '''
