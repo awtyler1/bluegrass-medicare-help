@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<!-- Social card source. Render: serve the repo root on :8765, open this page at 1200x630 in headless Chromium, screenshot to /assets/og/<slug>.png -->
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;background:#fff;overflow:hidden}
+.card{position:relative;width:1200px;height:630px;padding:56px 64px 0;font-family:'Source Sans 3',sans-serif;color:#1b2836}
+.card::before{content:"";position:absolute;left:0;top:0;width:1200px;height:12px;background:#cf461e}
+.kicker{font-family:'Figtree',sans-serif;font-weight:700;font-size:22px;letter-spacing:.12em;text-transform:uppercase;color:#b23c17}
+h1{font-family:'Figtree',sans-serif;font-weight:800;font-size:68px;line-height:1.02;letter-spacing:-.01em;margin:14px 0 0;width:560px}
+.sub{font-size:26px;line-height:1.35;color:#4a5563;margin:20px 0 0;width:540px}
+.stats{position:absolute;right:64px;top:62px;width:470px;display:flex;flex-direction:column;gap:18px}
+.s{background:#fff0e8;border-radius:18px;padding:20px 26px;border-left:8px solid #cf461e}
+.s b{display:block;font-family:'Figtree',sans-serif;font-weight:800;font-size:46px;line-height:1;color:#1b2836}
+.s span{display:block;font-size:22px;line-height:1.3;color:#4a5563;margin-top:8px}
+.foot{position:absolute;left:64px;right:64px;bottom:0;height:96px;border-top:2px solid #eadfd6;display:flex;align-items:center;justify-content:space-between}
+.foot img{height:56px;width:auto}
+.foot .url{font-family:'Figtree',sans-serif;font-weight:700;font-size:22px;color:#1b2836}
+</style></head><body>
+<div class="card">
+  <div class="kicker">Data &middot; Medicare Advantage</div>
+  <h1>Medicare Advantage, by the Numbers</h1>
+  <p class="sub">Enrollment, denials and 20-year costs, laid out from public data.</p>
+  <div class="stats">
+    <div class="s"><b>55%</b><span>of eligible people on Medicare Advantage (2026)</span></div>
+    <div class="s"><b>77 of 1,000</b><span>prior authorization requests denied (2024)</span></div>
+    <div class="s"><b>$87k to $133k</b><span>20 years of a supplement plus a drug plan</span></div>
+  </div>
+  <div class="foot"><img src="/assets/logo.png" alt=""><span class="url">bluegrassmedicarehelp.com</span></div>
+</div>
+</body></html>
