@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<!-- Social card source. Render with: node docs/og/render.js medicare-enrollment-calculator -->
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1200px;height:630px;background:#fff;overflow:hidden}
+.card{position:relative;width:1200px;height:630px;padding:54px 64px 0;font-family:'Source Sans 3',sans-serif;color:#1b2836}
+.card::before{content:"";position:absolute;left:0;top:0;width:1200px;height:12px;background:#cf461e}
+.kicker{font-family:'Figtree',sans-serif;font-weight:700;font-size:22px;letter-spacing:.12em;text-transform:uppercase;color:#b23c17}
+h1{font-family:'Figtree',sans-serif;font-weight:800;font-size:62px;line-height:1.04;letter-spacing:-.01em;margin:12px 0 0}
+.sub{font-size:26px;line-height:1.35;color:#4a5563;margin:14px 0 0}
+.tl{position:absolute;left:64px;right:64px;top:296px}
+.brace{display:flex;align-items:flex-end;height:44px;margin-bottom:8px}
+.brace .on{width:calc(3*(100% - 60px)/7 + 20px);border:3px solid #2f6844;border-bottom:none;border-radius:10px 10px 0 0;height:18px;position:relative}
+.brace .on span{position:absolute;left:0;right:0;top:-34px;text-align:center;font-family:'Figtree',sans-serif;font-weight:700;font-size:21px;color:#2f6844;white-space:nowrap}
+.months{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.m{height:78px;border-radius:14px;background:#f5f8fb;border:2px solid #e3e8ee;display:flex;align-items:center;justify-content:center;font-family:'Figtree',sans-serif;font-weight:700;font-size:28px;color:#1b2836}
+.m.early{background:#eef5f0;border-color:#b9d4c2}
+.m.bday{background:#cf461e;border-color:#cf461e;color:#fff;flex-direction:column;line-height:1.05}
+.m.bday small{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.cap{display:flex;justify-content:space-between;margin-top:10px;font-size:19px;color:#4a5563}
+.foot{position:absolute;left:64px;right:64px;bottom:0;height:92px;border-top:2px solid #eadfd6;display:flex;align-items:center;justify-content:space-between}
+.foot img{height:54px;width:auto}
+.foot .url{font-family:'Figtree',sans-serif;font-weight:700;font-size:22px;color:#1b2836}
+</style></head><body>
+<div class="card">
+  <div class="kicker">Free tool &middot; Takes about a minute</div>
+  <h1>When do I sign up for Medicare?</h1>
+  <p class="sub">Enter your birthday, answer two questions, and see your exact 7-month window.</p>
+  <div class="tl">
+    <div class="brace"><div class="on"><span>Sign up here: coverage starts June 1</span></div></div>
+    <div class="months">
+      <div class="m early">Mar</div><div class="m early">Apr</div><div class="m early">May</div>
+      <div class="m bday">Jun<small>Turn 65</small></div>
+      <div class="m">Jul</div><div class="m">Aug</div><div class="m">Sep</div>
+    </div>
+    <div class="cap"><span>Example: turning 65 in June</span><span>Your 7-month Initial Enrollment Period</span></div>
+  </div>
+  <div class="foot"><img src="/assets/logo.png" alt=""><span class="url">bluegrassmedicarehelp.com</span></div>
+</div>
+</body></html>
