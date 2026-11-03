@@ -70,6 +70,7 @@ independent outlet, unless marked. National article (no Kentucky claims).
 |---|---|---|
 | Average Medigap premium, current policyholders, 2025 | $244/month ($2,926/year), up from $203 in 2020 | KFF Key Facts About Medigap (NAIC data); United Medicare Advisors citing KFF |
 | Change | +7% 2024 to 2025; +20% 2020 to 2025 | same |
+| 2023 average (chart point) | $217/month among current policyholders | KFF (NAIC data via Mark Farrah) |
 | Plan G average | $194/month (2025), up 13% year over year; range $164 (NM) to $257 (NY) | KFF; United Medicare Advisors |
 | New 65-year-old quote | about $155 to $160/month Plan G (2025) | ValuePenguin ($159, nonsmoking woman); MedicareSupplement.com ($155) |
 | 2026 filings (industry analysis, label as such) | Plan G increases roughly 12% to 26% at six large insurers; average 16.8% | Telos Actuarial via MedicareFAQ, Actuary.info, Paul B. |
