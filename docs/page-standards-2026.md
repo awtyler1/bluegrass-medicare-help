@@ -21,7 +21,7 @@ network, so it was not inspected live) and from the senior-usability research in
 
 | Job | Page | Primary action |
 |---|---|---|
-| Orientation | `/` | Search the guides (call is secondary) |
+| Orientation | `/` | Book a free review with a local advisor (advisor-first hero since November 2026; "What brings you here?" situations, then guides and search lower down) |
 | Turning 65 | `/turning-65/` | Book a free review |
 | Learn | `/articles/` and topic pages, 34 articles | Read; one end-of-article review link |
 | Local | `/kentucky/` and five county pages | Book a free review |
