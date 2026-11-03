@@ -162,13 +162,15 @@ HEAD = f"""<title>{TITLE}</title>
 <meta property="og:title" content="{TITLE}">
 <meta property="og:description" content="{DESC}">
 <meta property="og:url" content="{URL}">
-<meta property="og:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
+<meta property="og:image" content="https://www.bluegrassmedicarehelp.com/assets/og/medicare-enrollment-calculator.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Medicare enrollment calculator: when do I sign up for Medicare? Example timeline for someone turning 65 in June: signing up in March, April or May starts coverage June 1, within a 7-month Initial Enrollment Period.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{TITLE}">
 <meta name="twitter:description" content="{DESC}">
-<meta name="twitter:image" content="https://www.bluegrassmedicarehelp.com/assets/og-image.png">
+<meta name="twitter:image" content="https://www.bluegrassmedicarehelp.com/assets/og/medicare-enrollment-calculator.png">
+<meta name="twitter:image:alt" content="Medicare enrollment calculator: when do I sign up for Medicare? Example timeline for someone turning 65 in June: signing up in March, April or May starts coverage June 1, within a 7-month Initial Enrollment Period.">
 <script type="application/ld+json">__LD__</script>
 {STYLE}</head>
 <body>
