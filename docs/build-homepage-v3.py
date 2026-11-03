@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the homepage (direction B, bright coral + rounded sans) into index.html.
+"""Build the homepage (bright coral + rounded sans; advisor-first since November 2026) into index.html.
 
 Idempotent: keeps the tracking snippet (everything before <title>) and the SEO tail
 (<link rel="canonical"> through </head>) from the existing index.html, and regenerates the rest.
@@ -11,9 +11,9 @@ cur = open(SRC, encoding="utf-8").read()
 head_top = cur[:cur.index("<title>")]
 tail = cur[cur.index('<link rel="canonical"'):cur.index("</head>")]
 
-TITLE = "Kentucky Medicare Help in Plain English | Bluegrass Medicare Help"
-DESC = ("Plain-English Medicare guides for every Kentucky county, checked against official sources, "
-        "plus free help from licensed Lexington advisors who pick up the phone.")
+TITLE = "Free Medicare Help from Licensed Kentucky Advisors | Bluegrass Medicare Help"
+DESC = ("Talk to a licensed Medicare advisor from our Lexington office, free. We compare plans for your doctors and "
+        "prescriptions. Plus plain-English Medicare guides for every Kentucky county.")
 def _team(m):
     """Firm schema: both partners on the business node, Andrew as his own Person."""
     d = json.loads(m.group(1)); g = d.get("@graph", [])
@@ -138,6 +138,35 @@ h2{font-size:31px;margin-bottom:8px;}
 .human a{font-weight:700;white-space:nowrap;}
 .trust{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 26px;margin-top:20px;color:var(--mute);font-size:16px;font-weight:600;}
 .trust .star{color:var(--star);letter-spacing:1px;margin-right:6px;}
+/* advisor-first hero (mockup A) */
+.hva{display:grid;gap:30px;align-items:center;padding-block:44px 52px;}
+@media(min-width:900px){.hva{grid-template-columns:1.1fr .9fr;gap:48px;padding-block:64px 70px;}}
+.hva h1{font-size:40px;font-weight:800;} @media(min-width:900px){.hva h1{font-size:54px;}}
+.hva .sub{font-size:20.5px;color:var(--mute);margin:16px 0 26px;max-width:560px;}
+.hva .row{display:flex;flex-wrap:wrap;align-items:center;gap:6px 20px;}
+.hva .trust{justify-content:flex-start;}
+.callline{display:inline-flex;align-items:center;min-height:56px;font-weight:700;font-size:19px;color:var(--link);}
+.ticks{list-style:none;display:flex;flex-wrap:wrap;gap:8px 20px;margin:20px 0 0;color:var(--ink);font-weight:600;font-size:17px;}
+.ticks li::before{content:"";display:inline-block;width:9px;height:15px;border:solid #2f6844;border-width:0 3px 3px 0;transform:rotate(45deg);margin:0 10px 0 4px;position:relative;top:-2px;}
+.duocard{background:var(--tint1);border-radius:26px;padding:22px;}
+.duocard .ph{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.duocard figure{margin:0;} .duocard img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:18px;}
+.duocard figcaption{margin-top:10px;font-size:15.5px;color:var(--mute);line-height:1.35;} .duocard figcaption b{display:block;font-family:var(--head);font-size:19px;color:var(--ink);}
+.duocard .office{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:16px;color:var(--ink);}
+/* situations (mockup C) */
+.sits{display:grid;gap:14px;grid-template-columns:1fr;} @media(min-width:700px){.sits{grid-template-columns:1fr 1fr;}} @media(min-width:1000px){.sits{grid-template-columns:repeat(3,1fr);}}
+.sit{position:relative;display:block;background:var(--surf);border-radius:18px;padding:20px 52px 20px 22px;color:var(--ink);box-shadow:0 1px 2px rgba(27,40,54,.06),0 8px 24px rgba(27,40,54,.06);transition:box-shadow .15s;}
+.sit b{display:block;font-family:var(--head);font-size:21px;line-height:1.2;} .sit span{display:block;color:var(--mute);font-size:16.5px;margin-top:4px;}
+.sit i{position:absolute;right:20px;top:50%;transform:translateY(-50%);font-style:normal;font-weight:700;font-size:22px;color:var(--link);}
+.sit:hover{box-shadow:0 2px 4px rgba(27,40,54,.08),0 14px 32px rgba(27,40,54,.10);}
+/* how a review works */
+.steps{list-style:none;counter-reset:s;display:grid;gap:16px;grid-template-columns:1fr;margin:6px 0 0;}
+@media(min-width:800px){.steps{grid-template-columns:repeat(3,1fr);}}
+.steps li{counter-increment:s;background:var(--surf);border-radius:20px;padding:24px 24px 22px;box-shadow:0 1px 2px rgba(27,40,54,.06),0 8px 24px rgba(27,40,54,.06);}
+.steps li::before{content:counter(s);display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--cta);color:#fff;font-family:var(--head);font-weight:800;font-size:19px;margin-bottom:12px;}
+.steps b{display:block;font-family:var(--head);font-size:22px;margin-bottom:4px;} .steps span{color:var(--mute);font-size:17px;}
+.stepcta{margin-top:26px;}
+.topicsearch{max-width:680px;margin:0 0 28px;}
 /* cards */
 .grid{display:grid;gap:18px;grid-template-columns:1fr;}
 @media(min-width:640px){.grid.c2,.grid.c3{grid-template-columns:1fr 1fr;}}
@@ -219,30 +248,68 @@ NAV = ('<nav class="nav">\n  <div class="wrap">\n'
  '    </button>\n  </div>\n</nav>')
 
 t65 = "/turning-65/"
+CAL = '<svg class="cta-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
+SITUATIONS = [("I'm turning 65", "Your sign-up window and first choices", "/turning-65/"),
+              ("I'm reviewing my plan for next year", "What to check before December 7", "/articles/medicare-annual-enrollment-period/"),
+              ("My plan is ending", "What a non-renewal letter means and your options", "/articles/medicare-advantage-plan-ending-kentucky/"),
+              ("I'm still working at 65", "When you can wait on Part B, and when you can't", "/articles/working-past-65-medicare/"),
+              ("Advantage or a Supplement?", "The real differences, side by side", "/articles/medicare-advantage-vs-medigap/"),
+              ("I need help paying", "Programs that lower premiums and drug costs", "/articles/help-paying-for-medicare/")]
+SIT_GRID = "".join(f'<a class="sit" href="{u}"><b>{t}</b><span>{d}</span><i aria-hidden="true">&rarr;</i></a>' for t, d, u in SITUATIONS)
 BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
 {ustrip()}
 
 {NAV}
 
 <main id="main">
-<header class="hero"><div class="wrap">
-  <span class="eyebrow">Free Medicare help for all of Kentucky</span>
-  <h1>Kentucky's plain-English Medicare guide.</h1>
-  <p class="sub">Answers to the Medicare questions Kentuckians ask most, checked against official sources and dated. Written by licensed Kentucky advisors you can actually call.</p>
-  <div class="find">
+<header class="hero-a"><div class="wrap hva">
+  <div>
+    <span class="eyebrow">Free Medicare help for all of Kentucky</span>
+    <h1>Talk to a local Medicare advisor before you choose.</h1>
+    <p class="sub">A free review with a licensed advisor from our Lexington office. We check your doctors and prescriptions against the plans in your county and explain your options in plain English.</p>
+    <div class="row"><a class="pill" href="/schedule/">{CAL}Book a free review</a><a class="callline" href="{TEL}">or call {PN}</a></div>
+    <ul class="ticks"><li>Always free</li><li>Phone, video or in person</li><li>No pressure to switch</li></ul>
+    <div class="trust"><span><span class="star">★★★★★</span>5.0 on Google</span><span>Over 1,000 Kentuckians helped</span><span>Independent Lexington firm</span></div>
+  </div>
+  <div class="duocard">
+    <div class="ph">
+      <figure><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><figcaption><b>Austin Tyler</b>Licensed Medicare Advisor</figcaption></figure>
+      <figure><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="768" height="960"><figcaption><b>Andrew Horn</b>Licensed Medicare Advisor</figcaption></figure>
+    </div>
+    <p class="office">Your call is answered by one of us, not a call center. Office: 1029 Monarch Street, Lexington.</p>
+  </div>
+</div></header>
+
+<section class="band t1" aria-labelledby="sit-h"><div class="wrap">
+  <h2 id="sit-h">What brings you here?</h2><p class="lead">Pick the one that fits. Each guide is short, and you can talk to us at any point.</p>
+  <div class="sits">{SIT_GRID}</div>
+</div></section>
+
+<section class="band t2" aria-labelledby="how-h"><div class="wrap">
+  <h2 id="how-h">How a free review works</h2><p class="lead">About 30 minutes, by phone, video or at our Lexington office. You never pay us; the insurance companies pay licensed agents, and we work with several of them rather than one.</p>
+  <ol class="steps">
+    <li><b>Pick a time</b><span>Book online in a minute, or call and we will set it up with you.</span></li>
+    <li><b>We do the comparing</b><span>We check your doctors, hospital and exact prescriptions against the plans in your county.</span></li>
+    <li><b>You decide</b><span>We explain the options in plain English. No pressure to switch, and we will say so if your current plan is the right one.</span></li>
+  </ol>
+  <p class="stepcta"><a class="pill" href="/schedule/">{CAL}Book a free review</a></p>
+</div></section>
+
+<section class="band t1" aria-labelledby="rev-h"><div class="wrap">
+  <h2 id="rev-h">What Kentuckians say</h2><p class="lead">5.0 on Google. <a href="/reviews/">Read all reviews &rarr;</a></p>
+  <div class="grid c3">{''.join(f'<div class="rev"><div class="star" aria-label="5 out of 5 stars">★★★★★</div><p>“{t}”</p><b>{w}, Google review</b></div>' for t, w in REVIEWS)}</div>
+</div></section>
+
+<section class="band" aria-labelledby="topics-h"><div class="wrap">
+  <h2 id="topics-h">Prefer to read first?</h2><p class="lead">{NGUIDES} free plain-English guides, written by our advisors and checked against official sources. <a href="/articles/">See them all &rarr;</a></p>
+  <div class="find topicsearch">
     <form class="ask" role="search" id="askform" action="/articles/">
       <label for="q">Search the Medicare guides</label>
-      <input id="q" name="q" type="search" placeholder="Type your Medicare question" autocomplete="off" aria-controls="results">
+      <input id="q" name="q" type="search" placeholder="Search the guides" autocomplete="off" aria-controls="results">
       <button class="pill" type="submit">{G['search']}<span class="lbl">Search</span></button>
     </form>
     <div class="results" id="results" role="region" aria-live="polite" aria-label="Matching guides" hidden></div>
   </div>
-  <div class="human"><span class="duo"><img src="/assets/austin-tyler.jpg" alt="" width="48" height="48"><img src="/assets/andrew-horn.jpg" alt="" width="48" height="48"></span><span>Rather talk it through? A licensed advisor picks up.</span><a href="{TEL}">{PN}</a></div>
-  <div class="trust"><span><span class="star">★★★★★</span>5.0 on Google</span><span>Over 1,000 Kentuckians helped</span><span>Independent Lexington firm</span></div>
-</div></header>
-
-<section class="band t1" aria-labelledby="topics-h"><div class="wrap">
-  <h2 id="topics-h">Start with a topic</h2><p class="lead">{NGUIDES} plain-English guides, each with a short recap and a five-question check. <a href="/articles/">See them all &rarr;</a></p>
   <div class="grid c3">
     {tcard('book','Medicare basics',n('basics'),'Parts A, B, C and D, and the cost words every plan uses, explained once and clearly.','/articles/basics/')}
     {tcard('cake','Turning 65',n('turning65') + ' + a date calculator','Your enrollment window, your first decisions, and the penalties to avoid.',t65)}
@@ -253,13 +320,9 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
   </div>
 </div></section>
 
-<section class="band t2" aria-labelledby="ask-h"><div class="wrap askband">
-  <span class="duo"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="92" height="92"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="92" height="92"></span>
-  <div class="t"><h2 id="ask-h">Have a question the guides don't answer?</h2><p>Ask our advisors. Licensed in Kentucky, with an office in Lexington. No cost, no pressure.</p></div>
-  <a class="pill" href="{TEL}">{PH}Call {PN}</a>
-</div></section>
 
-<section class="band" aria-labelledby="month-h"><div class="wrap">
+
+<section class="band t2" aria-labelledby="month-h"><div class="wrap">
   <h2 id="month-h">This season in Medicare</h2><p class="lead">What changed, what is due, and what you can ignore.</p>
   <div class="grid c3">
     <a class="card stack" href="/articles/medicare-annual-enrollment-period/"><span class="chipdate" id="aepchip">Ends December 7</span><span class="ch">Annual Enrollment: October 15 to December 7</span><span class="cp">How to read your Annual Notice of Change and decide whether to keep your plan.</span><span class="go">Read &rarr;</span></a>
@@ -282,27 +345,13 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
   <div class="chips">{''.join(f'<a class="chip" href="{u}">{c}</a>' for c, u in COUNTIES)}<a class="chip more" href="/kentucky/">Find your county &rarr;</a></div>
 </div></section>
 
-<section class="band t1" aria-labelledby="rev-h"><div class="wrap">
-  <h2 id="rev-h">What Kentuckians say</h2><p class="lead">5.0 on Google. <a href="/reviews/">Read all reviews &rarr;</a></p>
-  <div class="grid c3">{''.join(f'<div class="rev"><div class="star" aria-label="5 out of 5 stars">★★★★★</div><p>“{t}”</p><b>{w}, Google review</b></div>' for t, w in REVIEWS)}</div>
-</div></section>
 
-<section class="band" aria-labelledby="note-h"><div class="wrap">
-  <h2 id="note-h">Meet your advisors</h2>
-  <p class="lead">Tyler Insurance Group is an independent Medicare advisory firm in Lexington. We built this site so Kentuckians could get straight answers about Medicare without a sales pitch.</p>
-  <div class="team">
-    <a class="adv" href="/about/"><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="104" height="104"><div><b>Austin Tyler</b><span>Licensed Medicare Advisor</span><small>KY DOI #1187780 &middot; NPN 20234188</small></div></a>
-    <a class="adv" href="/about/"><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="104" height="104"><div><b>Andrew Horn</b><span>Licensed Medicare Advisor</span><small>Tyler Insurance Group &middot; Lexington, Kentucky</small></div></a>
-  </div>
-  <p class="firmnote">Reading is free. So is calling: the carriers pay licensed agents, so you never pay us, and we work with several companies rather than one. If you would rather sit across a table, our office is at 1029 Monarch Street, Suite 110, Lexington, right off Beaumont Circle. <a href="/about/">More about our firm &rarr;</a></p>
-</div></section>
 
-<section class="final" aria-labelledby="final-h"><div class="wrap"><h2 id="final-h">Still have a question?</h2><p>Call and you get a licensed advisor, not a queue. If reading is all you need today, that's fine too.</p>
-  <a class="pill" href="{TEL}">{PH}Call us</a><span class="num">{PN}</span>
-  <p style="margin:16px auto 0;font-size:17px;">Prefer a set time? <a class="u" href="/schedule/">Book a free review</a>.</p></div></section>
+<section class="final" aria-labelledby="final-h"><div class="wrap"><h2 id="final-h">Talk it through with a local advisor</h2><p>Free, licensed, and based in Lexington. Phone, video or in person, at a time that suits you.</p>
+  <a class="pill" href="/schedule/">{CAL}Book a free review</a><span class="num">or call {PN}</span></div></section>
 </main>
 
-<div class="sticky"><a href="{TEL}">{PH}Call us {PN}</a></div>
+<div class="sticky"><a href="/schedule/">{CAL}Book a free review</a></div>
 <nav class="fnav" aria-label="Footer">
   <div class="wrap">
     <a href="/" class="fnav-logo" aria-label="Bluegrass Medicare Help home"><img src="/assets/logo.png" alt="Bluegrass Medicare Help" width="806" height="220" onerror="this.closest('.fnav-logo').style.display='none'"></a>
