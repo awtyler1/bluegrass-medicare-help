@@ -342,7 +342,7 @@ __FAQ__  </section>
 
   <p class="disclaim">This calculator is general information based on federal Medicare enrollment rules and is not advice for your specific situation. It does not calculate penalty amounts, disability enrollment dates, or state-specific Medicare Supplement rules. Confirm your dates with Social Security at 1-800-772-1213 or ssa.gov/medicare before making decisions. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 </main>
-<div class="sticky"><a href="tel:18597858289">Questions? Call Austin (859) 785-8289</a></div>
+<div class="sticky"><a href="tel:18597858289">Questions? Call us (859) 785-8289</a></div>
 <script src="/assets/iep-engine.js"></script>
 <script>
 (function(){
