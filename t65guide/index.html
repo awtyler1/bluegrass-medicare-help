@@ -132,11 +132,13 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
         <li>Advantage or Supplement: which road fits you.</li>
       </ul>
       <form class="card" id="pcform" novalidate>
-        <h2>Where should we text it?</h2>
+        <h2>Where should we send it?</h2>
         <label for="fname">First name</label>
         <input class="inp" id="fname" name="first_name" autocomplete="given-name" autocapitalize="words" required>
         <label for="phone">Mobile phone</label>
         <input class="inp" id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(859) 555-0123" required>
+        <label for="email">Email <span style="font-weight:400;color:var(--mute)">(optional, for a printable copy)</span></label>
+        <input class="inp" id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com">
         <label for="when">When do you turn 65?</label>
         <select class="inp" id="when" name="turning_65" required>
           <option value="">Pick one</option>
@@ -189,10 +191,14 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
     n.classList.toggle('bad',!name); p.classList.toggle('bad',digits.length!==10);
     if(!name){ err.textContent='Please add your first name.'; n.focus(); return; }
     if(digits.length!==10){ err.textContent='Please add a 10-digit mobile number.'; p.focus(); return; }
+    var em=(document.getElementById('email').value||'').trim();
+    var emBad=em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em);
+    document.getElementById('email').classList.toggle('bad',!!emBad);
+    if(emBad){ err.textContent='Please check your email, or leave it blank.'; document.getElementById('email').focus(); return; }
     w.classList.toggle('bad',!w.value);
     if(!w.value){ err.textContent='Please pick when you turn 65.'; w.focus(); return; }
     err.textContent=''; go.disabled=true;
-    var payload={first_name:name, phone:'+1'+digits, source:'T65 Guide Lander', lead_magnet:'Turning 65 in Kentucky Guide', turning_65:w.value,
+    var payload={first_name:name, phone:'+1'+digits, source:'T65 Guide Lander', lead_magnet:'Turning 65 in Kentucky Guide', turning_65:w.value, email:em,
       page:location.href, consent_text:CONSENT_TEXT, consent_at:new Date().toISOString(),
       utm_source:q('utm_source'), utm_medium:q('utm_medium'), utm_campaign:q('utm_campaign'), utm_content:q('utm_content'), fbclid:q('fbclid')};
     var done=false;

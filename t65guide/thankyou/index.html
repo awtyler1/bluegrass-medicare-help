@@ -133,7 +133,7 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
   <p class="sub">Call our office and Austin or Andrew will walk you through your five decisions, by phone or at our office on Monarch Street. It never costs you a penny.</p>
   <a class="btn" href="tel:18597858289" data-track="call">Call (859) 785-8289<small>Your call comes straight to our office.</small></a>
   <p class="note">The best time to call is 3 months before your 65th birthday month, when your sign-up window opens.</p>
-  <p class="quiet" id="glink" hidden>We texted your guide. Want it now? <a href="#" data-track="guide">Open it here</a></p>
+  <p class="quiet" id="glink" hidden>We sent your guide. Want it now? <a href="#" data-track="guide">Open it here</a></p>
 </main>
 <div style="height:28px"></div>
 <footer class="foot">
@@ -148,7 +148,7 @@ label{display:block;font-weight:600;font-size:16px;margin:8px 0 4px;}
 
 <script>
 (function(){
-  var GUIDE_URL=""; // paste the hosted T65 guide PDF link; the quiet link shows once it is set
+  var GUIDE_URL="https://assets.cdn.filesafe.space/Sk1fSSIS0T4wBpJiADrK/media/6ae51950ce53a65ab2b157ad.pdf"; // paste the hosted T65 guide PDF link; the quiet link shows once it is set
   if(GUIDE_URL){ var g=document.getElementById('glink'); g.hidden=false; g.querySelector('a').href=GUIDE_URL; }
   try{ var nm=sessionStorage.getItem('t65_name'); if(nm){ document.getElementById('tyh').textContent='Got it, '+nm+'. Now let\'s get you set up right.'; } }catch(e){}
   try{ if(window.fbq) fbq('track','Lead',{content_name:'Turning 65 in Kentucky Guide'}); }catch(e){}
