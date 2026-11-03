@@ -254,7 +254,7 @@ BODY = r"""
       Checked October 8, 2026. The Kentucky recipient figure is our estimate and is labeled as such.
     </div>
 
-    <p class="stamp"><b>Written and reviewed by Austin Tyler</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Federal facts from the CMS FAQ and White House fact sheet via the outlets above; Kentucky counts from the CMS enrollment file, August 2026.</p>
+    <p class="stamp"><b>Written and reviewed by Austin Tyler, MBA</b>, licensed Kentucky agent, NPN 20234188, Kentucky DOI license #1187780. Federal facts from the CMS FAQ and White House fact sheet via the outlets above; Kentucky counts from the CMS enrollment file, August 2026.</p>
 
     <p class="disclaim">This article is general information, not advice for your specific situation, and it describes a federal payment that Tyler Insurance Group has no role in administering. Eligibility and payment details are as published by CMS on the dates noted and may change. No specific plan is named or recommended. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 """

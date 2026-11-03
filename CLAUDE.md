@@ -9,12 +9,14 @@ Audience: Kentucky seniors approaching or on Medicare. Philosophy: **guide → e
   copy. Reader-voice buttons stay first person ("Get my free review"), and reviews and video transcripts stay verbatim.
 - **Partners:** Austin Tyler (KY DOI #1187780, NPN 20234188; credited as article author) and Andrew Horn (photo
   `/assets/andrew-horn.jpg`). Both carry the title **Licensed Medicare Advisor** everywhere (cards, bylines, schema
-  `jobTitle`). Do not publish a license number or NPN for Andrew until he provides them.
+  `jobTitle`), and their degrees after their names: **Austin Tyler, MBA** and **Andrew Horn, MHA** (schema
+  `honorificSuffix`; applied by `docs/name-credentials.py`, idempotent). Do not publish a license number or NPN for
+  Andrew until he provides them.
 - **No videos** on the site (October 2026). `/videos/` 301s to `/articles/`; `docs/remove-videos.py` strips any player,
   transcript or VideoObject an older build script brings back.
 - **Phone:** (859) 785-8289, `tel:18597858289`, schema `+1-859-785-8289`.
 - Older article build scripts predate this; after rebuilding any page with them run `python3 docs/firm-voice-v3.py`
-  (idempotent), then `docs/build-hubs.py`, `docs/build-homepage-v3.py` and `docs/remove-videos.py`.
+  (idempotent), then `docs/build-hubs.py`, `docs/build-homepage-v3.py`, `docs/remove-videos.py` and `docs/name-credentials.py`.
 
 ## Page standards (October 2026)
 Every page follows **`docs/page-standards-2026.md`**: one job and one coral primary button per page, the

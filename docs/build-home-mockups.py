@@ -185,7 +185,7 @@ BODY_A = lambda a: f"""{nav(a,'A')}
     <div class="ctarow"><a class="btn" href="{TEL}">{PHONE_SVG}Call {PHONE_TXT}</a><span class="or">or <a href="#">schedule a time</a></span></div>
     {TRUST}
   </div>
-  <div class="photo"><img src="{a}austin-tyler.jpg" alt="Austin Tyler"><div class="cap"><b>Austin Tyler</b>Licensed agent · Lexington, KY</div></div>
+  <div class="photo"><img src="{a}austin-tyler.jpg" alt="Austin Tyler"><div class="cap"><b>Austin Tyler, MBA</b>Licensed agent · Lexington, KY</div></div>
 </div></header>
 
 <section class="sec"><div class="wrap">

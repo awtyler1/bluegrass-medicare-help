@@ -217,7 +217,7 @@ BODY = r"""
       Checked November 2, 2026. Projections are labeled as projections.
     </div>
 
-    <p class="stamp"><b>Written and reviewed by Austin Tyler</b>, Licensed Medicare Advisor, NPN 20234188, Kentucky DOI license #1187780. Every figure was confirmed against at least two sources; Social Security and CMS documents are the primary references.</p>
+    <p class="stamp"><b>Written and reviewed by Austin Tyler, MBA</b>, Licensed Medicare Advisor, NPN 20234188, Kentucky DOI license #1187780. Every figure was confirmed against at least two sources; Social Security and CMS documents are the primary references.</p>
 
     <p class="disclaim">This article is general information, not advice for your specific situation. Figures are as published by the Social Security Administration and CMS on the dates noted; projections may differ from the final amounts. No specific plan is named or recommended. Tyler Insurance Group is not connected with or endorsed by the United States government or the federal Medicare program. We do not offer every plan available in your area. Currently we represent 6 organizations which offer 158 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options.</p>
 """
