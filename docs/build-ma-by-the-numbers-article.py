@@ -97,13 +97,54 @@ BODY = r"""
     <div class="ans">
       <p><strong>The short version:</strong></p>
       <ul>
-        <li><strong>More than half of Medicare is now Advantage:</strong> 55% of eligible people, over 35 million, in 2026.</li>
-        <li><strong>Most prior authorization requests are approved.</strong> In 2024, plans denied 7.7%. Only about 1 in 9 denials was appealed, and about 4 in 5 appeals won.</li>
+        <li><strong>More than half of Medicare is now Advantage:</strong> 55% of eligible people, more than 1 in 2, over 35 million, in 2026.</li>
+        <li><strong>Most prior authorization requests are approved.</strong> In 2024, plans denied 7.7%, about 1 in 13 requests. Only about 1 in 9 denials was appealed, and about 4 in 5 appeals won.</li>
         <li><strong>The distrust has real causes:</strong> documented denial problems in nursing-home and rehab care, hospitals leaving networks, aggressive marketing, and federal estimates that plans are paid more than Original Medicare would cost.</li>
-        <li><strong>Supplements are getting harder to afford.</strong> The average Medigap premium rose 20% from 2020 to 2025, and outside your first six months on Part B, most states let insurers turn you down for health reasons.</li>
+        <li><strong>Supplements are getting harder to afford.</strong> The average Medigap premium rose 20% from 2020 to 2025, from $203 to $244 a month, about $490 more a year. Outside your first six months on Part B, most states let insurers turn you down for health reasons.</li>
         <li><strong>Over 20 years</strong>, a Plan G supplement plus a drug plan costs roughly __LOW__ to __HIGH__ in premiums and deductibles, against median savings of $110,100 among people on Medicare. A $0-premium Advantage plan costs more only if your copays average more than about __PERYR_LOW__ to __PERYR_HIGH__ a year, every year.</li>
       </ul>
     </div>
+
+    <h2>The percentages in everyday terms</h2>
+    <p>Percentages are easy to misread, so here is what the main ones on this page mean in people, requests and dollars. Conversions marked "our arithmetic" are calculated from the published figures.</p>
+    <div class="tblwrap">
+    <table class="nettbl">
+      <tr><th>The figure</th><th>What it means</th></tr>
+      <tr><td>55% of eligible people are on Advantage</td><td>More than 1 in 2 people, about 35 million</td></tr>
+      <tr><td>46% are with UnitedHealth or Humana</td><td>Nearly half of members, about 16 million people</td></tr>
+      <tr><td>7.7% of prior authorization requests denied (2024)</td><td>About 1 in 13 requests; 12 of every 13 are approved</td></tr>
+      <tr><td>11.5% of denials appealed</td><td>About 1 in 9 denials; the other 8 are never challenged</td></tr>
+      <tr><td>80.7% of appeals overturned</td><td>About 4 in 5 people who appeal win, fully or partly</td></tr>
+      <tr><td>12% of standard requests denied (2025 insurer data)</td><td>About 1 in 8 requests</td></tr>
+      <tr><td>13% of sampled denials met Medicare rules (Inspector General)</td><td>About 1 in 8 denials in the sample should likely have been approved</td></tr>
+      <tr><td>UnitedHealthcare post-acute denials, 8.7% to 22.7%</td><td>From about 1 in 11 requests in 2019 to nearly 1 in 4 in 2022</td></tr>
+      <tr><td>About 23% of Original Medicare prior authorization requests denied</td><td>Nearly 1 in 4, but only about 2 requests are made per 100 people a year</td></tr>
+      <tr><td>Advantage paid about 14% more ($76 billion, MedPAC)</td><td>Roughly $2,200 per Advantage member per year, and Part B premiums roughly $15 a month higher for everyone (our arithmetic)</td></tr>
+      <tr><td>12% of men and 15% of women rely on Social Security for 90%+ of income</td><td>About 1 in 8 men and 1 in 7 women 65 and older on Social Security</td></tr>
+      <tr><td>Health costs equal 36% of Social Security income</td><td>About $1 of every $3, or more than four months of benefits a year</td></tr>
+      <tr><td>Medigap premiums up 7% in 2025</td><td>About $16 more a month on the average $244 premium, about $190 a year</td></tr>
+      <tr><td>Plan G filings up 12% to 26% in 2026</td><td>On a $194 premium, about $23 to $50 more a month, $280 to $605 a year</td></tr>
+      <tr><td>13% of people in Original Medicare have no supplement</td><td>About 1 in 8, 3.5 million people</td></tr>
+      <tr><td>30% of them had trouble paying for care</td><td>About 3 in 10</td></tr>
+      <tr><td>You pay 20% on Original Medicare alone</td><td>$20 of every $100 bill, and $20,000 of every $100,000, with no ceiling</td></tr>
+      <tr><td>9% of Advantage members are in plans at the legal maximum limit</td><td>About 1 in 11 members, 1.8 million people</td></tr>
+      <tr><td>94% satisfied with the quality of their care</td><td>More than 9 in 10, in both programs</td></tr>
+    </table>
+    </div>
+    <p>And the dollar figures, measured against the average retired worker's Social Security check of $2,071 a month:</p>
+    <div class="tblwrap">
+    <table class="nettbl">
+      <tr><th>Cost</th><th>Equals about</th></tr>
+      <tr><td>Premiums on Original Medicare + Plan G + drug plan: $432 a month (21% of the check)</td><td>$5,183 a year, about $2,750 a year more than Part B alone</td></tr>
+      <tr><td>Premium on a $0 Advantage plan: Part B only, $203 a month (10%)</td><td>$2,435 a year</td></tr>
+      <tr><td>Plan G in a bad year: $283</td><td>About four days of Social Security</td></tr>
+      <tr><td>Average Advantage out-of-pocket limit: $5,421</td><td>About 2.6 months of Social Security</td></tr>
+      <tr><td>Legal maximum Advantage limit: $9,250</td><td>About 4.5 months</td></tr>
+      <tr><td>One $100,000 year on Original Medicare alone: $20,226</td><td>Nearly 10 months</td></tr>
+      <tr><td>20 years of a supplement, drug plan and deductible: __LOW__ to __HIGH__</td><td>3.5 to 5.4 years of Social Security checks</td></tr>
+    </table>
+    </div>
+    <p class="vstamp">Months and years are our arithmetic: the cost divided by $2,071 a month or $24,852 a year.</p>
 
     <h2>How many people are on Medicare Advantage?</h2>
     <p>In 2026, <strong>55% of eligible Medicare beneficiaries</strong> are enrolled in a Medicare Advantage plan, according to KFF. Enrollment passed 35 million people in February. In 2007 the share was 19%. Growth has slowed to about 3% a year, and most of the recent growth is in Special Needs Plans for people with Medicaid or chronic conditions, which now hold 8.2 million people, nearly 1 in 4 enrollees. Two companies, UnitedHealth Group and Humana, cover 46% of all Advantage members.</p>
@@ -114,12 +155,12 @@ BODY = r"""
     __VIZ_PA__
     <ul>
       <li><strong>Volume:</strong> 52.8 million prior authorization requests in 2024.</li>
-      <li><strong>Denials:</strong> 4.1 million fully or partly denied, <strong>7.7%</strong>.</li>
-      <li><strong>Appeals:</strong> only <strong>11.5%</strong> of denials were appealed, and <strong>80.7%</strong> of those appeals reversed the denial in full or in part.</li>
+      <li><strong>Denials:</strong> 4.1 million fully or partly denied, <strong>7.7%</strong>, about 1 in 13.</li>
+      <li><strong>Appeals:</strong> only <strong>11.5%</strong> of denials were appealed (about 1 in 9), and <strong>80.7%</strong> of those appeals reversed the denial in full or in part (about 4 in 5).</li>
       <li><strong>Newer data:</strong> insurers' own published figures for 2025, covering 14 large companies, show 12% of standard requests denied in Advantage and 67% of appealed denials overturned. The method differs from the CMS data, so the two years are not directly comparable.</li>
     </ul>
-    <p>Two harder facts belong next to those. In 2022 the HHS Inspector General reviewed a sample of 2019 denials from 15 large plans and found that <strong>13% of denied prior authorization requests met Medicare's own coverage rules</strong>, meaning Original Medicare likely would have paid. And in 2024 a U.S. Senate investigation found UnitedHealthcare's denial rate for post-acute care (skilled nursing, rehab) rose from <strong>8.7% in 2019 to 22.7% in 2022</strong>, with post-acute denials at UnitedHealthcare and CVS running about three times their overall rates. The insurers dispute the report's conclusions.</p>
-    <p>Original Medicare is not denial-free either. It requires prior authorization for far fewer services, about 2 requests per 100 people in 2024, but it denied about 23% of those. Since January 2026, a federal pilot called WISeR has added prior authorization to traditional Medicare for selected services in six states (Arizona, New Jersey, Ohio, Oklahoma, Texas and Washington).</p>
+    <p>Two harder facts belong next to those. In 2022 the HHS Inspector General reviewed a sample of 2019 denials from 15 large plans and found that <strong>13% of denied prior authorization requests met Medicare's own coverage rules</strong>, about 1 in 8, meaning Original Medicare likely would have paid. And in 2024 a U.S. Senate investigation found UnitedHealthcare's denial rate for post-acute care (skilled nursing, rehab) rose from <strong>8.7% in 2019 to 22.7% in 2022</strong>, from about 1 in 11 requests to nearly 1 in 4, with post-acute denials at UnitedHealthcare and CVS running about three times their overall rates. The insurers dispute the report's conclusions.</p>
+    <p>Original Medicare is not denial-free either. It requires prior authorization for far fewer services, about 2 requests per 100 people in 2024, but it denied about 23% of those, nearly 1 in 4. Since January 2026, a federal pilot called WISeR has added prior authorization to traditional Medicare for selected services in six states (Arizona, New Jersey, Ohio, Oklahoma, Texas and Washington).</p>
     <p><strong>What the denial numbers mean for you:</strong> the large majority of requests are approved, but if you are denied, appeal. Most people do not, and most people who do, win.</p>
 
     <h2>Why so many people dislike Medicare Advantage</h2>
@@ -127,18 +168,18 @@ BODY = r"""
     <div class="stage"><span class="num">1</span><span class="st"><b>Denials, especially for rehab and nursing care.</b>The Inspector General and Senate findings above are the source of many stories people repeat, and the post-acute numbers are the strongest evidence behind them.</span></div>
     <div class="stage"><span class="num">2</span><span class="st"><b>Networks that change.</b>Becker's Hospital Review tracked about 40 health systems dropping some or all Advantage contracts in 2025, and at least 25 more in 2026, often citing prior authorization and slow payment. If your hospital leaves your plan's network, your plan may no longer cover care there except in emergencies.</span></div>
     <div class="stage"><span class="num">3</span><span class="st"><b>The marketing.</b>A 2022 Senate Finance Committee report found complaints to CMS about Advantage marketing more than doubled from 2020 to 2021. Many people's first impression of these plans is a late-night ad or a cold call, and that sticks.</span></div>
-    <div class="stage"><span class="num">4</span><span class="st"><b>The cost to taxpayers.</b>Medicare's own advisory commission, MedPAC, estimates that Advantage plans will be paid about 14% more in 2026 than Original Medicare would have spent on the same people, about $76 billion, which also makes Part B premiums an estimated $11 billion higher in total. The industry disputes the method. This is a real policy debate, but it is about the program's cost, not about what your plan costs you.</span></div>
+    <div class="stage"><span class="num">4</span><span class="st"><b>The cost to taxpayers.</b>Medicare's own advisory commission, MedPAC, estimates that Advantage plans will be paid about 14% more in 2026 than Original Medicare would have spent on the same people, about $76 billion, roughly $2,200 per Advantage member a year. MedPAC also estimates it makes Part B premiums $11 billion higher in total, roughly $15 a month for each person on Part B (our arithmetic). The industry disputes the method. This is a real policy debate about the program's cost, separate from what your own plan charges you.</span></div>
     <div class="stage"><span class="num">5</span><span class="st"><b>It can be hard to go back.</b>If you leave a supplement for an Advantage plan and later want the supplement again, insurers in most states can ask health questions and turn you down. Only Connecticut, Massachusetts, Maine and New York guarantee that right every year for people 65 and older. A federal trial right lets you return within 12 months of first joining an Advantage plan, but after that, the door may not open.</span></div>
     <p>Now the other side of the ledger, also from the research. KFF's review of 62 studies comparing the two programs found <strong>few big differences</strong> across a wide range of measures. Satisfaction is similar: in one analysis of federal survey data, 94% of people in each program said they were satisfied with the quality of their care. And Advantage members are more likely than people in Original Medicare to have incomes below $20,000, which matters for the next section.</p>
 
     <h2>What seniors actually live on</h2>
     <p>Any honest comparison has to start with the budget, because for most people the budget decides.</p>
     <ul>
-      <li><strong>The average retired worker's Social Security check</strong> is about $2,071 a month in 2026, rising to about $2,170 in January 2027. For 12% of men and 15% of women 65 and older on Social Security, it is 90% or more of their income.</li>
+      <li><strong>The average retired worker's Social Security check</strong> is about $2,071 a month in 2026, rising to about $2,170 in January 2027. For 12% of men and 15% of women 65 and older on Social Security, about 1 in 8 men and 1 in 7 women, it is 90% or more of their income.</li>
       <li><strong>Half of all people on Medicare</strong> live on less than $43,200 a year per person and have less than <strong>$110,100</strong> in savings. One in four has income below $24,600 and savings below $18,950.</li>
       <li><strong>Retirement accounts:</strong> only about half of households aged 65 to 74 have one at all. For those that do, the median balance is about $200,000.</li>
       <li><strong>Spending:</strong> households headed by someone 65 or older spent an average of $61,432 in 2024 on everything, according to the Bureau of Labor Statistics. That is a household figure; the average retired worker's check is about $24,900 a year.</li>
-      <li><strong>Health costs already take a big bite:</strong> in 2023 people on Medicare spent an average of $6,459 out of pocket on health care, including premiums. That equals 36% of the average Social Security income per beneficiary.</li>
+      <li><strong>Health costs already take a big bite:</strong> in 2023 people on Medicare spent an average of $6,459 out of pocket on health care, including premiums. That equals 36% of the average Social Security income per beneficiary: about $1 of every $3, or more than four months of benefits.</li>
     </ul>
     __VIZ_CHECK__
     <p>That is the first fact that drives many people toward Advantage: before any copay, Original Medicare with an average supplement and drug plan takes about one dollar in five from the average check in premiums. A $0-premium Advantage plan takes about one in ten.</p>
@@ -147,8 +188,8 @@ BODY = r"""
     <p>Medicare Supplement (Medigap) plans are excellent coverage: Plan G pays nearly everything Original Medicare leaves behind, at any doctor in the country who takes Medicare. The issue is price, and price over time.</p>
     <ul>
       <li>The <strong>average Medigap premium was $244 a month</strong> ($2,926 a year) among current policyholders in 2025, according to KFF's analysis of insurer data. Plan G averaged $194, ranging from $164 in New Mexico to $257 in New York.</li>
-      <li>Premiums rose <strong>7% from 2024 to 2025 and 20% from 2020 to 2025</strong> on average; Plan G's average rose about 13% in 2025 alone.</li>
-      <li>Industry analysis of 2026 rate filings found Plan G increases of roughly 12% to 26% at several of the largest insurers.</li>
+      <li>Premiums rose <strong>7% from 2024 to 2025</strong> (about $16 a month) <strong>and 20% from 2020 to 2025</strong> ($203 to $244 a month) on average; Plan G's average rose about 13% in 2025 alone, about $22 a month.</li>
+      <li>Industry analysis of 2026 rate filings found Plan G increases of roughly 12% to 26% at several of the largest insurers. On a $194 premium, that is about $23 to $50 more a month.</li>
       <li>In most states, insurers price by <strong>attained age</strong>, so your premium also rises as you get older, on top of those yearly increases. KFF notes these policies are the cheapest at first and can be the most expensive over time.</li>
     </ul>
     <p>And the timing problem: the only point at which every insurer must sell you a supplement at its standard rate, regardless of health, is your <strong>six-month Medigap open enrollment period</strong>, which starts when you are 65 and enrolled in Part B. Certain events, such as losing retiree coverage, also create a guaranteed right. Miss those windows, or leave later, and in most states a heart condition, diabetes or a cancer history can mean higher rates or a denial. For many people, "just get a supplement" is not an option they actually have.</p>
@@ -171,11 +212,11 @@ BODY = r"""
     <h2>Original Medicare alone vs. a Medicare Advantage plan</h2>
     <p>Some people skip a supplement and stay on Original Medicare by itself: about 3.5 million people, 13% of everyone in traditional Medicare, have no supplemental coverage at all. On premiums, this looks identical to a $0 Advantage plan: you pay Part B and nothing else. The difference is what happens in a bad year.</p>
     <ul>
-      <li><strong>Original Medicare alone:</strong> after the $283 Part B deductible you pay 20% of every outpatient bill, plus $1,736 for each hospital stay's benefit period, with <strong>no yearly limit</strong>.</li>
+      <li><strong>Original Medicare alone:</strong> after the $283 Part B deductible you pay 20% of every outpatient bill ($20 of every $100), plus $1,736 for each hospital stay's benefit period, with <strong>no yearly limit</strong>.</li>
       <li><strong>Medicare Advantage:</strong> every plan must cap your in-network Part A and B costs. The 2026 average limit is <strong>$5,421</strong>; the legal maximum is $9,250 (rising to $9,850 in 2027).</li>
     </ul>
     __VIZ_BAD__
-    <p>It shows in people's lives. In KFF's analysis of federal survey data, people in Original Medicare with no supplement were the most likely of any group to report problems paying for care, 30% (2018 data). People with a supplement were the least likely. Advantage members fell in between.</p>
+    <p>It shows in people's lives. In KFF's analysis of federal survey data, people in Original Medicare with no supplement were the most likely of any group to report problems paying for care: 30%, about 3 in 10 (2018 data). People with a supplement were the least likely. Advantage members fell in between.</p>
 
     <h2>The case for a Medicare Advantage plan, in facts</h2>
     <p>Put the pieces together and the factual case for an Advantage plan with drug coverage (often called an MAPD) looks like this:</p>

@@ -96,3 +96,17 @@ independent outlet, unless marked. National article (no Kentucky claims).
 
 Update the 2027 Part B and IRMAA references when CMS releases them; refresh enrollment
 (KFF updates each summer), prior auth (KFF annual), Medigap premiums (KFF/NAIC annual).
+
+## 9. Plain-language conversions (our arithmetic, shown on the page)
+
+- Rates as "1 in X": 7.7% = 1 in 13; 11.5% = 1 in 9; 80.7% = 4 in 5; 12% = 1 in 8; 13% = 1 in 8;
+  8.7% = 1 in 11; 22.7% and 22.9% = nearly 1 in 4; 12% / 15% = 1 in 8 / 1 in 7; 30% = 3 in 10;
+  9% = 1 in 11; 46% of 35 million = about 16 million.
+- MedPAC $76 billion / about 35 million MA members = about $2,200 per member a year; $11 billion /
+  about 62.9 million Part B enrollees (CMS figure used for the $90 rebate) = about $175 a year,
+  about $15 a month.
+- Medigap: $244 / 1.07 = $228, so the 2025 increase is about $16 a month; $203 to $244 = $41 a
+  month, about $490 a year; Plan G $194 / 1.13 = $172, about $22; 12% to 26% of $194 = $23 to $50.
+- Against the average check ($2,071 a month, $24,852 a year): $283 = about 4 days; $5,421 = 2.6
+  months; $9,250 = 4.5 months; $20,226 = 9.8 months; $86,700 to $133,200 = 3.5 to 5.4 years;
+  $6,459 / $17,718 x 12 = 4.4 months of average Social Security income.
