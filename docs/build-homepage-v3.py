@@ -277,7 +277,7 @@ BODY = f"""<a class="skip-link" href="#main">Skip to content</a>
       <figure><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><figcaption><b>Austin Tyler, MBA</b>Licensed Medicare Advisor</figcaption></figure>
       <figure><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="768" height="960"><figcaption><b>Andrew Horn, MHA</b>Licensed Medicare Advisor</figcaption></figure>
     </div>
-    <p class="office">Your call is answered by one of us, not a call center. Office: 1029 Monarch Street, Lexington.</p>
+    <p class="office">Call and you reach our Lexington office, not a call center. Your review is with Austin or Andrew. Office: 1029 Monarch Street, Lexington.</p>
   </div>
 </div></header>
 

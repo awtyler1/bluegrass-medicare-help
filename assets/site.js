@@ -37,7 +37,7 @@
       : "Good start — Medicare is genuinely tricky, and now you know a little more.";
     result.innerHTML = '<div class="kc-score">You scored ' + score + ' / ' + total + '</div>'
       + '<p>' + msg + '</p>'
-      + '<p>Have a question about your own situation? <a href="/help/">Talk to Austin &rarr;</a>'
+      + '<p>Have a question about your own situation? <a href="/schedule/">Talk to our team &rarr;</a>'
       + ' &nbsp;·&nbsp; <a href="/articles/">Keep learning &rarr;</a></p>';
     result.style.display = '';
     if (typeof gtag === 'function') gtag('event', 'knowledge_check_complete', { score: score, total: total });

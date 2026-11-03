@@ -2,7 +2,9 @@
 """Three advisor-first homepage variations (November 2026), built from the live homepage's own CSS,
 chrome and sections so they look finished. Output: /mockups/home-v4/{a,b,c}/ plus an index. Not indexed.
 Brief: the main action on the homepage is talking to a local advisor; resources stay, lower down;
-no search box in the hero (most visitors do not know what to search, and most land on articles from Google)."""
+no search box in the hero (most visitors do not know what to search, and most land on articles from Google).
+Snapshot: it reads sections from the pre-November homepage, which the live homepage no longer has, so it
+cannot be re-run as is; the chosen design (A hero + C situations) now lives in build-homepage-v3.py."""
 import os, re
 
 SRC = open("index.html", encoding="utf-8").read()
@@ -133,7 +135,7 @@ HERO_A = f"""<header class="hero-a"><div class="wrap hva">
       <figure><img src="/assets/austin-tyler.jpg" alt="Austin Tyler" width="600" height="750"><figcaption><b>Austin Tyler, MBA</b>Licensed Medicare Advisor</figcaption></figure>
       <figure><img src="/assets/andrew-horn.jpg" alt="Andrew Horn" width="768" height="960"><figcaption><b>Andrew Horn, MHA</b>Licensed Medicare Advisor</figcaption></figure>
     </div>
-    <p class="office">Your call is answered by one of us, not a call center. Office: 1029 Monarch Street, Lexington.</p>
+    <p class="office">Call and you reach our Lexington office, not a call center. Your review is with Austin or Andrew. Office: 1029 Monarch Street, Lexington.</p>
   </div>
 </div></header>"""
 TOPICS_A = retitle(TOPICS, '>Start with a topic<', '>Prefer to read first?<', True,
@@ -192,10 +194,10 @@ HERO_C = f"""<header class="hero-c"><div class="wrap hvc">
   <div class="row"><a class="pill" href="/schedule/">{CAL}Book a free review</a></div>
   <p class="orway">Or reach us another way:</p>
   <div class="ways">
-    {way(GLY_PH, 'Call now', PN + ', a licensed advisor answers', TEL)}
+    {way(GLY_PH, 'Call now', PN + ', our Lexington office', TEL)}
     {way(GLY_BACK, 'Have us call you', 'Leave your number', '/schedule/#cback')}
   </div>
-  <div class="human"><span class="duo"><img src="/assets/austin-tyler.jpg" alt="" width="48" height="48"><img src="/assets/andrew-horn.jpg" alt="" width="48" height="48"></span><span>You talk to Austin or Andrew, not a call center.</span></div>
+  <div class="human"><span class="duo"><img src="/assets/austin-tyler.jpg" alt="" width="48" height="48"><img src="/assets/andrew-horn.jpg" alt="" width="48" height="48"></span><span>Your review is with Austin or Andrew, not a call center.</span></div>
   {TRUST}
 </div></header>"""
 SIT_C = f"""<section class="band t1" aria-labelledby="sit-h"><div class="wrap">

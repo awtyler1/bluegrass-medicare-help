@@ -27,8 +27,8 @@ OVERRIDES = [
     ("I am a licensed agent with an office on Monarch Street in Lexington.", "We are licensed agents with an office on Monarch Street in Lexington."),
     ("a local agent like me", "a local firm like ours"),
     ("A local independent agent (that is me)", "A local independent agency (that is us)"),
-    ("I will be the same person who picks up the phone next year", "we will be the same people who pick up the phone next year"),
-    ("you'll get a real person, usually me.", "you'll get a real person, usually one of the partners."),
+    ("I will be the same person who picks up the phone next year", "we will be the same people you work with next year"),
+    ("you'll get a real person, usually me.", "you'll reach our Lexington office, not a call center."),
     ("Austin is a licensed local agent who does this every day.", "Our licensed local advisors do this every day."),
 ]
 # reader-voice lines that are not in quotation marks
