@@ -6,7 +6,7 @@ import glob, json, re
 
 def strip_css(css):
     """Drop rules whose selectors are all video selectors, then any @media block left empty."""
-    vid = re.compile(r'\.(?:sc)?vid|\.vtx')
+    vid = re.compile(r'\.(?:sc)?vid|\.vtx|\.vlink')
     def rule(m):
         sels = [s for s in re.sub(r'/\*.*?\*/', "", m.group(1), flags=re.S).split(",") if s.strip()]
         return "" if sels and all(vid.search(s) for s in sels) else m.group(0)
@@ -42,6 +42,8 @@ for p in sorted(glob.glob("**/index.html", recursive=True)):
     h = re.sub(r'[ \t]*<figure class="vid">.*?</figure>\n?', "", h, flags=re.S)
     h = re.sub(r'[ \t]*<section class="scvid">.*?</section>\n?', "", h, flags=re.S)
     h = re.sub(r'<details class="vtx">.*?</details>\n?', "", h, flags=re.S)
+    # "Watch: ..." link cards that pointed readers to an article's video
+    h = re.sub(r'[ \t]*<aside class="vlink">.*?</aside>\n?', "", h, flags=re.S)
     # click-to-play loaders
     h = re.sub(r'<script>\s*/\*[^*]*\*/\s*\(function\(\)\{\s*var b=document\.getElementById\(\'(?:about|sc)?vid(?:btn)?\'\);.*?</script>\n?', "", h, flags=re.S)
     h = re.sub(r'<script type="application/ld\+json">(.*?)</script>', strip_schema, h, flags=re.S)
